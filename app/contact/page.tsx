@@ -1,12 +1,71 @@
-import React from 'react'
+"use client"
+import Contact1 from '@/public/webp/contact-1.webp'
+import Image from 'next/image'
 import NavbarTitle from '../about-us/components/NavbarTitle'
+import { CustomButton } from '@/components/custom-btn'
+import Form from "@/app/contact/components/form"
+import Location from "@/public/svg/location.svg"
+import Phone from "@/public/svg/phone.svg"
+import Email from "@/public/svg/email.svg"
 
 const Contact = () => {
-  return (
-    <div className='w-full'>
-<NavbarTitle title='Contact Us' locate='Contact Us'/>
+
+
+	return (
+		<div className='w-full'>
+			<NavbarTitle title='Contact Us' locate='Contact Us' />
+			{/*  */}
+			<div className='flex items-center gap-35 px-25 py-30'>
+				<div>
+				<Image  src={Contact1} alt='Contact' />
+        </div>
+        <div className='w-[35%] space-y-12'>
+          <div className='text-4xl font-bold text-primary'>Growth strategies to be effective & competitive</div>
+          <div className= 'w-[80%] text-zinc-500 text-lg'>Everything we do and dream up has a solid design impact. We create human-centered enterprise software that has the polished, snappy feel of the best consumer apps.</div>
+          <CustomButton title='Get Started'/>
+        </div>
+				
+			</div>
+      {/*  */}
+      <div className='bg-bg px-30 py-30'>
+        <div className='text-primary text-center text-6xl font-bold'>Have some questions?</div>
+        <div className='mt-20 flex gap-20'>
+           <div className="w-[50%] h-[500px]">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.1160972569!2d72.74109918983905!3d33.684420199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbf2fda0895f1%3A0x999f9db6e49389c!2sIslamabad!5e0!3m2!1sen!2s!4v1693946400000!5m2!1sen!2s"
+        width="100%"
+        height="100%"
+        style={{ border: 0, borderRadius: 10 }}
+        allowFullScreen
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
     </div>
-  )
+    <Form/>
+        </div>
+        {/* cards */}
+        <div className='mt-30 flex gap-10'>
+          {/* card 1 */}
+          <div className='bg-white rounded-2xl shadow-xl w-100 py-10 text-center'>
+            <div className='w-16 h-16 rounded-full bg-blue-500 mx-auto mb-6 flex items-center justify-center'><Image src={Location} alt="location" /></div>
+            <p className='text-zinc-600'>Arcus Park, Str. 231-233, 04347</p>
+            <p className='text-zinc-600'>Leipzig, Germany.</p>
+          </div>
+          {/* card 2 */}
+          <div className='bg-white rounded-2xl shadow-xl w-100 py-10 text-center'>
+            <div className='w-16 h-16 rounded-full bg-blue-500 mx-auto mb-6 flex items-center justify-center'><Image src={Phone} alt="location" /></div>
+            <p className='text-zinc-600'>+49 340 90020</p>
+            <p className='text-zinc-600'>+49 340 90020</p>
+          </div>
+          {/* card 3 */}
+          <div className='bg-white rounded-2xl shadow-xl w-100 py-10 text-center'>
+            <div className='w-16 h-16 rounded-full bg-blue-500 mx-auto mb-6 flex items-center justify-center'><Image src={Email} alt="location" /></div>
+            <p className='text-zinc-600'>info@codeless.co</p>
+            <p className='text-zinc-600'>support@convertatheme.com</p>
+          </div>
+        </div>
+      </div>
+		</div>
+	)
 }
 
 export default Contact
