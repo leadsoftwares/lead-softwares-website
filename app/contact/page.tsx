@@ -10,6 +10,7 @@ import Phone from '@/public/svg/phone.svg'
 import Contact1 from '@/public/webp/contact-1.webp'
 import Image from 'next/image'
 import NavbarTitle from '../about-us/components/NavbarTitle'
+import FAQPage from './components/faq-box'
 
 const Contact = () => {
 	return (
@@ -54,37 +55,41 @@ const Contact = () => {
 				<div className='mt-30 flex gap-10 flex-col lg:flex-row'>
 					{/* card 1 */}
 					<div className='bg-white rounded-2xl shadow-xl w-100 py-10 text-center mx-auto'>
-						<div className='w-16 h-16 rounded-full bg-blue-500 mx-auto mb-6 flex items-center justify-center'>
+						<div className='w-16 h-16 rounded-full bg-blue-500 mx-auto mb-2 flex items-center justify-center'>
 							<Image src={Location} alt='location' />
 						</div>
-						<p className='text-zinc-600'>Arcus Park, Str. 231-233, 04347</p>
-						<p className='text-zinc-600'>Leipzig, Germany.</p>
+            <h2 className='font-extrabold text-2xl mb-4'>Location</h2>
+            <p className='text-zinc-600 mb-4'>Find us at our office</p>
+						<p className='text-black font-bold'>7901 4th St N STE 300 Saint</p>
+						<p className='text-black font-bold'>Petersburg, FL 33702 US</p>
 					</div>
 					{/* card 2 */}
 					<div className='bg-white rounded-2xl shadow-xl w-100 py-10 text-center mx-auto'>
-						<div className='w-16 h-16 rounded-full bg-blue-500 mx-auto mb-6 flex items-center justify-center'>
+						<div className='w-16 h-16 rounded-full bg-blue-500 mx-auto mb-2 flex items-center justify-center'>
 							<Image src={Phone} alt='location' />
 						</div>
-						<p className='text-zinc-600'>+49 340 90020</p>
-						<p className='text-zinc-600'>+49 340 90020</p>
+             <h2 className='font-extrabold text-2xl mb-4'>Phone</h2>
+            <p className='text-zinc-600 mb-4'>Reach out to us by phone</p>
+						<p className='text-black font-bold'>+92 316 6072132</p>
 					</div>
 					{/* card 3 */}
 					<div className='bg-white rounded-2xl shadow-xl w-100 py-10 text-center mx-auto'>
-						<div className='w-16 h-16 rounded-full bg-blue-500 mx-auto mb-6 flex items-center justify-center'>
+						<div className='w-16 h-16 rounded-full bg-blue-500 mx-auto mb-2 flex items-center justify-center'>
 							<Image src={Email} alt='location' />
 						</div>
-						<p className='text-zinc-600'>info@codeless.co</p>
-						<p className='text-zinc-600'>support@convertatheme.com</p>
+             <h2 className='font-extrabold text-2xl mb-4'>Email</h2>
+						<p className='text-zinc-600 mb-4'>Contact us at</p>
+						<p className='text-black font-bold'>contact@leadsoftwares.com</p>
 					</div>
 				</div>
 			</div>
 			{/*  */}
 			<div className='py-25'>
-				<div className='lg:w-[70%] text-5xl text-primary font-semibold leading-14 text-center mx-auto'>
+				<div className='px-6 lg:w-[70%] text-4xl lg:text-5xl text-primary font-semibold leading-11 lg:leading-14 text-center mx-auto'>
 					A proficient software development boutique focuses on cutting-edge
 					technologies
 				</div>
-				<div className='flex gap-10 justify-center mt-20 px-30'>
+				<div className='flex flex-col lg:flex-row gap-10 justify-center mt-20 px-4 lg:px-30'>
           {/* box1 */}
 					<div className='bg-blue-500 text-white rounded-2xl px-8 py-10 space-y-6'>
 						<div>
@@ -126,6 +131,8 @@ const Contact = () => {
 					</div>
 				</div>
 			</div>
+      {/*  */}
+      <FAQPage />
 		</div>
 	)
 }

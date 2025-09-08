@@ -1,5 +1,5 @@
 import { Facebook, Twitter, Youtube } from 'lucide-react'
-import Logo from '@/public/webp/logo-white.webp'
+import Logo from '@/public/png/Lead Logo White with white Text-02-02.png'
 import Image from 'next/image'
 
 const Footer = () => {
@@ -14,7 +14,7 @@ const Footer = () => {
 			<div className='absolute left-0 top-0 flex flex-wrap gap-16 flex-col md:flex-row justify-between w-full z-110 py-18 px-8  md:py-20 md:px-30'>
 				{/* left-side */}
 				<div>
-					<Image src={Logo} alt='converta' />
+					<Image width={150} height={150} src={Logo} alt='converta' />
 					{/* desc */} 
 					<div className='text-zinc-300 text-sm font-light mt-6'>
 						Creative-powered to fuel your growth goals. We build world-class

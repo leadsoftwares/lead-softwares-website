@@ -45,7 +45,8 @@ const Strategy = () => {
 					HELPING ENTREPRENEURS MAKE MORE MONEY
 				</div>
 				<div className='hidden lg:block title text-5xl leading-14 font-semibold text-[#321270]'>
-					Unlimited cash back, zero fees, <br /> no credit check
+					Customizing IT Solutions to Fit <br />
+Your Business Needs
 				</div>
 				<div className='block lg:hidden title text-3xl leading-10 font-semibold text-[#321270]'>
 					Unlimited cash back, zero fees, no credit check
@@ -64,11 +65,10 @@ const Strategy = () => {
 							}`}
 						>
 							<div className='title text-2xl text-[#321270] font-semibold'>
-								Strategy & Business
+								Assessment and Planning
 							</div>
 							<div className='desc text-zinc-400'>
-								We design business models and growth strategies to be effective
-								and competitive.
+								We Conduct thorough consultations to understand and document client requirements comprehensively.
 							</div>
 						</div>
 
@@ -80,11 +80,10 @@ const Strategy = () => {
 							}`}
 						>
 							<div className='title text-2xl text-[#321270] font-semibold'>
-								Product Development
+								Implementation and Integration
 							</div>
 							<div className='desc text-zinc-400'>
-								We innovate and create new products tailored for growth and
-								efficiency.
+								We Develop and rigorously test software applications, ensuring top-notch quality.
 							</div>
 						</div>
 
@@ -96,11 +95,10 @@ const Strategy = () => {
 							}`}
 						>
 							<div className='title text-2xl text-[#321270] font-semibold'>
-								Futures Research
+								Monitoring and Optimization
 							</div>
 							<div className='desc text-zinc-400'>
-								We explore trends and innovations to prepare businesses for
-								tomorrow.
+								We Conduct regular audits, scale infrastructure, and uphold industry standards for ongoing efficiency and excellence.
 							</div>
 						</div>
 					</div>

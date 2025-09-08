@@ -23,7 +23,7 @@ const Navbar = () => {
 			<nav className='w-full flex justify-between items-center'>
 				{/* Logo */}
 				<div className='logo'>
-					<Image className='w-40 md:w-50' src={logo} alt='logo' />
+					<Image className='w-40 md:w-40' src={logo} alt='logo' />
 				</div>
 
 				{/* Desktop Navigation */}

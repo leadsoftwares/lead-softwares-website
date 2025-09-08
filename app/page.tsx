@@ -19,21 +19,19 @@ const page = () => {
 		<div>
 			<div className='hero px-2 lg:px-17 flex gap-16 w-full h-120 lg:h-160 bg-bg'>
 				<div className='left py-8 md:mx-auto lg:pl-16 flex flex-col gap-6 justify-center h-120 lg:h-160 text-center lg:text-start'>
-					<div className='title text-4xl lg:text-7xl font-bold text-primary'>
-						Designing your <br /> next{' '}
+					<div className='title text-4xl lg:text-6xl font-bold text-primary'>
+						We Handle IT, <br /> So you can Handle {' '}
 						<span className='bg-gradient-to-r from-[#857FFF] via-[#BB7BFF] to-pink-300 bg-clip-text text-transparent'>
 							business.
 						</span>
 					</div>
 					<div className='desc text-lg text-zinc-500'>
-						Small business, big opportunity? We help our clients exploit
-						technology to <br /> strategically reshape their business around
-						digital economy.
+					Leveraging technology to turn your business potential <br /> into performance.
 					</div>
 					<div className='bts mt-5 flex mx-auto lg:mx-0'>
-						<CustomButton title='Discover now' />
+						<CustomButton title='Get Started' />
 						<button className='hidden md:block text-blue-500 outline-1 outline-blue-500 hover:outline-purple-900 py-3 px-6 cursor-pointer  rounded-md transition mr-4'>
-							How it Works
+							Services
 						</button>
 					</div>
 				</div>
@@ -123,31 +121,28 @@ const page = () => {
 							alt='MobileViewCard'
 						/>
 					</div>
-					<div className='detail w-110 flex flex-col gap-6 ml-16'>
-						<div className='hidden md:block title text-4xl font-semibold text-[#321270]'>
+					<div className='detail w-120 flex flex-col gap-6 ml-16'>
+						<div className='hidden md:block title text-4xl font-bold text-[#321270]'>
 							We’re building business for <br /> your digital economy
 						</div>
 						<div className='block md:hidden title text-4xl font-semibold text-[#321270]'>
 							We’re building business <br /> for your digital <br /> economy
 						</div>
 						<div className='desc w-[90vw] md:w-full text-zinc-400'>
-							We are building business, banking products and services to support
-							the next generation of entrepreneurs. The world as we know it is
-							no longer the same, and changes now occur in days and months, not
-							years. Get started!
+							We specialize in creating effective IT solutions tailored for businesses. From enhancing digital presence to optimizing operational efficiency, we empower enterprises to thrive in today's competitive landscape. Partner with us to unlock the potential of your business with innovative technology solutions.
 						</div>
 						<div className='infos flex gap-12 mt-4'>
 							<div className='1 space-y-2'>
-								<div className='numbers text-6xl text-green-400 font-semibold'>
-									120k
+								<div className='numbers text-6xl text-green-400 font-bold'>
+									25+
 								</div>
 								<div className='title font-bold text-[#321270]'>
 									Business Consultants
 								</div>
 							</div>
 							<div className='2 space-y-2'>
-								<div className='numbers text-6xl text-green-400 font-semibold'>
-									370+
+								<div className='numbers text-6xl text-green-400 font-bold'>
+									10+
 								</div>
 								<div className='title font-bold text-[#321270]'>
 									Startups in 2023
