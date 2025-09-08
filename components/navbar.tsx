@@ -1,7 +1,7 @@
 "use client"
 import { ChevronDown, Menu, Search, ShoppingCart, X } from 'lucide-react'
 import { useState } from 'react'
-import logo from '@/public/webp/logo.webp'
+import logo from '@/public/png/Lead Logo Black .png'
 import Image from 'next/image'
 import NavLink from '@/components/navlink'
 

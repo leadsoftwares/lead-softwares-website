@@ -1,4 +1,3 @@
-import Navbar from '@/app/components/Navbar'
 import { ChevronRight, type LucideIcon } from 'lucide-react'
 
 interface TitleProps {
@@ -12,8 +11,8 @@ const NavbarTitle = ({ title, headlocate,icon: Icon, locate }: TitleProps) => {
 	return (
 		<div className='w-full h-100 bg-bg'>
 			{/* About us title */}
-			<div className='w-full h-full flex flex-col justify-center items-center pb-25 gap-10'>
-				<div className='w-[50%] lg:w-full text-center title text-primary font-bold text-6xl'>{title}</div>
+			<div className='w-full h-full flex flex-col justify-center items-center lg:pb-10 gap-10'>
+				<div className='w-[90%] lg:w-full text-center title text-primary font-bold text-6xl'>{title}</div>
 				<div className='flex items-center gap-1'>
 					{' '}
 					<a

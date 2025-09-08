@@ -14,7 +14,7 @@ const form = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
   return (
-     <div className="w-[50%] bg-white rounded-2xl shadow-lg p-6 space-y-8 py-10">
+     <div className="lg:w-[50%] bg-white rounded-2xl shadow-lg p-6 space-y-8 py-10">
       <input
         type="text"
         name="name"
