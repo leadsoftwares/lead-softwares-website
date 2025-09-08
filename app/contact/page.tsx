@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
 import NavbarTitle from '../about-us/components/NavbarTitle'
 
 const Contact = () => {

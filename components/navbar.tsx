@@ -3,7 +3,7 @@ import { ChevronDown, Menu, Search, ShoppingCart, X } from 'lucide-react'
 import { useState } from 'react'
 import logo from '@/public/webp/logo.webp'
 import Image from 'next/image'
-import NavLink from '@/components/NavLink'
+import NavLink from '@/components/navlink'
 
 const Navbar = () => {
 	const [openDropdown, setOpenDropdown] = useState<string | null>(null)

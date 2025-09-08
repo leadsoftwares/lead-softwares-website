@@ -1,31 +1,30 @@
-"use client"
-import NavbarTitle from '@/app/about-us/components/NavbarTitle'
+'use client'
 import Card from '@/app/about-us/components/Card'
-import { Box, Check, Facebook, Medal, Twitter, Youtube } from 'lucide-react'
-import React from 'react'
-import { useState } from 'react'
-import Navbar from '../components/Navbar'
-import AboutusImg from '@/public/jpeg/about-us-thumbnail.jpeg'
+import NavbarTitle from '@/app/about-us/components/NavbarTitle'
 import { CustomButton } from '@/components/custom-btn'
-import HistoryIMG1 from "@/public/jpeg/HistoryIMG1.jpeg"
-import HistoryIMG2 from "@/public/jpeg/HistoryIMG2.jpeg"
-import RoadMap from "@/public/svg/roadmap.svg"
-import HistoryIMG3 from "@/public/jpeg/HistoryIMG3.jpeg"
-import HistoryIMG4 from "@/public/jpeg/HistoryIMG4.jpeg"
-import AboutGrowth1 from "@/public/webp/about-Growth1.webp"
-import AboutGrowth2 from "@/public/webp/about-Growth2.webp"
-import AboutGrowth3 from "@/public/png/about-Growth3.png"
-import AboutGrowth4 from "@/public/webp/about-Growth4.webp"
+import Partners from '@/components/partners'
+import AboutusImg from '@/public/jpeg/about-us-thumbnail.jpeg'
+import HistoryIMG1 from '@/public/jpeg/HistoryIMG1.jpeg'
+import HistoryIMG2 from '@/public/jpeg/HistoryIMG2.jpeg'
+import HistoryIMG3 from '@/public/jpeg/HistoryIMG3.jpeg'
+import HistoryIMG4 from '@/public/jpeg/HistoryIMG4.jpeg'
+import AboutGrowth3 from '@/public/png/about-Growth3.png'
+import RoadMap from '@/public/svg/roadmap.svg'
+import AboutGrowth1 from '@/public/webp/about-Growth1.webp'
+import AboutGrowth2 from '@/public/webp/about-Growth2.webp'
+import AboutGrowth4 from '@/public/webp/about-Growth4.webp'
 import AboutStaff1 from '@/public/webp/about-staff-1.webp'
 import AboutStaff2 from '@/public/webp/about-staff-2.webp'
 import AboutStaff3 from '@/public/webp/about-staff-3.webp'
 import AboutStaff4 from '@/public/webp/about-staff-4.webp'
+import { Box, Check, Facebook, Medal, Twitter, Youtube } from 'lucide-react'
 import Image from 'next/image'
-import Partners from '@/components/Partners'
+import { useState } from 'react'
+import Navbar from '@/components/navbar'
 
 const contact = {
-  email: "info@converta.com",
-  number: "+1 212 946 2700"
+	email: 'info@converta.com',
+	number: '+1 212 946 2700',
 }
 const staffData = [
 	{ name: 'Marta Smith', info: 'Product Designer', img: AboutStaff1 },
@@ -35,10 +34,10 @@ const staffData = [
 ]
 
 const About = () => {
-  const [isPlaying, setIsPlaying] = useState(false)
-  return (
-    <div className='w-full'>
-      	<div className='w-full h-12 px-6 lg:px-28 bg-white flex justify-between items-center border-b border-zinc-300'>
+	const [isPlaying, setIsPlaying] = useState(false)
+	return (
+		<div className='w-full'>
+			<div className='w-full h-12 px-6 lg:px-28 bg-white flex justify-between items-center border-b border-zinc-300'>
 				{/* logos */}
 				<div className='flex items-center gap-6 mt-2'>
 					<a href='#'>
@@ -56,17 +55,16 @@ const About = () => {
 					<div className='flex gap-6 font-light'>
 						<div className='text-zinc-400'>{contact.email}</div>
 						<div className='text-zinc-400'>{contact.number}</div>
-						<button className='text-blue-400 cursor-pointer hover:text-blue-500'>Sign In</button>
+						<button className='text-blue-400 cursor-pointer hover:text-blue-500'>
+							Sign In
+						</button>
 					</div>
 				</div>
 			</div>
-      {/* navbar + title */}
-      <div className='w-full bg-bg'>
-      <Navbar />
-       </div>
-      <NavbarTitle title='About us' locate='About us'/>
-      {/*  */}
-       	<div className='w-full gap-20 flex flex-col lg:flex-row items-center px-10 lg:px-30 py-30'>
+			{/* navbar + title */}
+			<NavbarTitle title='About us' locate='About us' />
+			{/*  */}
+			<div className='w-full gap-20 flex flex-col lg:flex-row items-center px-10 lg:px-30 py-30'>
 				<div className='space-y-10 lg:w-[30%]'>
 					<div className='title text-primary font-semibold text-4xl'>
 						Growth strategies to be effective & competitive
@@ -76,7 +74,7 @@ const About = () => {
 						human-centered enterprise software that has the polished, snappy
 						feel of the best consumer apps.
 					</div>
-						<CustomButton title='Get Started' />
+					<CustomButton title='Get Started' />
 				</div>
 
 				<div className='lg:w-[60%] h-full max-w-3xl mx-auto rounded-4xl overflow-hidden shadow-2xl'>
@@ -106,8 +104,8 @@ const About = () => {
 					)}
 				</div>
 			</div>
-{/*  */}
-<div className='bg-bg py-25 mx-4'>
+			{/*  */}
+			<div className='bg-bg py-25 mx-4'>
 				{/* header */}
 				<div className='space-y-3'>
 					{/* subtitle */}
@@ -194,8 +192,8 @@ const About = () => {
 					</div>
 				</div>
 			</div>
-      {/* Our History Section */}
-<div className='w-full py-25'>
+			{/* Our History Section */}
+			<div className='w-full py-25'>
 				{/* header */}
 				<div className='lg:w-[65%] px-6 lg:px-0 text-primary text-4xl lg:text-5xl font-semibold mx-auto text-center leading-12 lg:leading-16'>
 					As leaders in developing sustainable solutions, the future of
@@ -207,7 +205,7 @@ const About = () => {
 						<Image
 							className='rounded-4xl cursor-pointer hover:shadow-2xl hover:scale-99 transition-all duration-200'
 							src={HistoryIMG1}
-              alt='HistoryIMG1'
+							alt='HistoryIMG1'
 						/>
 						<div className='text-xl font-semibold text-blue-950'>
 							UX/UI Design
@@ -217,7 +215,7 @@ const About = () => {
 						<Image
 							className='rounded-4xl cursor-pointer hover:shadow-2xl hover:scale-99 transition-all duration-200'
 							src={HistoryIMG2}
-              alt='HistoryIMG2'
+							alt='HistoryIMG2'
 						/>
 						<div className='text-xl font-semibold text-blue-950'>
 							NFT Market UI
@@ -227,7 +225,7 @@ const About = () => {
 						<Image
 							className='rounded-4xl cursor-pointer hover:shadow-2xl hover:scale-99 transition-all duration-200'
 							src={HistoryIMG3}
-              alt='HistoryIMG3'
+							alt='HistoryIMG3'
 						/>
 						<div className='text-xl font-semibold text-blue-950'>
 							Health Mobile App
@@ -237,7 +235,7 @@ const About = () => {
 						<Image
 							className='rounded-4xl cursor-pointer hover:shadow-2xl hover:scale-99 transition-all duration-200'
 							src={HistoryIMG4}
-              alt='HistoryIMG4'
+							alt='HistoryIMG4'
 						/>
 						<div className='text-xl font-semibold text-blue-950'>
 							Wallet App Development
@@ -245,8 +243,8 @@ const About = () => {
 					</div>
 				</div>
 			</div>
-      {/* Growth Section */}
-      <div className='mx-4 bg-bg py-30 px-8 lg:px-30 flex flex-col lg:flex-row gap-40'>
+			{/* Growth Section */}
+			<div className='mx-4 bg-bg py-30 px-8 lg:px-30 flex flex-col lg:flex-row gap-40'>
 				{/* Left Side */}
 				<div className='lg:w-[35%] space-y-10'>
 					{/* title */}
@@ -309,17 +307,19 @@ const About = () => {
 					<Image className='shadow-xl rounded-4xl' src={AboutGrowth1} alt='G' />
 					<Image
 						className='shadow-xl rounded-4xl lg:relative bottom-10'
-						src={AboutGrowth2} alt='G'
+						src={AboutGrowth2}
+						alt='G'
 					/>
 					<Image className='shadow-xl rounded-4xl' src={AboutGrowth3} alt='G' />
 					<Image
 						className='shadow-xl rounded-4xl lg:relative bottom-10'
-						src={AboutGrowth4} alt="G"
+						src={AboutGrowth4}
+						alt='G'
 					/>
 				</div>
 			</div>
-      {/* Team Section */}
-      <div className='lg:px-20 py-15'>
+			{/* Team Section */}
+			<div className='lg:px-20 py-15'>
 				{/* title */}
 				<div className='text-4xl lg:text5xl font-semibold text-primary text-center'>
 					Meet our awesome and professional team
@@ -336,24 +336,30 @@ const About = () => {
 					))}
 				</div>
 			</div>
-      {/* partnership logos */}
-      <Partners/>
-      {/* email section */}
-      <div
-			 style={{
-        background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #7209b7 100%)'
-      }}
-			className='mx-4 lg:mx-20 py-30 space-y-9 mb-10 rounded-xl'>
+			{/* partnership logos */}
+			<Partners />
+			{/* email section */}
+			<div
+				style={{
+					background:
+						'linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #7209b7 100%)',
+				}}
+				className='mx-4 lg:mx-20 py-30 space-y-9 mb-10 rounded-xl'
+			>
 				<div className='w-[90%] lg:w-[60%] mx-auto text-white font-semibold text-5xl lg:text-5xl text-center'>
 					Receive the latest technology & business news in your inbox
 				</div>
 				<div className='w-full text-center'>
-					<input className='bg-white py-3 w-60 lg:w-80 px-3 rounded' type="text" placeholder='Your Email Address' />
-					<CustomButton title='Sign Up'/>
+					<input
+						className='bg-white py-3 w-60 lg:w-80 px-3 rounded'
+						type='text'
+						placeholder='Your Email Address'
+					/>
+					<CustomButton title='Sign Up' />
 				</div>
 			</div>
-    </div>
-  )
+		</div>
+	)
 }
 
 export default About
