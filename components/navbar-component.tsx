@@ -1,9 +1,9 @@
 'use client'
-import { ChevronDown, Menu, Search, ShoppingCart, X } from 'lucide-react'
+import { ChevronDown, Menu, X } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
-import NavLink from './navlink-component'
 import logo from '../public/png/lead-logo-black.png'
+import NavLink from './navlink-component'
 
 const Navbar = () => {
 	const [openDropdown, setOpenDropdown] = useState<string | null>(null)
@@ -19,12 +19,12 @@ const Navbar = () => {
 	}
 
 	return (
-		<div className='w-full h-16 flex items-center px-4 lg:px-30 sticky top-0 bg-white z-10000'>
-			<nav className='w-full flex justify-between items-center'>
+		<div className='w-full h-16 flex items-center px-4 lg:px-10 sticky top-0 bg-white z-10000'>
+			<div className='logo'>
+				<Image className='w-35 md:w-35' src={logo} alt='logo' />
+			</div>
+			<nav className='mx-auto flex justify-between items-center'>
 				{/* Logo */}
-				<div className='logo'>
-					<Image className='w-40 md:w-40' src={logo} alt='logo' />
-				</div>
 
 				{/* Desktop Navigation */}
 				<div className='hidden lg:flex items-center gap-6'>
@@ -34,33 +34,9 @@ const Navbar = () => {
 							onMouseLeave={() => setOpenDropdown(null)}
 							className='relative cursor-pointer hover:text-blue-500 flex items-center gap-3'
 						>
-							<span className='flex items-center gap-3'>
-								Home <ChevronDown size={15} />
-							</span>
-
-							{openDropdown === 'home' && (
-								<ul className='absolute text-zinc-400 left-0 mt-55 w-52 bg-white shadow-lg rounded-xl py-2 z-50'>
-									<li className='flex justify-between hover:text-blue-500 px-4 py-2 cursor-pointer'>
-										Main{' '}
-										<span className='text-xs font-semibold px-2 py-0.5 rounded-full bg-red-100 text-red-600'>
-											HOT
-										</span>
-									</li>
-									<li className='flex justify-between hover:text-blue-500 px-4 py-2 cursor-pointer'>
-										Agency Style{' '}
-										<span className='text-xs font-semibold px-2 py-0.5 rounded-full bg-green-100 text-green-600'>
-											NEW
-										</span>
-									</li>
-									<NavLink href={'/'}>Business Style</NavLink>
-									<li className='px-4 py-2 hover:text-blue-500 cursor-pointer'>
-										SaaS Style
-									</li>
-									<li className='px-4 py-2 hover:text-blue-500 cursor-pointer'>
-										Technology Style
-									</li>
-								</ul>
-							)}
+							<NavLink href={'/'}>
+								Home
+							</NavLink>
 						</li>
 
 						<NavLink href='/about-us'>About us</NavLink>
@@ -99,159 +75,23 @@ const Navbar = () => {
 						</li>
 
 						<li
-							onMouseEnter={() => setOpenDropdown('features')}
-							onMouseLeave={() => setOpenDropdown(null)}
 							className='cursor-pointer hover:text-blue-500 flex items-center gap-3'
 						>
-							<span className='flex items-center'>
-								Features <ChevronDown size={15} />
-							</span>
-							{openDropdown === 'features' && (
-								<div className='features z-110 absolute mt-76 left-0 flex gap-30 items-center bg-white shadow-lg px-30 py-10'>
-									<div className='ul1'>
-										<ul className='flex flex-col gap-3'>
-											<li className='text-zinc-700 font-medium hover:text-blue-700 cursor-pointer'>
-												Intro
-											</li>
-											<li className='text-zinc-400 cursor-pointer hover:text-blue-500'>
-												Headers
-											</li>
-											<li className='text-zinc-400 cursor-pointer hover:text-blue-500'>
-												Hero Sections
-											</li>
-											<li className='text-zinc-400 cursor-pointer hover:text-blue-500'>
-												Page Headers
-											</li>
-											<li className='text-zinc-400 cursor-pointer hover:text-blue-500'>
-												Section Patterns
-												<span className='text-xs font-semibold ml-2 px-2 py-0.5 rounded-full bg-green-100 text-green-600'>
-													NEW
-												</span>
-											</li>
-											<li className='text-zinc-400 cursor-pointer hover:text-blue-500'>
-												Shape Dividers
-											</li>
-										</ul>
-									</div>
-									<div className='ul2'>
-										<ul className='flex flex-col gap-3'>
-											<li className='text-zinc-700 font-medium hover:text-blue-700 cursor-pointer'>
-												Main Content
-											</li>
-											<li className='text-zinc-400 cursor-pointer hover:text-blue-500'>
-												Headings Styles
-											</li>
-											<li className='text-zinc-400 cursor-pointer hover:text-blue-500'>
-												Services Styles{' '}
-												<span className='text-xs font-semibold px-2 py-0.5 rounded-full bg-red-100 text-red-600'>
-													HOT
-												</span>
-											</li>
-											<li className='text-zinc-400 cursor-pointer hover:text-blue-500'>
-												Pricing Styles
-											</li>
-											<li className='text-zinc-400 cursor-pointer hover:text-blue-500'>
-												Testimonials
-											</li>
-											<li className='text-zinc-400 cursor-pointer hover:text-blue-500'>
-												Team/Staff
-											</li>
-										</ul>
-									</div>
-									<div className='ul3'>
-										<ul className='flex flex-col gap-3'>
-											<li className='text-zinc-700 font-medium hover:text-blue-700 cursor-pointer'>
-												More
-											</li>
-											<div className='-ml-4'>
-												<NavLink href={'/features/Portfolio-Styles'}>
-													Portfolio Styles{' '}
-													<span className='text-xs font-semibold px-2 py-0.5 rounded-full bg-red-100 text-red-600'>
-														HOT
-													</span>
-												</NavLink>
-											</div>
-											<li className='text-zinc-400 cursor-pointer hover:text-blue-500'>
-												Blog Elements
-											</li>
-											<li className='text-zinc-400 cursor-pointer hover:text-blue-500'>
-												Call to Actions
-											</li>
-											<li className='text-zinc-400 cursor-pointer hover:text-blue-500'>
-												Counters
-											</li>
-											<li className='text-zinc-400 cursor-pointer hover:text-blue-500'>
-												WooCommerce
-											</li>
-										</ul>
-									</div>
-									<div className='ul4'>
-										<ul className='flex flex-col gap-3'>
-											<li className='text-zinc-700 font-medium hover:text-blue-700 cursor-pointer'>
-												Ending
-											</li>
-											<li className='text-zinc-400 cursor-pointer hover:text-blue-500'>
-												FAQ
-											</li>
-											<li className='text-zinc-400 cursor-pointer hover:text-blue-500'>
-												Forms
-											</li>
-											<li className='text-zinc-400 cursor-pointer hover:text-blue-500'>
-												Mailchimp Forms
-											</li>
-											<li className='text-zinc-400 cursor-pointer hover:text-blue-500'>
-												Footer Styles
-											</li>
-										</ul>
-									</div>
-								</div>
-							)}
-						</li>
-
-						<li
-							onMouseEnter={() => setOpenDropdown('blog')}
-							onMouseLeave={() => setOpenDropdown(null)}
-							className='cursor-pointer hover:text-blue-500 flex items-center gap-3'
-						>
-							<span className='flex items-center'>
-								Blog <ChevronDown size={15} />
-							</span>
-							{openDropdown === 'blog' && (
-								<ul className='absolute text-zinc-400 mt-50 w-52 bg-white shadow-lg rounded-xl py-2 z-50'>
-									<li className='px-4 py-2 hover:text-blue-500 hover:bg-gray-100 cursor-pointer'>
-										Single Centered
-									</li>
-									<li className='px-4 py-2 hover:text-blue-500 hover:bg-gray-100 cursor-pointer'>
-										Single with Gradient
-									</li>
-									<li className='px-4 py-2 hover:text-blue-500 hover:bg-gray-100 cursor-pointer'>
-										Single with Image
-									</li>
-									<li className='px-4 py-2 hover:text-blue-500 hover:bg-gray-100 cursor-pointer'>
-										Single with Sidebar
-									</li>
-								</ul>
-							)}
+							<NavLink href='/portfolio'>	
+								Portfolio
+							</NavLink>
 						</li>
 						<NavLink href='/contact'>Contact</NavLink>
 					</ul>
 
-					<div className='icons-btn flex gap-4 items-center text-zinc-400'>
-						<ShoppingCart className='cursor-pointer' />
-						<Search className='cursor-pointer' />
-						<button className='bg-blue-500 text-white py-3 px-6 cursor-pointer hover:bg-purple-900 rounded-md transition'>
-							Get Started
-						</button>
-					</div>
+					
 				</div>
+				
 
 				{/* Mobile Menu Button & Icons */}
 				<div className='lg:hidden flex items-center gap-4'>
 					{/* Mobile Icons */}
-					<div className='flex gap-3 text-zinc-400'>
-						<ShoppingCart size={20} className='cursor-pointer' />
-						<Search size={20} className='cursor-pointer' />
-					</div>
+					<div className='flex gap-3 text-zinc-400'></div>
 
 					{/* Hamburger Menu */}
 					<button
@@ -262,6 +102,11 @@ const Navbar = () => {
 					</button>
 				</div>
 			</nav>
+			<div className='hidden icons-btn lg:flex gap-4 items-center text-zinc-400'>
+						<button className='bg-blue-500 text-white py-3 px-6 cursor-pointer hover:bg-purple-900 rounded-md transition'>
+							Get Started
+						</button>
+					</div>
 
 			{/* Mobile Menu Dropdown */}
 			{isMobileMenuOpen && (

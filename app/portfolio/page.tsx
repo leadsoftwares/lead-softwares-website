@@ -1,20 +1,20 @@
 'use client'
-import NavbarTitle from '../../about-us/components/NavbarTitle'
-import HistoryIMG1 from '../../../public/jpeg/HistoryIMG1.jpeg'
-import HistoryIMG2 from '../../../public/jpeg/HistoryIMG2.jpeg'
-import HistoryIMG3 from '../../../public/jpeg/HistoryIMG3.jpeg'
-import HistoryIMG4 from '../../../public/jpeg/HistoryIMG4.jpeg'
-import Portfolio1 from '../../../public/jpeg/portfolio-1.jpeg'
-import Portfolio2 from '../../../public/jpeg/portfolio-2.jpeg'
-import Portfolio4 from '../../../public/jpeg/portfolio-4.jpeg'
-import Portfolio3 from '../../../public/jpeg/portfolio3.jpeg'
-import Mobile1 from '../../../public/webp/Mobile1.webp'
-import Mobile2 from '../../../public/webp/Mobile2.webp'
-import Mobile3 from '../../../public/webp/Mobile3.webp'
 import { ChevronRight } from 'lucide-react'
 import { motion } from 'motion/react'
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
+import HistoryIMG1 from '../../public/jpeg/HistoryIMG1.jpeg'
+import HistoryIMG2 from '../../public/jpeg/HistoryIMG2.jpeg'
+import HistoryIMG3 from '../../public/jpeg/HistoryIMG3.jpeg'
+import HistoryIMG4 from '../../public/jpeg/HistoryIMG4.jpeg'
+import Portfolio1 from '../../public/jpeg/portfolio-1.jpeg'
+import Portfolio2 from '../../public/jpeg/portfolio-2.jpeg'
+import Portfolio4 from '../../public/jpeg/portfolio-4.jpeg'
+import Portfolio3 from '../../public/jpeg/portfolio3.jpeg'
+import Mobile1 from '../../public/webp/Mobile1.webp'
+import Mobile2 from '../../public/webp/Mobile2.webp'
+import Mobile3 from '../../public/webp/Mobile3.webp'
+import NavbarTitle from '../about-us/components/NavbarTitle'
 
 const items = [
 	{
@@ -63,10 +63,10 @@ const PortfolioStyles = () => {
 	return (
 		<div className='w-full overflow-hidden'>
 			<NavbarTitle
-				title='Portfolio Styles'
+				title='Portfolio'
 				icon={ChevronRight}
 				headlocate='Features'
-				locate='Portfolio Styles'
+				locate='Portfolio'
 			/>
 			{/*  */}
 			<div className='w-full py-20'>
@@ -108,7 +108,7 @@ const PortfolioStyles = () => {
 					drag='x'
 					whileDrag={{ scale: 0.95 }}
 					dragElastic={0.2}
-					dragConstraints={{ right: 0, left: -width }}
+					dragConstraints={{ right: 0, left: -600 }}
 					dragTransition={{ bounceDamping: 30 }}
 					transition={{ duration: 0.2, ease: 'easeInOut' }}
 					className='flex gap-10 lg:gap-30 items-baseline will-change-transform cursor-grab active:cursor-grabbing'
@@ -116,8 +116,9 @@ const PortfolioStyles = () => {
 					{items.map((itemData, index) => {
 						return (
 							<motion.div
-							key={itemData.id ?? index} 
-							className='min-w-[15rem] lg:min-w-[25rem] min-h-[15rem] lg:min-h-[25rem] p-2'>
+								key={itemData.id ?? index}
+								className='min-w-[15rem] lg:min-w-[25rem] min-h-[15rem] lg:min-h-[25rem] p-2'
+							>
 								<Image
 									src={itemData?.imgSrc}
 									alt='img'
@@ -138,16 +139,17 @@ const PortfolioStyles = () => {
 					drag='x'
 					whileDrag={{ scale: 0.95 }}
 					dragElastic={0.2}
-					dragConstraints={{ right: 0, left: -width }}
+					dragConstraints={{ right: 0, left: -600 }}
 					dragTransition={{ bounceDamping: 30 }}
 					transition={{ duration: 0.2, ease: 'easeInOut' }}
 					className='flex gap-10 lg:gap-30 items-baseline will-change-transform cursor-grab active:cursor-grabbing'
 				>
-					{items.map((itemData , index) => {
+					{items.map((itemData, index) => {
 						return (
 							<motion.div
-							key={itemData.id ?? index} 
-							className='min-w-[15rem] lg:min-w-[25rem] min-h-[15rem] lg:min-h-[25rem] p-2 relative'>
+								key={itemData.id ?? index}
+								className='min-w-[15rem] lg:min-w-[25rem] min-h-[15rem] lg:min-h-[25rem] p-2 relative'
+							>
 								<Image
 									src={itemData?.imgSrc}
 									alt='img'
@@ -173,7 +175,7 @@ const PortfolioStyles = () => {
 					drag='x'
 					whileDrag={{ scale: 0.95 }}
 					dragElastic={0.2}
-					dragConstraints={{ right: 0, left: -width }}
+					dragConstraints={{ right: 0, left: -600 }}
 					dragTransition={{ bounceDamping: 30 }}
 					transition={{ duration: 0.2, ease: 'easeInOut' }}
 					className='flex gap-10 lg:gap-30 items-baseline will-change-transform cursor-grab active:cursor-grabbing'
@@ -181,8 +183,9 @@ const PortfolioStyles = () => {
 					{items.map((itemData, index) => {
 						return (
 							<motion.div
-							key={itemData.id ?? index} 
-							className='min-w-[15rem] lg:min-w-[25rem] min-h-[15rem] lg:min-h-[25rem] p-2'>
+								key={itemData.id ?? index}
+								className='min-w-[15rem] lg:min-w-[25rem] min-h-[15rem] lg:min-h-[25rem] p-2'
+							>
 								<Image
 									src={itemData?.imgSrc}
 									alt='img'
@@ -218,16 +221,17 @@ const PortfolioStyles = () => {
 					drag='x'
 					whileDrag={{ scale: 0.95 }}
 					dragElastic={0.2}
-					dragConstraints={{ right: 0, left: -width }}
+					dragConstraints={{ right: 0, left: -600 }}
 					dragTransition={{ bounceDamping: 30 }}
 					transition={{ duration: 0.2, ease: 'easeInOut' }}
 					className='flex gap-10 lg:gap-30 items-baseline will-change-transform cursor-grab active:cursor-grabbing'
 				>
-					{items.map((itemData ,index) => {
+					{items.map((itemData, index) => {
 						return (
 							<motion.div
-							key={itemData.id ?? index} 
-							className='min-w-[15rem] lg:min-w-[25rem] min-h-[15rem] lg:min-h-[25rem] p-2'>
+								key={itemData.id ?? index}
+								className='min-w-[15rem] lg:min-w-[25rem] min-h-[15rem] lg:min-h-[25rem] p-2'
+							>
 								<Image
 									src={itemData?.imgSrc}
 									alt='img'
@@ -313,11 +317,12 @@ const PortfolioStyles = () => {
 					>
 						<div className='hidden lg:block absolute lg:-left-40 lg:-top-20 lg:w-120 h-190 bg-white/60 blur-3xl rounded-full'></div>
 						<div className='hidden lg:block absolute -right-20 -top-20 w-120 h-190 bg-white/60 blur-3xl rounded-full'></div>
-						{items.map((itemData , index) => {
+						{items.map((itemData, index) => {
 							return (
 								<motion.div
-								key={itemData.id ?? index} 
-								className='min-w-[15rem] min-h-[20rem] p-2'>
+									key={itemData.id ?? index}
+									className='min-w-[15rem] min-h-[20rem] p-2'
+								>
 									<Image
 										src={itemData?.img}
 										alt='img'
