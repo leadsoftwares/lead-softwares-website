@@ -1,5 +1,5 @@
 import { Facebook, Twitter, Youtube } from 'lucide-react'
-import Logo from '@/public/png/Lead Logo White with white Text-02-02.png'
+import Logo from '../public/png/Lead Logo White with white Text-02-02.png'
 import Image from 'next/image'
 
 const Footer = () => {

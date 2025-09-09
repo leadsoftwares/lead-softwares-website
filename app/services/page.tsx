@@ -1,10 +1,10 @@
 import React from 'react'
 import NavbarTitle from '../about-us/components/NavbarTitle'
-import File from "@/public/svg/services.svg"
-import Shop from "@/public/svg/shop.svg"
-import Speaker from "@/public/svg/speaker.svg"
+import File from "../../public/svg/services.svg"
+import Shop from "../../public/svg/shop.svg"
+import Speaker from "../../public/svg/speaker.svg"
 import Image from 'next/image'
-import { CustomButton } from '@/components/custom-btn'
+import { CustomButton } from '../../components/custom-btn'
 
 const services = () => {
   return (

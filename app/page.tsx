@@ -1,18 +1,18 @@
-import AccountCard from '@/components/account-card'
-import Card from '@/components/card'
-import { CustomButton } from '@/components/custom-btn'
-import Partners from '@/components/partners'
-import MobileView from '@/public/png/mobileview.png'
-import MobileViewCard from '@/public/png/mobileviewCard.png'
-import Account from '@/public/svg/account.svg'
-import Goal from '@/public/svg/goals.svg'
-import RoadMap from '@/public/svg/roadmap.svg'
-import Rocket from '@/public/svg/rocket.svg'
-import Trophy from '@/public/svg/trophy.svg'
-import Tv from '@/public/svg/tv.svg'
+import MobileView from '../public/png/mobileview.png'
+import MobileViewCard from '../public/png/mobileviewCard.png'
+import Account from '../public/svg/account.svg'
+import Goal from '../public/svg/goals.svg'
+import RoadMap from '../public/svg/roadmap.svg'
+import Rocket from '../public/svg/rocket.svg'
+import Trophy from '../public/svg/trophy.svg'
+import Tv from '../public/svg/tv.svg'
 import { ArrowRight, BriefcaseBusiness } from 'lucide-react'
 import Image from 'next/image'
-import Strategy from '@/components/strategy'
+import AccountCard from '../components/account-card'
+import Card from '../components/card'
+import { CustomButton } from '../components/custom-btn'
+import Partners from '../components/partners'
+import Strategy from '../components/strategy'
 
 const page = () => {
 	return (
@@ -20,13 +20,14 @@ const page = () => {
 			<div className='hero px-2 lg:px-17 flex gap-16 w-full h-120 lg:h-160 bg-bg'>
 				<div className='left py-8 md:mx-auto lg:pl-16 flex flex-col gap-6 justify-center h-120 lg:h-160 text-center lg:text-start'>
 					<div className='title text-4xl lg:text-6xl font-bold text-primary'>
-						We Handle IT, <br /> So you can Handle {' '}
+						We Handle IT, <br /> So you can Handle{' '}
 						<span className='bg-gradient-to-r from-[#857FFF] via-[#BB7BFF] to-pink-300 bg-clip-text text-transparent'>
 							business.
 						</span>
 					</div>
 					<div className='desc text-lg text-zinc-500'>
-					Leveraging technology to turn your business potential <br /> into performance.
+						Leveraging technology to turn your business potential <br /> into
+						performance.
 					</div>
 					<div className='bts mt-5 flex mx-auto lg:mx-0'>
 						<CustomButton title='Get Started' />
@@ -126,10 +127,15 @@ const page = () => {
 							We &apos; re building business for <br /> your digital economy
 						</div>
 						<div className='block md:hidden title text-4xl font-semibold text-[#321270]'>
-							We &apos; re building business <br /> for your digital <br /> economy
+							We &apos; re building business <br /> for your digital <br />{' '}
+							economy
 						</div>
 						<div className='desc w-[90vw] md:w-full text-zinc-400'>
-							We specialize in creating effective IT solutions tailored for businesses. From enhancing digital presence to optimizing operational efficiency, we empower enterprises to thrive in today&apos;s competitive landscape. Partner with us to unlock the potential of your business with innovative technology solutions.
+							We specialize in creating effective IT solutions tailored for
+							businesses. From enhancing digital presence to optimizing
+							operational efficiency, we empower enterprises to thrive in
+							today&apos;s competitive landscape. Partner with us to unlock the
+							potential of your business with innovative technology solutions.
 						</div>
 						<div className='infos flex gap-12 mt-4'>
 							<div className='1 space-y-2'>
