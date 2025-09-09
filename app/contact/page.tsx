@@ -1,13 +1,13 @@
 'use client'
-import Form from '@/app/contact/components/form'
-import { CustomButton } from '@/components/custom-btn'
-import Box1 from '@/public/svg/box1.svg'
-import Box2 from "@/public/svg/box2.svg"
-import Box3 from "@/public/svg/box3.svg"
-import Email from '@/public/svg/email.svg'
-import Location from '@/public/svg/location.svg'
-import Phone from '@/public/svg/phone.svg'
-import Contact1 from '@/public/webp/contact-1.webp'
+import Form from '../contact/components/form'
+import { CustomButton } from '../../components/custom-btn'
+import Box1 from '../../public/svg/box1.svg'
+import Box2 from "../../public/svg/box2.svg"
+import Box3 from "../../public/svg/box3.svg"
+import Email from '../../public/svg/email.svg'
+import Location from '../../public/svg/location.svg'
+import Phone from '../../public/svg/phone.svg'
+import Contact1 from '../../public/webp/contact-1.webp'
 import Image from 'next/image'
 import NavbarTitle from '../about-us/components/NavbarTitle'
 import FAQPage from './components/faq-box'

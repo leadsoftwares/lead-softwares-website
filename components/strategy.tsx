@@ -1,7 +1,7 @@
 'use client'
-import StrategyImage from '@/public/webp/strategyIMG.webp'
-import StrategyImage2 from '@/public/webp/strategyIMG2.webp'
-import StrategyImage3 from '@/public/webp/strategyIMG3.webp'
+import StrategyImage from '../public/webp/strategyIMG.webp'
+import StrategyImage2 from '../public/webp/strategyIMG2.webp'
+import StrategyImage3 from '../public/webp/strategyIMG3.webp'
 
 import Image from 'next/image'
 

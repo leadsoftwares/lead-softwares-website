@@ -1,6 +1,6 @@
 'use client'
-import NavLink from '@/components/navlink'
-import logo from '@/public/png/Lead Logo Black .png'
+import NavLink from '../components/navlink'
+import logo from '../public/png/Lead Logo Black .png'
 import { ChevronDown, Menu, Search, ShoppingCart, X } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'

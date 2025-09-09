@@ -1,9 +1,9 @@
 import React from 'react'
-import Trustpilot from '@/public/webp/trustpilot.webp'
-import AWS from '@/public/webp/aws.webp'
-import Spotify from '@/public/webp/spotify.webp'
-import Brandlogo from '@/public/webp/brandlogo.webp'
-import Forbes from '@/public/webp/forbes.webp'
+import Trustpilot from '../public/webp/trustpilot.webp'
+import AWS from '../public/webp/aws.webp'
+import Spotify from '../public/webp/spotify.webp'
+import Brandlogo from '../public/webp/brandlogo.webp'
+import Forbes from '../public/webp/forbes.webp'
 import Image from 'next/image'
 const Partners = () => {
   return (

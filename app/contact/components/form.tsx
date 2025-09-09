@@ -1,5 +1,5 @@
 "use client"
-import { CustomButton } from '@/components/custom-btn'
+import { CustomButton } from '../../../components/custom-btn'
 import React, { useState } from 'react'
 
 const Form = () => {
