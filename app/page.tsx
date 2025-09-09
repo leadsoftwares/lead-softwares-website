@@ -1,3 +1,7 @@
+'use client'
+
+import { motion } from 'framer-motion'
+
 import { ArrowRight, BriefcaseBusiness } from 'lucide-react'
 import Image from 'next/image'
 import AccountCard from '../components/account-card'
@@ -17,7 +21,13 @@ import Tv from '../public/svg/tv.svg'
 const page = () => {
 	return (
 		<div>
-			<div className='hero px-2 lg:px-17 flex gap-16 w-full h-120 lg:h-160 bg-bg'>
+			<motion.div
+				initial={{ opacity: 0, y: 50 }} // start invisible, move down
+				whileInView={{ opacity: 1, y: 0 }} // when scrolled into view
+				viewport={{ once: true }} // animate only once
+				transition={{ duration: 1, ease: 'easeOut' }}
+				className='hero px-2 lg:px-17 flex gap-16 w-full h-120 lg:h-160 bg-bg'
+			>
 				<div className='left py-8 md:mx-auto lg:pl-16 flex flex-col gap-6 justify-center h-120 lg:h-160 text-center lg:text-start'>
 					<div className='title text-4xl lg:text-6xl font-bold text-primary'>
 						We Handle IT, <br /> So you can Handle{' '}
@@ -44,7 +54,7 @@ const page = () => {
 						</div>
 					</div>
 				</div>
-			</div>
+			</motion.div>
 
 			{/*  */}
 			<div className='main w-full min-h-196'>
@@ -59,7 +69,13 @@ const page = () => {
 						<br /> challenges to be
 					</h2>
 				</div>
-				<div className='boxes flex flex-col flex-wrap md:flex-row md:flex-nowrap gap-8 mx-12 md:mx-24 mt-24 pb-20 border-b border-gray-300'>
+				<motion.div
+					initial={{ opacity: 0, y: 50 }} // start invisible, move down
+					whileInView={{ opacity: 1, y: 0 }} // when scrolled into view
+					viewport={{ once: true }} // animate only once
+					transition={{ duration: 0.8, ease: 'easeOut' }}
+					className='boxes flex flex-col flex-wrap md:flex-row md:flex-nowrap gap-8 mx-12 md:mx-24 mt-24 pb-20 border-b border-gray-300'
+				>
 					<div className='box1 flex flex-col gap-5 w-80 md:w-120'>
 						<Image className='w-12 h-12' src={Rocket} alt='Rocket' />
 						<div className='title font-semibold text-xl md:text-2xl text-[#321270]'>
@@ -108,7 +124,7 @@ const page = () => {
 							</a>
 						</div>
 					</div>
-				</div>
+				</motion.div>
 				<div className='details h-185 flex flex-col lg:flex-row items-center justify-center gap-10 mt-14 md:mt-48'>
 					<div className='relative img mt-30 md:mt-0'>
 						<Image
@@ -124,10 +140,10 @@ const page = () => {
 					</div>
 					<div className='detail w-120 flex flex-col gap-6 ml-16'>
 						<div className='hidden md:block title text-4xl font-bold text-[#321270]'>
-							We &apos; re building business for <br /> your digital economy
+							We&apos;re building business for <br /> your digital economy
 						</div>
 						<div className='block md:hidden title text-4xl font-semibold text-[#321270]'>
-							We &apos; re building business <br /> for your digital <br />{' '}
+							We&apos;re building business <br /> for your digital <br />{' '}
 							economy
 						</div>
 						<div className='desc w-[90vw] md:w-full text-zinc-400'>

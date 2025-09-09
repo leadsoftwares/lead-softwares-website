@@ -161,7 +161,7 @@ const Services = () => {
 				</div>
 				<p className='w-[90%] lg:w-[35%] text-white text-lg mx-auto'>
 					Receive the latest technology & business news in your inbox. Select
-					the newsletters you’d like to receive.
+					the newsletters you&apos;d like to receive.
 				</p>
 				<div className='w-full text-center'>
 					<input
