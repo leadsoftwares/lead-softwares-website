@@ -123,13 +123,13 @@ const page = () => {
 					</div>
 					<div className='detail w-120 flex flex-col gap-6 ml-16'>
 						<div className='hidden md:block title text-4xl font-bold text-[#321270]'>
-							We’re building business for <br /> your digital economy
+							We &apos; re building business for <br /> your digital economy
 						</div>
 						<div className='block md:hidden title text-4xl font-semibold text-[#321270]'>
-							We’re building business <br /> for your digital <br /> economy
+							We &apos; re building business <br /> for your digital <br /> economy
 						</div>
 						<div className='desc w-[90vw] md:w-full text-zinc-400'>
-							We specialize in creating effective IT solutions tailored for businesses. From enhancing digital presence to optimizing operational efficiency, we empower enterprises to thrive in today's competitive landscape. Partner with us to unlock the potential of your business with innovative technology solutions.
+							We specialize in creating effective IT solutions tailored for businesses. From enhancing digital presence to optimizing operational efficiency, we empower enterprises to thrive in today&apos;s competitive landscape. Partner with us to unlock the potential of your business with innovative technology solutions.
 						</div>
 						<div className='infos flex gap-12 mt-4'>
 							<div className='1 space-y-2'>

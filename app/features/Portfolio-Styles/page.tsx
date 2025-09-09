@@ -1,6 +1,5 @@
 'use client'
 import NavbarTitle from '@/app/about-us/components/NavbarTitle'
-import Navbar from '@/app/components/Navbar'
 import HistoryIMG1 from '@/public/jpeg/HistoryIMG1.jpeg'
 import HistoryIMG2 from '@/public/jpeg/HistoryIMG2.jpeg'
 import HistoryIMG3 from '@/public/jpeg/HistoryIMG3.jpeg'
@@ -53,7 +52,6 @@ const items = [
 ]
 
 const PortfolioStyles = () => {
-	const [activeItem, setActiveItem] = useState(items[0])
 	const [width, setWidth] = useState(0)
 	const carousel = useRef<HTMLDivElement>(null)
 
@@ -117,7 +115,9 @@ const PortfolioStyles = () => {
 				>
 					{items.map((itemData, index) => {
 						return (
-							<motion.div className='min-w-[15rem] lg:min-w-[25rem] min-h-[15rem] lg:min-h-[25rem] p-2'>
+							<motion.div
+							key={itemData.id ?? index} 
+							className='min-w-[15rem] lg:min-w-[25rem] min-h-[15rem] lg:min-h-[25rem] p-2'>
 								<Image
 									src={itemData?.imgSrc}
 									alt='img'
@@ -143,9 +143,11 @@ const PortfolioStyles = () => {
 					transition={{ duration: 0.2, ease: 'easeInOut' }}
 					className='flex gap-10 lg:gap-30 items-baseline will-change-transform cursor-grab active:cursor-grabbing'
 				>
-					{items.map((itemData, index) => {
+					{items.map((itemData , index) => {
 						return (
-							<motion.div className='min-w-[15rem] lg:min-w-[25rem] min-h-[15rem] lg:min-h-[25rem] p-2 relative'>
+							<motion.div
+							key={itemData.id ?? index} 
+							className='min-w-[15rem] lg:min-w-[25rem] min-h-[15rem] lg:min-h-[25rem] p-2 relative'>
 								<Image
 									src={itemData?.imgSrc}
 									alt='img'
@@ -178,7 +180,9 @@ const PortfolioStyles = () => {
 				>
 					{items.map((itemData, index) => {
 						return (
-							<motion.div className='min-w-[15rem] lg:min-w-[25rem] min-h-[15rem] lg:min-h-[25rem] p-2'>
+							<motion.div
+							key={itemData.id ?? index} 
+							className='min-w-[15rem] lg:min-w-[25rem] min-h-[15rem] lg:min-h-[25rem] p-2'>
 								<Image
 									src={itemData?.imgSrc}
 									alt='img'
@@ -219,9 +223,11 @@ const PortfolioStyles = () => {
 					transition={{ duration: 0.2, ease: 'easeInOut' }}
 					className='flex gap-10 lg:gap-30 items-baseline will-change-transform cursor-grab active:cursor-grabbing'
 				>
-					{items.map((itemData, index) => {
+					{items.map((itemData ,index) => {
 						return (
-							<motion.div className='min-w-[15rem] lg:min-w-[25rem] min-h-[15rem] lg:min-h-[25rem] p-2'>
+							<motion.div
+							key={itemData.id ?? index} 
+							className='min-w-[15rem] lg:min-w-[25rem] min-h-[15rem] lg:min-h-[25rem] p-2'>
 								<Image
 									src={itemData?.imgSrc}
 									alt='img'
@@ -307,9 +313,11 @@ const PortfolioStyles = () => {
 					>
 						<div className='hidden lg:block absolute lg:-left-40 lg:-top-20 lg:w-120 h-190 bg-white/60 blur-3xl rounded-full'></div>
 						<div className='hidden lg:block absolute -right-20 -top-20 w-120 h-190 bg-white/60 blur-3xl rounded-full'></div>
-						{items.map((itemData, index) => {
+						{items.map((itemData , index) => {
 							return (
-								<motion.div className='min-w-[15rem] min-h-[20rem] p-2'>
+								<motion.div
+								key={itemData.id ?? index} 
+								className='min-w-[15rem] min-h-[20rem] p-2'>
 									<Image
 										src={itemData?.img}
 										alt='img'

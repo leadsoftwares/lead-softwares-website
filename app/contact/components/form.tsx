@@ -1,7 +1,8 @@
+"use client"
 import { CustomButton } from '@/components/custom-btn'
 import React, { useState } from 'react'
 
-const form = () => {
+const Form = () => {
     const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -47,4 +48,4 @@ const form = () => {
   )
 }
 
-export default form
+export default Form

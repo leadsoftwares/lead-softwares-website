@@ -20,7 +20,6 @@ import AboutStaff4 from '@/public/webp/about-staff-4.webp'
 import { Box, Check, Facebook, Medal, Twitter, Youtube } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
-import Navbar from '@/components/navbar'
 
 const contact = {
 	email: 'info@converta.com',
@@ -124,7 +123,7 @@ const About = () => {
 						{/* box 1 */}
 						<div className='bg-white flex flex-col lg:flex-row space-x-3 w-full lg:w-120 rounded-2xl shadow-lg p-6'>
 							<div className='w-14 h-14 lg:w-20 lg:h-12 mb-6 lg:mb-15 flex justify-center mx-auto lg:mx-0 items-center rounded-full bg-blue-100'>
-								<img src={RoadMap} />
+								<Image src={RoadMap} alt='RoadMap' />
 							</div>
 							<div className='space-y-4'>
 								<div className='title text-center lg:text-start text-2xl text-[#321270] font-semibold'>
