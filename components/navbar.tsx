@@ -1,9 +1,9 @@
-"use client"
-import { ChevronDown, Menu, Search, ShoppingCart, X } from 'lucide-react'
-import { useState } from 'react'
-import logo from '@/public/png/Lead Logo Black .png'
-import Image from 'next/image'
+'use client'
 import NavLink from '@/components/navlink'
+import logo from '@/public/png/Lead Logo Black .png'
+import { ChevronDown, Menu, Search, ShoppingCart, X } from 'lucide-react'
+import Image from 'next/image'
+import { useState } from 'react'
 
 const Navbar = () => {
 	const [openDropdown, setOpenDropdown] = useState<string | null>(null)
@@ -52,11 +52,7 @@ const Navbar = () => {
 											NEW
 										</span>
 									</li>
-									<NavLink
-										href={'/'}
-									>
-										Business Style
-									</NavLink>
+									<NavLink href={'/'}>Business Style</NavLink>
 									<li className='px-4 py-2 hover:text-blue-500 cursor-pointer'>
 										SaaS Style
 									</li>
@@ -67,11 +63,7 @@ const Navbar = () => {
 							)}
 						</li>
 
-						<NavLink
-							href='/about-us'
-						>
-							About us
-						</NavLink>
+						<NavLink href='/about-us'>About us</NavLink>
 
 						<li
 							onMouseEnter={() => setOpenDropdown('pages')}
@@ -83,9 +75,11 @@ const Navbar = () => {
 							</span>
 							{openDropdown === 'pages' && (
 								<ul className='absolute text-zinc-400 mt-80 w-52 bg-white shadow-lg rounded-xl py-2 z-110'>
-									<li className='px-4 py-2 hover:text-blue-500 hover:bg-gray-100 cursor-pointer'>
+									<NavLink
+										href='/services'
+									>
 										Services
-									</li>
+									</NavLink>
 									<li className='px-4 py-2 hover:text-blue-500 hover:bg-gray-100 cursor-pointer'>
 										Pricing
 									</li>
@@ -174,14 +168,12 @@ const Navbar = () => {
 												More
 											</li>
 											<div className='-ml-4'>
-											<NavLink
-												href={'/features/Portfolio-Styles'}
-											>
-												Portfolio Styles{' '}
-												<span className='text-xs font-semibold px-2 py-0.5 rounded-full bg-red-100 text-red-600'>
-													HOT
-												</span>
-											</NavLink>
+												<NavLink href={'/features/Portfolio-Styles'}>
+													Portfolio Styles{' '}
+													<span className='text-xs font-semibold px-2 py-0.5 rounded-full bg-red-100 text-red-600'>
+														HOT
+													</span>
+												</NavLink>
 											</div>
 											<li className='text-zinc-400 cursor-pointer hover:text-blue-500'>
 												Blog Elements
@@ -308,11 +300,7 @@ const Navbar = () => {
 										</span>
 									</div>
 									<div className='-ml-4 my-3'>
-									<NavLink
-										href={'/'}
-									>
-										Business Style
-									</NavLink>
+										<NavLink href={'/'}>Business Style</NavLink>
 									</div>
 									<div className='py-2 text-zinc-500 hover:text-blue-500'>
 										SaaS Style
@@ -326,11 +314,7 @@ const Navbar = () => {
 
 						{/* About us */}
 						<div className='pb-4 -ml-4'>
-							<NavLink
-								href='/about-us'
-							>
-								About us
-							</NavLink>
+							<NavLink href='/about-us'>About us</NavLink>
 						</div>
 
 						{/* Pages */}

@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Converta Next.js",
+  title: "Lead Softwares",
   description: "Created by Hassan King",
 };
 
