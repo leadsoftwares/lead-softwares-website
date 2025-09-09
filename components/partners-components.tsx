@@ -12,7 +12,7 @@ const Partners = () => {
 				Trusted by nearly 5000+ customers & startups
 			</div>
 			{/* logos */}
-			<div className='flex w-full flex-wrap justify-center lg:flex-row items-center gap-26 md:gap-20 lg:gap-26 mt-10 pb-28 border-b border-zinc-300'>
+			<div className='flex w-full flex-wrap justify-center lg:flex-row items-center gap-26 md:gap-20 lg:gap-26 mt-10 pb-28'>
 				<Image src={Trustpilot} alt='trustpilot' />
 				<Image src={AWS} alt='AWS' />
 				<Image src={Spotify} alt='Spotify' />

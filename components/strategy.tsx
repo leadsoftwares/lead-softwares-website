@@ -15,7 +15,7 @@ const Strategy = () => {
 	>('left')
 
 	// Define the order of images
-	const images = [StrategyImage, StrategyImage2, StrategyImage3];
+	const images = [StrategyImage, StrategyImage2, StrategyImage3]
 
 	const handleImageChange = (newImage: typeof StrategyImage) => {
 		if (newImage === activeImage) return // Don't animate if same image
@@ -44,12 +44,9 @@ const Strategy = () => {
 				<div className='subTitle text-blue-500 text-xs'>
 					HELPING ENTREPRENEURS MAKE MORE MONEY
 				</div>
-				<div className='hidden lg:block title text-5xl leading-14 font-semibold text-[#321270]'>
+				<div className='title text-5xl leading-14 font-bold text-primary'>
 					Customizing IT Solutions to Fit <br />
-Your Business Needs
-				</div>
-				<div className='block lg:hidden title text-3xl leading-10 font-semibold text-[#321270]'>
-					Unlimited cash back, zero fees, no credit check
+					Your Business Needs
 				</div>
 			</div>
 			<div className='main w-full mt-18 flex flex-col lg:flex-row gap-18'>
@@ -68,7 +65,8 @@ Your Business Needs
 								Assessment and Planning
 							</div>
 							<div className='desc text-zinc-400'>
-								We Conduct thorough consultations to understand and document client requirements comprehensively.
+								We Conduct thorough consultations to understand and document
+								client requirements comprehensively.
 							</div>
 						</div>
 
@@ -83,7 +81,8 @@ Your Business Needs
 								Implementation and Integration
 							</div>
 							<div className='desc text-zinc-400'>
-								We Develop and rigorously test software applications, ensuring top-notch quality.
+								We Develop and rigorously test software applications, ensuring
+								top-notch quality.
 							</div>
 						</div>
 
@@ -98,7 +97,8 @@ Your Business Needs
 								Monitoring and Optimization
 							</div>
 							<div className='desc text-zinc-400'>
-								We Conduct regular audits, scale infrastructure, and uphold industry standards for ongoing efficiency and excellence.
+								We Conduct regular audits, scale infrastructure, and uphold
+								industry standards for ongoing efficiency and excellence.
 							</div>
 						</div>
 					</div>
