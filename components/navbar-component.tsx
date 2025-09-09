@@ -19,11 +19,11 @@ const Navbar = () => {
 	}
 
 	return (
-		<div className='w-full h-16 flex items-center px-4 lg:px-10 sticky top-0 bg-white z-10000'>
+		<div className='w-full h-16 flex items-center justify-between px-4 lg:px-10 sticky top-0 bg-white z-10000'>
 			<div className='logo'>
 				<Image className='w-35 md:w-35' src={logo} alt='logo' />
 			</div>
-			<nav className='mx-auto flex justify-between items-center'>
+			<nav className='lg:mx-auto flex lg:justify-between items-center'>
 				{/* Logo */}
 
 				{/* Desktop Navigation */}
@@ -90,8 +90,6 @@ const Navbar = () => {
 
 				{/* Mobile Menu Button & Icons */}
 				<div className='lg:hidden flex items-center gap-4'>
-					{/* Mobile Icons */}
-					<div className='flex gap-3 text-zinc-400'></div>
 
 					{/* Hamburger Menu */}
 					<button
