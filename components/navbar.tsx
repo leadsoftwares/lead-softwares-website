@@ -1,9 +1,9 @@
 'use client'
-import NavLink from '../components/navlink'
-import logo from '../public/png/Lead Logo Black .png'
 import { ChevronDown, Menu, Search, ShoppingCart, X } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
+import NavLink from '../components/navlink'
+import logo from '../public/png/Lead Logo Black .png'
 
 const Navbar = () => {
 	const [openDropdown, setOpenDropdown] = useState<string | null>(null)
@@ -75,11 +75,7 @@ const Navbar = () => {
 							</span>
 							{openDropdown === 'pages' && (
 								<ul className='absolute text-zinc-400 mt-80 w-52 bg-white shadow-lg rounded-xl py-2 z-110'>
-									<NavLink
-										href='/services'
-									>
-										Services
-									</NavLink>
+									<NavLink href='/services'>Services</NavLink>
 									<li className='px-4 py-2 hover:text-blue-500 hover:bg-gray-100 cursor-pointer'>
 										Pricing
 									</li>
