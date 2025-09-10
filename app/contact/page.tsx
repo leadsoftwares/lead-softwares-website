@@ -97,7 +97,7 @@ const Contact = () => {
 						</div>
 						<div className='font-bold text-2xl'>Technology Services</div>
 						<div className='text-md leading-7'>
-							If you’re looking for a dedicated partner to entrust your software
+							If you&apos;re looking for a dedicated partner to entrust your software
 							& app development someone reliable and skilled enough to accompany
 							you through your technical blockage, we are the one.
 						</div>
@@ -110,7 +110,7 @@ const Contact = () => {
 						</div>
 						<div className='font-bold text-2xl'>Technology Services</div>
 						<div className='text-md leading-7'>
-							If you’re looking for a dedicated partner to entrust your software
+							If you&apos;re looking for a dedicated partner to entrust your software
 							& app development someone reliable and skilled enough to accompany
 							you through your technical blockage, we are the one.
 						</div>
@@ -123,7 +123,7 @@ const Contact = () => {
 						</div>
 						<div className='font-bold text-2xl'>Technology Services</div>
 						<div className='text-md leading-7'>
-							If you’re looking for a dedicated partner to entrust your software
+							If you&apos;re looking for a dedicated partner to entrust your software
 							& app development someone reliable and skilled enough to accompany
 							you through your technical blockage, we are the one.
 						</div>
