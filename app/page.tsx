@@ -2,14 +2,15 @@
 
 import { motion } from 'framer-motion'
 
+import LandingIMG from '@/public/png/portfolio2.png'
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
-import LandingBG from '../public/png/landingBG1.png'
 import AccountCard from '../components/account-card'
 import Card from '../components/card'
 import { CustomButton } from '../components/custom-btn'
 import Partners from '../components/partners-components'
 import Strategy from '../components/strategy'
+import LandingBG from '../public/png/landingBG1.png'
 import MobileView from '../public/png/mobileview.png'
 import MobileViewCard from '../public/png/mobileviewCard.png'
 import Account from '../public/svg/account.svg'
@@ -38,20 +39,94 @@ const strategy = [
 	},
 ]
 const strategyBoxes = [
-	{ icon: Account, title: 'Business Agility & Innovation' ,bg: "bg-blue-100" },
-	{ icon: Goal, title: 'Strategic Goal Definition', bg: "bg-pink-100" },
-	{ icon: RoadMap, title: 'Action Roadmap Definition', bg: "bg-green-100" },
-	{ icon: Briefcase, title: 'Business Model Analysis', bg: "bg-green-200" },
+	{ icon: Account, title: 'Business Agility & Innovation', bg: 'bg-blue-100' },
+	{ icon: Goal, title: 'Strategic Goal Definition', bg: 'bg-pink-100' },
+	{ icon: RoadMap, title: 'Action Roadmap Definition', bg: 'bg-green-100' },
+	{ icon: Briefcase, title: 'Business Model Analysis', bg: 'bg-green-200' },
 ]
 
 const page = () => {
 	return (
 		<div className='w-full overflow-hidden'>
 			{/* hero section */}
-<section className='w-full h-100 bg-blue-900'>
-sdsdddd
-</section>
+			<section className='relative w-full h-[650px] bg-[#120330] overflow-hidden text-white gap-10'>
+				<div>lfdhos</div>
+				{/* Column 1 (scroll UP) */}
+				<div className='absolute right-0 h-full overflow-hidden w-[220px]'>
+					<div className='flex flex-col gap-6 animate-scroll-up opacity-20'>
+						{[...Array(2)].map((_, dup) => (
+							<div key={dup} className='flex flex-col gap-6'>
+								<Image
+									className='rounded-lg'
+									width={700}
+									height={600}
+									src={LandingIMG}
+									alt='1'
+								/>
+								<Image
+									className='rounded-lg'
+									width={700}
+									height={600}
+									src={LandingIMG}
+									alt='2'
+								/>
+								<Image
+									className='rounded-lg'
+									width={700}
+									height={700}
+									src={LandingIMG}
+									alt='3'
+								/>
+								<Image
+									className='rounded-lg'
+									width={700}
+									height={600}
+									src={LandingIMG}
+									alt='4'
+								/>
+							</div>
+						))}
+					</div>
+				</div>
 
+				{/* Column 2 (scroll DOWN) */}
+				<div className='relative h-full overflow-hidden w-[220px] '>
+					<div className='flex flex-col gap-6 animate-scroll-down opacity-20'>
+						{[...Array(2)].map((_, dup) => (
+							<div key={dup} className='flex flex-col gap-6'>
+								<Image
+									className='rounded-lg'
+									width={200}
+									height={200}
+									src={LandingIMG}
+									alt='1'
+								/>
+								<Image
+									className='rounded-lg'
+									width={200}
+									height={200}
+									src={LandingIMG}
+									alt='2'
+								/>
+								<Image
+									className='rounded-lg'
+									width={200}
+									height={200}
+									src={LandingIMG}
+									alt='3'
+								/>
+								<Image
+									className='rounded-lg'
+									width={200}
+									height={200}
+									src={LandingIMG}
+									alt='4'
+								/>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
 
 			{/*  */}
 			<motion.div
@@ -81,7 +156,11 @@ sdsdddd
 				</div>
 				<div className='hidden lg:block'>
 					<div className='relative right h-160 flex items-center justify-center'>
-						<Image className='absolute bottom-0 rounded-2xl z-10 right-0' src={LandingBG} alt="" />
+						<Image
+							className='absolute bottom-0 rounded-2xl z-10 right-0'
+							src={LandingBG}
+							alt=''
+						/>
 						<div className='relative circle bg-linear-to-br blur-3xl from-[#F2A296] via-[#E68B56] to-[#AD60A9] to-40% border border-amber-400 w-130 h-130 rounded-full flex items-center justify-center'></div>
 						<div className='absolute cards flex gap-4 z-100'>
 							<Card /> <AccountCard />
@@ -230,7 +309,9 @@ sdsdddd
 									transition={{ duration: 0.8, ease: 'easeOut' }}
 									className='box1 hover:-translate-y-2 transition-all duration-300 pb-18 cursor-pointer shadow-md bg-white rounded-2xl flex items-center gap-6 flex-col py-12 w-70'
 								>
-									<div className={`icon ${strategyBox.bg} w-14 h-14 rounded-full flex items-center justify-center`}>
+									<div
+										className={`icon ${strategyBox.bg} w-14 h-14 rounded-full flex items-center justify-center`}
+									>
 										<Image src={strategyBox.icon} alt={strategyBox.title} />
 									</div>
 									<div className='title text-center text-[#321270] text-2xl font-semibold px-4'>

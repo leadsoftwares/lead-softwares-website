@@ -5,3 +5,41 @@
   --color-bg: #F4F6FB;
   --color-lightBlue:#4299e1; 
 }
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+/* utility using Tailwind’s arbitrary values */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 10s ease-in-out infinite;
+}
+
+
+/* Move images UP (looping) */
+@keyframes scroll-up {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); } /* move half content up */
+}
+
+@keyframes scroll-down {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }  /* move half content down */
+}
+
+.animate-scroll-up {
+  animation: scroll-up 20s linear infinite;
+}
+
+.animate-scroll-down {
+  animation: scroll-down 20s linear infinite;
+}
