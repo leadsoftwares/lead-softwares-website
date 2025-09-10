@@ -45,20 +45,21 @@ const strategyBoxes = [
 
 const page = () => {
 	return (
-		<div className='w-full overflow-hidden'>
+		<div className='w-full overflow-hidde'>
 			{/* hero section */}
+			<div className='relative overflow-hidden'>
 			<motion.section
 				initial={{ opacity: 0, y: 50 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true }}
 				transition={{ duration: 0.8, ease: 'easeOut' }}
-				className='relative w-full h-[85vh] bg-[#120330] overflow-hidden text-white gap-10'
+				className='relative w-full h-[85vh] bg-[#120330] text-white gap-10'
 			>
 				{/* <div className='absolute top-10'>
 					<Image width={200} height={200} src={LogoWhite} alt="" />
 				</div> */}
-				<div className='absolute top-25 left-20 text-white space-y-14'>
-					<div className='font-bold text-7xl '>
+				<div className='lg:px-20 py-20 lg:py-40 text-white space-y-14 text-center flex flex-col items-center'>
+					<div className='px-20 font-bold text-4xl lg:text-7xl '>
 						<h1>
 							Empower your{' '}
 							<span>
@@ -77,13 +78,15 @@ const page = () => {
 					</p>
 					<div className='btns flex gap-5'>
 						<CustomButton title={'Get Started'} />
-						<button className='bg-white text-blue-500 py-2 px-4 rounded-md cursor-pointer hover:bg-zinc-100'>
+						<button className='hidden md:block bg-white text-blue-500 py-2 px-4 rounded-md cursor-pointer hover:bg-zinc-100'>
 							See All Demos
 						</button>
 					</div>
 				</div>
+			
+			</motion.section>
 				{/* Column 1 (scroll UP) */}
-				<div className='absolute right-60 overflow-hidden h-full transform -rotate-12'>
+				<div className='hidden md:block absolute top-0 right-60 overflow-hidden h-full transform -rotate-12'>
 					<div className='flex flex-col gap-6 animate-scroll-up opacity-20'>
 						{[...Array(2)].map((_, dup) => (
 							<div key={dup} className='flex flex-col gap-6'>
@@ -119,9 +122,8 @@ const page = () => {
 						))}
 					</div>
 				</div>
-
 				{/* Column 2 (scroll DOWN) */}
-				<div className='absolute -right-50 transform -rotate-12 h-full overflow-hidden '>
+				<div className='hidden md:block absolute top-0 -right-50 transform -rotate-12 h-full overflow-hidden '>
 					<div className='flex flex-col gap-6 animate-scroll-down opacity-20'>
 						{[...Array(2)].map((_, dup) => (
 							<div key={dup} className='flex flex-col gap-6'>
@@ -157,7 +159,8 @@ const page = () => {
 						))}
 					</div>
 				</div>
-			</motion.section>
+			</div>
+			
 
 			{/*  */}
 			{/* <motion.div
