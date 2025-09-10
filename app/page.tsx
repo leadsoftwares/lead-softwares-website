@@ -2,15 +2,13 @@
 
 import { motion } from 'framer-motion'
 
+import Typewriter from '@/components/typewriter'
 import LandingIMG from '@/public/png/portfolio2.png'
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
-import AccountCard from '../components/account-card'
-import Card from '../components/card'
 import { CustomButton } from '../components/custom-btn'
 import Partners from '../components/partners-components'
 import Strategy from '../components/strategy'
-import LandingBG from '../public/png/landingBG1.png'
 import MobileView from '../public/png/mobileview.png'
 import MobileViewCard from '../public/png/mobileviewCard.png'
 import Account from '../public/svg/account.svg'
@@ -49,38 +47,71 @@ const page = () => {
 	return (
 		<div className='w-full overflow-hidden'>
 			{/* hero section */}
-			<section className='relative w-full h-[650px] bg-[#120330] overflow-hidden text-white gap-10'>
-				<div>lfdhos</div>
+			<motion.section
+				initial={{ opacity: 0, y: 50 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true }}
+				transition={{ duration: 0.8, ease: 'easeOut' }}
+				className='relative w-full h-[85vh] bg-[#120330] overflow-hidden text-white gap-10'
+			>
+				{/* <div className='absolute top-10'>
+					<Image width={200} height={200} src={LogoWhite} alt="" />
+				</div> */}
+				<div className='absolute top-25 left-20 text-white space-y-14'>
+					<div className='font-bold text-7xl '>
+						<h1>
+							Empower your{' '}
+							<span>
+								{' '}																
+								<Typewriter
+									words={['Technology', 'Startup', 'SaaS', 'Software']}
+								/>
+							</span>
+						</h1>
+						<h1>Website with Lead Software</h1>
+					</div>
+					<p className='w-[60%] text-zinc-300 text-lg'>
+						An incredible theme for modern Software and SaaS businesses. With a
+						sleek and professional design, customizable layouts, and
+						integrations with popular plugins.
+					</p>
+					<div className='btns flex gap-5'>
+						<CustomButton title={'Get Started'} />
+						<button className='bg-white text-blue-500 py-2 px-4 rounded-md cursor-pointer hover:bg-zinc-100'>
+							See All Demos
+						</button>
+					</div>
+				</div>
 				{/* Column 1 (scroll UP) */}
-				<div className='absolute right-0 h-full overflow-hidden w-[220px]'>
+				<div className='absolute right-60 overflow-hidden h-full transform -rotate-12'>
 					<div className='flex flex-col gap-6 animate-scroll-up opacity-20'>
 						{[...Array(2)].map((_, dup) => (
 							<div key={dup} className='flex flex-col gap-6'>
 								<Image
 									className='rounded-lg'
-									width={700}
-									height={600}
+									width={400}
+									height={300}
 									src={LandingIMG}
 									alt='1'
 								/>
 								<Image
 									className='rounded-lg'
-									width={700}
-									height={600}
+									width={400}
+									height={300}
 									src={LandingIMG}
 									alt='2'
 								/>
 								<Image
 									className='rounded-lg'
-									width={700}
-									height={700}
+									width={400}
+									height={300}
 									src={LandingIMG}
 									alt='3'
 								/>
 								<Image
 									className='rounded-lg'
-									width={700}
-									height={600}
+									width={400}
+									height={300}
 									src={LandingIMG}
 									alt='4'
 								/>
@@ -90,35 +121,35 @@ const page = () => {
 				</div>
 
 				{/* Column 2 (scroll DOWN) */}
-				<div className='relative h-full overflow-hidden w-[220px] '>
+				<div className='absolute -right-50 transform -rotate-12 h-full overflow-hidden '>
 					<div className='flex flex-col gap-6 animate-scroll-down opacity-20'>
 						{[...Array(2)].map((_, dup) => (
 							<div key={dup} className='flex flex-col gap-6'>
 								<Image
 									className='rounded-lg'
-									width={200}
-									height={200}
+									width={400}
+									height={300}
 									src={LandingIMG}
 									alt='1'
 								/>
 								<Image
 									className='rounded-lg'
-									width={200}
-									height={200}
+									width={400}
+									height={300}
 									src={LandingIMG}
 									alt='2'
 								/>
 								<Image
 									className='rounded-lg'
-									width={200}
-									height={200}
+									width={400}
+									height={300}
 									src={LandingIMG}
 									alt='3'
 								/>
 								<Image
 									className='rounded-lg'
-									width={200}
-									height={200}
+									width={400}
+									height={300}
 									src={LandingIMG}
 									alt='4'
 								/>
@@ -126,10 +157,10 @@ const page = () => {
 						))}
 					</div>
 				</div>
-			</section>
+			</motion.section>
 
 			{/*  */}
-			<motion.div
+			{/* <motion.div
 				initial={{ opacity: 0, y: 50 }} // start invisible, move down
 				whileInView={{ opacity: 1, y: 0 }} // when scrolled into view
 				viewport={{ once: true }} // animate only once
@@ -167,7 +198,7 @@ const page = () => {
 						</div>
 					</div>
 				</div>
-			</motion.div>
+			</motion.div> */}
 
 			{/*  */}
 			<div className='main w-full min-h-196'>
@@ -193,7 +224,7 @@ const page = () => {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 					transition={{ duration: 0.8, ease: 'easeOut' }}
-					className='boxes flex flex-col flex-wrap md:flex-row md:flex-nowrap gap-8 mx-12 md:mx-24 mt-24 pb-20 border-b border-gray-300'
+					className='boxes flex flex-col flex-wrap lg:flex-row md:flex-nowrap gap-8 mx-auto items-center lg:justify-center lg::mx-auto mt-24 pb-20 border-b border-gray-300'
 				>
 					{strategy.map((item, i) => (
 						<div key={i} className='flex flex-col gap-5 w-80 md:w-120'>
@@ -219,7 +250,7 @@ const page = () => {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 					transition={{ duration: 0.8, ease: 'easeOut' }}
-					className='details h-185 flex flex-col lg:flex-row items-center justify-center gap-10 mt-14 md:mt-18'
+					className='details min-h-185 flex flex-col lg:flex-row items-center justify-center gap-10 mt-14 md:mt-58'
 				>
 					<div className='relative img mt-30 md:mt-0'>
 						<Image

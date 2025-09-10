@@ -6,22 +6,13 @@
   --color-lightBlue:#4299e1; 
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-30px);
-  }
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
 }
 
-/* utility using Tailwind’s arbitrary values */
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-float-slow {
-  animation: float 10s ease-in-out infinite;
+.animate-blink {
+  animation: blink 1s step-start infinite;
 }
 
 
@@ -37,9 +28,10 @@
 }
 
 .animate-scroll-up {
-  animation: scroll-up 20s linear infinite;
+  animation: scroll-up 30s linear infinite;
 }
 
 .animate-scroll-down {
-  animation: scroll-down 20s linear infinite;
+  animation: scroll-down 30s linear infinite;
 }
+
