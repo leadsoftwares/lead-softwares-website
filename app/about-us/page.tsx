@@ -3,7 +3,7 @@
 import { Box, Check, Facebook, Medal, Twitter, Youtube } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
-import { CustomButton } from '../../components/custom-btn'
+import  CustomButton from '../../components/custom-btn'
 import Partners from '../../components/partners-components'
 import AboutusImg from '../../public/jpeg/about-us-thumbnail.jpeg'
 import AboutGrowth3 from '../../public/png/about-Growth3.png'

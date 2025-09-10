@@ -5,3 +5,56 @@
   --color-bg: #F4F6FB;
   --color-lightBlue:#4299e1; 
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 8px; /* for horizontal scroll */
+}
+
+/* Track */
+::-webkit-scrollbar-track { /* dark background (Tailwind slate-900) */
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #38bdf8, #3b82f6, #2563eb); /* cyan → blue */
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #60a5fa, #2563eb);
+}
+
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s step-start infinite;
+}
+
+
+/* Move images UP (looping) */
+@keyframes scroll-up {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); } /* move half content up */
+}
+
+@keyframes scroll-down {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }  /* move half content down */
+}
+
+.animate-scroll-up {
+  animation: scroll-up 30s linear infinite;
+}
+
+.animate-scroll-down {
+  animation: scroll-down 30s linear infinite;
+}
+

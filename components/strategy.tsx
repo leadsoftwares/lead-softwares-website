@@ -1,4 +1,5 @@
 'use client'
+import { motion } from 'motion/react'
 import StrategyImage from '../public/webp/strategyIMG.webp'
 import StrategyImage2 from '../public/webp/strategyIMG2.webp'
 import StrategyImage3 from '../public/webp/strategyIMG3.webp'
@@ -40,7 +41,13 @@ const Strategy = () => {
 
 	return (
 		<div className='strategy border-b border-zinc-300 py-18 px-10 md:px-17 mt-60 lg:mt-0 w-full min-h-160 bg-[#F4F6FB]'>
-			<div className='header text-center w-full space-y-2 mx-auto'>
+			<motion.div
+				initial={{ opacity: 0, y: 50 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true }}
+				transition={{ duration: 0.8, ease: 'easeOut' }}
+				className='header text-center w-full space-y-2 mx-auto'
+			>
 				<div className='subTitle text-blue-500 text-xs'>
 					HELPING ENTREPRENEURS MAKE MORE MONEY
 				</div>
@@ -48,8 +55,14 @@ const Strategy = () => {
 					Customizing IT Solutions to Fit <br />
 					Your Business Needs
 				</div>
-			</div>
-			<div className='main w-full mt-18 flex flex-col lg:flex-row gap-18'>
+			</motion.div>
+			<motion.div
+				initial={{ opacity: 0, y: 50 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true }} 
+				transition={{ duration: 1, ease: 'easeOut' }}
+				className='main w-full mt-18 flex flex-col lg:flex-row gap-18'
+			>
 				<div className='left'>
 					<div className='boxes space-y-8'>
 						{/* Box 1 */}
@@ -122,7 +135,7 @@ const Strategy = () => {
 						/>
 					</div>
 				</div>
-			</div>
+			</motion.div>
 		</div>
 	)
 }

@@ -5,7 +5,7 @@ import Avatar1 from '@/public/webp/avatar-1.webp'
 import Avatar2 from '@/public/webp/avatar-2.webp'
 import Avatar3 from '@/public/webp/avatar-3.webp'
 import Image from 'next/image'
-import { CustomButton } from '../../components/custom-btn'
+import  CustomButton from '../../components/custom-btn'
 import Partners from '../../components/partners-components'
 import Strategy from '../../components/strategy'
 import File from '../../public/svg/services.svg'
@@ -161,7 +161,7 @@ const Services = () => {
 				</div>
 				<p className='w-[90%] lg:w-[35%] text-white text-lg mx-auto'>
 					Receive the latest technology & business news in your inbox. Select
-					the newsletters you’d like to receive.
+					the newsletters you&apos;d like to receive.
 				</p>
 				<div className='w-full text-center'>
 					<input
