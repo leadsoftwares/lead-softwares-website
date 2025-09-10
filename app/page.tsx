@@ -1,12 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-
-import Typewriter from '@/components/typewriter'
-import LandingIMG from '@/public/png/portfolio2.png'
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
-import { CustomButton } from '../components/custom-btn'
+import  CustomButton  from '../components/custom-btn'
 import Partners from '../components/partners-components'
 import Strategy from '../components/strategy'
 import MobileView from '../public/png/mobileview.png'
@@ -18,6 +15,7 @@ import RoadMap from '../public/svg/roadmap.svg'
 import Rocket from '../public/svg/rocket.svg'
 import Trophy from '../public/svg/trophy.svg'
 import Tv from '../public/svg/tv.svg'
+import Banner from '@/components/Banner'
 
 const strategy = [
 	{
@@ -45,122 +43,9 @@ const strategyBoxes = [
 
 const page = () => {
 	return (
-		<div className='w-full overflow-hidde'>
+		<div className='w-full overflow-hide'>
 			{/* hero section */}
-			<div className='relative overflow-hidden'>
-			<motion.section
-				initial={{ opacity: 0, y: 50 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				viewport={{ once: true }}
-				transition={{ duration: 0.8, ease: 'easeOut' }}
-				className='relative w-full h-[85vh] bg-[#120330] text-white gap-10'
-			>
-				{/* <div className='absolute top-10'>
-					<Image width={200} height={200} src={LogoWhite} alt="" />
-				</div> */}
-				<div className='lg:px-20 py-20 lg:py-40 text-white space-y-14 text-center flex flex-col items-center'>
-					<div className='px-20 font-bold text-4xl lg:text-7xl '>
-						<h1>
-							Empower your{' '}
-							<span>
-								{' '}																
-								<Typewriter
-									words={['Technology', 'Startup', 'SaaS', 'Software']}
-								/>
-							</span>
-						</h1>
-						<h1>Website with Lead Software</h1>
-					</div>
-					<p className='w-[60%] text-zinc-300 text-lg'>
-						An incredible theme for modern Software and SaaS businesses. With a
-						sleek and professional design, customizable layouts, and
-						integrations with popular plugins.
-					</p>
-					<div className='btns flex gap-5'>
-						<CustomButton title={'Get Started'} />
-						<button className='hidden md:block bg-white text-blue-500 py-2 px-4 rounded-md cursor-pointer hover:bg-zinc-100'>
-							See All Demos
-						</button>
-					</div>
-				</div>
-			
-			</motion.section>
-				{/* Column 1 (scroll UP) */}
-				<div className='hidden md:block absolute top-0 right-60 overflow-hidden h-full transform -rotate-12'>
-					<div className='flex flex-col gap-6 animate-scroll-up opacity-20'>
-						{[...Array(2)].map((_, dup) => (
-							<div key={dup} className='flex flex-col gap-6'>
-								<Image
-									className='rounded-lg'
-									width={400}
-									height={300}
-									src={LandingIMG}
-									alt='1'
-								/>
-								<Image
-									className='rounded-lg'
-									width={400}
-									height={300}
-									src={LandingIMG}
-									alt='2'
-								/>
-								<Image
-									className='rounded-lg'
-									width={400}
-									height={300}
-									src={LandingIMG}
-									alt='3'
-								/>
-								<Image
-									className='rounded-lg'
-									width={400}
-									height={300}
-									src={LandingIMG}
-									alt='4'
-								/>
-							</div>
-						))}
-					</div>
-				</div>
-				{/* Column 2 (scroll DOWN) */}
-				<div className='hidden md:block absolute top-0 -right-50 transform -rotate-12 h-full overflow-hidden '>
-					<div className='flex flex-col gap-6 animate-scroll-down opacity-20'>
-						{[...Array(2)].map((_, dup) => (
-							<div key={dup} className='flex flex-col gap-6'>
-								<Image
-									className='rounded-lg'
-									width={400}
-									height={300}
-									src={LandingIMG}
-									alt='1'
-								/>
-								<Image
-									className='rounded-lg'
-									width={400}
-									height={300}
-									src={LandingIMG}
-									alt='2'
-								/>
-								<Image
-									className='rounded-lg'
-									width={400}
-									height={300}
-									src={LandingIMG}
-									alt='3'
-								/>
-								<Image
-									className='rounded-lg'
-									width={400}
-									height={300}
-									src={LandingIMG}
-									alt='4'
-								/>
-							</div>
-						))}
-					</div>
-				</div>
-			</div>
-			
+		<Banner/>
 
 			{/*  */}
 			{/* <motion.div
