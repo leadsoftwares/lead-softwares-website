@@ -1,15 +1,15 @@
 'use client'
-import Form from '../contact/components/form'
-import { CustomButton } from '../../components/custom-btn'
+import CustomButton from '@/components/custom-btn'
+import Image from 'next/image'
 import Box1 from '../../public/svg/box1.svg'
-import Box2 from "../../public/svg/box2.svg"
-import Box3 from "../../public/svg/box3.svg"
+import Box2 from '../../public/svg/box2.svg'
+import Box3 from '../../public/svg/box3.svg'
 import Email from '../../public/svg/email.svg'
 import Location from '../../public/svg/location.svg'
 import Phone from '../../public/svg/phone.svg'
 import Contact1 from '../../public/webp/contact-1.webp'
-import Image from 'next/image'
 import NavbarTitle from '../about-us/components/NavbarTitle'
+import Form from '../contact/components/form'
 import FAQPage from './components/faq-box'
 
 const Contact = () => {
@@ -58,8 +58,8 @@ const Contact = () => {
 						<div className='w-16 h-16 rounded-full bg-blue-500 mx-auto mb-2 flex items-center justify-center'>
 							<Image src={Location} alt='location' />
 						</div>
-            <h2 className='font-extrabold text-2xl mb-4'>Location</h2>
-            <p className='text-zinc-600 mb-4'>Find us at our office</p>
+						<h2 className='font-extrabold text-2xl mb-4'>Location</h2>
+						<p className='text-zinc-600 mb-4'>Find us at our office</p>
 						<p className='text-black font-bold'>7901 4th St N STE 300 Saint</p>
 						<p className='text-black font-bold'>Petersburg, FL 33702 US</p>
 					</div>
@@ -68,8 +68,8 @@ const Contact = () => {
 						<div className='w-16 h-16 rounded-full bg-blue-500 mx-auto mb-2 flex items-center justify-center'>
 							<Image src={Phone} alt='location' />
 						</div>
-             <h2 className='font-extrabold text-2xl mb-4'>Phone</h2>
-            <p className='text-zinc-600 mb-4'>Reach out to us by phone</p>
+						<h2 className='font-extrabold text-2xl mb-4'>Phone</h2>
+						<p className='text-zinc-600 mb-4'>Reach out to us by phone</p>
 						<p className='text-black font-bold'>+92 316 6072132</p>
 					</div>
 					{/* card 3 */}
@@ -77,7 +77,7 @@ const Contact = () => {
 						<div className='w-16 h-16 rounded-full bg-blue-500 mx-auto mb-2 flex items-center justify-center'>
 							<Image src={Email} alt='location' />
 						</div>
-             <h2 className='font-extrabold text-2xl mb-4'>Email</h2>
+						<h2 className='font-extrabold text-2xl mb-4'>Email</h2>
 						<p className='text-zinc-600 mb-4'>Contact us at</p>
 						<p className='text-black font-bold'>contact@leadsoftwares.com</p>
 					</div>
@@ -90,49 +90,55 @@ const Contact = () => {
 					technologies
 				</div>
 				<div className='flex flex-col lg:flex-row gap-10 justify-center mt-20 px-4 lg:px-30'>
-          {/* box1 */}
+					{/* box1 */}
 					<div className='bg-blue-500 text-white rounded-2xl px-8 py-10 space-y-6'>
 						<div>
 							<Image src={Box1} alt='box1' />
 						</div>
 						<div className='font-bold text-2xl'>Technology Services</div>
 						<div className='text-md leading-7'>
-							If you&apos;re looking for a dedicated partner to entrust your software
-							& app development someone reliable and skilled enough to accompany
-							you through your technical blockage, we are the one.
+							If you&apos;re looking for a dedicated partner to entrust your
+							software & app development someone reliable and skilled enough to
+							accompany you through your technical blockage, we are the one.
 						</div>
-            <button className='bg-white cursor-pointer text-blue-500 p-4 px-8 rounded-md'>Learn More</button>
+						<button className='bg-white cursor-pointer text-blue-500 p-4 px-8 rounded-md'>
+							Learn More
+						</button>
 					</div>
-          {/* box2 */}
-          	<div className=' bg-blue-500 text-white rounded-2xl px-8 py-10 space-y-6'>
+					{/* box2 */}
+					<div className=' bg-blue-500 text-white rounded-2xl px-8 py-10 space-y-6'>
 						<div>
 							<Image src={Box2} alt='box1' />
 						</div>
 						<div className='font-bold text-2xl'>Technology Services</div>
 						<div className='text-md leading-7'>
-							If you&apos;re looking for a dedicated partner to entrust your software
-							& app development someone reliable and skilled enough to accompany
-							you through your technical blockage, we are the one.
+							If you&apos;re looking for a dedicated partner to entrust your
+							software & app development someone reliable and skilled enough to
+							accompany you through your technical blockage, we are the one.
 						</div>
-            <button className='bg-white cursor-pointer text-blue-500 p-4 px-8 rounded-md'>Learn More</button>
+						<button className='bg-white cursor-pointer text-blue-500 p-4 px-8 rounded-md'>
+							Learn More
+						</button>
 					</div>
-          {/* box3 */}
-          	<div className=' bg-blue-500 text-white rounded-2xl px-8 py-10 space-y-6'>
+					{/* box3 */}
+					<div className=' bg-blue-500 text-white rounded-2xl px-8 py-10 space-y-6'>
 						<div>
 							<Image src={Box3} alt='box1' />
 						</div>
 						<div className='font-bold text-2xl'>Technology Services</div>
 						<div className='text-md leading-7'>
-							If you&apos;re looking for a dedicated partner to entrust your software
-							& app development someone reliable and skilled enough to accompany
-							you through your technical blockage, we are the one.
+							If you&apos;re looking for a dedicated partner to entrust your
+							software & app development someone reliable and skilled enough to
+							accompany you through your technical blockage, we are the one.
 						</div>
-            <button className='bg-white cursor-pointer text-blue-500 p-4 px-8 rounded-md'>Learn More</button>
+						<button className='bg-white cursor-pointer text-blue-500 p-4 px-8 rounded-md'>
+							Learn More
+						</button>
 					</div>
 				</div>
 			</div>
-      {/*  */}
-      <FAQPage />
+			{/*  */}
+			<FAQPage />
 		</div>
 	)
 }
