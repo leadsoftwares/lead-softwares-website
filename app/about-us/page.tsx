@@ -36,7 +36,7 @@ const staffData = [
 const About = () => {
 	const [isPlaying, setIsPlaying] = useState(false)
 	return (
-		<div className='w-full'>
+		<div className='w-full overflow-hidden'>
 			<div className='w-full h-12 px-6 lg:px-28 bg-white flex justify-between items-center border-b border-zinc-300'>
 				{/* logos */}
 				<div className='flex items-center gap-6 mt-2'>
