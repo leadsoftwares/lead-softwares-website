@@ -51,7 +51,7 @@ const Strategy = () => {
 				<div className='subTitle text-blue-500 text-xs'>
 					HELPING ENTREPRENEURS MAKE MORE MONEY
 				</div>
-				<div className='title text-5xl leading-14 font-bold text-primary'>
+				<div className='title text-4xl md:text-5xl md:leading-14 font-bold text-primary'>
 					Customizing IT Solutions to Fit <br />
 					Your Business Needs
 				</div>
@@ -61,7 +61,7 @@ const Strategy = () => {
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true }} 
 				transition={{ duration: 1, ease: 'easeOut' }}
-				className='main w-full mt-18 flex flex-col lg:flex-row gap-18'
+				className='main w-full mt-18 flex flex-col lg:flex-row gap-18 lg:justify-center'
 			>
 				<div className='left'>
 					<div className='boxes space-y-8'>
@@ -116,8 +116,6 @@ const Strategy = () => {
 						</div>
 					</div>
 				</div>
-
-				{/* RIGHT SIDE */}
 				{/* RIGHT SIDE */}
 				<div className='right'>
 					<div className='box w-full h-100 lg:w-180 lg:h-140 border-6 border-black rounded overflow-hidden relative'>
