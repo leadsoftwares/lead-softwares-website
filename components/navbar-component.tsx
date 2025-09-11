@@ -1,29 +1,13 @@
 'use client'
 import { ChevronDown, Menu, X } from 'lucide-react'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import logo from '../public/png/lead-logo-black.png'
 import NavLink from './navlink-component'
 
 const Navbar = () => {
 	const [openDropdown, setOpenDropdown] = useState<string | null>(null)
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
-
-	// show navbar only when scrollY > 0
-	const [showNavbar, setShowNavbar] = useState(false)
-
-	useEffect(() => {
-		const handleScroll = () => {
-			if (window.scrollY > 0) {
-				setShowNavbar(true)
-			} else {
-				setShowNavbar(false)
-			}
-		}
-
-		window.addEventListener('scroll', handleScroll)
-		return () => window.removeEventListener('scroll', handleScroll)
-	}, [])
 
 	const toggleMobileMenu = () => {
 		setIsMobileMenuOpen(!isMobileMenuOpen)
@@ -37,13 +21,12 @@ const Navbar = () => {
 	return (
 		<div
 			className={`w-full h-16 font-semibold flex items-center justify-between px-4 lg:px-10 sticky top-0 bg-white z-[10000] transition-transform duration-300
-      ${showNavbar ? 'translate-y-0' : '-translate-y-full hidden'}
       `}
 		>
 			{/* Logo */}
-			<div className='logo'>
+			<NavLink href='/'>
 				<Image className='w-35 md:w-35' src={logo} alt='logo' />
-			</div>
+			</NavLink>
 
 			{/* Desktop Navigation */}
 			<nav className='lg:mx-auto flex lg:justify-between items-center'>
@@ -68,12 +51,24 @@ const Navbar = () => {
 							{openDropdown === 'pages' && (
 								<ul className='absolute top-full mt-2 text-zinc-400 w-52 bg-white shadow-lg rounded-xl py-2 z-50'>
 									<NavLink href='/services'>Services</NavLink>
-									<li className='px-4 py-2 hover:text-blue-500 hover:bg-gray-100 cursor-pointer'>Pricing</li>
-									<li className='px-4 py-2 hover:text-blue-500 hover:bg-gray-100 cursor-pointer'>Support</li>
-									<li className='px-4 py-2 hover:text-blue-500 hover:bg-gray-100 cursor-pointer'>Careers</li>
-									<li className='px-4 py-2 hover:text-blue-500 hover:bg-gray-100 cursor-pointer'>Shop</li>
-									<li className='px-4 py-2 hover:text-blue-500 hover:bg-gray-100 cursor-pointer'>Cart</li>
-									<li className='px-4 py-2 hover:text-blue-500 hover:bg-gray-100 cursor-pointer'>Checkout</li>
+									<li className='px-4 py-2 hover:text-blue-500 hover:bg-gray-100 cursor-pointer'>
+										Pricing
+									</li>
+									<li className='px-4 py-2 hover:text-blue-500 hover:bg-gray-100 cursor-pointer'>
+										Support
+									</li>
+									<li className='px-4 py-2 hover:text-blue-500 hover:bg-gray-100 cursor-pointer'>
+										Careers
+									</li>
+									<li className='px-4 py-2 hover:text-blue-500 hover:bg-gray-100 cursor-pointer'>
+										Shop
+									</li>
+									<li className='px-4 py-2 hover:text-blue-500 hover:bg-gray-100 cursor-pointer'>
+										Cart
+									</li>
+									<li className='px-4 py-2 hover:text-blue-500 hover:bg-gray-100 cursor-pointer'>
+										Checkout
+									</li>
 								</ul>
 							)}
 						</li>
@@ -104,7 +99,7 @@ const Navbar = () => {
 
 			{/* Mobile Menu Dropdown */}
 			{isMobileMenuOpen && (
-				<div className='lg:hidden absolute top-25 left-0 right-0 bg-white shadow-lg z-50'>
+				<div className='lg:hidden absolute top-15 left-0 right-0 bg-white shadow-lg z-50'>
 					<div className='px-4 py-6 space-y-4'>
 						<div className='pb-4 -ml-4'>
 							<button className='w-full flex items-center justify-between text-zinc-600 hover:text-blue-500'>
@@ -122,18 +117,34 @@ const Navbar = () => {
 								<span>Pages</span>
 								<ChevronDown
 									size={15}
-									className={`transition-transform ${openDropdown === 'pages' ? 'rotate-180' : ''}`}
+									className={`transition-transform ${
+										openDropdown === 'pages' ? 'rotate-180' : ''
+									}`}
 								/>
 							</button>
 							{openDropdown === 'pages' && (
 								<div className='mt-3 pl-4 space-y-2'>
-									<div className='py-2 text-zinc-500 hover:text-blue-500'>Services</div>
-									<div className='py-2 text-zinc-500 hover:text-blue-500'>Pricing</div>
-									<div className='py-2 text-zinc-500 hover:text-blue-500'>Support</div>
-									<div className='py-2 text-zinc-500 hover:text-blue-500'>Careers</div>
-									<div className='py-2 text-zinc-500 hover:text-blue-500'>Shop</div>
-									<div className='py-2 text-zinc-500 hover:text-blue-500'>Cart</div>
-									<div className='py-2 text-zinc-500 hover:text-blue-500'>Checkout</div>
+									<div className='py-2 text-zinc-500 hover:text-blue-500'>
+										Services
+									</div>
+									<div className='py-2 text-zinc-500 hover:text-blue-500'>
+										Pricing
+									</div>
+									<div className='py-2 text-zinc-500 hover:text-blue-500'>
+										Support
+									</div>
+									<div className='py-2 text-zinc-500 hover:text-blue-500'>
+										Careers
+									</div>
+									<div className='py-2 text-zinc-500 hover:text-blue-500'>
+										Shop
+									</div>
+									<div className='py-2 text-zinc-500 hover:text-blue-500'>
+										Cart
+									</div>
+									<div className='py-2 text-zinc-500 hover:text-blue-500'>
+										Checkout
+									</div>
 								</div>
 							)}
 						</div>
