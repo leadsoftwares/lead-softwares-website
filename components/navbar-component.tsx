@@ -20,7 +20,8 @@ const Navbar = () => {
 
 	return (
 		<div
-			className={`w-full h-16 font-semibold flex items-center justify-between px-4 lg:px-10 sticky top-0 bg-white z-[10000] transition-transform duration-300
+			className={`w-full h-16 shadow-[0_4px_10px_rgba(0,0,0,0.15)]
+ font-semibold flex items-center justify-between px-4 lg:px-10 sticky top-0 bg-white z-[10000] transition-transform duration-300
       `}
 		>
 			{/* Logo */}
@@ -33,9 +34,6 @@ const Navbar = () => {
 				<div className='hidden lg:flex items-center gap-6'>
 					<ul className='flex gap-10 list-none text-zinc-400'>
 						<li
-							onMouseEnter={() => setOpenDropdown('home')}
-							onMouseLeave={() => setOpenDropdown(null)}
-							className='relative cursor-pointer hover:text-blue-500 flex items-center gap-3'
 						>
 							<NavLink href={'/'}>Home</NavLink>
 						</li>
@@ -49,11 +47,11 @@ const Navbar = () => {
 								Pages <ChevronDown size={15} />
 							</span>
 							{openDropdown === 'pages' && (
-								<ul className='absolute top-full mt-2 text-zinc-400 w-52 bg-white shadow-lg rounded-xl py-2 z-50'>
+								<ul className='absolute flex flex-col top-full text-zinc-400 w-52 bg-white shadow-lg rounded-xl py-2 z-50'>
 									<NavLink href='/services'>Services</NavLink>
-									<li className='px-4 py-2 hover:text-blue-500 hover:bg-gray-100 cursor-pointer'>
+									<NavLink href='/pricing'>
 										Pricing
-									</li>
+									</NavLink>
 									<li className='px-4 py-2 hover:text-blue-500 hover:bg-gray-100 cursor-pointer'>
 										Support
 									</li>

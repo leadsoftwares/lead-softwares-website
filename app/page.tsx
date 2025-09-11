@@ -16,6 +16,7 @@ import Rocket from '../public/svg/rocket.svg'
 import Trophy from '../public/svg/trophy.svg'
 import Tv from '../public/svg/tv.svg'
 import Banner from '@/components/Banner'
+import Number from '@/components/numbes'
 
 const strategy = [
 	{
@@ -89,7 +90,7 @@ const page = () => {
 			</motion.div> */}
 
 			{/*  */}
-			<div className='main w-full min-h-196'>
+			<div className='main w-full min-h-196 px-10'>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
 					whileInView={{ opacity: 1, y: 0 }}
@@ -115,7 +116,7 @@ const page = () => {
 					className='boxes flex flex-col flex-wrap lg:flex-row md:flex-nowrap gap-8 mx-auto items-center lg:justify-center lg::mx-auto mt-24 pb-20 border-b border-gray-300'
 				>
 					{strategy.map((item, i) => (
-						<div key={i} className='flex flex-col gap-5 w-80 md:w-120'>
+						<div key={i} className='flex flex-col gap-6 w-80 md:w-120'>
 							<Image
 								className='w-12 h-12'
 								src={item.icon}
@@ -169,16 +170,16 @@ const page = () => {
 						</div>
 						<div className='infos flex gap-12 mt-4'>
 							<div className='1 space-y-2'>
-								<div className='numbers text-6xl text-green-400 font-bold'>
-									25+
+								<div className='numbers text-6xl text-[#22c55e] font-bold flex items-center'>
+									<Number number={25} />+
 								</div>
 								<div className='title font-bold text-[#321270]'>
 									Business Consultants
 								</div>
 							</div>
 							<div className='2 space-y-2'>
-								<div className='numbers text-6xl text-green-400 font-bold'>
-									10+
+								<div className='numbers text-6xl text-[#22c55e] font-bold flex items-center'>
+									<Number number={10}/>+
 								</div>
 								<div className='title font-bold text-[#321270]'>
 									Startups in 2023
