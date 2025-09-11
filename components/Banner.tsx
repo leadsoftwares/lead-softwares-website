@@ -38,7 +38,7 @@ const Banner = () => {
 							</span>
 						</h1>
 						<h1 className='block md:hidden'>
-							Empower your <br />{' '}
+							Mr.... your <br />{' '}
 							<span>
 								<Typewriter
 									words={['Technology', 'Startup', 'SaaS', 'Software']}
