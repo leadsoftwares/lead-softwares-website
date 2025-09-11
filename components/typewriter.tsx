@@ -49,7 +49,7 @@ export default function Typewriter({
   return (
     <span className="font-bold text-4xl lg:text-7xl bg-gradient-to-r  from-blue-500 to-pink-200 to-60% bg-clip-text text-transparent">
       {text}
-      <span className="ml-1 relative top-3 inline-block w-[40px] h-[10px] bg-blue-500 animate-blink"></span>
+      <span className="ml-1 relative md:top-3 inline-block w-[20px] md:w-[40px] h-[5px] md:h-[10px] bg-blue-500 animate-blink"></span>
     </span>
   );
 }

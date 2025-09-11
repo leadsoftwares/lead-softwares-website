@@ -11,7 +11,7 @@ const Navbar = () => {
 
 	const toggleMobileMenu = () => {
 		setIsMobileMenuOpen(!isMobileMenuOpen)
-		setOpenDropdown(null) // Close any open dropdowns when toggling mobile menu
+		setOpenDropdown(null)
 	}
 
 	const handleMobileDropdown = (dropdown: string) => {
@@ -19,14 +19,17 @@ const Navbar = () => {
 	}
 
 	return (
-		<div className='w-full h-16 flex items-center justify-between px-4 lg:px-10 sticky top-0 bg-white z-10000'>
-			<div className='logo'>
+		<div
+			className={`w-full h-16 font-semibold flex items-center justify-between px-4 lg:px-10 sticky top-0 bg-white z-[10000] transition-transform duration-300
+      `}
+		>
+			{/* Logo */}
+			<NavLink href='/'>
 				<Image className='w-35 md:w-35' src={logo} alt='logo' />
-			</div>
-			<nav className='lg:mx-auto flex lg:justify-between items-center'>
-				{/* Logo */}
+			</NavLink>
 
-				{/* Desktop Navigation */}
+			{/* Desktop Navigation */}
+			<nav className='lg:mx-auto flex lg:justify-between items-center'>
 				<div className='hidden lg:flex items-center gap-6'>
 					<ul className='flex gap-10 list-none text-zinc-400'>
 						<li
@@ -34,23 +37,19 @@ const Navbar = () => {
 							onMouseLeave={() => setOpenDropdown(null)}
 							className='relative cursor-pointer hover:text-blue-500 flex items-center gap-3'
 						>
-							<NavLink href={'/'}>
-								Home
-							</NavLink>
+							<NavLink href={'/'}>Home</NavLink>
 						</li>
-
 						<NavLink href='/about-us'>About us</NavLink>
-
 						<li
 							onMouseEnter={() => setOpenDropdown('pages')}
 							onMouseLeave={() => setOpenDropdown(null)}
-							className='cursor-pointer hover:text-blue-500 flex items-center gap-3'
+							className='cursor-pointer hover:text-blue-500 flex items-center gap-3 relative'
 						>
 							<span className='flex items-center'>
 								Pages <ChevronDown size={15} />
 							</span>
 							{openDropdown === 'pages' && (
-								<ul className='absolute text-zinc-400 mt-80 w-52 bg-white shadow-lg rounded-xl py-2 z-110'>
+								<ul className='absolute top-full mt-2 text-zinc-400 w-52 bg-white shadow-lg rounded-xl py-2 z-50'>
 									<NavLink href='/services'>Services</NavLink>
 									<li className='px-4 py-2 hover:text-blue-500 hover:bg-gray-100 cursor-pointer'>
 										Pricing
@@ -73,25 +72,15 @@ const Navbar = () => {
 								</ul>
 							)}
 						</li>
-
-						<li
-							className='cursor-pointer hover:text-blue-500 flex items-center gap-3'
-						>
-							<NavLink href='/portfolio'>	
-								Portfolio
-							</NavLink>
+						<li className='cursor-pointer hover:text-blue-500 flex items-center gap-3'>
+							<NavLink href='/portfolio'>Portfolio</NavLink>
 						</li>
 						<NavLink href='/contact'>Contact</NavLink>
 					</ul>
-
-					
 				</div>
-				
 
-				{/* Mobile Menu Button & Icons */}
+				{/* Mobile Menu Button */}
 				<div className='lg:hidden flex items-center gap-4'>
-
-					{/* Hamburger Menu */}
 					<button
 						onClick={toggleMobileMenu}
 						className='p-2 text-zinc-600 hover:text-blue-500 transition'
@@ -100,63 +89,26 @@ const Navbar = () => {
 					</button>
 				</div>
 			</nav>
-			<div className='hidden icons-btn lg:flex gap-4 items-center text-zinc-400'>
-						<button className='bg-blue-500 text-white py-3 px-6 cursor-pointer hover:bg-purple-900 rounded-md transition'>
-							Get Started
-						</button>
-					</div>
+
+			{/* Desktop "Get Started" */}
+			<div className='hidden lg:flex gap-4 items-center text-zinc-400'>
+				<button className='bg-blue-500 text-white py-3 px-6 cursor-pointer hover:bg-purple-900 rounded-md transition'>
+					Get Started
+				</button>
+			</div>
 
 			{/* Mobile Menu Dropdown */}
 			{isMobileMenuOpen && (
-				<div className='lg:hidden absolute top-25 left-0 right-0 bg-white shadow-lg z-50'>
+				<div className='lg:hidden absolute top-15 left-0 right-0 bg-white shadow-lg z-50'>
 					<div className='px-4 py-6 space-y-4'>
-						{/* Home */}
-						<div className='pb-4'>
-							<button
-								onClick={() => handleMobileDropdown('home')}
-								className='w-full flex items-center justify-between text-zinc-400 hover:text-blue-500'
-							>
-								<span>Home</span>
-								<ChevronDown
-									size={15}
-									className={`transition-transform ${
-										openDropdown === 'home' ? 'rotate-180' : ''
-									}`}
-								/>
-							</button>
-							{openDropdown === 'home' && (
-								<div className='mt-3 pl-4 space-y-2'>
-									<div className='flex justify-between items-center py-2 text-zinc-500 hover:text-blue-500'>
-										Main
-										<span className='text-xs font-semibold px-2 py-0.5 rounded-full bg-red-100 text-red-600'>
-											HOT
-										</span>
-									</div>
-									<div className='flex justify-between items-center py-2 text-zinc-500 hover:text-blue-500'>
-										Agency Style
-										<span className='text-xs font-semibold px-2 py-0.5 rounded-full bg-green-100 text-green-600'>
-											NEW
-										</span>
-									</div>
-									<div className='-ml-4 my-3'>
-										<NavLink href={'/'}>Business Style</NavLink>
-									</div>
-									<div className='py-2 text-zinc-500 hover:text-blue-500'>
-										SaaS Style
-									</div>
-									<div className='py-2 text-zinc-500 hover:text-blue-500'>
-										Technology Style
-									</div>
-								</div>
-							)}
-						</div>
-
-						{/* About us */}
 						<div className='pb-4 -ml-4'>
+							<button className='w-full flex items-center justify-between text-zinc-600 hover:text-blue-500'>
+								<NavLink href='/'>Home</NavLink>
+							</button>
+						</div>
+						<div className='pb-4 -ml-4 text-zinc-600'>
 							<NavLink href='/about-us'>About us</NavLink>
 						</div>
-
-						{/* Pages */}
 						<div className='pb-4'>
 							<button
 								onClick={() => handleMobileDropdown('pages')}
@@ -196,123 +148,11 @@ const Navbar = () => {
 								</div>
 							)}
 						</div>
-
-						{/* Features */}
-						<div className='pb-4'>
-							<button
-								onClick={() => handleMobileDropdown('features')}
-								className='w-full flex items-center justify-between text-zinc-400 hover:text-blue-500'
-							>
-								<span>Features</span>
-								<ChevronDown
-									size={15}
-									className={`transition-transform ${
-										openDropdown === 'features' ? 'rotate-180' : ''
-									}`}
-								/>
-							</button>
-							{openDropdown === 'features' && (
-								<div className='mt-3 pl-4 space-y-3'>
-									<div>
-										<div className='font-medium text-zinc-700 mb-2'>Intro</div>
-										<div className='space-y-1 text-sm'>
-											<div className='py-1 text-zinc-500 hover:text-blue-500'>
-												Headers
-											</div>
-											<div className='py-1 text-zinc-500 hover:text-blue-500'>
-												Hero Sections
-											</div>
-											<div className='py-1 text-zinc-500 hover:text-blue-500'>
-												Page Headers
-											</div>
-											<div className='py-1 text-zinc-500 hover:text-blue-500'>
-												Section Patterns
-											</div>
-											<div className='py-1 text-zinc-500 hover:text-blue-500'>
-												Shape Dividers
-											</div>
-										</div>
-									</div>
-									<div>
-										<div className='font-medium text-zinc-700 mb-2'>
-											Main Content
-										</div>
-										<div className='space-y-1 text-sm'>
-											<div className='py-1 text-zinc-500 hover:text-blue-500'>
-												Headings Styles
-											</div>
-											<div className='py-1 text-zinc-500 hover:text-blue-500'>
-												Services Styles
-											</div>
-											<div className='py-1 text-zinc-500 hover:text-blue-500'>
-												Pricing Styles
-											</div>
-											<div className='py-1 text-zinc-500 hover:text-blue-500'>
-												Testimonials
-											</div>
-										</div>
-									</div>
-									<div>
-										<div className='font-medium text-zinc-700 mb-2'>More</div>
-										<div className='space-y-1 text-sm'>
-											<div className='py-1 text-zinc-500 hover:text-blue-500'>
-												Portfolio Styles
-											</div>
-											<div className='py-1 text-zinc-500 hover:text-blue-500'>
-												Blog Elements
-											</div>
-											<div className='py-1 text-zinc-500 hover:text-blue-500'>
-												Call to Auctions
-											</div>
-											<div className='py-1 text-zinc-500 hover:text-blue-500'>
-												Counters
-											</div>
-											<div className='py-1 text-zinc-500 hover:text-blue-500'>
-												WooCommerce
-											</div>
-										</div>
-									</div>
-								</div>
-							)}
+						<div className='pb-4 -ml-4'>
+							<NavLink href='/portfolio'>Portfolio</NavLink>
 						</div>
-
-						{/* Blog */}
-						<div className='pb-4'>
-							<button
-								onClick={() => handleMobileDropdown('blog')}
-								className='w-full flex items-center justify-between text-zinc-400 hover:text-blue-500'
-							>
-								<span>Blog</span>
-								<ChevronDown
-									size={15}
-									className={`transition-transform ${
-										openDropdown === 'blog' ? 'rotate-180' : ''
-									}`}
-								/>
-							</button>
-							{openDropdown === 'blog' && (
-								<div className='mt-3 pl-4 space-y-2'>
-									<div className='py-2 text-zinc-500 hover:text-blue-500'>
-										Single Centered
-									</div>
-									<div className='py-2 text-zinc-500 hover:text-blue-500'>
-										Single with Gradient
-									</div>
-									<div className='py-2 text-zinc-500 hover:text-blue-500'>
-										Single with Image
-									</div>
-									<div className='py-2 text-zinc-500 hover:text-blue-500'>
-										Single with Sidebar
-									</div>
-								</div>
-							)}
-						</div>
-
-						{/* Contact */}
-						<div className='pb-4'>
-							<div className='text-zinc-600 hover:text-blue-500 cursor-pointer'>
-								Contact
-							</div>
+						<div className='pb-4 -ml-4'>
+							<NavLink href='/contact'>Contact</NavLink>
 						</div>
 					</div>
 				</div>

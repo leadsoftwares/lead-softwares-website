@@ -43,7 +43,7 @@ const strategyBoxes = [
 
 const page = () => {
 	return (
-		<div className='w-full overflow-hide'>
+		<div className='w-full overflow-hidden'>
 			{/* hero section */}
 		<Banner/>
 
@@ -152,7 +152,7 @@ const page = () => {
 							alt='MobileViewCard'
 						/>
 					</div>
-					<div className='detail w-120 flex flex-col gap-6 ml-16 px-4'>
+					<div className='detail md:w-120 flex flex-col gap-6 md:ml-16 px-4'>
 						<div className='hidden md:block title text-4xl font-bold text-[#321270]'>
 							We&apos;re building business for <br /> your digital economy
 						</div>
@@ -218,7 +218,7 @@ const page = () => {
 				</motion.div>
 				<div className='main w-full mt-18 flex justify-evenly flex-col lg:flex-row  gap-16'>
 					<div className='left'>
-						<div className='boxes flex flex-col items-center w-full md:flex-row md:w-160 md:flex-wrap gap-6'>
+						<div className='boxes flex flex-col items-center w-full md:flex-row md:w-160 md:flex-wrap gap-6 mx-auto'>
 							{strategyBoxes.map((strategyBox, i) => (
 								<motion.div
 									key={i}
@@ -226,7 +226,7 @@ const page = () => {
 									whileInView={{ opacity: 1, y: 0 }}
 									viewport={{ once: true }}
 									transition={{ duration: 0.8, ease: 'easeOut' }}
-									className='box1 hover:-translate-y-2 transition-all duration-300 pb-18 cursor-pointer shadow-md bg-white rounded-2xl flex items-center gap-6 flex-col py-12 w-70'
+									className='box1 hover:-translate-y-2 transition-all duration-300 pb-18 cursor-pointer shadow-md bg-white rounded-2xl flex items-center gap-6 flex-col py-12 w-70 mx-auto'
 								>
 									<div
 										className={`icon ${strategyBox.bg} w-14 h-14 rounded-full flex items-center justify-center`}
@@ -279,13 +279,13 @@ const page = () => {
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true }}
 				transition={{ duration: 1, ease: 'easeOut' }}
-				className='w-full mt-16 mb-22 flex flex-col gap-12 items-center'
+				className='w-full mt-16 mb-22 flex flex-col gap-12 items-center px-2'
 			>
 				{/* title */}
 				<div className='hidden md:block text-5xl leading-14 font-semibold text-[#321270] text-center'>
 					Plan for big expenses, manage profits, <br /> vendors, and much more
 				</div>
-				<div className='block md:hidden text-4xl leading-14 font-semibold text-[#321270] text-center'>
+				<div className='block md:hidden text-4xl leading-10 font-semibold text-[#321270] text-center'>
 					Plan for big expenses, manage profits, vendors, and much more
 				</div>
 				{/* desc */}
