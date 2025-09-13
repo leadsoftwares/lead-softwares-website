@@ -40,7 +40,7 @@ const Strategy = () => {
 	}
 
 	return (
-		<div className='strategy border-b border-zinc-300 py-18 px-10 md:px-17 mt-60 lg:mt-0 w-full min-h-160 bg-[#F4F6FB]'>
+		<div className='strategy border-b border-zinc-300 py-18 px-10 md:px-18 mt-60 lg:mt-0 w-full min-h-160 bg-[#F4F6FB]'>
 			<motion.div
 				initial={{ opacity: 0, y: 50 }}
 				whileInView={{ opacity: 1, y: 0 }}
@@ -117,8 +117,8 @@ const Strategy = () => {
 					</div>
 				</div>
 				{/* RIGHT SIDE */}
-				<div className='right'>
-					<div className='box w-full h-100 lg:w-180 lg:h-140 border-6 border-black rounded overflow-hidden relative'>
+				<div className='right  w-full max-w-220'>
+					<div className='box w-full h-100 lg:w-full lg:h-140 border-6 border-black rounded overflow-hidden relative'>
 						<Image
 							src={activeImage}
 							alt='Strategy illustration'

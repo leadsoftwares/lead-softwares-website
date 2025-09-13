@@ -14,7 +14,7 @@ import FAQPage from './components/faq-box'
 
 const Contact = () => {
 	return (
-		<div className='w-full'>
+		<div className='w-full overflow-hidden'>
 			<NavbarTitle title='Contact Us' locate='Contact Us' />
 			{/*  */}
 			<div className='flex flex-col lg:flex-row items-center gap-35 px-4 lg:px-25 py-30'>

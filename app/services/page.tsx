@@ -63,7 +63,7 @@ const serviceData = [
 
 const Services = () => {
 	return (
-		<div className='w-full'>
+		<div className='w-full overflow-hidden'>
 			<NavbarTitle title='Services' locate='Services' />
 			{/*  */}
 			<div className='px-2 py-30'>
