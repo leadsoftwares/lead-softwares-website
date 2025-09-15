@@ -97,6 +97,7 @@ const page = () => {
 									onClick={(e) => {
 										setHearValue(opt)
 										e.currentTarget.parentElement?.classList.add('hidden')
+                                        
 									}}
 									className='px-3 py-2 cursor-pointer hover:bg-gray-100'
 								>
