@@ -7,8 +7,8 @@ import Spotify from '../public/webp/spotify.webp'
 import Trustpilot from '../public/webp/trustpilot.webp'
 const Partners = () => {
 	return (
-		<div className='w-full'>
-			<div className='text-[#321270] text-center mx-4 lg:mx-0 text-2xl font-semibold mt-38'>
+		<div className='w-full space-y-20'>
+			<div className='text-primary text-center mx-4 lg:mx-0 text-2xl font-semibold mt-30'>
 				Trusted by nearly 5000+ customers & startups
 			</div>
 			{/* logos */}

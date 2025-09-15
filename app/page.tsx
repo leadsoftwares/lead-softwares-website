@@ -1,12 +1,14 @@
 'use client'
 
+import Banner from '@/components/Banner'
+import Number from '@/components/numbers'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
-import  CustomButton  from '../components/custom-btn'
+import CustomButton from '../components/custom-btn'
 import Partners from '../components/partners-components'
 import Strategy from '../components/strategy'
-import MobileView from '../public/png/mobileview.png'
+import MobileView from '../public/png/mobileview.webp'
 import MobileViewCard from '../public/png/mobileviewCard.png'
 import Account from '../public/svg/account.svg'
 import Briefcase from '../public/svg/briefcase.svg'
@@ -15,18 +17,17 @@ import RoadMap from '../public/svg/roadmap.svg'
 import Rocket from '../public/svg/rocket.svg'
 import Trophy from '../public/svg/trophy.svg'
 import Tv from '../public/svg/tv.svg'
-import Banner from '@/components/Banner'
-import Number from '@/components/numbes'
+import Link from 'next/link'
 
 const strategy = [
 	{
 		icon: Rocket,
-		title: 'Design-led digital trasformation',
+		title: 'Design-led digital transformation',
 		text: 'We combine business opportunities with customer expectations to design, transform and deliver useful products, and unique brand experiences.',
 	},
 	{
 		icon: Tv,
-		title: 'Tansition to sustainable futures',
+		title: 'Transition to sustainable futures',
 		text: 'We combine business opportunities with customer expectations to design, transform and deliver useful products, and unique brand experiences.',
 	},
 	{
@@ -44,9 +45,9 @@ const strategyBoxes = [
 
 const page = () => {
 	return (
-		<div className='w-full overflow-hidden'>
+		<div className='w-full overflow-hidden select-none'>
 			{/* hero section */}
-		<Banner/>
+			<Banner />
 
 			{/*  */}
 			{/* <motion.div
@@ -96,7 +97,7 @@ const page = () => {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 					transition={{ duration: 0.8, ease: 'easeOut' }}
-					className='title text-5xl w-full flex justify-center mt-14  text-[#321270] font-semibold'
+					className='title text-5xl w-full flex justify-center mt-14  text-primary font-semibold'
 				>
 					<h2 className='hidden md:block leading-14'>
 						Make your business future-proof <br /> to anticipate the challenges
@@ -113,21 +114,21 @@ const page = () => {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 					transition={{ duration: 0.8, ease: 'easeOut' }}
-					className='boxes flex flex-col flex-wrap lg:flex-row md:flex-nowrap gap-8 mx-auto items-center lg:justify-center lg::mx-auto mt-24 pb-20 border-b border-gray-300'
+					className='boxes flex flex-col flex-wrap lg:flex-row md:flex-nowrap gap-8 mx-auto items-center lg:justify-center lg::mx-auto mt-24 pb-20 border-b border-gray-300 px-60'
 				>
 					{strategy.map((item, i) => (
-						<div key={i} className='flex flex-col gap-6 w-80 md:w-120'>
+						<div key={i} className='flex flex-col gap-6 w-80 md:w-160'>
 							<Image
 								className='w-12 h-12'
 								src={item.icon}
 								alt={`${item.icon}`}
 							/>
-							<div className='title font-semibold text-xl md:text-2xl text-[#321270]'>
+							<div className='title font-semibold text-xl md:text-2xl text-primary'>
 								{item.title}
 							</div>
-							<div className='desc text-zinc-400 font-light'>{item.text}</div>
+							<div className='desc text-text font-'>{item.text}</div>
 							<div className='link'>
-								<a href='#' className='text-zinc-400 font-light text-xl'>
+								<a href='#' className='text-text font-medium text-[16px] hover:text-blue-500'>
 									Learn More
 								</a>
 							</div>
@@ -139,7 +140,7 @@ const page = () => {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 					transition={{ duration: 0.8, ease: 'easeOut' }}
-					className='details min-h-185 flex flex-col lg:flex-row items-center justify-center gap-10 mt-14 md:mt-58'
+					className='details min-h-185 flex flex-col lg:flex-row items-center justify-center gap-10 mt-0 md:mt-10'
 				>
 					<div className='relative img mt-30 md:mt-0'>
 						<Image
@@ -154,14 +155,14 @@ const page = () => {
 						/>
 					</div>
 					<div className='detail md:w-120 flex flex-col gap-6 md:ml-16 px-4'>
-						<div className='hidden md:block title text-4xl font-bold text-[#321270]'>
+						<div className='hidden md:block title text-4xl font-bold text-primary'>
 							We&apos;re building business for <br /> your digital economy
 						</div>
-						<div className='block md:hidden title text-4xl font-semibold text-[#321270]'>
+						<div className='block md:hidden title text-4xl font-semibold text-primary'>
 							We&apos;re building business <br /> for your digital <br />{' '}
 							economy
 						</div>
-						<div className='desc w-[90vw] md:w-full text-zinc-400'>
+						<div className='desc w-[90vw] md:w-full text-text'>
 							We specialize in creating effective IT solutions tailored for
 							businesses. From enhancing digital presence to optimizing
 							operational efficiency, we empower enterprises to thrive in
@@ -173,31 +174,31 @@ const page = () => {
 								<div className='numbers text-6xl text-[#22c55e] font-bold flex items-center'>
 									<Number number={25} />+
 								</div>
-								<div className='title font-bold text-[#321270]'>
+								<div className='title font-bold text-primary'>
 									Business Consultants
 								</div>
 							</div>
 							<div className='2 space-y-2'>
 								<div className='numbers text-6xl text-[#22c55e] font-bold flex items-center'>
-									<Number number={10}/>+
+									<Number number={10} />+
 								</div>
-								<div className='title font-bold text-[#321270]'>
+								<div className='title font-bold text-primary'>
 									Startups in 2023
 								</div>
 							</div>
 						</div>
-						<div className='btn mt-8'>
-							<button className='bg-blue-500 text-white py-3 px-7 cursor-pointer hover:bg-purple-900 rounded-md transition'>
-								Get Started
-							</button>
-						</div>
+						<Link href='/consultation' className='btn mt-8'>
+							<CustomButton title='Get Started' />
+						</Link>
 					</div>
 				</motion.div>
 			</div>
 			{/*  */}
 			<Strategy />
 			{/*  */}
-			<div className='goals py-18 px-10 md:px-17 w-full h-full lg:h-210 bg-[#F4F6FB]'>
+			<Partners />
+			{/*  */}
+			<div className='goals mx-10 py-18 px-10 md:px-17 h-full lg:h-210 bg-[#F4F6FB]'>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
 					whileInView={{ opacity: 1, y: 0 }}
@@ -205,14 +206,14 @@ const page = () => {
 					transition={{ duration: 0.8, ease: 'easeOut' }}
 					className='header text-center w-full space-y-4 mx-auto'
 				>
-					<div className='title text-4xl md:text-5xl leading-12 md:leading-14 font-semibold text-[#321270]'>
+					<div className='title text-4xl md:text-5xl leading-12 md:leading-14 font-semibold text-primary'>
 						Develop your next business today
 					</div>
-					<div className='hidden md:block subTitle text-zinc-400 text-lg'>
+					<div className='hidden md:block subTitle text-text text-lg'>
 						We design new concepts, prototypes and processes for the next <br />{' '}
 						generation of services and experiences, ready for the market.
 					</div>
-					<div className='block md:hidden subTitle text-zinc-400 text-lg'>
+					<div className='block md:hidden subTitle text-text text-lg'>
 						We design new concepts, prototypes and processes for the next
 						generation of services and experiences, ready for the market.
 					</div>
@@ -234,7 +235,7 @@ const page = () => {
 									>
 										<Image src={strategyBox.icon} alt={strategyBox.title} />
 									</div>
-									<div className='title text-center text-[#321270] text-2xl font-semibold px-4'>
+									<div className='title text-center text-primary text-2xl font-semibold px-4'>
 										{strategyBox.title}
 									</div>
 								</motion.div>
@@ -250,17 +251,17 @@ const page = () => {
 					>
 						<div className='flex flex-col gap-8 w-full'>
 							{/* title */}
-							<div className='hidden lg:block text-[#321270] text-4xl font-semibold leading-12'>
+							<div className='hidden lg:block text-primary text-4xl font-semibold leading-12'>
 								Strategies that get you on <br /> the path to success
 							</div>
-							<div className='block lg:hidden text-[#321270] text-4xl font-semibold leading-12'>
+							<div className='block lg:hidden text-primary text-4xl font-semibold leading-12'>
 								Strategies that get you on the path to success
 							</div>
 							{/* desc */}
-							<div className='text-zinc-400 text-lg'>
+							<div className='text-text text-lg'>
 								Through an in-depth knowledge of all industrial sectors and the
 								application of approaches such as Lean Strategy, and Business
-								Design, we prepare organisations to welcome change, to be ready
+								Design, we prepare organizations to welcome change, to be ready
 								to evolve rapidly while remaining competitive in the market.
 							</div>
 							{/* btn */}
@@ -274,7 +275,7 @@ const page = () => {
 				</div>
 			</div>
 			{/*  */}
-			<Partners />
+			
 			<motion.div
 				initial={{ opacity: 0, y: 50 }}
 				whileInView={{ opacity: 1, y: 0 }}
@@ -283,19 +284,21 @@ const page = () => {
 				className='w-full mt-16 mb-22 flex flex-col gap-12 items-center px-2'
 			>
 				{/* title */}
-				<div className='hidden md:block text-5xl leading-14 font-semibold text-[#321270] text-center'>
+				<div className='hidden md:block text-5xl leading-14 font-semibold text-primary text-center'>
 					Plan for big expenses, manage profits, <br /> vendors, and much more
 				</div>
-				<div className='block md:hidden text-4xl leading-10 font-semibold text-[#321270] text-center'>
+				<div className='block md:hidden text-4xl leading-10 font-semibold text-primary text-center'>
 					Plan for big expenses, manage profits, vendors, and much more
 				</div>
 				{/* desc */}
-				<div className='text-lg text-zinc-400 text-center'>
+				<div className='text-lg text-text text-center'>
 					We work with organizations of all sizes, from early start-ups to
 					global brands, in <br /> the private, public, and social sector.
 				</div>
 				{/* btn */}
+				<Link href='/consultation'>
 				<CustomButton title='Get Started' />
+				</Link>
 			</motion.div>
 		</div>
 	)

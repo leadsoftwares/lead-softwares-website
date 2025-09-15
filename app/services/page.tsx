@@ -89,7 +89,7 @@ const Services = () => {
 					))}
 				</div>
 
-				<div className='w-full px-2 lg:px-30 flex flex-col lg:flex-row gap-10 mt-20 text-blue-950'>
+				<div className='w-full px-2 lg:px-30 flex flex-col lg:flex-row gap-10 mt-20 text-primary'>
 					{stats.map((stat, i) => (
 						<div
 							key={i}
@@ -121,11 +121,11 @@ const Services = () => {
 								<Image width={80} height={80} src={customer.img} alt='Avatar' />
 								<div className='space-y-1'>
 									<div className='font-bold'>{customer.name}</div>
-									<p className='text-zinc-500'>{customer.info}</p>
+									<p className='text-text'>{customer.info}</p>
 									<Image src={Stars} alt='' />
 								</div>
 							</div>
-							<div className='text-zinc-600 text-lg mt-6'>
+							<div className='text-text text-lg mt-6'>
 								{customer.review}
 							</div>
 						</div>
@@ -139,7 +139,7 @@ const Services = () => {
 						<div className='text-4xl lg:text-5xl font-bold text-primary text-center'>
 							Frequently asked questions
 						</div>
-						<p className='px-8 lg:px-0 text-zinc-400 text-center'>
+						<p className='px-8 lg:px-0 text-text text-center'>
 							We hope this section will help you better understand the issues
 							related to software
 						</p>

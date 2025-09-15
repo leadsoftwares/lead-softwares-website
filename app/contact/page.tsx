@@ -25,7 +25,7 @@ const Contact = () => {
 					<div className='text-4xl font-bold text-primary'>
 						Growth strategies to be effective & competitive
 					</div>
-					<div className='w-[90%] lg:w-[80%] text-zinc-500 text-lg'>
+					<div className='w-[90%] lg:w-[80%] text-text text-lg'>
 						Everything we do and dream up has a solid design impact. We create
 						human-centered enterprise software that has the polished, snappy
 						feel of the best consumer apps.
@@ -59,7 +59,7 @@ const Contact = () => {
 							<Image src={Location} alt='location' />
 						</div>
 						<h2 className='font-extrabold text-2xl mb-4'>Location</h2>
-						<p className='text-zinc-600 mb-4'>Find us at our office</p>
+						<p className='text-text mb-4'>Find us at our office</p>
 						<p className='text-black font-bold'>7901 4th St N STE 300 Saint</p>
 						<p className='text-black font-bold'>Petersburg, FL 33702 US</p>
 					</div>
@@ -69,7 +69,7 @@ const Contact = () => {
 							<Image src={Phone} alt='location' />
 						</div>
 						<h2 className='font-extrabold text-2xl mb-4'>Phone</h2>
-						<p className='text-zinc-600 mb-4'>Reach out to us by phone</p>
+						<p className='text-text mb-4'>Reach out to us by phone</p>
 						<p className='text-black font-bold'>+92 316 6072132</p>
 					</div>
 					{/* card 3 */}
@@ -78,7 +78,7 @@ const Contact = () => {
 							<Image src={Email} alt='location' />
 						</div>
 						<h2 className='font-extrabold text-2xl mb-4'>Email</h2>
-						<p className='text-zinc-600 mb-4'>Contact us at</p>
+						<p className='text-text mb-4'>Contact us at</p>
 						<p className='text-black font-bold'>contact@leadsoftwares.com</p>
 					</div>
 				</div>

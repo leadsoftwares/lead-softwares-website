@@ -84,7 +84,7 @@ const PortfolioStyles = () => {
 							src={HistoryIMG1}
 							alt='HistoryIMG1'
 						/>
-						<div className='text-xl font-semibold text-blue-950'>
+						<div className='text-xl font-semibold text-primary'>
 							UX/UI Design
 						</div>
 					</div>
@@ -94,7 +94,7 @@ const PortfolioStyles = () => {
 							src={HistoryIMG2}
 							alt='HistoryIMG2'
 						/>
-						<div className='text-xl font-semibold text-blue-950'>
+						<div className='text-xl font-semibold text-primary'>
 							NFT Market UI
 						</div>
 					</div>
@@ -104,7 +104,7 @@ const PortfolioStyles = () => {
 							src={HistoryIMG3}
 							alt='HistoryIMG3'
 						/>
-						<div className='text-xl font-semibold text-blue-950'>
+						<div className='text-xl font-semibold text-primary'>
 							Health Mobile App
 						</div>
 					</div>
@@ -114,7 +114,7 @@ const PortfolioStyles = () => {
 							src={HistoryIMG4}
 							alt='HistoryIMG4'
 						/>
-						<div className='text-xl font-semibold text-blue-950'>
+						<div className='text-xl font-semibold text-primary'>
 							Wallet App Development
 						</div>
 					</div>
@@ -128,7 +128,7 @@ const PortfolioStyles = () => {
 							<div className='title font-bold text-xl text-primary'>
 								1. Carousel/Grid
 							</div>
-							<div className='text-zinc-500 text-lg'>
+							<div className='text-text text-lg'>
 								Allows users to display their portfolio items in either a
 								carousel or a grid layout, with different stylings.
 							</div>
@@ -137,7 +137,7 @@ const PortfolioStyles = () => {
 							<div className='title font-bold text-xl text-primary'>
 								2. Carousel Navigation
 							</div>
-							<div className='text-zinc-500 text-lg'>
+							<div className='text-text text-lg'>
 								Users can add navigation arrows to allow visitors to navigate
 								through the portfolio items more easily.
 							</div>
@@ -146,7 +146,7 @@ const PortfolioStyles = () => {
 							<div className='title font-bold text-xl text-primary'>
 								3. Filters
 							</div>
-							<div className='text-zinc-500 text-lg'>
+							<div className='text-text text-lg'>
 								This feature is especially useful for websites with a large
 								portfolio where users may want to filter the items to find
 								specific one
@@ -246,15 +246,15 @@ const PortfolioStyles = () => {
 									/>
 									<div className='mt-18 space-y-6'>
 										<div className='space-x-14'>
-											<span className='text-zinc-500 text-sm font-semibold'>
+											<span className='text-text text-sm font-semibold'>
 												{itemData?.minidesc}
 											</span>
-											<span className='text-zinc-500 text-sm font-semibold'>
+											<span className='text-text text-sm font-semibold'>
 												{itemData?.description}
 											</span>
 										</div>
 										<div>
-											<div className='relative text-8xl font-bold text-zinc-300'>
+											<div className='relative text-8xl font-bold text-text'>
 												{itemData?.id}
 											</div>
 											<div className='absolute bottom-10 font-bold text-3xl mt-8 text-primary'>

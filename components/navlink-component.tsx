@@ -26,7 +26,7 @@ export default function NavLink({ href, children, exact = false }: NavLinkProps)
       className={
         isActive
           ? "px-4 py-2 text-blue-500 cursor-pointer"
-          : "px-4 py-2 text-zinc-400 hover:text-blue-500 cursor-pointer"
+          : "px-4 py-2 text-text hover:text-blue-500 cursor-pointer"
       }
     >
       {children}

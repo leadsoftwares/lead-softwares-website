@@ -53,8 +53,8 @@ const About = () => {
 				{/* info */}
 				<div className='hidden lg:block'>
 					<div className='flex gap-6 font-light'>
-						<div className='text-zinc-400'>{contact.email}</div>
-						<div className='text-zinc-400'>{contact.number}</div>
+						<div className='text-text'>{contact.email}</div>
+						<div className='text-text'>{contact.number}</div>
 						<button className='text-blue-400 cursor-pointer hover:text-blue-500'>
 							Sign In
 						</button>
@@ -127,7 +127,7 @@ const About = () => {
 								<Image src={RoadMap} alt='RoadMap' />
 							</div>
 							<div className='space-y-4'>
-								<div className='title text-center lg:text-start text-2xl text-[#321270] font-semibold'>
+								<div className='title text-center lg:text-start text-2xl text-primary font-semibold'>
 									Strategy & Business
 								</div>
 								<div className='desc text-center lg:text-start text-zinc-400'>
@@ -142,7 +142,7 @@ const About = () => {
 								<Box className='text-green-500' />
 							</div>
 							<div className='space-y-4'>
-								<div className='title text-center lg:text-start text-2xl text-[#321270] font-semibold'>
+								<div className='title text-center lg:text-start text-2xl text-primary font-semibold'>
 									Product Design
 								</div>
 								<div className='desc text-center lg:text-start text-zinc-400'>
@@ -157,7 +157,7 @@ const About = () => {
 								<Medal className='text-red-400' />
 							</div>
 							<div className='space-y-4'>
-								<div className='title text-center lg:text-start text-2xl text-[#321270] font-semibold'>
+								<div className='title text-center lg:text-start text-2xl text-primary font-semibold'>
 									Futures Research
 								</div>
 								<div className='desc text-center lg:text-start text-zinc-400'>
@@ -171,14 +171,14 @@ const About = () => {
 					<div className='w-full'>
 						<div className='lg:w-[70%] flex flex-col gap-8'>
 							{/* title */}
-							<div className='text-[#321270] text-4xl font-semibold leading-12'>
+							<div className='text-primary text-4xl font-semibold leading-12'>
 								Strategies that get you on the path to success
 							</div>
 							{/* desc */}
 							<div className='text-zinc-400 text-lg'>
 								Through an in-depth knowledge of all industrial sectors and the
 								application of approaches such as Lean Strategy, and Business
-								Design, we prepare organisations to welcome change, to be ready
+								Design, we prepare organizations to welcome change, to be ready
 								to evolve rapidly while remaining competitive in the market.
 							</div>
 							{/* btn */}
@@ -207,7 +207,7 @@ const About = () => {
 							src={HistoryIMG1}
 							alt='HistoryIMG1'
 						/>
-						<div className='text-xl font-semibold text-blue-950'>
+						<div className='text-xl font-semibold text-primary'>
 							UX/UI Design
 						</div>
 					</div>
@@ -217,7 +217,7 @@ const About = () => {
 							src={HistoryIMG2}
 							alt='HistoryIMG2'
 						/>
-						<div className='text-xl font-semibold text-blue-950'>
+						<div className='text-xl font-semibold text-primary'>
 							NFT Market UI
 						</div>
 					</div>
@@ -227,7 +227,7 @@ const About = () => {
 							src={HistoryIMG3}
 							alt='HistoryIMG3'
 						/>
-						<div className='text-xl font-semibold text-blue-950'>
+						<div className='text-xl font-semibold text-primary'>
 							Health Mobile App
 						</div>
 					</div>
@@ -237,7 +237,7 @@ const About = () => {
 							src={HistoryIMG4}
 							alt='HistoryIMG4'
 						/>
-						<div className='text-xl font-semibold text-blue-950'>
+						<div className='text-xl font-semibold text-primary'>
 							Wallet App Development
 						</div>
 					</div>
@@ -252,7 +252,7 @@ const About = () => {
 						Growth strategies to be effective & competitive
 					</div>
 					{/* desc */}
-					<div className='text-lg text-zinc-400 font-light'>
+					<div className='text-lg text-text font-light'>
 						Money should never sit still. Achieve capital efficiency with our
 						apps: as a leading DeFi yield aggregator, we offer first-rate yield
 						optimization and risk teaching strategies. Get the best yield by
@@ -260,7 +260,7 @@ const About = () => {
 					</div>
 					{/* lists */}
 					<div className='flex flex-col lg:flex-row gap-20 text-lg font-light'>
-						<ul className='text-zinc-600 space-y-4'>
+						<ul className='text-text space-y-4'>
 							<li className='flex items-center gap-2'>
 								<span>
 									<Check color='green' size={18} />
@@ -280,7 +280,7 @@ const About = () => {
 								Social Sharing
 							</li>
 						</ul>
-						<ul className='text-zinc-600 space-y-4'>
+						<ul className='text-text space-y-4'>
 							<li className='flex items-center gap-2'>
 								<span>
 									<Check color='green' size={18} />
