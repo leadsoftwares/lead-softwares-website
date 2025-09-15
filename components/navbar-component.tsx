@@ -84,11 +84,9 @@ const Navbar = () => {
 			{/* Mobile Menu Dropdown */}
 			{isMobileMenuOpen && (
 				<div className='lg:hidden absolute top-15 left-0 right-0 bg-white shadow-lg z-50'>
-					<div className='px-4 py-6 space-y-4'>
+					<div className='px-4 py-6 space-y-2'>
 						<div className='pb-4 -ml-4'>
-							<button className='w-full flex items-center justify-between text-text hover:text-blue-500'>
 								<NavLink href='/'>Home</NavLink>
-							</button>
 						</div>
 						<div className='pb-4 -ml-4 text-zinc-600'>
 							<NavLink href='/about-us'>About us</NavLink>
@@ -107,24 +105,16 @@ const Navbar = () => {
 								/>
 							</button>
 							{openDropdown === 'pages' && (
-								<div className='mt-3 pl-4 space-y-2'>
-									<div className='py-2 text-text hover:text-blue-500'>
+								<div className='mt-3 pl-4 space-y-2 flex flex-col'>
+									<NavLink href='/services'>
 										Services
-									</div>
-									<div className='py-2 text-text hover:text-blue-500'>
-										Pricing
-									</div>
-									<div className='py-2 text-text hover:text-blue-500'>
-										Support
-									</div>
-									<div className='py-2 text-text hover:text-blue-500'>
+									</NavLink>
+									<NavLink href='/team'>
+										Team
+									</NavLink>
+									<NavLink href='/career'>
 										Careers
-									</div>
-									<div className='py-2 text-text hover:text-blue-500'>Shop</div>
-									<div className='py-2 text-text hover:text-blue-500'>Cart</div>
-									<div className='py-2 text-text hover:text-blue-500'>
-										Checkout
-									</div>
+									</NavLink>
 								</div>
 							)}
 						</div>

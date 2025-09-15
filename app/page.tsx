@@ -91,7 +91,7 @@ const page = () => {
 			</motion.div> */}
 
 			{/*  */}
-			<div className='main w-full min-h-196 px-10'>
+			<div className='main w-full min-h-196 lg:px-10'>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
 					whileInView={{ opacity: 1, y: 0 }}
@@ -114,7 +114,7 @@ const page = () => {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 					transition={{ duration: 0.8, ease: 'easeOut' }}
-					className='boxes flex flex-col flex-wrap lg:flex-row md:flex-nowrap gap-8 mx-auto items-center lg:justify-center lg::mx-auto mt-24 pb-20 border-b border-gray-300 px-60'
+					className='boxes flex flex-col flex-wrap lg:flex-row md:flex-nowrap gap-8 mx-auto items-center lg:justify-center lg::mx-auto mt-24 pb-20 border-b border-gray-300 lg:px-60'
 				>
 					{strategy.map((item, i) => (
 						<div key={i} className='flex flex-col gap-6 w-80 md:w-160'>
