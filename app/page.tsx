@@ -198,7 +198,7 @@ const page = () => {
 			{/*  */}
 			<Partners />
 			{/*  */}
-			<div className='goals mx-10 py-18 px-10 md:px-17 h-full lg:h-210 bg-[#F4F6FB]'>
+			<div className='goals mx-6 py-18 px-10 md:px-17 h-full lg:h-210 bg-[#F4F6FB]'>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
 					whileInView={{ opacity: 1, y: 0 }}
@@ -218,9 +218,9 @@ const page = () => {
 						generation of services and experiences, ready for the market.
 					</div>
 				</motion.div>
-				<div className='main w-full mt-18 flex justify-evenly flex-col lg:flex-row  gap-16'>
+				<div className='main w-full mt-18 flex justify-evenly flex-col lg:flex-row gap-16'>
 					<div className='left'>
-						<div className='boxes flex flex-col items-center w-full md:flex-row md:w-160 md:flex-wrap gap-6 mx-auto'>
+						<div className='boxes flex flex-col items-center md:flex-row md:w-160 md:flex-wrap gap-6 mx-auto'>
 							{strategyBoxes.map((strategyBox, i) => (
 								<motion.div
 									key={i}
@@ -228,7 +228,7 @@ const page = () => {
 									whileInView={{ opacity: 1, y: 0 }}
 									viewport={{ once: true }}
 									transition={{ duration: 0.8, ease: 'easeOut' }}
-									className='box1 hover:-translate-y-2 transition-all duration-300 pb-18 cursor-pointer shadow-md bg-white rounded-2xl flex items-center gap-6 flex-col py-12 w-70 mx-auto'
+									className='box hover:-translate-y-2 transition-all duration-300 pb-18 cursor-pointer shadow-md bg-white rounded-2xl flex items-center gap-6 flex-col py-12 max-w-65 sm:w-70 mx-auto'
 								>
 									<div
 										className={`icon ${strategyBox.bg} w-14 h-14 rounded-full flex items-center justify-center`}
