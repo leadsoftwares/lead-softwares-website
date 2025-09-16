@@ -93,7 +93,7 @@ const Services = () => {
 					{stats.map((stat, i) => (
 						<div
 							key={i}
-							className={`${stat.bg} flex items-center justify-center gap-4 p-6`}
+							className={`${stat.bg} w-full flex items-center justify-center gap-4 p-6`}
 						>
 							<div className='font-bold text-6xl'>{stat.value}</div>
 							<div className='font-bold'>{stat.label}</div>
