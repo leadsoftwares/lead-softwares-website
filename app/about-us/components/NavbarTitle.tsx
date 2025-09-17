@@ -4,12 +4,14 @@ interface TitleProps {
 	title: string
 	headlocate?: string
 	icon?: LucideIcon
-	locate: string
+	locate?: string
 }
 
 const NavbarTitle = ({ title, headlocate,icon: Icon, locate }: TitleProps) => {
 	return (
-		<div className='w-full h-100 bg-bg'>
+		<div className='w-full h-100'
+		style={{ background: 'var(--color-bgGradient)' }}
+		>
 			{/* About us title */}
 			<div className='w-full h-full flex flex-col justify-center items-center lg:pb-10 gap-10'>
 				<div className='w-[90%] lg:w-full text-center title text-primary font-bold text-6xl'>{title}</div>

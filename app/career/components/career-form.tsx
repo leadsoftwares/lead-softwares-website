@@ -36,7 +36,7 @@ type FormData = {
 	cvFile: File | null
 }
 
-const ConsultationForm = () => {
+const CareerForm = () => {
 	const {
 		register,
 		handleSubmit,
@@ -68,13 +68,14 @@ const ConsultationForm = () => {
 
 	// Validate skills on submission
 	useEffect(() => {
-		// Validate if skills array is empty
+		// If skills array is empty, set validation error
 		if (watchedSkills && watchedSkills.length === 0) {
 			setError('skills', {
 				type: 'required',
 				message: 'At least one skill is required',
 			})
 		} else if (watchedSkills && watchedSkills.length > 0) {
+			// Clear the error if there are skills
 			clearErrors('skills')
 		}
 	}, [watchedSkills, setError, clearErrors])
@@ -93,23 +94,20 @@ const ConsultationForm = () => {
 		name: 'experience',
 	})
 
+	// Setup for dropdowns
 	const [openDropdown, setOpenDropdown] = useState<string | null>(null)
-	const dropdownRefs = useRef<(HTMLUListElement | null)[]>([])
+	const genderDropdownRef = useRef<HTMLUListElement>(null)
 
 	const genderOptions = ['Male', 'Female', 'Not Specified']
 	const [profilePreview, setProfilePreview] = useState<string | null>(null)
 	const [newSkill, setNewSkill] = useState<string>('')
 
-	// Completely remove the useEffect for skills validation
-
-	// We don't need a separate state for skills error as we'll use React Hook Form's built-in error handling
-
+	// Watch clicks outside the dropdown to close it
 	useEffect(() => {
 		const handleClickOutside = (event: MouseEvent) => {
 			if (
-				dropdownRefs.current.every(
-					(ref) => ref && !ref.contains(event.target as Node)
-				)
+				genderDropdownRef.current &&
+				!genderDropdownRef.current.contains(event.target as Node)
 			) {
 				setOpenDropdown(null)
 			}
@@ -118,108 +116,44 @@ const ConsultationForm = () => {
 		return () => document.removeEventListener('mousedown', handleClickOutside)
 	}, [])
 
-	const onSubmit = (data: FormData) => {
-		// Check if skills is empty before proceeding
-		if (!data.skills || data.skills.length === 0) {
-			setError('skills', {
-				type: 'required',
-				message: 'At least one skill is required',
-			})
-			return // Don't proceed if validation fails
-		}
+	const onSubmit = async (data: FormData) => {
+		// Perform any additional validations here if needed
+		// Skills validation is already handled by the form validation
 
-		// Check if cover letter is empty
-		if (!data.coverLetter || data.coverLetter.trim() === '') {
-			setError('coverLetter', {
-				type: 'required',
-				message: 'Cover letter is required',
-			})
-			return // Don't proceed if validation fails
-		}
+		// Log form data - in a real app, you would send this to your API
+		console.log('Form Submitted:', data)
 
-		// Check if CV file is missing
-		if (!data.cvFile) {
-			setError('cvFile', {
-				type: 'required',
-				message: 'CV file is required',
-			})
-			return // Don't proceed if validation fails
-		}
-
-		// If we get here, all validations have passed including skills, cover letter, and CV
-		console.log('Form Submitted:', data) // Here you would typically send the data to your server
-		// Example:
+		// Example API submission code (commented out)
 		// const formData = new FormData();
+		// Add form fields to formData
 		// Object.entries(data).forEach(([key, value]) => {
-		//   if (key === 'cvFile' && value) {
-		//     formData.append(key, value);
-		//   } else if (key === 'skills' || key === 'education' || key === 'experience') {
+		//   if (key === 'cvFile' || key === 'profilePic') {
+		//     if (value) formData.append(key, value);
+		//   } else if (['skills', 'education', 'experience'].includes(key)) {
 		//     formData.append(key, JSON.stringify(value));
 		//   } else {
 		//     formData.append(key, String(value));
 		//   }
 		// });
-		// fetch('/api/submit-career-form', {
-		//   method: 'POST',
-		//   body: formData
-		// });
+
+		// try {
+		//   const response = await fetch('/api/submit-career-form', {
+		//     method: 'POST',
+		//     body: formData
+		//   });
+		//
+		//   if (response.ok) {
+		//     alert('Form submitted successfully!');
+		//   } else {
+		//     alert('Form submission failed. Please try again.');
+		//   }
+		// } catch (error) {
+		//   console.error('Error submitting form:', error);
+		//   alert('An error occurred while submitting the form.');
+		// }
 
 		alert('Form submitted successfully!')
 	}
-
-	const Dropdown = ({
-		label,
-		name,
-		options,
-		index,
-	}: {
-		label: string
-		name: keyof FormData
-		options: string[]
-		index: number
-	}) => (
-		<div className='relative'>
-			<label className='text-text'>{label}</label>
-			<input
-				type='text'
-				{...register(name, { required: `${label} is required` })}
-				readOnly
-				placeholder='Select...'
-				onClick={() => setOpenDropdown(openDropdown === name ? null : name)}
-				className='w-full border border-text rounded-md p-2 cursor-pointer bg-white'
-			/>
-			<ChevronDown
-				className='absolute right-3 top-9 text-gray-500 pointer-events-none'
-				size={18}
-			/>
-			{errors[name] && (
-				<p className='text-red-500 text-sm'>
-					{errors[name]?.message as string}
-				</p>
-			)}
-			<ul
-				ref={(el) => {
-					if (el) dropdownRefs.current[index] = el
-				}}
-				className={`absolute w-full top-16 mt-1 border border-gray-300 bg-white rounded-md shadow-lg z-10 ${
-					openDropdown === name ? '' : 'hidden'
-				}`}
-			>
-				{options.map((opt, i) => (
-					<li
-						key={i}
-						onClick={() => {
-							setValue(name, opt, { shouldValidate: true })
-							setOpenDropdown(null)
-						}}
-						className='px-3 py-2 cursor-pointer hover:bg-gray-100'
-					>
-						{opt}
-					</li>
-				))}
-			</ul>
-		</div>
-	)
 
 	return (
 		<form
@@ -414,12 +348,47 @@ const ConsultationForm = () => {
 					</div>
 
 					{/* Gender */}
-					<Dropdown
-						label='Gender'
-						name='gender'
-						options={genderOptions}
-						index={0}
-					/>
+					<div className='relative'>
+						<label className='text-text'>Gender</label>
+						<input
+							type='text'
+							{...register('gender', { required: 'Gender is required' })}
+							readOnly
+							placeholder='Select...'
+							onClick={() =>
+								setOpenDropdown(openDropdown === 'gender' ? null : 'gender')
+							}
+							className='w-full border border-text rounded-md p-2 cursor-pointer bg-white'
+						/>
+						<ChevronDown
+							className='absolute right-3 top-9 text-gray-500 pointer-events-none'
+							size={18}
+						/>
+						{errors.gender && (
+							<p className='text-red-500 text-sm'>
+								{errors.gender.message as string}
+							</p>
+						)}
+						<ul
+							ref={genderDropdownRef}
+							className={`absolute w-full top-16 mt-1 border border-gray-300 bg-white rounded-md shadow-lg z-10 ${
+								openDropdown === 'gender' ? '' : 'hidden'
+							}`}
+						>
+							{genderOptions.map((opt, i) => (
+								<li
+									key={i}
+									onClick={() => {
+										setValue('gender', opt, { shouldValidate: true })
+										setOpenDropdown(null)
+									}}
+									className='px-3 py-2 cursor-pointer hover:bg-gray-100'
+								>
+									{opt}
+								</li>
+							))}
+						</ul>
+					</div>
 				</div>
 
 				{/* Address */}
@@ -712,6 +681,8 @@ const ConsultationForm = () => {
 				<h1 className='text-2xl md:text-3xl text-primary font-semibold text-center pb-6'>
 					Skills <span className='text-red-500 text-sm'>*</span>
 				</h1>
+
+				{/* Skills input and add button */}
 				<div className='flex gap-2 mb-4'>
 					<input
 						type='text'
@@ -719,69 +690,62 @@ const ConsultationForm = () => {
 						placeholder='Add skill...'
 						onChange={(e) => setNewSkill(e.target.value)}
 						onKeyDown={(e) => {
-							// Add skill when Enter key is pressed
 							if (e.key === 'Enter' && newSkill.trim()) {
 								e.preventDefault()
 								const updatedSkills = [...watch('skills'), newSkill.trim()]
 								setValue('skills', updatedSkills, { shouldValidate: true })
 								setNewSkill('')
-								// Clear any previous validation errors if we have skills now
-								if (updatedSkills.length > 0) {
-									clearErrors('skills')
-								}
+								clearErrors('skills')
 							}
 						}}
-						className={`border ${
-							errors.skills ? 'border-red-500 bg-red-50' : 'border-text'
-						} rounded-md p-2 flex-1`}
+						className='border rounded-md p-2 flex-1 border-text'
 					/>
 					<button
 						type='button'
 						onClick={() => {
 							if (newSkill.trim()) {
-								// Get current skills and add new one
 								const updatedSkills = [...watch('skills'), newSkill.trim()]
-								// Update skills in form
 								setValue('skills', updatedSkills, { shouldValidate: true })
-								// Clear input field
 								setNewSkill('')
-								// Clear any previous validation errors if we have skills now
-								if (updatedSkills.length > 0) {
-									clearErrors('skills')
-								}
+								clearErrors('skills')
 							}
 						}}
-						className='bg-blue-500 text-white px-4 rounded-md'
+						className='bg-blue-500 text-white px-4 rounded-md hover:bg-blue-600 transition-colors'
 					>
 						Add
 					</button>
 				</div>
 
-				{/* Display skills */}
-				<div className='flex flex-wrap gap-2'>
-					{watch('skills').length > 0 &&
-						watch('skills').map((skill, i) => (
-							<span
-								key={i}
-								className='px-3 py-1 bg-gray-200 rounded-md cursor-pointer'
+				{/* Display skills as tags */}
+				<div className='flex flex-wrap gap-2 mb-2'>
+					{watch('skills').map((skill, i) => (
+						<div
+							key={i}
+							className='px-3 py-1 bg-gray-200 rounded-md flex items-center group hover:bg-gray-300 transition-colors'
+						>
+							<span>{skill}</span>
+							<button
+								type='button'
+								className='ml-2 text-gray-500 hover:text-red-500'
 								onClick={() => {
-									// Filter out the clicked skill
 									const updatedSkills = watch('skills').filter(
 										(_, idx) => idx !== i
 									)
-									// Update skills in form
-									setValue('skills', updatedSkills, { shouldValidate: true })
+									setValue('skills', updatedSkills, {
+										shouldValidate: updatedSkills.length === 0,
+									})
 								}}
 							>
-								{skill} ✕
-							</span>
-						))}
+								✕
+							</button>
+						</div>
+					))}
 				</div>
 
 				{/* Show error message if skills validation fails */}
 				{errors.skills && (
-					<p className='text-red-500 text-sm mt-2'>
-						At least one skill is required
+					<p className='text-red-500 text-sm'>
+						{errors.skills.message as string}
 					</p>
 				)}
 			</div>
@@ -828,11 +792,12 @@ const ConsultationForm = () => {
 					<input
 						type='file'
 						accept='.pdf,.doc,.docx,.png'
+						{...register('cvFile', { required: 'CV file is required' })}
 						onChange={(e) => {
 							const file = e.target.files?.[0] || null
 							setValue('cvFile', file, { shouldValidate: true })
 
-							// If file is removed, show validation error
+							// Update React Hook Form validation
 							if (!file) {
 								setError('cvFile', {
 									type: 'required',
@@ -866,4 +831,4 @@ const ConsultationForm = () => {
 	)
 }
 
-export default ConsultationForm
+export default CareerForm

@@ -11,10 +11,10 @@ import { ChevronRight } from 'lucide-react'
 import { motion } from 'motion/react'
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
-import HistoryIMG1 from '../../public/jpeg/HistoryIMG1.jpeg'
-import HistoryIMG2 from '../../public/jpeg/HistoryIMG2.jpeg'
-import HistoryIMG3 from '../../public/jpeg/HistoryIMG3.jpeg'
-import HistoryIMG4 from '../../public/jpeg/HistoryIMG4.jpeg'
+import TigerIT from '@/public/png/portfolio1.png'
+import Quotelyn from '@/public/png/portfolio2.png'
+import Lawraze from '@/public/png/portfolio3.png'
+import Barq from '@/public/png/portfolio4.png'
 import NavbarTitle from '../about-us/components/NavbarTitle'
 
 const items = [
@@ -80,42 +80,50 @@ const PortfolioStyles = () => {
 				<div className='lg:w-full justify-center flex flex-wrap gap-8 mt-30 mx-4 lg:mx-0'>
 					<div className='space-y-6'>
 						<Image
-							className='rounded-4xl cursor-pointer hover:shadow-2xl hover:scale-99 transition-all duration-200'
-							src={HistoryIMG1}
+							className='rounded-4xl cursor-pointer hover:shadow-2xl hover:scale-99 transition-all duration-300'
+							width={600}
+							height={600}
+							src={TigerIT}
 							alt='HistoryIMG1'
 						/>
 						<div className='text-xl font-semibold text-primary'>
-							UX/UI Design
+							Tiger IT
 						</div>
 					</div>
 					<div className='space-y-6'>
 						<Image
-							className='rounded-4xl cursor-pointer hover:shadow-2xl hover:scale-99 transition-all duration-200'
-							src={HistoryIMG2}
+							width={600}
+							height={600}
+							className='rounded-4xl cursor-pointer hover:shadow-2xl hover:scale-99 transition-all duration-300'
+							src={Quotelyn}
 							alt='HistoryIMG2'
 						/>
 						<div className='text-xl font-semibold text-primary'>
-							NFT Market UI
+							Quotelyn
 						</div>
 					</div>
 					<div className='space-y-6'>
 						<Image
-							className='rounded-4xl cursor-pointer hover:shadow-2xl hover:scale-99 transition-all duration-200'
-							src={HistoryIMG3}
+						width={600}
+							height={600}
+							className='rounded-4xl cursor-pointer hover:shadow-2xl hover:scale-99 transition-all duration-300'
+							src={Lawraze}
 							alt='HistoryIMG3'
 						/>
 						<div className='text-xl font-semibold text-primary'>
-							Health Mobile App
+							Lawraze
 						</div>
 					</div>
 					<div className='space-y-6'>
 						<Image
-							className='rounded-4xl cursor-pointer hover:shadow-2xl hover:scale-99 transition-all duration-200'
-							src={HistoryIMG4}
+						width={600}
+							height={600}
+							className='rounded-4xl cursor-pointer hover:shadow-2xl hover:scale-99 transition-all duration-300'
+							src={Barq}
 							alt='HistoryIMG4'
 						/>
-						<div className='text-xl font-semibold text-primary'>
-							Wallet App Development
+						<div className='ml-2 text-xl font-semibold text-primary'>
+							Barq-e-Shop
 						</div>
 					</div>
 				</div>
@@ -282,7 +290,7 @@ const PortfolioStyles = () => {
 						dragConstraints={{ right: 0, left: -width }}
 						dragTransition={{ bounceDamping: 30 }}
 						transition={{ duration: 0.2, ease: 'easeInOut' }}
-						className='flex gap-15 items-baseline will-change-transform cursor-grab active:cursor-grabbing'
+						className='flex justify-center gap-15 items-baseline will-change-transform cursor-grab active:cursor-grabbing'
 					>
 						{items.map((itemData, index) => {
 							return (

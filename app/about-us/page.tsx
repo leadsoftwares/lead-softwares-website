@@ -10,28 +10,21 @@ import AboutGrowth3 from '../../public/png/about-Growth3.png'
 import AboutGrowth1 from '../../public/webp/about-Growth1.webp'
 import AboutGrowth2 from '../../public/webp/about-Growth2.webp'
 import AboutGrowth4 from '../../public/webp/about-Growth4.webp'
-import HistoryIMG1 from '../../public/jpeg/HistoryIMG1.jpeg'
-import HistoryIMG2 from '../../public/jpeg/HistoryIMG2.jpeg'
-import HistoryIMG3 from '../../public/jpeg/HistoryIMG3.jpeg'
-import HistoryIMG4 from '../../public/jpeg/HistoryIMG4.jpeg'
+import TigerIT from '@/public/png/portfolio1.png'
+import Quotelyn from '@/public/png/portfolio2.png'
+import Lawraze from '@/public/png/portfolio3.png'
+import Barq from '@/public/png/portfolio4.png'
 import RoadMap from '../../public/svg/roadmap.svg'
-import AboutStaff1 from '../../public/webp/about-staff-1.webp'
-import AboutStaff2 from '../../public/webp/about-staff-2.webp'
-import AboutStaff3 from '../../public/webp/about-staff-3.webp'
-import AboutStaff4 from '../../public/webp/about-staff-4.webp'
-import Card from './components/Card'
+
+
 import NavbarTitle from './components/NavbarTitle'
+import TeamSection from '../../components/team-section'
 
 const contact = {
 	email: 'info@converta.com',
 	number: '+1 212 946 2700',
 }
-const staffData = [
-	{ name: 'Marta Smith', info: 'Product Designer', img: AboutStaff1 },
-	{ name: 'Thomas Smith', info: 'Developer', img: AboutStaff2 },
-	{ name: 'Stella Smith', info: 'Project Manager', img: AboutStaff3 },
-	{ name: 'Martin Smith', info: 'Artificial Intelligence', img: AboutStaff4 },
-]
+
 
 const About = () => {
 	const [isPlaying, setIsPlaying] = useState(false)
@@ -203,38 +196,46 @@ const About = () => {
 				<div className='lg:w-full justify-center flex flex-wrap gap-8 mt-30 mx-4 lg:mx-0'>
 					<div className='space-y-6'>
 						<Image
-							className='rounded-4xl cursor-pointer hover:shadow-2xl hover:scale-99 transition-all duration-200'
-							src={HistoryIMG1}
+						width={600}
+							height={600}
+							className='rounded-4xl cursor-pointer hover:shadow-2xl hover:scale-99 transition-all duration-300'
+							src={TigerIT}
 							alt='HistoryIMG1'
 						/>
 						<div className='text-xl font-semibold text-primary'>
-							UX/UI Design
+							Tiger IT
 						</div>
 					</div>
 					<div className='space-y-6'>
 						<Image
-							className='rounded-4xl cursor-pointer hover:shadow-2xl hover:scale-99 transition-all duration-200'
-							src={HistoryIMG2}
+						width={600}
+							height={600}
+							className='rounded-4xl cursor-pointer hover:shadow-2xl hover:scale-99 transition-all duration-300'
+							src={Quotelyn}
 							alt='HistoryIMG2'
 						/>
 						<div className='text-xl font-semibold text-primary'>
-							NFT Market UI
+							Quotelyn
 						</div>
 					</div>
 					<div className='space-y-6'>
 						<Image
-							className='rounded-4xl cursor-pointer hover:shadow-2xl hover:scale-99 transition-all duration-200'
-							src={HistoryIMG3}
+						width={600}
+							height={600}
+							className='rounded-4xl cursor-pointer hover:shadow-2xl hover:scale-99 transition-all duration-300'
+							src={Lawraze}
 							alt='HistoryIMG3'
 						/>
 						<div className='text-xl font-semibold text-primary'>
-							Health Mobile App
+							Lawraze
 						</div>
 					</div>
 					<div className='space-y-6'>
 						<Image
-							className='rounded-4xl cursor-pointer hover:shadow-2xl hover:scale-99 transition-all duration-200'
-							src={HistoryIMG4}
+						width={600}
+							height={600}
+							className='rounded-4xl cursor-pointer hover:shadow-2xl hover:scale-99 transition-all duration-300'
+							src={Barq}
 							alt='HistoryIMG4'
 						/>
 						<div className='text-xl font-semibold text-primary'>
@@ -319,23 +320,7 @@ const About = () => {
 				</div>
 			</div>
 			{/* Team Section */}
-			<div className='lg:px-20 py-15'>
-				{/* title */}
-				<div className='text-4xl lg:text5xl font-semibold text-primary text-center'>
-					Meet our awesome and professional team
-				</div>
-				{/* team members */}
-				<div className='flex flex-col lg:flex-row justify-center space-y-8 mt-20'>
-					{staffData.map((person, index) => (
-						<Card
-							key={index}
-							name={person.name}
-							info={person.info}
-							img={person.img}
-						/>
-					))}
-				</div>
-			</div>
+			<TeamSection/>
 			{/* partnership logos */}
 			<Partners />
 			{/* email section */}
@@ -349,7 +334,7 @@ const About = () => {
 				<div className='w-[90%] lg:w-[60%] mx-auto text-white font-semibold text-5xl lg:text-5xl text-center'>
 					Receive the latest technology & business news in your inbox
 				</div>
-				<div className='w-full text-center'>
+				<div className='w-full text-center space-x-4'>
 					<input
 						className='bg-white py-3 w-60 lg:w-80 px-3 rounded'
 						type='text'

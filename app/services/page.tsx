@@ -163,7 +163,7 @@ const Services = () => {
 					Receive the latest technology & business news in your inbox. Select
 					the newsletters you&apos;d like to receive.
 				</p>
-				<div className='w-full text-center'>
+				<div className='w-full text-center space-x-4'>
 					<input
 						className='bg-white py-3 w-60 lg:w-80 px-3 rounded'
 						type='text'

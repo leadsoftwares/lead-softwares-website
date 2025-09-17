@@ -24,7 +24,7 @@ const Navbar = () => {
 		<div
 			className={`w-full h-16 shadow-[0_4px_10px_rgba(0,0,0,0.15)]
  font-[500] flex items-center justify-between px-4 lg:px-10 sticky top-0 bg-white z-[10000] transition-transform duration-300
-      `}
+       `}
 		>
 			{/* Logo */}
 			<NavLink href='/'>
