@@ -131,9 +131,9 @@ const PortfolioStyles = () => {
 							className='relative space-y-6 group block w-fit'
 						>
 							{/* Wrapper for image + overlay */}
-							<div className='relative rounded-4xl overflow-hidden'>
+							<div className='relative rounded-xl md:rounded-4xl overflow-hidden'>
 								<Image
-									className='rounded-4xl transition-transform duration-300 hover:shadow-2xl group-hover:scale-105'
+									className='transition-transform duration-300 hover:shadow-2xl group-hover:scale-105'
 									width={500}
 									height={500}
 									src={project.img}
@@ -141,7 +141,7 @@ const PortfolioStyles = () => {
 								/>
 
 								{/* Dark overlay */}
-								<div className='absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-4xl'></div>
+								<div className='absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
 
 								{/* Button on hover */}
 								<div className='absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 cursor-pointer'>
@@ -202,13 +202,13 @@ const PortfolioStyles = () => {
 								{/* First set of web projects */}
 								{items.slice(0, 8).map((item, index) => (
 									<div key={`web-${index}`} className='mx-4 md:mx-6 flex-shrink-0'>
-										<div className='w-[320px] md:w-[340px] lg:w-[340px]'>
+										<div className='w-[340px] md:w-[340px] lg:w-[340px]'>
 											<Image
 												width={340}
 												height={340}
 												src={item.imgSrc}
 												alt={item.title || ''}
-												className='object-cover w-full h-[180px] md:h-[210px] lg:h-[240px] rounded-xl'
+												className='object-cover w-full h-[220px] md:h-[210px] lg:h-[240px] rounded-xl'
 											/>
 										</div>
 										{item.title && (
@@ -222,13 +222,13 @@ const PortfolioStyles = () => {
 								{/* Duplicate set for seamless looping */}
 								{items.slice(0, 8).map((item, index) => (
 									<div key={`web-dup-${index}`} className='mx-4 md:mx-6 flex-shrink-0'>
-										<div className='w-[320px] md:w-[340px] lg:w-[340px]'>
+										<div className='w-[340px] md:w-[340px] lg:w-[340px]'>
 											<Image
 												width={340}
 												height={340}
 												src={item.imgSrc}
 												alt={item.title || ''}
-												className='object-cover w-full h-[180px] md:h-[210px] lg:h-[240px] rounded-xl'
+												className='object-cover w-full h-[220px] md:h-[210px] lg:h-[240px] rounded-xl'
 											/>
 										</div>
 										{item.title && (
@@ -257,13 +257,13 @@ const PortfolioStyles = () => {
 								{/* First set of mobile projects */}
 								{MobileProjects.map((item, index) => (
 									<div key={`mobile-${index}`} className='mx-6 flex-shrink-0'>
-										<div className='w-[220px] md:w-[200px] lg:w-[300px]'>
+										<div className='w-[340px] md:w-[200px] lg:w-[300px]'>
 											<Image
 												width={280}
 												height={400}
 												src={item.img}
 												alt={item.title || ''}
-												className='object-cover w-full h-[320px] md:h-[340px] lg:h-[400px] rounded-xl'
+												className='object-cover w-full h-[480px] md:h-[340px] lg:h-[400px] rounded-xl'
 											/>
 										</div>
 										{item.title && (
@@ -280,13 +280,13 @@ const PortfolioStyles = () => {
 										key={`mobile-dup-${index}`}
 										className='mx-6 flex-shrink-0'
 									>
-										<div className='w-[220px] md:w-[200px] lg:w-[300px]'>
+										<div className='w-[340px] md:w-[200px] lg:w-[300px]'>
 											<Image
 												width={280}
 												height={400}
 												src={item.img}
 												alt={item.title || ''}
-												className='object-cover w-full h-[320px] md:h-[340px] lg:h-[400px] rounded-xl'
+												className='object-cover w-full h-[480px] md:h-[340px] lg:h-[400px] rounded-xl'
 											/>
 										</div>
 										{item.title && (
