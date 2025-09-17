@@ -11,11 +11,12 @@ import Contact1 from '../../public/webp/contact-1.webp'
 import NavbarTitle from '../about-us/components/NavbarTitle'
 import Form from '../contact/components/form'
 import FAQPage from './components/faq-box'
+import Link from 'next/link'
 
 const Contact = () => {
 	return (
 		<div className='w-full overflow-hidden'>
-			<NavbarTitle title='Contact Us' locate='Contact Us' />
+			<NavbarTitle title='Contact Us' />
 			{/*  */}
 			<div className='flex flex-col lg:flex-row items-center gap-35 px-4 lg:px-25 py-30'>
 				<div>
@@ -30,7 +31,9 @@ const Contact = () => {
 						human-centered enterprise software that has the polished, snappy
 						feel of the best consumer apps.
 					</div>
+					<Link href={'/consultation'}>
 					<CustomButton title='Get Started' />
+					</Link>
 				</div>
 			</div>
 			{/*  */}

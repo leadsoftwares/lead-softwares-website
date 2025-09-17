@@ -15,47 +15,17 @@ import Quotelyn from '@/public/png/portfolio2.png'
 import Lawraze from '@/public/png/portfolio3.png'
 import Barq from '@/public/png/portfolio4.png'
 import RoadMap from '../../public/svg/roadmap.svg'
-
-
 import NavbarTitle from './components/NavbarTitle'
 import TeamSection from '../../components/team-section'
-
-const contact = {
-	email: 'info@converta.com',
-	number: '+1 212 946 2700',
-}
+import Link from 'next/link'
 
 
 const About = () => {
 	const [isPlaying, setIsPlaying] = useState(false)
 	return (
 		<div className='w-full overflow-hidden'>
-			<div className='w-full h-12 px-6 lg:px-28 bg-white flex justify-between items-center border-b border-zinc-300'>
-				{/* logos */}
-				<div className='flex items-center gap-6 mt-2'>
-					<a href='#'>
-						<Facebook color='gray' fill='gray' size={18} />
-					</a>
-					<a href='#'>
-						<Twitter color='gray' fill='gray' size={18} />
-					</a>
-					<a href='#'>
-						<Youtube color='white' fill='gray' size={26} />
-					</a>
-				</div>
-				{/* info */}
-				<div className='hidden lg:block'>
-					<div className='flex gap-6 font-light'>
-						<div className='text-text'>{contact.email}</div>
-						<div className='text-text'>{contact.number}</div>
-						<button className='text-blue-400 cursor-pointer hover:text-blue-500'>
-							Sign In
-						</button>
-					</div>
-				</div>
-			</div>
 			{/* navbar + title */}
-			<NavbarTitle title='About us' locate='About us' />
+			<NavbarTitle title='About Us' />
 			{/*  */}
 			<div className='w-full gap-20 flex flex-col lg:flex-row items-center px-10 lg:px-30 py-30'>
 				<div className='space-y-10 lg:w-[30%]'>
@@ -67,7 +37,9 @@ const About = () => {
 						human-centered enterprise software that has the polished, snappy
 						feel of the best consumer apps.
 					</div>
+					<Link href={'/consultation'}>
 					<CustomButton title='Get Started' />
+					</Link>
 				</div>
 
 				<div className='lg:w-[60%] h-full max-w-3xl mx-auto rounded-4xl overflow-hidden shadow-2xl'>
@@ -175,12 +147,9 @@ const About = () => {
 								to evolve rapidly while remaining competitive in the market.
 							</div>
 							{/* btn */}
-							<div className='flex gap-4'>
+							<Link href={'/consultation'} className='flex gap-4'>
 								<CustomButton title='Get Started' />
-								<button className='hidden md:block text-blue-500 outline-1 outline-blue-500 hover:outline-purple-900 py-2 px-5 cursor-pointer  rounded-md transition mr-4'>
-									How it Works
-								</button>
-							</div>
+							</Link>
 						</div>
 					</div>
 				</div>
