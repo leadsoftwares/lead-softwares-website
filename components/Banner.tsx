@@ -7,10 +7,11 @@ import LandingIMG3 from '@/public/png/portfolio3.png'
 import LandingIMG4 from '@/public/png/portfolio4.png'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Banner = () => {
 	return (
-		<div className='relative overflow-hidden'>
+		<div className='relative overflow-hidden h-full'>
 			{/* Banner Section (blue background + text) */}
 
 			<motion.section
@@ -21,10 +22,10 @@ const Banner = () => {
 				style={{
 					backgroundImage: `url(${Bannerbg.src})`, // ✅ correct
 				}}
-				className='relative w-full max-h-[85vh] bg-no-repeat bg-cover text-white flex items-center'
+				className='relative pt-10 md:pt-0 w-full max-h-[100vh] bg-no-repeat bg-cover text-white flex items-center'
 			>
 				<div className='container mx-auto px-6 lg:px-20 py-20 lg:py-40 flex flex-col items-center lg:items-start space-y-10 z-90'>
-					<div className='font-bold text-4xl lg:text-7xl text-center lg:text-left'>
+					<div className='font-[700] text-4xl lg:text-7xl text-center lg:text-left'>
 						<h1 className='hidden md:block'>
 							We manage your{' '}
 							<span>
@@ -63,12 +64,9 @@ const Banner = () => {
 						sleek and professional design, customizable layouts, and
 						integrations with popular plugins.
 					</p>
-					<div className='flex gap-5 cursor-pointer'>
+					<Link href='/consultation' className='flex gap-5 cursor-pointer'>
 						<CustomButton title={'Get Started'} />
-						<button className='hidden md:block bg-white text-blue-500 py-2 px-4 rounded-md cursor-pointer hover:bg-zinc-100 font-semibold'>
-							See All Demos
-						</button>
-					</div>
+					</Link>
 				</div>
 			</motion.section>
 

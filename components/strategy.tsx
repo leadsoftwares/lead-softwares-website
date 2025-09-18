@@ -5,137 +5,117 @@ import StrategyImage2 from '../public/webp/strategyIMG2.webp'
 import StrategyImage3 from '../public/webp/strategyIMG3.webp'
 
 import Image from 'next/image'
-
 import { useState } from 'react'
 
 const Strategy = () => {
-	const [activeImage, setActiveImage] = useState(StrategyImage)
-	const [isAnimating, setIsAnimating] = useState<boolean>(false)
-	const [animationDirection, setAnimationDirection] = useState<
-		'left' | 'right'
-	>('left')
+  const images = [StrategyImage, StrategyImage2, StrategyImage3]
+  const [activeIndex, setActiveIndex] = useState(0)
 
-	// Define the order of images
-	const images = [StrategyImage, StrategyImage2, StrategyImage3]
+  const handleClick = (newIndex: number) => {
+    if (newIndex === activeIndex) return
+    setActiveIndex(newIndex)
+  }
 
-	const handleImageChange = (newImage: typeof StrategyImage) => {
-		if (newImage === activeImage) return // Don't animate if same image
+  return (
+    <div className='strategy mx-2 py-18 px-10 md:px-18 mt-20 md:mt-60 lg:mt-0 min-h-160 bg-linear-to-br from-[#F7F9FC] from-40% to-[#EAEAF9] to-60%'>
+      {/* Header */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className='header text-center w-full space-y-2 mx-auto'
+      >
+        <div className='subTitle text-blue-500 text-xs'>
+          HELPING ENTREPRENEURS MAKE MORE MONEY
+        </div>
+        <div className='title text-3xl md:text-5xl md:leading-14 font-bold text-primary'>
+          Customizing IT Solutions to Fit <br />
+          Your Business Needs
+        </div>
+      </motion.div>
 
-		// Determine animation direction based on current and new image index
-		const currentIndex = images.indexOf(activeImage)
-		const newIndex = images.indexOf(newImage)
+      {/* Main */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1, ease: 'easeOut' }}
+        className='main w-full mt-18 flex flex-col lg:flex-row gap-18 lg:justify-center'
+      >
+        {/* LEFT SIDE - clickable boxes */}
+        <div className='left'>
+          <div className='boxes space-y-8'>
+            <div
+              onClick={() => handleClick(0)}
+              className={`space-y-6 w-full lg:w-120 rounded-2xl p-6 cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-105 ${
+                activeIndex === 0 ? 'bg-white shadow-xl scale-105' : ''
+              }`}
+            >
+              <div className='title text-2xl text-primary font-semibold'>
+                Assessment and Planning
+              </div>
+              <div className='desc text-zinc-400'>
+                We Conduct thorough consultations to understand and document
+                client requirements comprehensively.
+              </div>
+            </div>
 
-		// If moving to a higher index (next), slide left to right
-		// If moving to a lower index (previous), slide right to left
-		const direction = newIndex > currentIndex ? 'right' : 'left'
-		setAnimationDirection(direction)
+            <div
+              onClick={() => handleClick(1)}
+              className={`space-y-6 w-full lg:w-120 rounded-2xl p-6 cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-105 ${
+                activeIndex === 1 ? 'bg-white shadow-xl scale-105' : ''
+              }`}
+            >
+              <div className='title text-2xl text-primary font-semibold'>
+                Implementation and Integration
+              </div>
+              <div className='desc text-zinc-400'>
+                We Develop and rigorously test software applications, ensuring
+                top-notch quality.
+              </div>
+            </div>
 
-		setIsAnimating(true)
+            <div
+              onClick={() => handleClick(2)}
+              className={`space-y-6 w-full lg:w-120 rounded-2xl p-6 cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-105 ${
+                activeIndex === 2 ? 'bg-white shadow-xl scale-105' : ''
+              }`}
+            >
+              <div className='title text-2xl text-primary font-semibold'>
+                Monitoring and Optimization
+              </div>
+              <div className='desc text-zinc-400'>
+                We Conduct regular audits, scale infrastructure, and uphold
+                industry standards for ongoing efficiency and excellence.
+              </div>
+            </div>
+          </div>
+        </div>
 
-		// After the exit animation completes, change image and start enter animation
-		setTimeout(() => {
-			setActiveImage(newImage)
-			setIsAnimating(false)
-		}, 250) // Half of the total animation duration
-	}
-
-	return (
-		<div className='strategy border-b border-zinc-300 py-18 px-10 md:px-18 mt-60 lg:mt-0 w-full min-h-160 bg-[#F4F6FB]'>
-			<motion.div
-				initial={{ opacity: 0, y: 50 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				viewport={{ once: true }}
-				transition={{ duration: 0.8, ease: 'easeOut' }}
-				className='header text-center w-full space-y-2 mx-auto'
-			>
-				<div className='subTitle text-blue-500 text-xs'>
-					HELPING ENTREPRENEURS MAKE MORE MONEY
-				</div>
-				<div className='title text-4xl md:text-5xl md:leading-14 font-bold text-primary'>
-					Customizing IT Solutions to Fit <br />
-					Your Business Needs
-				</div>
-			</motion.div>
-			<motion.div
-				initial={{ opacity: 0, y: 50 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				viewport={{ once: true }} 
-				transition={{ duration: 1, ease: 'easeOut' }}
-				className='main w-full mt-18 flex flex-col lg:flex-row gap-18 lg:justify-center'
-			>
-				<div className='left'>
-					<div className='boxes space-y-8'>
-						{/* Box 1 */}
-						<div
-							onClick={() => handleImageChange(StrategyImage)}
-							className={`box1 space-y-6 w-full lg:w-120 rounded-2xl p-6 cursor-pointer transition-all duration-100 hover:shadow-xl hover:scale-105 ${
-								activeImage === StrategyImage
-									? 'bg-white shadow-xl scale-105'
-									: ''
-							}`}
-						>
-							<div className='title text-2xl text-[#321270] font-semibold'>
-								Assessment and Planning
-							</div>
-							<div className='desc text-zinc-400'>
-								We Conduct thorough consultations to understand and document
-								client requirements comprehensively.
-							</div>
-						</div>
-
-						{/* Box 2 */}
-						<div
-							onClick={() => handleImageChange(StrategyImage2)}
-							className={`box2 space-y-6 w-full lg:w-120 rounded-2xl p-6 cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-105 ${
-								activeImage === StrategyImage2 ? 'bg-white shadow-xl' : ''
-							}`}
-						>
-							<div className='title text-2xl text-[#321270] font-semibold'>
-								Implementation and Integration
-							</div>
-							<div className='desc text-zinc-400'>
-								We Develop and rigorously test software applications, ensuring
-								top-notch quality.
-							</div>
-						</div>
-
-						{/* Box 3 */}
-						<div
-							onClick={() => handleImageChange(StrategyImage3)}
-							className={`box3 space-y-6 w-full lg:w-120 rounded-2xl p-6 cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-105 ${
-								activeImage === StrategyImage3 ? 'bg-white shadow-lg' : ''
-							}`}
-						>
-							<div className='title text-2xl text-[#321270] font-semibold'>
-								Monitoring and Optimization
-							</div>
-							<div className='desc text-zinc-400'>
-								We Conduct regular audits, scale infrastructure, and uphold
-								industry standards for ongoing efficiency and excellence.
-							</div>
-						</div>
-					</div>
-				</div>
-				{/* RIGHT SIDE */}
-				<div className='right  w-full max-w-220'>
-					<div className='box w-full h-100 lg:w-full lg:h-140 border-6 border-black rounded overflow-hidden relative'>
-						<Image
-							src={activeImage}
-							alt='Strategy illustration'
-							fill
-							className={`object-cover transition-all duration-700 ease-in-out transform ${
-								isAnimating
-									? animationDirection === 'left'
-										? 'translate-x-full opacity-0'
-										: '-translate-x-full opacity-0'
-									: 'translate-x-0 opacity-100'
-							}`}
-						/>
-					</div>
-				</div>
-			</motion.div>
-		</div>
-	)
+        {/* RIGHT SIDE - horizontal slide image */}
+        <div className='right w-full max-w-220'>
+          <div className='box w-full h-100 lg:w-full lg:h-140 border-6 border-black rounded overflow-hidden relative'>
+            <div
+              className="flex h-full w-full transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+            >
+              {images.map((img, i) => (
+                <div key={i} className="w-full flex-shrink-0 relative">
+                  <Image
+                    src={img}
+                    alt={`Slide ${i + 1}`}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  )
 }
 
 export default Strategy

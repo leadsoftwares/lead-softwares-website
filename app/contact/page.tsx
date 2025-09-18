@@ -11,11 +11,12 @@ import Contact1 from '../../public/webp/contact-1.webp'
 import NavbarTitle from '../about-us/components/NavbarTitle'
 import Form from '../contact/components/form'
 import FAQPage from './components/faq-box'
+import Link from 'next/link'
 
 const Contact = () => {
 	return (
 		<div className='w-full overflow-hidden'>
-			<NavbarTitle title='Contact Us' locate='Contact Us' />
+			<NavbarTitle title='Contact Us' />
 			{/*  */}
 			<div className='flex flex-col lg:flex-row items-center gap-35 px-4 lg:px-25 py-30'>
 				<div>
@@ -25,12 +26,14 @@ const Contact = () => {
 					<div className='text-4xl font-bold text-primary'>
 						Growth strategies to be effective & competitive
 					</div>
-					<div className='w-[90%] lg:w-[80%] text-zinc-500 text-lg'>
+					<div className='w-[90%] lg:w-[80%] text-text text-lg'>
 						Everything we do and dream up has a solid design impact. We create
 						human-centered enterprise software that has the polished, snappy
 						feel of the best consumer apps.
 					</div>
+					<Link href={'/consultation'}>
 					<CustomButton title='Get Started' />
+					</Link>
 				</div>
 			</div>
 			{/*  */}
@@ -52,33 +55,33 @@ const Contact = () => {
 					<Form />
 				</div>
 				{/* cards */}
-				<div className='mt-30 flex gap-10 flex-col lg:flex-row'>
+				<div className='px-4 mt-30 flex gap-10 flex-col lg:flex-row'>
 					{/* card 1 */}
-					<div className='bg-white rounded-2xl shadow-xl w-100 py-10 text-center mx-auto'>
+					<div className='bg-white rounded-2xl shadow-xl w-full md:w-100 py-10 text-center mx-auto'>
 						<div className='w-16 h-16 rounded-full bg-blue-500 mx-auto mb-2 flex items-center justify-center'>
 							<Image src={Location} alt='location' />
 						</div>
 						<h2 className='font-extrabold text-2xl mb-4'>Location</h2>
-						<p className='text-zinc-600 mb-4'>Find us at our office</p>
+						<p className='text-text mb-4'>Find us at our office</p>
 						<p className='text-black font-bold'>7901 4th St N STE 300 Saint</p>
 						<p className='text-black font-bold'>Petersburg, FL 33702 US</p>
 					</div>
 					{/* card 2 */}
-					<div className='bg-white rounded-2xl shadow-xl w-100 py-10 text-center mx-auto'>
+					<div className='bg-white rounded-2xl shadow-xl w-full md:w-100 py-10 text-center mx-auto'>
 						<div className='w-16 h-16 rounded-full bg-blue-500 mx-auto mb-2 flex items-center justify-center'>
 							<Image src={Phone} alt='location' />
 						</div>
 						<h2 className='font-extrabold text-2xl mb-4'>Phone</h2>
-						<p className='text-zinc-600 mb-4'>Reach out to us by phone</p>
+						<p className='text-text mb-4'>Reach out to us by phone</p>
 						<p className='text-black font-bold'>+92 316 6072132</p>
 					</div>
 					{/* card 3 */}
-					<div className='bg-white rounded-2xl shadow-xl w-100 py-10 text-center mx-auto'>
+					<div className='bg-white rounded-2xl shadow-xl w-full md:w-100 py-10 text-center mx-auto'>
 						<div className='w-16 h-16 rounded-full bg-blue-500 mx-auto mb-2 flex items-center justify-center'>
 							<Image src={Email} alt='location' />
 						</div>
 						<h2 className='font-extrabold text-2xl mb-4'>Email</h2>
-						<p className='text-zinc-600 mb-4'>Contact us at</p>
+						<p className='text-text mb-4'>Contact us at</p>
 						<p className='text-black font-bold'>contact@leadsoftwares.com</p>
 					</div>
 				</div>
