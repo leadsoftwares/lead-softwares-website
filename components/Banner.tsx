@@ -22,7 +22,7 @@ const Banner = () => {
 				style={{
 					backgroundImage: `url(${Bannerbg.src})`, // ✅ correct
 				}}
-				className='relative w-full max-h-[100vh] bg-no-repeat bg-cover text-white flex items-center'
+				className='relative pt-10 md:pt-0 w-full max-h-[100vh] bg-no-repeat bg-cover text-white flex items-center'
 			>
 				<div className='container mx-auto px-6 lg:px-20 py-20 lg:py-40 flex flex-col items-center lg:items-start space-y-10 z-90'>
 					<div className='font-[700] text-4xl lg:text-7xl text-center lg:text-left'>

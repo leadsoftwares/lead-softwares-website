@@ -17,7 +17,7 @@ const Strategy = () => {
   }
 
   return (
-    <div className='strategy mx-6 py-18 px-10 md:px-18 mt-60 lg:mt-0 min-h-160 bg-linear-to-br from-[#F7F9FC] from-40% to-[#EAEAF9] to-60%'>
+    <div className='strategy mx-2 py-18 px-10 md:px-18 mt-60 lg:mt-0 min-h-160 bg-linear-to-br from-[#F7F9FC] from-40% to-[#EAEAF9] to-60%'>
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -29,7 +29,7 @@ const Strategy = () => {
         <div className='subTitle text-blue-500 text-xs'>
           HELPING ENTREPRENEURS MAKE MORE MONEY
         </div>
-        <div className='title text-4xl md:text-5xl md:leading-14 font-bold text-primary'>
+        <div className='title text-3xl md:text-5xl md:leading-14 font-bold text-primary'>
           Customizing IT Solutions to Fit <br />
           Your Business Needs
         </div>

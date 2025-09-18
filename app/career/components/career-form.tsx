@@ -161,8 +161,9 @@ const CareerForm = () => {
 			className='lg:relative lg:bottom-20 lg:max-w-[60%] rounded-xl shadow-xl lg:mx-auto lg:mb-40 py-10 px-6 lg:px-30 z-100 bg-white'
 			noValidate
 		>
+			<h1 className='font-bold mt-18 md:mt-0 text-4xl md:text-6xl text-primary text-center pb-12 border-b border-text'>Job Application Create</h1>
 			{/* ---------------- Personal Info ---------------- */}
-			<div>
+			<div className='mt-10'>
 				<h1 className='text-2xl md:text-3xl text-primary font-semibold text-center pb-10'>
 					Personal Info
 				</h1>

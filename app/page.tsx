@@ -104,7 +104,7 @@ const page = () => {
 						to be
 					</h2>
 
-					<h2 className='block md:hidden leading-14 text-center text-4xl'>
+					<h2 className='block md:hidden leading-11 text-center text-3xl'>
 						Make your business <br /> future-proof to <br /> anticipate the{' '}
 						<br /> challenges to be
 					</h2>
@@ -198,7 +198,7 @@ const page = () => {
 			{/*  */}
 			<Partners />
 			{/*  */}
-			<div className='goals mx-6 py-18 px-10 md:px-17 h-full lg:h-210 bg-[#F4F6FB]'>
+			<div className='goals mx-2 py-18 px-10 md:px-17 h-full lg:h-210 bg-[#F4F6FB]'>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
 					whileInView={{ opacity: 1, y: 0 }}
@@ -206,7 +206,7 @@ const page = () => {
 					transition={{ duration: 0.8, ease: 'easeOut' }}
 					className='header text-center w-full space-y-4 mx-auto'
 				>
-					<div className='title text-4xl md:text-5xl leading-12 md:leading-14 font-semibold text-primary'>
+					<div className='title text-4xl md:text-5xl leading-10 md:leading-14 font-semibold text-primary'>
 						Develop your next business today
 					</div>
 					<div className='hidden md:block subTitle text-text text-lg'>

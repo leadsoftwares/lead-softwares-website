@@ -5,7 +5,7 @@ import Form from './components/career-form'
 const page = () => {
   return (
     <div className='w-full overflow-hidden select-none'>
-        <NavbarTitle title='Career' locate='Career' />
+        <NavbarTitle title='Career' />
         <Form/>
     </div>
   )

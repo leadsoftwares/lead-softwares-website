@@ -113,7 +113,7 @@ const Services = () => {
 			<NavbarTitle title='Services' />
 			{/* images scroll */}
 			<div className='overflow-hidden py-8 bg-white mt-40 md:mt-0'>
-				<h2 className='px-6 text-center text-4xl md:text-6xl font-semibold mb-26 text-primary'>
+				<h2 className='px-6 text-center text-5xl md:text-6xl font-semibold mb-26 text-primary'>
 					Technologies that we work with
 				</h2>
 				<div
@@ -273,7 +273,7 @@ const Services = () => {
 					What our customers are saying
 				</div>
 				{/* cards */}
-				<div className='lg:px-30 flex justify-center flex-wrap gap-10 mt-20'>
+				<div className='px-4 lg:px-30 flex justify-center flex-wrap gap-10 mt-20'>
 					{customers.map((customer, index) => (
 						<div
 							key={index}
@@ -323,7 +323,7 @@ const Services = () => {
 					Receive the latest technology & business news in your inbox. Select
 					the newsletters you&apos;d like to receive.
 				</p>
-				<div className='w-full text-center space-x-4'>
+				<div className='w-full text-center space-y-4 md:space-x-4'>
 					<input
 						className='bg-white py-3 w-60 lg:w-80 px-3 rounded'
 						type='text'

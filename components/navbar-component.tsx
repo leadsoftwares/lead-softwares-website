@@ -1,13 +1,17 @@
 'use client'
+import logoWhite from '@/public/png/Lead Logo White with white Text-02-02.png'
 import { ChevronDown, Menu, X } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import logo from '../public/png/lead-logo-black.png'
 import CustomButton from './custom-btn'
 import NavLink from './navlink-component'
 
 const Navbar = () => {
+	const pathname = usePathname()
+	const isHomePage = pathname === '/'
 	const [openDropdown, setOpenDropdown] = useState<string | null>(null)
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
 	const [isScrolled, setIsScrolled] = useState<boolean>(false)
@@ -45,7 +49,7 @@ const Navbar = () => {
 
 	return (
 		<div
-			className={`w-full h-16 font-[500] flex items-center justify-between px-4 lg:px-10 fixed top-0 z-[10000] transition-all duration-300
+			className={`w-full h-16 font-[500] flex items-center justify-between px-2 lg:px-10 fixed top-0 z-[10000] transition-all duration-300
         ${
 					isScrolled
 						? 'bg-white shadow-[0_3px_8px_rgba(0,0,0,0.15)]'
@@ -55,15 +59,17 @@ const Navbar = () => {
 		>
 			{/* Logo */}
 			<NavLink href='/'>
-				<Image className='w-35 md:w-35' src={logo} alt='logo' />
+				{isHomePage && !isScrolled ? (
+					<Image className='w-35 md:w-35' src={logoWhite} alt='logo' />
+				) : (
+					<Image className='w-35 md:w-35' src={logo} alt='logo' />
+				)}
 			</NavLink>
 
 			{/* Desktop Navigation */}
 			<nav className='lg:mx-auto flex lg:justify-between items-center'>
 				<div className='hidden lg:flex items-center gap-6'>
-					<ul
-						className={`flex gap-5 list-none text-text`}
-					>
+					<ul className={`flex gap-5 list-none text-text`}>
 						<NavLink href={'/'}>Home</NavLink>
 
 						<NavLink href='/about-us'>About us</NavLink>
@@ -72,9 +78,7 @@ const Navbar = () => {
 							onMouseLeave={() => setOpenDropdown(null)}
 							className='cursor-pointer hover:text-blue-500 flex items-center gap-3 relative'
 						>
-							<span
-								className={`flex items-center text-text`}
-							>
+							<span className={`flex items-center text-text`}>
 								Pages <ChevronDown size={15} />
 							</span>
 							{openDropdown === 'pages' && (
@@ -126,11 +130,7 @@ const Navbar = () => {
 								onClick={() => handleMobileDropdown('pages')}
 								className='w-full flex items-center justify-between hover:text-blue-500'
 							>
-								<span
-									className={"text-text"}
-								>
-									Pages
-								</span>
+								<span className={'text-text'}>Pages</span>
 								<ChevronDown
 									size={15}
 									className={`transition-transform ${

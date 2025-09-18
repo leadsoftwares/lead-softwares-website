@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, Check, Facebook, Medal, Twitter, Youtube } from 'lucide-react'
+import { Box, Check, Medal} from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
 import  CustomButton from '../../components/custom-btn'
@@ -10,14 +10,11 @@ import AboutGrowth3 from '../../public/png/about-Growth3.png'
 import AboutGrowth1 from '../../public/webp/about-Growth1.webp'
 import AboutGrowth2 from '../../public/webp/about-Growth2.webp'
 import AboutGrowth4 from '../../public/webp/about-Growth4.webp'
-import TigerIT from '@/public/png/portfolio1.png'
-import Quotelyn from '@/public/png/portfolio2.png'
-import Lawraze from '@/public/png/portfolio3.png'
-import Barq from '@/public/png/portfolio4.png'
 import RoadMap from '../../public/svg/roadmap.svg'
 import NavbarTitle from './components/NavbarTitle'
 import TeamSection from '../../components/team-section'
 import Link from 'next/link'
+import ProjectHistory from '@/components/project-history'
 
 
 const About = () => {
@@ -28,7 +25,7 @@ const About = () => {
 			<NavbarTitle title='About Us' />
 			{/*  */}
 			<div className='w-full gap-20 flex flex-col lg:flex-row items-center px-10 lg:px-30 py-30'>
-				<div className='space-y-10 lg:w-[30%]'>
+				<div className='space-y-10 mt-10 md:mt-0 lg:w-[30%]'>
 					<div className='title text-primary font-semibold text-4xl'>
 						Growth strategies to be effective & competitive
 					</div>
@@ -78,7 +75,7 @@ const About = () => {
 						It’s Time for a Blockchain Revolution
 					</div>
 					{/* title */}
-					<div className='text-4xl lg:text-5xl text-primary lg:w-[45%] leading-14 font-semibold text-center mx-auto'>
+					<div className='text-4xl lg:text-5xl text-primary lg:w-[45%] leading-10 md:leading-14 font-semibold text-center mx-auto'>
 						Developing sustainable and innovative blockchain solutions
 					</div>
 				</div>
@@ -87,7 +84,7 @@ const About = () => {
 					{/* left side (boxes side) */}
 					<div className='space-y-8 lg:space-y-4'>
 						{/* box 1 */}
-						<div className='bg-white flex flex-col lg:flex-row space-x-3 w-full lg:w-120 rounded-2xl shadow-lg p-6'>
+						<div className='bg-white md:gap-4 flex flex-col items-center lg:flex-row space-x-3 w-full lg:w-120 rounded-2xl shadow-lg p-6'>
 							<div className='w-14 h-14 lg:w-20 lg:h-12 mb-6 lg:mb-15 flex justify-center mx-auto lg:mx-0 items-center rounded-full bg-blue-100'>
 								<Image src={RoadMap} alt='RoadMap' />
 							</div>
@@ -102,7 +99,7 @@ const About = () => {
 							</div>
 						</div>
 						{/* box 2 */}
-						<div className='bg-white flex flex-col lg:flex-row space-x-3 w-full lg:w-120 rounded-2xl shadow-lg p-6'>
+						<div className='bg-white md:gap-4 flex flex-col items-center lg:flex-row space-x-3 w-full lg:w-120 rounded-2xl shadow-lg p-6'>
 							<div className='w-14 h-14 lg:w-20 lg:h-12 mb-6 lg:mb-15 flex justify-center mx-auto lg:mx-0 items-center rounded-full bg-green-100'>
 								<Box className='text-green-500' />
 							</div>
@@ -117,7 +114,7 @@ const About = () => {
 							</div>
 						</div>
 						{/* box 3 */}
-						<div className='bg-white flex flex-col lg:flex-row space-x-3 w-full lg:w-120 rounded-2xl shadow-lg p-6'>
+						<div className='bg-white flex flex-col md:gap-4 items-center lg:flex-row space-x-3 w-full lg:w-120 rounded-2xl shadow-lg p-6'>
 							<div className='w-14 h-14 lg:w-20 lg:h-12 mb-6 lg:mb-15 flex justify-center mx-auto lg:mx-0 items-center rounded-full bg-red-100'>
 								<Medal className='text-red-400' />
 							</div>
@@ -155,63 +152,9 @@ const About = () => {
 				</div>
 			</div>
 			{/* Our History Section */}
-			<div className='w-full py-25'>
-				{/* header */}
-				<div className='lg:w-[65%] px-6 lg:px-0 text-primary text-4xl lg:text-5xl font-semibold mx-auto text-center leading-12 lg:leading-16'>
-					As leaders in developing sustainable solutions, the future of
-					blockchain is in our history
-				</div>
+			<div className='w-full'>
 				{/* Project History */}
-				<div className='lg:w-full justify-center flex flex-wrap gap-8 mt-30 mx-4 lg:mx-0'>
-					<div className='space-y-6'>
-						<Image
-						width={600}
-							height={600}
-							className='rounded-4xl cursor-pointer hover:shadow-2xl hover:scale-99 transition-all duration-300'
-							src={TigerIT}
-							alt='HistoryIMG1'
-						/>
-						<div className='text-xl font-semibold text-primary'>
-							Tiger IT
-						</div>
-					</div>
-					<div className='space-y-6'>
-						<Image
-						width={600}
-							height={600}
-							className='rounded-4xl cursor-pointer hover:shadow-2xl hover:scale-99 transition-all duration-300'
-							src={Quotelyn}
-							alt='HistoryIMG2'
-						/>
-						<div className='text-xl font-semibold text-primary'>
-							Quotelyn
-						</div>
-					</div>
-					<div className='space-y-6'>
-						<Image
-						width={600}
-							height={600}
-							className='rounded-4xl cursor-pointer hover:shadow-2xl hover:scale-99 transition-all duration-300'
-							src={Lawraze}
-							alt='HistoryIMG3'
-						/>
-						<div className='text-xl font-semibold text-primary'>
-							Lawraze
-						</div>
-					</div>
-					<div className='space-y-6'>
-						<Image
-						width={600}
-							height={600}
-							className='rounded-4xl cursor-pointer hover:shadow-2xl hover:scale-99 transition-all duration-300'
-							src={Barq}
-							alt='HistoryIMG4'
-						/>
-						<div className='text-xl font-semibold text-primary'>
-							Wallet App Development
-						</div>
-					</div>
-				</div>
+				<ProjectHistory/>
 			</div>
 			{/* Growth Section */}
 			<div className='mx-4 bg-bg py-30 px-8 lg:px-30 flex flex-col lg:flex-row gap-40'>
@@ -300,10 +243,10 @@ const About = () => {
 				}}
 				className='mx-4 lg:mx-20 py-30 space-y-9 mb-10 rounded-xl'
 			>
-				<div className='w-[90%] lg:w-[60%] mx-auto text-white font-semibold text-5xl lg:text-5xl text-center'>
+				<div className='w-[90%] lg:w-[60%] mx-auto text-white font-semibold text-4xl lg:text-5xl text-center'>
 					Receive the latest technology & business news in your inbox
 				</div>
-				<div className='w-full text-center space-x-4'>
+				<div className='w-full text-center md:space-x-4 space-y-4'>
 					<input
 						className='bg-white py-3 w-60 lg:w-80 px-3 rounded'
 						type='text'

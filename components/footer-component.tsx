@@ -1,5 +1,4 @@
 import { Facebook, Twitter, Youtube } from 'lucide-react'
-import { motion } from 'motion/react'
 import Image from 'next/image'
 import Logo from '../public/png/Lead Logo White with white Text-02-02.png'
 
@@ -11,7 +10,7 @@ const Footer = () => {
 				// whileInView={{ opacity: 1, x: 0 }}
 				// viewport={{ once: true }}
 				// transition={{ duration: 0.8, ease: 'easeOut' }}
-				className='relative overflow-hidden w-full bg-[#12032F] h-290 md:h-175 lg:h-130'
+				className='relative overflow-hidden w-full bg-[#12032F] h-290 md:h-175 lg:h-110'
 			>
 				{/* gradient */}
 				<div className='ml-30 h-110 w-120 flex items-center'>

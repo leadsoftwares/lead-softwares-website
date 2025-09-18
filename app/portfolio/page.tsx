@@ -3,49 +3,47 @@ import City17 from '@/public/png/City 17 D.png'
 import City17Mobile from '@/public/png/City 17 M.png'
 import Crazy from '@/public/png/Crazy By Rasel D.png'
 import IDN from '@/public/png/IDN Network D.png'
+import IDNM from '@/public/png/IDN Network M.png'
 import Mobile1 from '@/public/png/mobile-1.png'
 import Mobile2 from '@/public/png/mobile-2.png'
 import Mobile3 from '@/public/png/mobile-3.png'
 import Mobile4 from '@/public/png/mobile-4.png'
-import {
-	default as Portfolio1,
-	default as TigerIT,
-} from '@/public/png/portfolio1.png'
-import { default as Portfolio2 } from '@/public/png/portfolio2.png'
-import { default as Portfolio3 } from '@/public/png/portfolio3.png'
-import {
-	default as Barq,
-	default as Portfolio4,
-} from '@/public/png/portfolio4.png'
+import TigerIT from '@/public/png/portfolio1.png'
+import Quotelyn from '@/public/png/portfolio2.png'
+import Lawraze from '@/public/png/portfolio3.png'
+import Barq from '@/public/png/portfolio4.png'
 import SolaBranM from '@/public/png/SolaBran App M.png'
 import SuperA from '@/public/png/Super Aurora D.png'
 import Image from 'next/image'
+import MobileProject from '@/components/mobile-projects'
+
 import NavbarTitle from '../about-us/components/NavbarTitle'
+import ProjectHistory from '@/components/project-history'
 const items = [
 	{
 		id: '01',
-		imgSrc: Portfolio1,
+		imgSrc: TigerIT,
 		title: 'Tiger IT',
 		description: 'DIFFERENT STYLES',
 		minidesc: 'Different Styles',
 	},
 	{
 		id: '02',
-		imgSrc: Portfolio2,
+		imgSrc: Quotelyn,
 		title: 'Quotelyn',
 		description: 'DIFFERENT CAPTIONS',
 		minidesc: 'Different Captions',
 	},
 	{
 		id: '03',
-		imgSrc: Portfolio3,
+		imgSrc: Lawraze,
 		title: 'Lawraze',
 		description: 'DIFFERENT STYLES',
 		minidesc: 'Different Styles',
 	},
 	{
 		id: '04',
-		imgSrc: Portfolio4,
+		imgSrc: Barq,
 		title: 'Barq-e-Shop',
 		description: 'DIFFERENT CAPTIONS',
 		minidesc: 'Different Captions',
@@ -85,81 +83,17 @@ const MobileProjects = [
 	{ id: 3, img: Mobile3, title: 'Tiger IT' },
 	{ id: 4, img: Mobile4, title: 'Barq-e-Shop' },
 	{ id: 5, img: City17Mobile, title: 'City 17' },
-	{ id: 5, img: SolaBranM, title: 'Sola Bran' },
+	{ id: 6, img: SolaBranM, title: 'Sola Bran' },
+	{ id: 7, img: IDNM, title: 'IDN Network' },
 ]
-const ProjectView = [
-	{
-		id: 1,
-		img: TigerIT,
-		title: 'Tiger IT',
-		href: 'https://tigerit.app/',
-		alt: 'Tiger IT',
-	},
-	{
-		id: 2,
-		img: Barq,
-		title: 'Barq-e-Shop',
-		href: 'https://www.barqeshop.com/',
-		alt: 'Quotelyn',
-	},
-	{
-		id: 3,
-		img: Crazy,
-		title: 'Crazy by Rasel',
-		href: 'https://www.crazybyrasel.com/',
-		alt: 'Lawraze',
-	},
-]
+
 const PortfolioStyles = () => {
 	return (
 		<div className='w-full overflow-hidden'>
 			<NavbarTitle title='Portfolio' />
 			{/* our history section */}
-			<div className='w-full py-25 mt-16 md:mt-16'>
-				{/* header */}
-				<div className='lg:w-[65%] px-6 lg:px-0 text-primary text-3xl md:text-4xl lg:text-4xl font-semibold mx-auto text-center leading-10 lg:leading-16'>
-					Explore our recent client success stories and witness our full 360
-					transformations come to life
-				</div>
-				{/* Project History */}
-				<div className='lg:w-full justify-center flex flex-wrap gap-8 mt-30 mx-4 lg:mx-0'>
-					{ProjectView.map((project) => (
-						<a
-							key={project.id}
-							href={project.href}
-							target='_blank'
-							className='relative space-y-6 group block w-fit'
-						>
-							{/* Wrapper for image + overlay */}
-							<div className='relative rounded-xl md:rounded-4xl overflow-hidden'>
-								<Image
-									className='transition-transform duration-300 hover:shadow-2xl group-hover:scale-105'
-									width={500}
-									height={500}
-									src={project.img}
-									alt={project.alt}
-								/>
-
-								{/* Dark overlay */}
-								<div className='absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
-
-								{/* Button on hover */}
-								<div className='absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 cursor-pointer'>
-									<button className='border border-white text-white font-semibold py-2 px-6 rounded-xl cursor-pointer'>
-										View
-									</button>
-								</div>
-							</div>
-
-							{/* Title below */}
-							<div className='text-xl font-semibold text-primary'>
-								{project.title}
-							</div>
-						</a>
-					))}
-				</div>
-			</div>
-
+			<ProjectHistory />
+			<MobileProject />
 			{/*  */}
 			{/* <div className='w-full py-25 overflow-hidden'>
 				<div className='w-[80%] lg:w-[60%] mx-auto text-center text-4xl lg:text-5xl font-medium leading-14 text-primary'>
@@ -201,7 +135,10 @@ const PortfolioStyles = () => {
 							>
 								{/* First set of web projects */}
 								{items.slice(0, 8).map((item, index) => (
-									<div key={`web-${index}`} className='mx-4 md:mx-6 flex-shrink-0'>
+									<div
+										key={`web-${index}`}
+										className='mx-4 md:mx-6 flex-shrink-0'
+									>
 										<div className='w-[340px] md:w-[340px] lg:w-[340px]'>
 											<Image
 												width={340}
@@ -221,7 +158,10 @@ const PortfolioStyles = () => {
 
 								{/* Duplicate set for seamless looping */}
 								{items.slice(0, 8).map((item, index) => (
-									<div key={`web-dup-${index}`} className='mx-4 md:mx-6 flex-shrink-0'>
+									<div
+										key={`web-dup-${index}`}
+										className='mx-4 md:mx-6 flex-shrink-0'
+									>
 										<div className='w-[340px] md:w-[340px] lg:w-[340px]'>
 											<Image
 												width={340}

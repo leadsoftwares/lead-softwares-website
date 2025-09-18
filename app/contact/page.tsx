@@ -55,9 +55,9 @@ const Contact = () => {
 					<Form />
 				</div>
 				{/* cards */}
-				<div className='mt-30 flex gap-10 flex-col lg:flex-row'>
+				<div className='px-4 mt-30 flex gap-10 flex-col lg:flex-row'>
 					{/* card 1 */}
-					<div className='bg-white rounded-2xl shadow-xl w-100 py-10 text-center mx-auto'>
+					<div className='bg-white rounded-2xl shadow-xl w-full md:w-100 py-10 text-center mx-auto'>
 						<div className='w-16 h-16 rounded-full bg-blue-500 mx-auto mb-2 flex items-center justify-center'>
 							<Image src={Location} alt='location' />
 						</div>
@@ -67,7 +67,7 @@ const Contact = () => {
 						<p className='text-black font-bold'>Petersburg, FL 33702 US</p>
 					</div>
 					{/* card 2 */}
-					<div className='bg-white rounded-2xl shadow-xl w-100 py-10 text-center mx-auto'>
+					<div className='bg-white rounded-2xl shadow-xl w-full md:w-100 py-10 text-center mx-auto'>
 						<div className='w-16 h-16 rounded-full bg-blue-500 mx-auto mb-2 flex items-center justify-center'>
 							<Image src={Phone} alt='location' />
 						</div>
@@ -76,7 +76,7 @@ const Contact = () => {
 						<p className='text-black font-bold'>+92 316 6072132</p>
 					</div>
 					{/* card 3 */}
-					<div className='bg-white rounded-2xl shadow-xl w-100 py-10 text-center mx-auto'>
+					<div className='bg-white rounded-2xl shadow-xl w-full md:w-100 py-10 text-center mx-auto'>
 						<div className='w-16 h-16 rounded-full bg-blue-500 mx-auto mb-2 flex items-center justify-center'>
 							<Image src={Email} alt='location' />
 						</div>
