@@ -6,7 +6,7 @@ import TeamSection from '@/components/team-section'
 const page = () => {
   return (
     <div>
-        <NavbarTitle title='Our Team' locate='Team'
+        <NavbarTitle title='Our Team'
          />
          {/* team section */}
          <TeamSection/>
