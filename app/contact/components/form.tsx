@@ -12,12 +12,26 @@ const Form = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FormValues>()
 
-  const onSubmit = (data: FormValues) => {
-    console.log('Form submitted:', data)
-    alert('Form submitted successfully!')
+  const onSubmit = async (data: FormValues) => {
+    try {
+      const res = await fetch("", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      })
+
+      const result = await res.json()
+      alert(result.message)
+
+      if (result.success) reset() // clear form after success
+    } catch (err) {
+      console.error(err)
+      alert("Something went wrong, please try again.")
+    }
   }
 
   return (

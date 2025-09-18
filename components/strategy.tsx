@@ -17,7 +17,7 @@ const Strategy = () => {
   }
 
   return (
-    <div className='strategy mx-2 py-18 px-10 md:px-18 mt-60 lg:mt-0 min-h-160 bg-linear-to-br from-[#F7F9FC] from-40% to-[#EAEAF9] to-60%'>
+    <div className='strategy mx-2 py-18 px-10 md:px-18 mt-20 md:mt-60 lg:mt-0 min-h-160 bg-linear-to-br from-[#F7F9FC] from-40% to-[#EAEAF9] to-60%'>
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}

@@ -58,7 +58,10 @@ const Navbar = () => {
        `}
 		>
 			{/* Logo */}
-			<NavLink href='/'>
+			<NavLink
+				href='/'
+				onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}
+			>
 				{isHomePage && !isScrolled ? (
 					<Image className='w-35 md:w-35' src={logoWhite} alt='logo' />
 				) : (
@@ -110,6 +113,7 @@ const Navbar = () => {
 			{/* Desktop "Get Started" */}
 			<Link
 				href='/consultation'
+				onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}
 				className='hidden lg:flex gap-4 items-center text-zinc-400'
 			>
 				<CustomButton title='Get Started' />
@@ -120,10 +124,14 @@ const Navbar = () => {
 				<div className='lg:hidden absolute top-15 left-0 right-0 bg-white shadow-lg z-50'>
 					<div className='px-4 py-6 space-y-2'>
 						<div className='pb-4 -ml-4'>
-							<NavLink href='/'>Home</NavLink>
+							<NavLink href='/' onClick={toggleMobileMenu}>
+								Home
+							</NavLink>
 						</div>
 						<div className='pb-4 -ml-4 text-zinc-600'>
-							<NavLink href='/about-us'>About us</NavLink>
+							<NavLink href='/about-us' onClick={toggleMobileMenu}>
+								About us
+							</NavLink>
 						</div>
 						<div className='pb-4'>
 							<button
@@ -140,17 +148,27 @@ const Navbar = () => {
 							</button>
 							{openDropdown === 'pages' && (
 								<div className='mt-3 pl-4 space-y-2 flex flex-col'>
-									<NavLink href='/services'>Services</NavLink>
-									<NavLink href='/team'>Team</NavLink>
-									<NavLink href='/career'>Careers</NavLink>
+									<NavLink href='/services' onClick={toggleMobileMenu}>
+										Services
+									</NavLink>
+									<NavLink href='/team' onClick={toggleMobileMenu}>
+										Team
+									</NavLink>
+									<NavLink href='/career' onClick={toggleMobileMenu}>
+										Careers
+									</NavLink>
 								</div>
 							)}
 						</div>
 						<div className='pb-4 -ml-4'>
-							<NavLink href='/portfolio'>Portfolio</NavLink>
+							<NavLink href='/portfolio' onClick={toggleMobileMenu}>
+								Portfolio
+							</NavLink>
 						</div>
 						<div className='pb-4 -ml-4'>
-							<NavLink href='/contact'>Contact</NavLink>
+							<NavLink href='/contact' onClick={toggleMobileMenu}>
+								Contact
+							</NavLink>
 						</div>
 					</div>
 				</div>

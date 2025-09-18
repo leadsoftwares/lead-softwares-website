@@ -24,8 +24,8 @@ const About = () => {
 			{/* navbar + title */}
 			<NavbarTitle title='About Us' />
 			{/*  */}
-			<div className='w-full gap-20 flex flex-col lg:flex-row items-center px-10 lg:px-30 py-30'>
-				<div className='space-y-10 mt-10 md:mt-0 lg:w-[30%]'>
+			<div className='w-full gap-20 md:gap-40 flex flex-col lg:flex-row items-center px-10 lg:px-30 py-30'>
+				<div className='space-y-10 mt-10 md:mt-0 lg:w-[40%]'>
 					<div className='title text-primary font-semibold text-4xl'>
 						Growth strategies to be effective & competitive
 					</div>
@@ -50,6 +50,7 @@ const About = () => {
 								alt='Video Preview'
 								className='w-full lg:h-100 shadow-3xl'
 							/>
+							{/* get the hell out of here  */}
 						</div>
 					) : (
 						<div className='relative w-full aspect-video'>

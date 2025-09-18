@@ -19,8 +19,8 @@ const Footer = () => {
 
 				<div className='absolute left-0 top-0 flex flex-wrap gap-16 flex-col md:flex-row justify-between w-full z-110 py-18 px-8  md:py-20 md:px-30'>
 					{/* left-side */}
-					<div>
-						<Image width={150} height={150} src={Logo} alt='converta' />
+					<div className='flex flex-col items-center md:items-start text-center md:text-left'>
+						<Image width={150} height={150} src={Logo} alt='Leadsoftwares' />
 						{/* desc */}
 						<div className='text-zinc-300 text-sm font-light mt-6'>
 							Creative-powered to fuel your growth goals. We build world-class
@@ -28,7 +28,7 @@ const Footer = () => {
 						</div>
 					</div>
 					{/* right side */}
-					<div className='flex flex-col md:flex-row gap-10 md:gap-30 md:pr-20 relative z-110 pb-14'>
+					<div className='flex flex-col text-center md:flex-row gap-10 md:gap-30 md:pr-20 relative z-110 pb-14'>
 						<ul className='flex flex-col gap-6 text-zinc-400 text-sm'>
 							<a className='text-zinc-200 font-semibold' href='#'>
 								Products
@@ -65,7 +65,7 @@ const Footer = () => {
 						</div>
 						{/* icons */}
 						<div className='flex gap-6 mt-2'>
-							<a href='#'>
+							<a href='https://www.facebook.com/leadsoft' target='_blank'>
 								<Facebook color='white' size={18} />
 							</a>
 							<a href='#'>

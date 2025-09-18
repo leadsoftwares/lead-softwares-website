@@ -82,7 +82,7 @@ const MobileProjects = () => {
 				sliderElement.removeEventListener('touchend', handleScroll)
 			}
 		}
-	}, [activeSlide, ProjectView.length])
+	}, [activeSlide , ProjectView.length])
   return (
     <div className='w-full py-10'>
                     
