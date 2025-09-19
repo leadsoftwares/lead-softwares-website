@@ -16,7 +16,7 @@ import SolaBranM from '@/public/png/SolaBran App M.png'
 import SuperA from '@/public/png/Super Aurora D.png'
 import Image from 'next/image'
 import MobileProject from '@/components/mobile-projects'
-
+import PortfolioImg from "@/public/png/Lead software pages Images/Portfolio.png"
 import NavbarTitle from '../about-us/components/NavbarTitle'
 import ProjectHistory from '@/components/project-history'
 const items = [
@@ -90,7 +90,7 @@ const MobileProjects = [
 const PortfolioStyles = () => {
 	return (
 		<div className='w-full overflow-hidden'>
-			<NavbarTitle title='Portfolio' />
+			<NavbarTitle title='Portfolio' src={PortfolioImg}/>
 			{/* our history section */}
 			<ProjectHistory />
 			<MobileProject />

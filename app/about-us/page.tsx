@@ -15,6 +15,7 @@ import NavbarTitle from './components/NavbarTitle'
 import TeamSection from '../../components/team-section'
 import Link from 'next/link'
 import ProjectHistory from '@/components/project-history'
+import AboutSectionImg from "@/public/png/Lead software pages Images/about uss.png"
 
 
 const About = () => {
@@ -22,7 +23,7 @@ const About = () => {
 	return (
 		<div className='w-full overflow-hidden'>
 			{/* navbar + title */}
-			<NavbarTitle title='About Us' />
+			<NavbarTitle title='About Us' src={AboutSectionImg} />
 			{/*  */}
 			<div className='w-full gap-20 md:gap-40 flex flex-col lg:flex-row items-center px-10 lg:px-30 py-30'>
 				<div className='space-y-10 mt-10 md:mt-0 lg:w-[40%]'>

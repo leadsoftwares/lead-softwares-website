@@ -27,7 +27,7 @@ import Shop from '../../public/svg/shop.svg'
 import Speaker from '../../public/svg/speaker.svg'
 import NavbarTitle from '../about-us/components/NavbarTitle'
 import FAQ from './components/faq'
-
+import ServicesImg from "@/public/png/Lead software pages Images/Portfolio 1.png"
 const customers = [
 	{
 		name: 'Ernest Smith',
@@ -110,7 +110,7 @@ const Services = () => {
 
 	return (
 		<div className='w-full overflow-hidden'>
-			<NavbarTitle title='Services' />
+			<NavbarTitle title='Services' src={ServicesImg} />
 			{/* images scroll */}
 			<div className='overflow-hidden py-8 bg-white mt-40 md:mt-0'>
 				<h2 className='px-6 text-center text-5xl md:text-6xl font-semibold mb-26 text-primary'>

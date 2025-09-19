@@ -12,11 +12,12 @@ import NavbarTitle from '../about-us/components/NavbarTitle'
 import Form from '../contact/components/form'
 import FAQPage from './components/faq-box'
 import Link from 'next/link'
+import ContactImg from "@/public/png/Lead software pages Images/Contact Us.png"
 
 const Contact = () => {
 	return (
 		<div className='w-full overflow-hidden'>
-			<NavbarTitle title='Contact Us' />
+			<NavbarTitle title='Contact Us' src={ContactImg} />
 			{/*  */}
 			<div className='flex flex-col lg:flex-row items-center gap-35 px-4 lg:px-25 py-30'>
 				<div>

@@ -1,13 +1,14 @@
 import SectionBG from '@/public/section-bg.jpg'
 import CustomButton from '@/components/custom-btn'
 import Image from 'next/image'
-import MobileBG from '@/public/Services illustration png.png'
 import Link from 'next/link'
+import type { StaticImageData } from "next/image";
 interface TitleProps {
 	title: string
+	 src: string | StaticImageData;
 }
 
-const NavbarTitle = ({ title }: TitleProps) => {
+const NavbarTitle = ({ title, src }: TitleProps) => {
 	return (
 		<div
 			className='w-full max-h-[100vh] pt-26'
@@ -23,7 +24,7 @@ const NavbarTitle = ({ title }: TitleProps) => {
 				<div className='w-170'>
 					{/* mobile-view img */}
 					<div className='md:hidden mx-auto flex justify-center mb-6'>
-						<Image width={400} height={400} src={MobileBG} alt='' />
+						<Image width={400} height={400} src={src} alt='' />
 					</div>
 					{/* title */}
 					<div className='px-6'>
@@ -42,7 +43,7 @@ const NavbarTitle = ({ title }: TitleProps) => {
 				</div>
 				{/* right */}
 				<div className='hidden md:block'>
-					<Image width={700} height={700} src={MobileBG} alt='' />
+					<Image width={700} height={700} src={src} alt='' />
 				</div>
 				{/* <div className='flex items-center gap-1'>
 					{' '}
