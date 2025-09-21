@@ -8,3 +8,5 @@ Landing Page
 1) What we do section below the hero section;
 2) create client testimonial section 
 3) why choose us
+4) complete the submit forms methods;
+5) remove untapable button; there should be 0 button that is untapable;
