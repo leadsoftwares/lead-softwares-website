@@ -1,7 +1,8 @@
 'use client'
+import FirebaseUtils from '@/lib/firestore-utils'
 import { ChevronDown } from 'lucide-react'
-import React, { useState, useRef, useEffect } from 'react'
-import { useForm, Controller } from 'react-hook-form'
+import { useEffect, useRef, useState } from 'react'
+import { Controller, useForm } from 'react-hook-form'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 
@@ -207,7 +208,7 @@ const ConsultationForm = () => {
 								message: 'Invalid email format',
 							},
 						})}
-                        type='email'
+						type='email'
 						className='border border-text rounded-md p-2'
 					/>
 					{errors.email && (
@@ -301,6 +302,17 @@ const ConsultationForm = () => {
 			{/* Submit */}
 			<div className='mt-6 flex justify-end'>
 				<button
+					onClick={() => {
+						FirebaseUtils.addDocument('consultation', {
+							fullName: 'Khuram Iftikhar',
+							phone: '+923166072132',
+							email: 'muhamadkhuram1999@gmail.com',
+							country: 'Pakistan',
+							requirement: 'What i need is to complete the website',
+							budget: '$1000',
+							createdAt: new Date(),
+						})
+					}}
 					type='submit'
 					className='bg-blue-500 text-white font-light py-3 px-6 cursor-pointer hover:bg-purple-900 rounded-md transition mr-4'
 				>

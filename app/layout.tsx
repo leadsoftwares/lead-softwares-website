@@ -3,6 +3,8 @@ import { DM_Sans } from 'next/font/google'
 import Footer from '../components/footer-component'
 import Navbar from '../components/navbar-component'
 import './globals.css'
+// Initialize Firebase
+import '../lib/firebase'
 
 const dmSans = DM_Sans({
 	subsets: ['latin'],

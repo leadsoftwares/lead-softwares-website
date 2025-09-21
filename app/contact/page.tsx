@@ -1,18 +1,18 @@
 'use client'
 import CustomButton from '@/components/custom-btn'
+import ContactImg from '@/public/png/Lead software pages Images/Contact Us.png'
+import Box1 from '@/public/svg/box1.svg'
+import Box2 from '@/public/svg/box2.svg'
+import Box3 from '@/public/svg/box3.svg'
+import Email from '@/public/svg/email.svg'
+import Location from '@/public/svg/location.svg'
+import Phone from '@/public/svg/phone.svg'
+import Contact1 from '@/public/webp/contact-1.webp'
 import Image from 'next/image'
-import Box1 from '../../public/svg/box1.svg'
-import Box2 from '../../public/svg/box2.svg'
-import Box3 from '../../public/svg/box3.svg'
-import Email from '../../public/svg/email.svg'
-import Location from '../../public/svg/location.svg'
-import Phone from '../../public/svg/phone.svg'
-import Contact1 from '../../public/webp/contact-1.webp'
+import Link from 'next/link'
 import NavbarTitle from '../about-us/components/NavbarTitle'
 import Form from '../contact/components/form'
 import FAQPage from './components/faq-box'
-import Link from 'next/link'
-import ContactImg from "@/public/png/Lead software pages Images/Contact Us.png"
 
 const Contact = () => {
 	return (
@@ -33,7 +33,7 @@ const Contact = () => {
 						feel of the best consumer apps.
 					</div>
 					<Link href={'/consultation'}>
-					<CustomButton title='Get Started' />
+						<CustomButton title='Get Started' />
 					</Link>
 				</div>
 			</div>

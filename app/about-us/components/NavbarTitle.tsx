@@ -1,11 +1,11 @@
-import SectionBG from '@/public/section-bg.jpg'
 import CustomButton from '@/components/custom-btn'
+import SectionBG from '@/public/section-bg.jpg'
+import type { StaticImageData } from 'next/image'
 import Image from 'next/image'
 import Link from 'next/link'
-import type { StaticImageData } from "next/image";
 interface TitleProps {
 	title: string
-	 src: string | StaticImageData;
+	src: string | StaticImageData
 }
 
 const NavbarTitle = ({ title, src }: TitleProps) => {
@@ -28,36 +28,23 @@ const NavbarTitle = ({ title, src }: TitleProps) => {
 					</div>
 					{/* title */}
 					<div className='px-6'>
-					<div className='text-left lg:w-full title text-primary font-bold text-5xl md:text-7xl'>
-						{title}
-					</div>
-					{/* desc */}
-					<div className=' text-text mt-6 text-xl mb-12'>
-						The Engitech Token is the key to unlocking thefull potential of
-						Engitech. Get eve higher earning rates and our lowest rates
-					</div>
-					<Link href={'/consultation'}>
-					<CustomButton title='Get Started' />
-					</Link>
+						<div className='text-left lg:w-full title text-primary font-bold text-5xl md:text-7xl'>
+							{title}
+						</div>
+						{/* desc */}
+						<div className=' text-text mt-6 text-xl mb-12'>
+							The Engitech Token is the key to unlocking thefull potential of
+							Engitech. Get eve higher earning rates and our lowest rates
+						</div>
+						<Link href={'/consultation'}>
+							<CustomButton title='Get Started' />
+						</Link>
 					</div>
 				</div>
 				{/* right */}
 				<div className='hidden md:block'>
 					<Image width={700} height={700} src={src} alt='' />
 				</div>
-				{/* <div className='flex items-center gap-1'>
-					{' '}
-					<a className='text-lightBlue cursor-pointer font-light'>Home</a>{' '}
-					<span>
-						{' '}
-						<ChevronRight color='gray' size={14} />
-					</span>{' '}
-					<span className='text-lightBlue cursor-pointer font-light'>
-						{headlocate}{' '}
-					</span>{' '}
-					<span>{Icon && <Icon size={14} color='gray' />}</span>{' '}
-					<span className='text-zinc-500 font-light'>{locate}</span>{' '}
-				</div> */}
 			</div>
 		</div>
 	)
