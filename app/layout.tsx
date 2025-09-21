@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { DM_Sans } from 'next/font/google'
 import Footer from '../components/footer-component'
+import MicrosoftClarity from '../components/microsoft-clarity'
 import Navbar from '../components/navbar-component'
 import './globals.css'
 // Initialize Firebase
@@ -25,6 +26,7 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={dmSans.className} suppressHydrationWarning>
+				<MicrosoftClarity />
 				<Navbar />
 				{children}
 				<Footer />
