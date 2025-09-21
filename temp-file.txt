@@ -1,1 +1,10 @@
 updated on sep 14
+
+
+Todos:
+
+
+Landing Page
+1) What we do section below the hero section;
+2) create client testimonial section 
+3) why choose us
