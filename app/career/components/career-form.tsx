@@ -1,6 +1,5 @@
 'use client'
 import { ChevronDown, Plus } from 'lucide-react'
-import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import { Controller, useFieldArray, useForm } from 'react-hook-form'
 import PhoneInput from 'react-phone-input-2'
@@ -21,7 +20,6 @@ type Experience = {
 }
 
 type FormData = {
-	profilePic?: File | null
 	firstName: string
 	lastName: string
 	email: string
@@ -99,7 +97,6 @@ const CareerForm = () => {
 	const genderDropdownRef = useRef<HTMLUListElement>(null)
 
 	const genderOptions = ['Male', 'Female', 'Not Specified']
-	const [profilePreview, setProfilePreview] = useState<string | null>(null)
 	const [newSkill, setNewSkill] = useState<string>('')
 
 	// Watch clicks outside the dropdown to close it
@@ -117,41 +114,7 @@ const CareerForm = () => {
 	}, [])
 
 	const onSubmit = async (data: FormData) => {
-		// Perform any additional validations here if needed
-		// Skills validation is already handled by the form validation
-
-		// Log form data - in a real app, you would send this to your API
 		console.log('Form Submitted:', data)
-
-		// Example API submission code (commented out)
-		// const formData = new FormData();
-		// Add form fields to formData
-		// Object.entries(data).forEach(([key, value]) => {
-		//   if (key === 'cvFile' || key === 'profilePic') {
-		//     if (value) formData.append(key, value);
-		//   } else if (['skills', 'education', 'experience'].includes(key)) {
-		//     formData.append(key, JSON.stringify(value));
-		//   } else {
-		//     formData.append(key, String(value));
-		//   }
-		// });
-
-		// try {
-		//   const response = await fetch('/api/submit-career-form', {
-		//     method: 'POST',
-		//     body: formData
-		//   });
-		//
-		//   if (response.ok) {
-		//     alert('Form submitted successfully!');
-		//   } else {
-		//     alert('Form submission failed. Please try again.');
-		//   }
-		// } catch (error) {
-		//   console.error('Error submitting form:', error);
-		//   alert('An error occurred while submitting the form.');
-		// }
-
 		alert('Form submitted successfully!')
 	}
 
@@ -161,64 +124,14 @@ const CareerForm = () => {
 			className='lg:relative lg:bottom-20 lg:max-w-[60%] rounded-xl shadow-xl lg:mx-auto lg:mb-40 py-10 px-6 lg:px-30 z-100 bg-white'
 			noValidate
 		>
-			<h1 className='font-bold mt-18 md:mt-0 text-4xl md:text-6xl text-primary text-center pb-12 border-b border-text'>Job Application Create</h1>
+			<h1 className='font-bold mt-18 md:mt-0 text-4xl md:text-6xl text-primary text-center pb-12 border-b border-text'>
+				Job Application Create
+			</h1>
 			{/* ---------------- Personal Info ---------------- */}
 			<div className='mt-10'>
 				<h1 className='text-2xl md:text-3xl text-primary font-semibold text-center pb-10'>
 					Personal Info
 				</h1>
-
-				<div className='relative'>
-					{profilePreview ? (
-						<>
-							<Image
-								src={profilePreview}
-								alt='Profile Preview'
-								width={96}
-								height={96}
-								className='mt-4 w-24 h-24 rounded-full object-cover mx-auto'
-							/>
-							<label
-								htmlFor='profile-upload'
-								className='absolute bottom-0 right-1/2 transform translate-x-12 bg-white p-1 rounded-full shadow-md hover:bg-gray-100 cursor-pointer'
-								title='Change profile picture'
-							>
-								<svg
-									xmlns='http://www.w3.org/2000/svg'
-									width='16'
-									height='16'
-									viewBox='0 0 24 24'
-									fill='none'
-									stroke='currentColor'
-									strokeWidth='2'
-									strokeLinecap='round'
-									strokeLinejoin='round'
-								>
-									<path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'></path>
-									<path d='M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z'></path>
-								</svg>
-							</label>
-						</>
-					) : (
-						<label
-							htmlFor='profile-upload'
-							className='relative border flex justify-center mx-auto border-text rounded-full p-2 w-24 h-24 hover:bg-zinc-300 cursor-pointer bg-zinc-200'
-						></label>
-					)}
-					<input
-						id='profile-upload'
-						type='file'
-						accept='image/*'
-						onChange={(e) => {
-							const file = e.target.files?.[0]
-							if (file) {
-								setProfilePreview(URL.createObjectURL(file))
-								setValue('profilePic', file)
-							}
-						}}
-						className='hidden'
-					/>
-				</div>
 
 				<div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-6'>
 					{/* First Name */}
