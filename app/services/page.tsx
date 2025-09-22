@@ -1,5 +1,5 @@
 'use client'
-
+import { motion } from 'motion/react'
 import Mongo from '@/public/png/Tech logos/MongoDB_ForestGreen.png'
 import Ex from '@/public/png/Tech logos/ex.png'
 import Flutter from '@/public/png/Tech logos/flu.png'
@@ -12,10 +12,6 @@ import NodeJs from '@/public/png/Tech logos/node.png'
 import ReactJs from '@/public/png/Tech logos/react.png'
 import Tailwind from '@/public/png/Tech logos/ta.png'
 import TypeScript from '@/public/png/Tech logos/ts.png'
-import Stars from '@/public/svg/stars.svg'
-import Avatar1 from '@/public/webp/avatar-1.webp'
-import Avatar2 from '@/public/webp/avatar-2.webp'
-import Avatar3 from '@/public/webp/avatar-3.webp'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -27,36 +23,15 @@ import Shop from '../../public/svg/shop.svg'
 import Speaker from '../../public/svg/speaker.svg'
 import NavbarTitle from '../about-us/components/NavbarTitle'
 import FAQ from './components/faq'
+import ServicesImg from "@/public/png/Lead software pages Images/Portfolio 1.png"
+import CustomerReviews from '@/components/customerReviews'
 
-const customers = [
-	{
-		name: 'Ernest Smith',
-		info: 'Developer at Unixity',
-		img: Avatar1,
-		review:
-			'Outstanding dedication to excellence, exceptional support,received. Impressive service!',
-	},
-	{
-		name: 'Stella Smith',
-		info: 'Engineer at Unify',
-		img: Avatar2,
-		review:
-			'Expertise made all the difference, absolute pleasure to work with. Exceeded our expectations.',
-	},
-	{
-		name: 'Thomas Smith',
-		info: 'Developer at Unixity',
-		img: Avatar3,
-		review:
-			'I highly recommend this agency. Testing for our project was done everything top-notch',
-	},
-]
-const stats = [
-	{ value: '50k', label: 'Total Users', bg: 'bg-green-100' },
-	{ value: '32k', label: 'Downloads', bg: 'bg-blue-100' },
-	{ value: '90k', label: 'Social Likes', bg: 'bg-red-100' },
-	{ value: '25k', label: 'Subscribers', bg: 'bg-pink-100' },
-]
+// const stats = [
+// 	{ value: '50k', label: 'Total Users', bg: 'bg-green-100' },
+// 	{ value: '32k', label: 'Downloads', bg: 'bg-blue-100' },
+// 	{ value: '90k', label: 'Social Likes', bg: 'bg-red-100' },
+// 	{ value: '25k', label: 'Subscribers', bg: 'bg-pink-100' },
+// ]
 const serviceData = [
 	{
 		icon: File,
@@ -110,12 +85,17 @@ const Services = () => {
 
 	return (
 		<div className='w-full overflow-hidden'>
-			<NavbarTitle title='Services' />
+			<NavbarTitle title='Services' src={ServicesImg} />
 			{/* images scroll */}
 			<div className='overflow-hidden py-8 bg-white mt-40 md:mt-0'>
-				<h2 className='px-6 text-center text-5xl md:text-6xl font-semibold mb-26 text-primary'>
+				<motion.h2
+				initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true , amount: 0.3}}
+        transition={{ duration: 0.8, ease: 'easeIn' }}
+				className='px-6 text-center text-5xl md:text-6xl font-semibold mb-26 text-primary'>
 					Technologies that we work with
-				</h2>
+				</motion.h2>
 				<div
 					className={`mb-20 inline-flex items-center ${isVisible ? 'animate-marquee' : ''}`}
 					style={{
@@ -229,15 +209,25 @@ const Services = () => {
 			</div>
 			{/*  */}
 			<div className='px-2 py-30'>
-				<div className='text-center w-full space-y-2 mx-auto'>
+				<motion.div
+				initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true , amount: 0.3}}
+        transition={{ duration: 0.8, ease: 'easeInOut' }}
+				className='text-center w-full space-y-2 mx-auto'>
 					<div className='subTitle text-blue-500 text-lg lg:text-xs px-2'>
 						We work mainly with digital agencies and software companies
 					</div>
 					<div className='lg:w-[55%] mx-auto text-4xl lg:text-5xl lg:leading-14 font-semibold text-primary'>
 						Outstanding software and services that solve your hassle
 					</div>
-				</div>
-				<div className='flex flex-col lg:flex-row gap-10 justify-center px-2 lg:px-30 mt-20'>
+				</motion.div>
+				<motion.div
+				initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true , amount: 0.3}}
+        transition={{ duration: 0.8, ease: 'easeInOut' }}
+				className='flex flex-col lg:flex-row gap-10 justify-center px-2 lg:px-30 mt-20'>
 					{serviceData.map((service, i) => (
 						<div
 							key={i}
@@ -246,12 +236,14 @@ const Services = () => {
 							<Image src={service.icon} alt={service.title} />
 							<div className='font-bold'>{service.title}</div>
 							<p className='text-zinc-500'>{service.text}</p>
+							<Link href={'/consultation'}>
 							<CustomButton title='Learn More' />
+							</Link>
 						</div>
 					))}
-				</div>
+				</motion.div>
 
-				<div className='w-full px-2 lg:px-30 flex flex-col lg:flex-row gap-10 mt-20 text-primary'>
+				{/* <div className='w-full px-2 lg:px-30 flex flex-col lg:flex-row gap-10 mt-20 text-primary'>
 					{stats.map((stat, i) => (
 						<div
 							key={i}
@@ -261,39 +253,21 @@ const Services = () => {
 							<div className='font-bold'>{stat.label}</div>
 						</div>
 					))}
-				</div>
+				</div> */}
 			</div>
 			{/* strategy */}
 			<div className='-mt-60 lg:mt-0'>
 				<Strategy />
 			</div>
 			{/*  */}
-			<div className='py-30 bg-bg'>
-				<div className='px-4 text-4xl lg:text-5xl font-bold text-primary text-center'>
-					What our customers are saying
-				</div>
-				{/* cards */}
-				<div className='px-4 lg:px-30 flex justify-center flex-wrap gap-10 mt-20'>
-					{customers.map((customer, index) => (
-						<div
-							key={index}
-							className='w-90 border border-zinc-300 rounded-4xl bg-white p-8'
-						>
-							<div className='flex items-center gap-2'>
-								<Image width={80} height={80} src={customer.img} alt='Avatar' />
-								<div className='space-y-1'>
-									<div className='font-bold'>{customer.name}</div>
-									<p className='text-text'>{customer.info}</p>
-									<Image src={Stars} alt='' />
-								</div>
-							</div>
-							<div className='text-text text-lg mt-6'>{customer.review}</div>
-						</div>
-					))}
-				</div>
-			</div>
+			<CustomerReviews/>
 			{/*  */}
-			<div className='pt-30 px-4 lg:px-25'>
+			<motion.div
+			initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true , amount: 0.3}}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+			className='pt-30 px-4 lg:px-25'>
 				<div className='flex flex-col lg:flex-row items-center lg:justify-between'>
 					<div className='space-y-8'>
 						<div className='text-4xl lg:text-5xl font-bold text-primary text-center'>
@@ -311,9 +285,10 @@ const Services = () => {
 				<div>
 					<FAQ />
 				</div>
-			</div>
+			</motion.div>
 			{/* Partners */}
 			<Partners />
+			
 			{/*  */}
 			<div className="bg-[url('https://preview.codeless.co/converta/default/wp-content/uploads/2023/03/bg-footer-sub-min.png')] bg-cover bg-center py-30 text-center space-y-6 mx-4 lg:mx-25 rounded-3xl mb-10">
 				<div className='text-white text-5xl font-bold'>

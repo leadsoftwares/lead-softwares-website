@@ -1,21 +1,24 @@
 'use client'
-import { ChevronDown } from 'lucide-react'
-import React, { useState, useRef, useEffect } from 'react'
-import { useForm, Controller } from 'react-hook-form'
+import FirebaseUtils from '@/lib/firestore-utils'
+import { CheckCircle, ChevronDown, Loader } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
+import { Controller, useForm } from 'react-hook-form'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
+import CountrySelector from './countrySelector'
+
+type CountryOption = {
+	value: string
+	label: string
+}
 
 type FormData = {
-	firstName: string
-	lastName: string
+	fullName: string
 	email: string
-	company?: string
 	phone: string
-	projectDetails: string
-	hearValue: string
-	industryValue: string
 	budgetValue: string
-	regionValue: string
+	country: CountryOption | null
+	requirement: string
 }
 
 const ConsultationForm = () => {
@@ -24,34 +27,18 @@ const ConsultationForm = () => {
 		handleSubmit,
 		control,
 		setValue,
+		reset,
 		formState: { errors },
 	} = useForm<FormData>()
 
 	// dropdown states
 	const [openDropdown, setOpenDropdown] = useState<string | null>(null)
 	const dropdownRefs = useRef<(HTMLUListElement | null)[]>([])
+	const [showSuccess, setShowSuccess] = useState(false)
+	const [isLoading, setIsLoading] = useState(false)
 
 	// dropdown options
-	const hear = ['Google Search', 'Social Media', 'Direct', 'Referral']
-	const industries = [
-		'Health & Fitness',
-		'Beauty & Cosmetics',
-		'Fashion',
-		'Food & Drinks',
-		'Non Profit',
-		'Other',
-	]
 	const budgets = ['$1000 - $5000', '$5000 - $10000', 'More than $10000']
-	const regions = [
-		'Asia',
-		'Middle East & North Africa',
-		'Europe',
-		'USA',
-		'Canada',
-		'Australia & New Zealand',
-		'KSA',
-		'Other World',
-	]
 
 	// close dropdown on outside click
 	useEffect(() => {
@@ -71,7 +58,26 @@ const ConsultationForm = () => {
 	// onSubmit
 	const onSubmit = (data: FormData) => {
 		console.log('Form Submitted:', data)
-		alert('Form submitted!')
+		setIsLoading(true) // Start loading
+
+		FirebaseUtils.addDocument('consultation', {
+			fullName: data.fullName,
+			phone: data.phone,
+			email: data.email,
+			country: data.country?.label || '',
+			requirement: data.requirement,
+			budget: data.budgetValue,
+			createdAt: new Date(),
+		})
+			.then(() => {
+				setIsLoading(false) // Stop loading
+				setShowSuccess(true)
+				reset()
+			})
+			.catch((error) => {
+				setIsLoading(false) // Stop loading on error
+				console.error('Error submitting form:', error)
+			})
 	}
 
 	// reusable dropdown
@@ -134,65 +140,65 @@ const ConsultationForm = () => {
 			onSubmit={handleSubmit(onSubmit)}
 			className='lg:relative lg:bottom-20 lg:max-w-[60%] rounded-xl shadow-xl lg:mx-auto lg:mb-40 py-10 px-6 lg:px-30 z-100 bg-white'
 		>
+			{/* ✅ Success Box */}
+			{showSuccess && (
+				<div className='fixed inset-0 bg-black/40 flex items-center justify-center z-50'>
+					<div className='bg-white rounded-2xl shadow-xl p-6 text-center w-[300px]'>
+						<div className='flex justify-center mb-4'>
+							<div className='bg-green-100 p-4 rounded-full'>
+								<CheckCircle className='h-10 w-10 text-green-600' />
+							</div>
+						</div>
+						<h3 className='text-lg font-semibold text-gray-800 mb-2'>
+							Form Submitted!
+						</h3>
+						<p className='text-gray-600 mb-4'>
+							Your consultation request has been saved.
+						</p>
+						<button
+							onClick={() => setShowSuccess(false)}
+							className='bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition'
+						>
+							OK
+						</button>
+					</div>
+				</div>
+			)}
 			<h1 className='text-3xl md:text-4xl text-primary font-semibold text-center pb-10'>
 				Schedule a Free Consultation
 			</h1>
 
 			{/* Grid Section */}
 			<div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-				{/* First Name */}
+				{/* Full Name */}
 				<div className='flex flex-col'>
-					<label className='text-text'>First Name</label>
+					<label className='text-text'>Full Name</label>
 					<input
-						{...register('firstName', {
-							required: 'First name is required',
+						{...register('fullName', {
+							required: 'Full name is required',
 							pattern: {
-								value: /^[A-Za-z]+$/,
-								message: 'First name cannot contain numbers',
+								value: /^[A-Za-z\s]+$/,
+								message: 'Full name can only contain letters and spaces',
+							},
+							minLength: {
+								value: 2,
+								message: 'Full name must be at least 2 characters',
 							},
 						})}
 						type='text'
 						onKeyDown={(e) => {
 							if (
-								!/[a-zA-Z]/.test(e.key) &&
+								!/[a-zA-Z\s]/.test(e.key) &&
 								e.key !== 'Backspace' &&
 								e.key !== 'Tab'
 							) {
-								e.preventDefault() // block numbers, symbols, spaces
+								e.preventDefault() // block numbers and symbols, but allow spaces
 							}
 						}}
 						className='border border-text rounded-md p-2'
 					/>
-					{errors.firstName && (
-						<p className='text-red-500 text-sm'>{errors.firstName.message}</p>
-					)}
-				</div>
-
-				{/* Last Name */}
-				<div className='flex flex-col'>
-					<label className='text-text'>Last Name</label>
-					<input
-						{...register('lastName', {
-							required: 'Last name is required',
-							pattern: {
-								value: /^[A-Za-z]+$/,
-								message: 'Last name cannot contain numbers',
-							},
-						})}
-						onKeyDown={(e) => {
-							if (
-								!/[a-zA-Z]/.test(e.key) &&
-								e.key !== 'Backspace' &&
-								e.key !== 'Tab'
-							) {
-								e.preventDefault() // block numbers, symbols, spaces
-							}
-						}}
-						type='text'
-						className='border border-text rounded-md p-2'
-					/>
-					{errors.lastName && (
-						<p className='text-red-500 text-sm'>{errors.lastName.message}</p>
+					{errors.fullName && (
+						<p className='text-red-500 text-sm'>{errors.fullName.message}</p>
 					)}
 				</div>
 
@@ -207,22 +213,12 @@ const ConsultationForm = () => {
 								message: 'Invalid email format',
 							},
 						})}
-                        type='email'
+						type='email'
 						className='border border-text rounded-md p-2'
 					/>
 					{errors.email && (
 						<p className='text-red-500 text-sm'>{errors.email.message}</p>
 					)}
-				</div>
-
-				{/* Company */}
-				<div className='flex flex-col'>
-					<label className='text-text'>Company / Organization (Optional)</label>
-					<input
-						{...register('company')}
-						type='text'
-						className='border border-text rounded-md p-2'
-					/>
 				</div>
 
 				{/* Phone */}
@@ -251,18 +247,6 @@ const ConsultationForm = () => {
 
 				{/* Dropdowns */}
 				<Dropdown
-					label='How did you hear about us?'
-					name='hearValue'
-					options={hear}
-					index={0}
-				/>
-				<Dropdown
-					label='Industry'
-					name='industryValue'
-					options={industries}
-					index={1}
-				/>
-				<Dropdown
 					label='Estimated Budget'
 					name='budgetValue'
 					options={budgets}
@@ -270,41 +254,55 @@ const ConsultationForm = () => {
 				/>
 			</div>
 
-			{/* Region + Project Details */}
+			{/* country */}
 			<div className='pt-6 space-y-8'>
-				<Dropdown
-					label='Region'
-					name='regionValue'
-					options={regions}
-					index={3}
-				/>
-
-				{/* Project Details */}
-				<div className='flex flex-col'>
-					<label className='text-text'>Project Details</label>
-					<textarea
-						{...register('projectDetails', {
-							required: 'Project details are required',
-						})}
-						rows={4}
-						placeholder='Your Project Details'
-						className='border border-text rounded-md p-2 resize-none'
+				<div>
+					<label className='text-text'>Country</label>
+					<Controller
+						control={control}
+						name='country'
+						rules={{ required: 'Country is required' }}
+						render={({ field }) => (
+							<CountrySelector value={field.value} onChange={field.onChange} />
+						)}
 					/>
-					{errors.projectDetails && (
-						<p className='text-red-500 text-sm'>
-							{errors.projectDetails.message}
-						</p>
+					{errors.country && (
+						<p className='text-red-500 text-sm'>{errors.country.message}</p>
 					)}
 				</div>
+			</div>
+			{/* Requirement */}
+			<div className='pt-6'>
+				<label className='text-text'>Project Requirements</label>
+				<textarea
+					{...register('requirement', {
+						required: 'Project requirements are required',
+						minLength: {
+							value: 10,
+							message: 'Please provide more details (at least 10 characters)',
+						},
+					})}
+					className='w-full border border-text rounded-md p-2 h-24 resize-none'
+					placeholder='Please describe your project requirements...'
+				/>
+				{errors.requirement && (
+					<p className='text-red-500 text-sm'>{errors.requirement.message}</p>
+				)}
 			</div>
 
 			{/* Submit */}
 			<div className='mt-6 flex justify-end'>
 				<button
 					type='submit'
-					className='bg-blue-500 text-white font-light py-3 px-6 cursor-pointer hover:bg-purple-900 rounded-md transition mr-4'
+					disabled={isLoading}
+					className={`${
+						isLoading
+							? 'bg-gray-400 cursor-not-allowed'
+							: 'bg-blue-500 hover:bg-purple-900 cursor-pointer'
+					} text-white font-light py-3 px-6 rounded-md transition mr-4 flex items-center gap-2`}
 				>
-					Submit
+					{isLoading && <Loader className='h-4 w-4 animate-spin' />}
+					{isLoading ? 'Submitting...' : 'Submit'}
 				</button>
 			</div>
 		</form>

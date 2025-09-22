@@ -15,17 +15,23 @@ import NavbarTitle from './components/NavbarTitle'
 import TeamSection from '../../components/team-section'
 import Link from 'next/link'
 import ProjectHistory from '@/components/project-history'
-
+import AboutSectionImg from "@/public/png/Lead software pages Images/about uss.png"
+import { motion } from 'framer-motion'
 
 const About = () => {
 	const [isPlaying, setIsPlaying] = useState(false)
 	return (
 		<div className='w-full overflow-hidden'>
 			{/* navbar + title */}
-			<NavbarTitle title='About Us' />
+			<NavbarTitle title='About Us' src={AboutSectionImg} />
 			{/*  */}
 			<div className='w-full gap-20 md:gap-40 flex flex-col lg:flex-row items-center px-10 lg:px-30 py-30'>
-				<div className='space-y-10 mt-10 md:mt-0 lg:w-[40%]'>
+				<motion.div
+				initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true , amount: 0.3}}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+				className='space-y-10 mt-10 md:mt-0 lg:w-[40%]'>
 					<div className='title text-primary font-semibold text-4xl'>
 						Growth strategies to be effective & competitive
 					</div>
@@ -37,9 +43,14 @@ const About = () => {
 					<Link href={'/consultation'}>
 					<CustomButton title='Get Started' />
 					</Link>
-				</div>
+				</motion.div>
 
-				<div className='lg:w-[60%] h-full max-w-3xl mx-auto rounded-4xl overflow-hidden shadow-2xl'>
+				<motion.div
+				initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true , amount: 0.4}}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+				 className='lg:w-[60%] h-full max-w-3xl mx-auto rounded-4xl overflow-hidden shadow-2xl'>
 					{!isPlaying ? (
 						<div
 							className='relative cursor-pointer'
@@ -65,12 +76,17 @@ const About = () => {
 							></iframe>
 						</div>
 					)}
-				</div>
+				</motion.div>
 			</div>
 			{/*  */}
 			<div className='bg-bg py-25 mx-4'>
 				{/* header */}
-				<div className='space-y-3'>
+				<motion.div
+				initial={{ opacity: 0, x: 0 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true , amount: 0.3}}
+        transition={{ duration: 2, ease: 'easeOut' }}
+				className='space-y-3'>
 					{/* subtitle */}
 					<div className='text-sm text-lightBlue text-center'>
 						It’s Time for a Blockchain Revolution
@@ -79,11 +95,16 @@ const About = () => {
 					<div className='text-4xl lg:text-5xl text-primary lg:w-[45%] leading-10 md:leading-14 font-semibold text-center mx-auto'>
 						Developing sustainable and innovative blockchain solutions
 					</div>
-				</div>
+				</motion.div>
 				{/* blockchain detail */}
 				<div className='w-full flex flex-col lg:flex-row items-center gap-40 px-8 lg:px-25 mt-40'>
 					{/* left side (boxes side) */}
-					<div className='space-y-8 lg:space-y-4'>
+					<motion.div
+					initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true , amount: 0.3}}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+					className='space-y-8 lg:space-y-4'>
 						{/* box 1 */}
 						<div className='bg-white md:gap-4 flex flex-col items-center lg:flex-row space-x-3 w-full lg:w-120 rounded-2xl shadow-lg p-6'>
 							<div className='w-14 h-14 lg:w-20 lg:h-12 mb-6 lg:mb-15 flex justify-center mx-auto lg:mx-0 items-center rounded-full bg-blue-100'>
@@ -129,9 +150,14 @@ const About = () => {
 								</div>
 							</div>
 						</div>
-					</div>
+					</motion.div>
 					{/* right side */}
-					<div className='w-full'>
+					<motion.div
+					initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true , amount: 0.3}}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+					className='w-full'>
 						<div className='lg:w-[70%] flex flex-col gap-8'>
 							{/* title */}
 							<div className='text-primary text-4xl font-semibold leading-12'>
@@ -149,7 +175,7 @@ const About = () => {
 								<CustomButton title='Get Started' />
 							</Link>
 						</div>
-					</div>
+					</motion.div>
 				</div>
 			</div>
 			{/* Our History Section */}
@@ -160,7 +186,12 @@ const About = () => {
 			{/* Growth Section */}
 			<div className='mx-4 bg-bg py-30 px-8 lg:px-30 flex flex-col lg:flex-row gap-40'>
 				{/* Left Side */}
-				<div className='lg:w-[35%] space-y-10'>
+				<motion.div
+				initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true , amount: 0.3}}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+				className='lg:w-[35%] space-y-10'>
 					{/* title */}
 					<div className='text-4xl text-primary font-semibold'>
 						Growth strategies to be effective & competitive
@@ -215,9 +246,14 @@ const About = () => {
 							</li>
 						</ul>
 					</div>
-				</div>
+				</motion.div>
 				{/* Right Side */}
-				<div className='grid grid-cols-1 lg:grid-cols-2 mx-auto gap-10'>
+				<motion.div
+				initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true , amount: 0.3}}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+				className='grid grid-cols-1 lg:grid-cols-2 mx-auto gap-10'>
 					<Image className='shadow-xl rounded-4xl' src={AboutGrowth1} alt='G' />
 					<Image
 						className='shadow-xl rounded-4xl lg:relative bottom-10'
@@ -230,7 +266,7 @@ const About = () => {
 						src={AboutGrowth4}
 						alt='G'
 					/>
-				</div>
+				</motion.div>
 			</div>
 			{/* Team Section */}
 			<TeamSection/>

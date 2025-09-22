@@ -1,8 +1,12 @@
 import type { Metadata } from 'next'
 import { DM_Sans } from 'next/font/google'
 import Footer from '../components/footer-component'
+import MicrosoftClarity from '../components/microsoft-clarity'
 import Navbar from '../components/navbar-component'
 import './globals.css'
+// Initialize Firebase
+import '../lib/firebase'
+import SmoothScroll from '@/components/smoothScroll'
 
 const dmSans = DM_Sans({
 	subsets: ['latin'],
@@ -23,9 +27,12 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={dmSans.className} suppressHydrationWarning>
+				<SmoothScroll>
+				<MicrosoftClarity />
 				<Navbar />
 				{children}
 				<Footer />
+				</SmoothScroll>
 			</body>
 		</html>
 	)

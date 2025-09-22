@@ -1,13 +1,16 @@
-import SectionBG from '@/public/section-bg.jpg'
+'use client'
 import CustomButton from '@/components/custom-btn'
+import SectionBG from '@/public/section-bg.jpg'
+import { motion } from 'framer-motion'
+import type { StaticImageData } from 'next/image'
 import Image from 'next/image'
-import MobileBG from '@/public/Services illustration png.png'
 import Link from 'next/link'
 interface TitleProps {
 	title: string
+	src: string | StaticImageData
 }
 
-const NavbarTitle = ({ title }: TitleProps) => {
+const NavbarTitle = ({ title, src }: TitleProps) => {
 	return (
 		<div
 			className='w-full max-h-[100vh] pt-26'
@@ -20,43 +23,42 @@ const NavbarTitle = ({ title }: TitleProps) => {
 			{/* About us title */}
 			<div className='w-full h-full flex justify-evenly items-center lg:pb-10 gap-10 md:px-10'>
 				{/* left */}
-				<div className='w-170'>
+				<motion.div
+					initial={{ opacity: 0, x: -100 }}
+					whileInView={{ opacity: 1, x: 0 }}
+					viewport={{ once: true, amount: 0.3 }}
+					transition={{ duration: 0.8, ease: 'easeOut' }}
+					className='w-170'
+				>
 					{/* mobile-view img */}
 					<div className='md:hidden mx-auto flex justify-center mb-6'>
-						<Image width={400} height={400} src={MobileBG} alt='' />
+						<Image width={400} height={400} src={src} alt='' />
 					</div>
 					{/* title */}
 					<div className='px-6'>
-					<div className='text-left lg:w-full title text-primary font-bold text-5xl md:text-7xl'>
-						{title}
+						<div className='text-left lg:w-full title text-primary font-bold text-5xl md:text-7xl'>
+							{title}
+						</div>
+						{/* desc */}
+						<div className=' text-text mt-6 text-xl mb-12'>
+							The Engitech Token is the key to unlocking thefull potential of
+							Engitech. Get eve higher earning rates and our lowest rates
+						</div>
+						<Link href={'/consultation'}>
+							<CustomButton title='Get Started' />
+						</Link>
 					</div>
-					{/* desc */}
-					<div className=' text-text mt-6 text-xl mb-12'>
-						The Engitech Token is the key to unlocking thefull potential of
-						Engitech. Get eve higher earning rates and our lowest rates
-					</div>
-					<Link href={'/consultation'}>
-					<CustomButton title='Get Started' />
-					</Link>
-					</div>
-				</div>
+				</motion.div>
 				{/* right */}
-				<div className='hidden md:block'>
-					<Image width={700} height={700} src={MobileBG} alt='' />
-				</div>
-				{/* <div className='flex items-center gap-1'>
-					{' '}
-					<a className='text-lightBlue cursor-pointer font-light'>Home</a>{' '}
-					<span>
-						{' '}
-						<ChevronRight color='gray' size={14} />
-					</span>{' '}
-					<span className='text-lightBlue cursor-pointer font-light'>
-						{headlocate}{' '}
-					</span>{' '}
-					<span>{Icon && <Icon size={14} color='gray' />}</span>{' '}
-					<span className='text-zinc-500 font-light'>{locate}</span>{' '}
-				</div> */}
+				<motion.div
+					initial={{ opacity: 0, x: 100 }}
+					whileInView={{ opacity: 1, x: 0 }}
+					viewport={{ once: true, amount: 0.3 }}
+					transition={{ duration: 0.8, ease: 'easeOut' }}
+					className='hidden md:block'
+				>
+					<Image width={700} height={700} src={src} alt='' />
+				</motion.div>
 			</div>
 		</div>
 	)

@@ -18,7 +18,7 @@ import Rocket from '../public/svg/rocket.svg'
 import Trophy from '../public/svg/trophy.svg'
 import Tv from '../public/svg/tv.svg'
 import Link from 'next/link'
-
+import CustomerReviews from '@/components/customerReviews'
 const strategy = [
 	{
 		icon: Rocket,
@@ -45,7 +45,7 @@ const strategyBoxes = [
 
 const page = () => {
 	return (
-		<div className='w-full overflow-hidden select-none'>
+		<div className='w-full [scroll-behavior:smooth] overflow-hidden select-none'>
 			{/* hero section */}
 			<Banner />
 
@@ -142,7 +142,12 @@ const page = () => {
 					transition={{ duration: 0.8, ease: 'easeOut' }}
 					className='details min-h-185 flex flex-col lg:flex-row items-center justify-center gap-10 mt-0 md:mt-10'
 				>
-					<div className='relative img mt-30 md:mt-0'>
+					<motion.div
+					initial={{ opacity: 0, x: -80 }}
+				whileInView={{ opacity: 1, x: 0 }}
+				viewport={{ once: true , amount: 0.3}}													
+				transition={{ duration: 0.8, ease: 'easeOut' }}
+					className='relative img mt-30 md:mt-0'>
 						<Image
 							className='w-90 h-90 md:w-145 md:h-150'
 							src={MobileView}
@@ -153,8 +158,13 @@ const page = () => {
 							src={MobileViewCard}
 							alt='MobileViewCard'
 						/>
-					</div>
-					<div className='detail md:w-120 flex flex-col gap-6 md:ml-16 px-4'>
+					</motion.div>
+					<motion.div
+					initial={{ opacity: 0, x: 100 }}
+				whileInView={{ opacity: 1, x: 0 }}
+				viewport={{ once: true , amount: 0.3}}
+				transition={{ duration: 0.8, ease: 'easeOut' }}
+					className='detail md:w-120 flex flex-col gap-6 md:ml-16 px-4'>
 						<div className='hidden md:block title text-4xl font-bold text-primary'>
 							We&apos;re building business for <br /> your digital economy
 						</div>
@@ -190,7 +200,7 @@ const page = () => {
 						<Link href='/consultation' className='btn mt-8'>
 							<CustomButton title='Get Started' />
 						</Link>
-					</div>
+					</motion.div>
 				</motion.div>
 			</div>
 			{/*  */}
@@ -300,6 +310,8 @@ const page = () => {
 				<CustomButton title='Get Started' />
 				</Link>
 			</motion.div>
+			{/* Customer Reviews Section */}
+			<CustomerReviews/>
 		</div>
 	)
 }

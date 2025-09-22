@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Minus, Plus } from "lucide-react"
-
+import { motion } from "framer-motion"
 type FAQ = {
   question: string
   answer: string
@@ -157,7 +157,12 @@ export default function FAQPage() {
   return (
     <div className="bg-bg flex flex-col lg:flex-row py-30 px-6 lg:px-20">
       {/* Sidebar */}
-      <aside className="lg:w-64 bg-white shadow-md p-4 space-y-2">
+      <motion.aside
+      initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true , amount: 0.3}}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+      className="lg:w-64 bg-white shadow-md p-4 space-y-2">
         {sections.map((section, i) => (
           <button
             key={i}
@@ -174,10 +179,15 @@ export default function FAQPage() {
             {section.title}
           </button>
         ))}
-      </aside>
+      </motion.aside>
 
       {/* Content */}
-      <main className="flex-1 py-4 lg:py-0 lg:p-8">
+      <motion.main
+      initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true , amount: 0.3}}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+      className="flex-1 py-4 lg:py-0 lg:p-8">
         <div className="space-y-4">
           {sections[activeSection].faqs.length > 0 ? (
             sections[activeSection].faqs.map((faq, i) => {
@@ -216,7 +226,7 @@ export default function FAQPage() {
             </p>
           )}
         </div>
-      </main>
+      </motion.main>
     </div>
   )
 }
