@@ -18,7 +18,7 @@ import Rocket from '../public/svg/rocket.svg'
 import Trophy from '../public/svg/trophy.svg'
 import Tv from '../public/svg/tv.svg'
 import Link from 'next/link'
-
+import CustomerReviews from '@/components/customerReviews'
 const strategy = [
 	{
 		icon: Rocket,
@@ -310,6 +310,8 @@ const page = () => {
 				<CustomButton title='Get Started' />
 				</Link>
 			</motion.div>
+			{/* Customer Reviews Section */}
+			<CustomerReviews/>
 		</div>
 	)
 }
