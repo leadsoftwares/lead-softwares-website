@@ -3,7 +3,7 @@ import FirebaseUtils from '@/lib/firestore-utils'
 import { CheckCircle, Loader } from 'lucide-react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-
+import {motion} from 'framer-motion'
 type FormValues = {
 	name: string
 	email: string
@@ -43,8 +43,12 @@ const Form = () => {
 	}
 
 	return (
-		<form
+		<motion.form
 			onSubmit={handleSubmit(onSubmit)}
+			initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true , amount: 0.3}}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
 			className='lg:w-[50%] bg-white rounded-2xl shadow-lg p-6 space-y-8 py-10'
 		>
 			{/* ✅ Success Box */}
@@ -163,7 +167,7 @@ const Form = () => {
 					{isLoading ? 'Sending...' : 'Submit'}
 				</button>
 			</div>
-		</form>
+		</motion.form>
 	)
 }
 

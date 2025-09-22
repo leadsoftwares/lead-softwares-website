@@ -1,9 +1,12 @@
 'use client'
-import { ChevronDown, Plus } from 'lucide-react'
+import FirebaseUtils from '@/lib/firestore-utils'
+import { CheckCircle, ChevronDown, Loader, Plus } from 'lucide-react'
+import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import { Controller, useFieldArray, useForm } from 'react-hook-form'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
+import { motion } from 'framer-motion'												
 
 type Education = {
 	degree: string
@@ -18,8 +21,7 @@ type Experience = {
 	endDate: string
 	description: string
 }
-
-type FormData = {
+type PersonalInfo = {
 	firstName: string
 	lastName: string
 	email: string
@@ -27,11 +29,95 @@ type FormData = {
 	phone: string
 	address: string
 	gender: string
+}
+
+type FormData = {
+	personalInfo: PersonalInfo
 	education: Education[]
 	experience: Experience[]
 	skills: string[]
-	coverLetter: string
+	coverLetterFile: File | null
 	cvFile: File | null
+}
+
+// Custom File Upload Component
+interface FileUploadProps {
+	onFileChange: (file: File | null) => void
+	file: File | null
+	accept: string
+	error?: string
+}
+
+const CustomFileUpload = ({
+	onFileChange,
+	file,
+	accept,
+	error,
+}: FileUploadProps) => {
+	const fileInputRef = useRef<HTMLInputElement>(null)
+
+	const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const selectedFile = e.target.files?.[0] || null
+		onFileChange(selectedFile)
+	}
+
+	const handleDivClick = () => {
+		fileInputRef.current?.click()
+	}
+
+	return (
+		<div
+			className={`relative border-2 border-dashed rounded-lg p-8 cursor-pointer transition-colors
+				${error ? 'border-red-500 bg-red-50' : 'border-gray-300 hover:border-gray-400'} 
+				${file ? 'bg-gray-50' : 'bg-white'}`}
+			onClick={handleDivClick}
+		>
+			<input
+				ref={fileInputRef}
+				type='file'
+				accept={accept}
+				onChange={handleFileChange}
+				className='hidden'
+			/>
+
+			{file ? (
+				<div className='flex flex-col items-center justify-center space-y-2'>
+					<Image
+						src='/svg/file.svg'
+						alt='Document'
+						width={56}
+						height={56}
+						className='opacity-100 filter brightness-50'
+					/>
+					<p className='text-sm text-gray-800 text-center font-semibold'>
+						{file.name}
+					</p>
+					<p className='text-xs text-gray-600'>
+						{(file.size / 1024 / 1024).toFixed(2)} MB
+					</p>
+					<p className='text-xs text-blue-600 hover:text-blue-800 font-medium'>
+						Click to change file
+					</p>
+				</div>
+			) : (
+				<div className='flex flex-col items-center justify-center space-y-2'>
+					<Image
+						src='/svg/file.svg'
+						alt='Upload document'
+						width={48}
+						height={48}
+						className='opacity-30'
+					/>
+					<p className='text-sm text-gray-500 text-center'>
+						Click to upload file
+					</p>
+					<p className='text-xs text-gray-400'>
+						Accepted formats: PDF, DOC, DOCX, PNG (Max size: 5MB)
+					</p>
+				</div>
+			)}
+		</div>
+	)
 }
 
 const CareerForm = () => {
@@ -40,12 +126,22 @@ const CareerForm = () => {
 		handleSubmit,
 		control,
 		setValue,
+		reset,
 		watch,
 		formState: { errors },
 		clearErrors,
 		setError,
 	} = useForm<FormData>({
 		defaultValues: {
+			personalInfo: {
+				firstName: '',
+				lastName: '',
+				email: '',
+				dob: '',
+				phone: '',
+				address: '',
+				gender: '',
+			},
 			education: [{ degree: '', institution: '', year: '' }],
 			experience: [
 				{
@@ -95,6 +191,8 @@ const CareerForm = () => {
 	// Setup for dropdowns
 	const [openDropdown, setOpenDropdown] = useState<string | null>(null)
 	const genderDropdownRef = useRef<HTMLUListElement>(null)
+	const [showSuccess, setShowSuccess] = useState(false)
+	const [isLoading, setIsLoading] = useState(false)
 
 	const genderOptions = ['Male', 'Female', 'Not Specified']
 	const [newSkill, setNewSkill] = useState<string>('')
@@ -115,15 +213,84 @@ const CareerForm = () => {
 
 	const onSubmit = async (data: FormData) => {
 		console.log('Form Submitted:', data)
-		alert('Form submitted successfully!')
+		setIsLoading(true) // Start loading
+
+		// Log the CV file details for debugging
+		if (data.cvFile) {
+			console.log('CV File:', {
+				name: data.cvFile.name,
+				size: data.cvFile.size,
+				type: data.cvFile.type,
+			})
+		}
+
+		// Log the Cover Letter file details for debugging
+		if (data.coverLetterFile) {
+			console.log('Cover Letter File:', {
+				name: data.coverLetterFile.name,
+				size: data.coverLetterFile.size,
+				type: data.coverLetterFile.type,
+			})
+		}
+
+		// Prepare data for Firebase (without files)
+		const applicationData = {
+			personalInfo: data.personalInfo,
+			education: data.education,
+			experience: data.experience,
+			skills: data.skills,
+			cvFileName: data.cvFile?.name || '',
+			coverLetterFileName: data.coverLetterFile?.name || '',
+			createdAt: new Date(),
+		}
+
+		FirebaseUtils.addDocument('career', applicationData)
+			.then(() => {
+				setIsLoading(false) // Stop loading
+				setShowSuccess(true)
+				reset()
+			})
+			.catch((error) => {
+				setIsLoading(false) // Stop loading on error
+				console.error('Error submitting career application:', error)
+				alert('Error submitting application. Please try again.')
+			})
 	}
 
 	return (
-		<form
+		<motion.form
 			onSubmit={handleSubmit(onSubmit)}
+			initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true , amount: 0.2}}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
 			className='lg:relative lg:bottom-20 lg:max-w-[60%] rounded-xl shadow-xl lg:mx-auto lg:mb-40 py-10 px-6 lg:px-30 z-100 bg-white'
 			noValidate
 		>
+			{/* ✅ Success Modal */}
+			{showSuccess && (
+				<div className='fixed inset-0 bg-black/40 flex items-center justify-center z-50'>
+					<div className='bg-white rounded-2xl shadow-xl p-6 text-center w-[300px]'>
+						<div className='flex justify-center mb-4'>
+							<div className='bg-green-100 p-4 rounded-full'>
+								<CheckCircle className='h-10 w-10 text-green-600' />
+							</div>
+						</div>
+						<h3 className='text-lg font-semibold text-gray-800 mb-2'>
+							Application Submitted!
+						</h3>
+						<p className='text-gray-600 mb-4'>
+							Your job application has been successfully submitted.
+						</p>
+						<button
+							onClick={() => setShowSuccess(false)}
+							className='bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition'
+						>
+							OK
+						</button>
+					</div>
+				</div>
+			)}
 			<h1 className='font-bold mt-18 md:mt-0 text-4xl md:text-6xl text-primary text-center pb-12 border-b border-text'>
 				Job Application Create
 			</h1>
@@ -138,7 +305,7 @@ const CareerForm = () => {
 					<div className='flex flex-col'>
 						<label className='text-text'>First Name</label>
 						<input
-							{...register('firstName', {
+							{...register('personalInfo.firstName', {
 								required: 'First name is required',
 							})}
 							type='text'
@@ -153,8 +320,10 @@ const CareerForm = () => {
 							}}
 							className='border border-text rounded-md p-2'
 						/>
-						{errors.firstName && (
-							<p className='text-red-500 text-sm'>{errors.firstName.message}</p>
+						{errors.personalInfo?.firstName && (
+							<p className='text-red-500 text-sm'>
+								{errors.personalInfo.firstName.message}
+							</p>
 						)}
 					</div>
 
@@ -162,7 +331,9 @@ const CareerForm = () => {
 					<div className='flex flex-col'>
 						<label className='text-text'>Last Name</label>
 						<input
-							{...register('lastName', { required: 'Last name is required' })}
+							{...register('personalInfo.lastName', {
+								required: 'Last name is required',
+							})}
 							type='text'
 							onKeyDown={(e) => {
 								if (
@@ -176,8 +347,10 @@ const CareerForm = () => {
 							className='border border-text rounded-md p-2'
 						/>
 
-						{errors.lastName && (
-							<p className='text-red-500 text-sm'>{errors.lastName.message}</p>
+						{errors.personalInfo?.lastName && (
+							<p className='text-red-500 text-sm'>
+								{errors.personalInfo.lastName.message}
+							</p>
 						)}
 					</div>
 
@@ -185,7 +358,7 @@ const CareerForm = () => {
 					<div className='flex flex-col'>
 						<label className='text-text'>Email</label>
 						<input
-							{...register('email', {
+							{...register('personalInfo.email', {
 								required: 'Email is required',
 								pattern: {
 									value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, // basic email regex
@@ -195,8 +368,10 @@ const CareerForm = () => {
 							type='email'
 							className='border border-text rounded-md p-2'
 						/>
-						{errors.email && (
-							<p className='text-red-500 text-sm'>{errors.email.message}</p>
+						{errors.personalInfo?.email && (
+							<p className='text-red-500 text-sm'>
+								{errors.personalInfo.email.message}
+							</p>
 						)}
 					</div>
 
@@ -204,12 +379,12 @@ const CareerForm = () => {
 					<div className='flex flex-col'>
 						<label className='text-text'>Date of Birth</label>
 						<input
-							{...register('dob', {
+							{...register('personalInfo.dob', {
 								required: 'Date of Birth is required',
 								validate: (value) => {
 									const today = new Date()
 									today.setHours(0, 0, 0, 0) // reset time
-									const selectedDate = new Date(value)
+									const selectedDate = new Date(value as string)
 									selectedDate.setHours(0, 0, 0, 0)
 
 									if (selectedDate >= today) {
@@ -221,8 +396,10 @@ const CareerForm = () => {
 							type='date'
 							className='border border-text rounded-md p-2'
 						/>
-						{errors.dob && (
-							<p className='text-red-500 text-sm'>{errors.dob.message}</p>
+						{errors.personalInfo?.dob && (
+							<p className='text-red-500 text-sm'>
+								{errors.personalInfo.dob.message}
+							</p>
 						)}
 					</div>
 
@@ -231,17 +408,17 @@ const CareerForm = () => {
 						<label className='text-text'>Phone</label>
 						<Controller
 							control={control}
-							name='phone'
+							name='personalInfo.phone'
 							rules={{
 								required: 'Phone number is required',
 								validate: (value) => {
 									if (!/^\d+$/.test(value || '')) {
 										return 'Phone number must contain only digits'
 									}
-									if (value.length < 6) {
+									if ((value || '').length < 6) {
 										return 'Phone number must be at least 10 digits'
 									}
-									if (value.length > 15) {
+									if ((value || '').length > 15) {
 										return 'Phone number cannot exceed 15 digits'
 									}
 									return true
@@ -251,13 +428,15 @@ const CareerForm = () => {
 								<PhoneInput
 									inputClass='p-4 py-5 border border-text rounded-md max-w-full'
 									country='pk'
-									value={field.value}
+									value={field.value || ''}
 									onChange={field.onChange}
 								/>
 							)}
 						/>
-						{errors.phone && (
-							<p className='text-red-500 text-sm'>{errors.phone.message}</p>
+						{errors.personalInfo?.phone && (
+							<p className='text-red-500 text-sm'>
+								{errors.personalInfo.phone.message}
+							</p>
 						)}
 					</div>
 
@@ -266,7 +445,9 @@ const CareerForm = () => {
 						<label className='text-text'>Gender</label>
 						<input
 							type='text'
-							{...register('gender', { required: 'Gender is required' })}
+							{...register('personalInfo.gender', {
+								required: 'Gender is required',
+							})}
 							readOnly
 							placeholder='Select...'
 							onClick={() =>
@@ -278,9 +459,9 @@ const CareerForm = () => {
 							className='absolute right-3 top-9 text-gray-500 pointer-events-none'
 							size={18}
 						/>
-						{errors.gender && (
+						{errors.personalInfo?.gender && (
 							<p className='text-red-500 text-sm'>
-								{errors.gender.message as string}
+								{errors.personalInfo.gender.message as string}
 							</p>
 						)}
 						<ul
@@ -293,7 +474,9 @@ const CareerForm = () => {
 								<li
 									key={i}
 									onClick={() => {
-										setValue('gender', opt, { shouldValidate: true })
+										setValue('personalInfo.gender', opt, {
+											shouldValidate: true,
+										})
 										setOpenDropdown(null)
 									}}
 									className='px-3 py-2 cursor-pointer hover:bg-gray-100'
@@ -309,7 +492,7 @@ const CareerForm = () => {
 				<div className='flex flex-col mt-6'>
 					<label className='text-text'>Address</label>
 					<input
-						{...register('address', {
+						{...register('personalInfo.address', {
 							required: 'Address is required',
 							pattern: {
 								value: /^[A-Za-z0-9\s,.-/#]+$/,
@@ -319,8 +502,10 @@ const CareerForm = () => {
 						type='text'
 						className='border border-text rounded-md p-2'
 					/>
-					{errors.address && (
-						<p className='text-red-500 text-sm'>{errors.address.message}</p>
+					{errors.personalInfo?.address && (
+						<p className='text-red-500 text-sm'>
+							{errors.personalInfo.address.message}
+						</p>
 					)}
 				</div>
 			</div>
@@ -669,28 +854,53 @@ const CareerForm = () => {
 				<h1 className='text-2xl md:text-3xl text-primary font-semibold text-center pb-6'>
 					Cover Letter <span className='text-red-500 text-sm'>*</span>
 				</h1>
-				<textarea
-					{...register('coverLetter', {
-						required: 'Cover letter is required',
-						maxLength: {
-							value: 1000,
-							message: 'Cover letter cannot exceed 1000 characters',
+				<Controller
+					control={control}
+					name='coverLetterFile'
+					rules={{
+						required: 'Cover letter file is required',
+						validate: (file) => {
+							if (!file) return 'Cover letter file is required'
+
+							// Check file size (5MB limit)
+							const maxSize = 5 * 1024 * 1024 // 5MB in bytes
+							if (file.size > maxSize) {
+								return 'File size must be less than 5MB'
+							}
+
+							// Check file type
+							const allowedTypes = [
+								'application/pdf',
+								'application/msword',
+								'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+								'image/png',
+							]
+							if (!allowedTypes.includes(file.type)) {
+								return 'Only PDF, DOC, DOCX, and PNG files are allowed'
+							}
+
+							return true
 						},
-					})}
-					className={`w-full border ${
-						errors.coverLetter ? 'border-red-500 bg-red-50' : 'border-text'
-					} border-dotted rounded-md p-3`}
-					rows={5}
-					placeholder='Write your cover letter...'
-				></textarea>
-				{errors.coverLetter && (
+					}}
+					render={({ field }) => (
+						<CustomFileUpload
+							onFileChange={(file) => {
+								field.onChange(file)
+								if (file) {
+									clearErrors('coverLetterFile')
+								}
+							}}
+							file={field.value}
+							accept='.pdf,.doc,.docx,.png'
+							error={errors.coverLetterFile?.message}
+						/>
+					)}
+				/>
+				{errors.coverLetterFile && (
 					<p className='text-red-500 text-sm mt-1'>
-						{errors.coverLetter.message}
+						{errors.coverLetterFile.message}
 					</p>
 				)}
-				<p className='text-gray-500 text-xs mt-1 text-right'>
-					Max 1000 characters
-				</p>
 			</div>
 
 			{/* ---------------- CV Upload ---------------- */}
@@ -698,50 +908,69 @@ const CareerForm = () => {
 				<h1 className='text-2xl md:text-3xl text-primary font-semibold text-center pb-6'>
 					Upload CV <span className='text-red-500 text-sm'>*</span>
 				</h1>
-				<div
-					className={`${
-						errors.cvFile ? 'border-red-500 bg-red-50' : 'border-text'
-					} border rounded-md p-2`}
-				>
-					<input
-						type='file'
-						accept='.pdf,.doc,.docx,.png'
-						{...register('cvFile', { required: 'CV file is required' })}
-						onChange={(e) => {
-							const file = e.target.files?.[0] || null
-							setValue('cvFile', file, { shouldValidate: true })
+				<Controller
+					control={control}
+					name='cvFile'
+					rules={{
+						required: 'CV file is required',
+						validate: (file) => {
+							if (!file) return 'CV file is required'
 
-							// Update React Hook Form validation
-							if (!file) {
-								setError('cvFile', {
-									type: 'required',
-									message: 'CV file is required',
-								})
-							} else {
-								clearErrors('cvFile')
+							// Check file size (5MB limit)
+							const maxSize = 5 * 1024 * 1024 // 5MB in bytes
+							if (file.size > maxSize) {
+								return 'File size must be less than 5MB'
 							}
-						}}
-						className='w-full'
-					/>
-				</div>
+
+							// Check file type
+							const allowedTypes = [
+								'application/pdf',
+								'application/msword',
+								'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+								'image/png',
+							]
+							if (!allowedTypes.includes(file.type)) {
+								return 'Only PDF, DOC, DOCX, and PNG files are allowed'
+							}
+
+							return true
+						},
+					}}
+					render={({ field }) => (
+						<CustomFileUpload
+							onFileChange={(file) => {
+								field.onChange(file)
+								if (file) {
+									clearErrors('cvFile')
+								}
+							}}
+							file={field.value}
+							accept='.pdf,.doc,.docx,.png'
+							error={errors.cvFile?.message}
+						/>
+					)}
+				/>
 				{errors.cvFile && (
 					<p className='text-red-500 text-sm mt-1'>{errors.cvFile.message}</p>
 				)}
-				<p className='text-gray-500 text-xs mt-1'>
-					Accepted formats: PDF, DOC, DOCX, PNG
-				</p>
 			</div>
 
 			{/* Submit */}
 			<div className='mt-10 flex justify-end'>
 				<button
 					type='submit'
-					className='bg-blue-500 text-white font-light py-3 px-6 hover:bg-purple-900 rounded-md transition mr-4'
+					disabled={isLoading}
+					className={`${
+						isLoading
+							? 'bg-gray-400 cursor-not-allowed'
+							: 'bg-blue-500 hover:bg-purple-900 cursor-pointer'
+					} text-white font-light py-3 px-6 rounded-md transition mr-4 flex items-center gap-2`}
 				>
-					Submit
+					{isLoading && <Loader className='h-4 w-4 animate-spin' />}
+					{isLoading ? 'Submitting...' : 'Submit'}
 				</button>
 			</div>
-		</form>
+		</motion.form>
 	)
 }
 

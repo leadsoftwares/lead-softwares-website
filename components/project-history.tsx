@@ -6,6 +6,7 @@ import Crazy from '@/public/png/Crazy By Rasel D.png'
 import TigerIT from '@/public/png/portfolio1.png'
 import Barq from '@/public/png/portfolio4.png'
 import { useEffect, useRef, useState } from 'react'
+import { motion } from 'framer-motion'
 const ProjectHistory = () => {
     const [activeSlide, setActiveSlide] = useState(0)
 	const sliderRef = useRef<HTMLDivElement>(null)
@@ -86,12 +87,22 @@ const ProjectHistory = () => {
   return (
     <div className='w-full py-25 mt-16 md:mt-16'>
                     {/* header */}
-                    <div className='lg:w-[65%] px-6 lg:px-0 text-primary text-3xl md:text-4xl lg:text-4xl font-semibold mx-auto text-center leading-10 lg:leading-16'>
+                    <motion.div
+                    initial={{ opacity: 0, y: -100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true , amount: 0.3}}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+                    className='lg:w-[65%] px-6 lg:px-0 text-primary text-3xl md:text-4xl lg:text-4xl font-semibold mx-auto text-center leading-10 lg:leading-16'>
                         Explore our recent client success stories and witness our full 360
                         transformations come to life
-                    </div>
+                    </motion.div>
                     {/* Project History - Desktop View */}
-                    <div className='lg:w-full justify-center hidden md:flex flex-wrap gap-8 mt-30 mx-4 lg:mx-0'>
+                    <motion.div
+                    initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true , amount: 0.3}}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+                    className='lg:w-full justify-center hidden md:flex flex-wrap gap-8 mt-30 mx-4 lg:mx-0'>
                         {ProjectView.map((project) => (
                             <a
                                 key={project.id}
@@ -126,7 +137,7 @@ const ProjectHistory = () => {
                                 </div>
                             </a>
                         ))}
-                    </div>
+                    </motion.div>
     
                     {/* Project History - Mobile View (Full-width Swipe Slider) */}
                     <div className='md:hidden mt-16 w-full relative'>

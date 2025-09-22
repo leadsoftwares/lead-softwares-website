@@ -20,9 +20,9 @@ const Strategy = () => {
     <div className='strategy mx-2 py-18 px-10 md:px-18 mt-20 md:mt-60 lg:mt-0 min-h-160 bg-linear-to-br from-[#F7F9FC] from-40% to-[#EAEAF9] to-60%'>
       {/* Header */}
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true , amount: 0.3}}
         transition={{ duration: 0.8, ease: 'easeOut' }}
         className='header text-center w-full space-y-2 mx-auto'
       >
@@ -37,7 +37,7 @@ const Strategy = () => {
 
       {/* Main */}
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1, ease: 'easeOut' }}
@@ -94,7 +94,12 @@ const Strategy = () => {
         </div>
 
         {/* RIGHT SIDE - horizontal slide image */}
-        <div className='right w-full max-w-220'>
+        <motion.div
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true , amount: 0.3}}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className='right w-full max-w-220'>
           <div className='box w-full h-100 lg:w-full lg:h-140 border-6 border-black rounded overflow-hidden relative'>
             <div
               className="flex h-full w-full transition-transform duration-500 ease-in-out"
@@ -112,7 +117,7 @@ const Strategy = () => {
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       </motion.div>
     </div>
   )

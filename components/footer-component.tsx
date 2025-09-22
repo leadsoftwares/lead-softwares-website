@@ -1,7 +1,8 @@
+"use client"
 import { Facebook, Twitter, Youtube } from 'lucide-react'
 import Image from 'next/image'
 import Logo from '../public/png/Lead Logo White with white Text-02-02.png'
-
+import { motion } from 'framer-motion'																				
 const Footer = () => {
 	return (
 		<div>
@@ -19,16 +20,26 @@ const Footer = () => {
 
 				<div className='absolute left-0 top-0 flex flex-wrap gap-16 flex-col md:flex-row justify-between w-full z-110 py-18 px-8  md:py-20 md:px-30'>
 					{/* left-side */}
-					<div className='flex flex-col items-center md:items-start text-center md:text-left'>
+					<motion.div
+					initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true , amount: 0.3}}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+					 className='flex flex-col items-center md:items-start text-center md:text-left'>
 						<Image width={150} height={150} src={Logo} alt='Leadsoftwares' />
 						{/* desc */}
 						<div className='text-zinc-300 text-sm font-light mt-6'>
 							Creative-powered to fuel your growth goals. We build world-class
 							digital <br /> products, software and branding.
 						</div>
-					</div>
+					</motion.div>
 					{/* right side */}
-					<div className='flex flex-col text-center md:flex-row gap-10 md:gap-30 md:pr-20 relative z-110 pb-14'>
+					<motion.div
+					initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true , amount: 0.3}}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+					className='flex flex-col text-center md:flex-row gap-10 md:gap-30 md:pr-20 relative z-110 pb-14'>
 						<ul className='flex flex-col gap-6 text-zinc-400 text-sm'>
 							<a className='text-zinc-200 font-semibold' href='#'>
 								Products
@@ -56,7 +67,7 @@ const Footer = () => {
 							<a href='#'>Video Guides</a>
 							<a href='#'>Security</a>
 						</ul>
-					</div>
+					</motion.div>
 					{/* gradient */}
 					<div className='hidden lg:block absolute right-0 top-10 blur-3xl h-90 w-100 bg-[#412855] rounded-full'></div>
 					<footer className='w-[80vw] border-t border-zinc-600 z-110 flex justify-between'>

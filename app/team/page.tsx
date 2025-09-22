@@ -6,7 +6,7 @@ import TeamImg from "@/public/png/Lead software pages Images/Our Team.png"
 
 const page = () => {
   return (
-    <div>
+    <div className='w-full overflow-hidden select-none'>
         <NavbarTitle title='Our Team' src={TeamImg}
          />
          {/* team section */}

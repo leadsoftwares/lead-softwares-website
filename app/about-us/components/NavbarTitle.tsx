@@ -1,5 +1,7 @@
+'use client'
 import CustomButton from '@/components/custom-btn'
 import SectionBG from '@/public/section-bg.jpg'
+import { motion } from 'framer-motion'
 import type { StaticImageData } from 'next/image'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -21,7 +23,13 @@ const NavbarTitle = ({ title, src }: TitleProps) => {
 			{/* About us title */}
 			<div className='w-full h-full flex justify-evenly items-center lg:pb-10 gap-10 md:px-10'>
 				{/* left */}
-				<div className='w-170'>
+				<motion.div
+					initial={{ opacity: 0, x: -100 }}
+					whileInView={{ opacity: 1, x: 0 }}
+					viewport={{ once: true, amount: 0.3 }}
+					transition={{ duration: 0.8, ease: 'easeOut' }}
+					className='w-170'
+				>
 					{/* mobile-view img */}
 					<div className='md:hidden mx-auto flex justify-center mb-6'>
 						<Image width={400} height={400} src={src} alt='' />
@@ -40,11 +48,17 @@ const NavbarTitle = ({ title, src }: TitleProps) => {
 							<CustomButton title='Get Started' />
 						</Link>
 					</div>
-				</div>
+				</motion.div>
 				{/* right */}
-				<div className='hidden md:block'>
+				<motion.div
+					initial={{ opacity: 0, x: 100 }}
+					whileInView={{ opacity: 1, x: 0 }}
+					viewport={{ once: true, amount: 0.3 }}
+					transition={{ duration: 0.8, ease: 'easeOut' }}
+					className='hidden md:block'
+				>
 					<Image width={700} height={700} src={src} alt='' />
-				</div>
+				</motion.div>
 			</div>
 		</div>
 	)
