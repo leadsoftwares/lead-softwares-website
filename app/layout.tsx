@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 	title: 'Lead Softwares',
 	description: 'Created by Hassan King',
 	icons: {
-		icon: "@/public/png/White-01.png"
+		icon: '/White-01.png'
 	}
 }
 
