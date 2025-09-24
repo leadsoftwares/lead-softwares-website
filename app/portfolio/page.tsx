@@ -19,6 +19,7 @@ import MobileProject from '@/components/mobile-projects'
 import PortfolioImg from "@/public/png/Lead software pages Images/Portfolio.png"
 import NavbarTitle from '../about-us/components/NavbarTitle'
 import ProjectHistory from '@/components/project-history'
+import HeroGallery from '@/components/hero-gallery'
 const items = [
 	{
 		id: '01',
@@ -91,6 +92,8 @@ const PortfolioStyles = () => {
 	return (
 		<div className='w-full overflow-hidden'>
 			<NavbarTitle title='Portfolio' src={PortfolioImg}/>
+			{/* hero gallery */}
+			<HeroGallery/>
 			{/* our history section */}
 			<ProjectHistory />
 			<MobileProject />
