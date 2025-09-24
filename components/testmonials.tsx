@@ -62,7 +62,7 @@ export default function Testimonials() {
 					background: rgba(0, 0, 0, 0.5) !important;
 				}
 			`}</style>
-			<div className='max-w-3xl mx-auto px-4'>
+			<div className='max-w-3xl mx-auto px-0 lg:px-4'>
 				<Swiper
 					modules={[Pagination, Autoplay]}
 					pagination={{

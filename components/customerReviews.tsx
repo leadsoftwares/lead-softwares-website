@@ -1,9 +1,10 @@
 import Icon1 from '@/public/svg/icons/ai-commentary.svg'
 import Icon2 from '@/public/svg/icons/like-1.svg'
+import Icon6 from '@/public/svg/icons/like-tag.svg'
 import Icon3 from '@/public/svg/icons/quote-down (1).svg'
+import Icon5 from '@/public/svg/icons/quote-down.svg'
+import Icon7 from '@/public/svg/icons/ratings-rate-svgrepo-com.svg'
 import Icon4 from '@/public/svg/icons/star.svg'
-import Icon5 from "@/public/svg/icons/quote-down.svg"
-import Icon6 from "@/public/svg/icons/like-tag.svg"
 import SectionBG from '@/public/testimonial-bg.png'
 import Image from 'next/image'
 import Testimonials from './testmonials'
@@ -19,6 +20,7 @@ const customerReviews = () => {
 			}}
 		>
 			{/* icons */}
+			{/* desktop icons */}
 			<Image
 				className='hidden md:block absolute left-10 opacity-10 filter grayscale'
 				width={100}
@@ -61,7 +63,64 @@ const customerReviews = () => {
 				src={Icon6}
 				alt='Icon1'
 			/>
-			<Testimonials/>
+			<Image
+				className='hidden md:block absolute right-50 top-120 opacity-10 filter invert'
+				width={140}
+				height={140}
+				src={Icon7}
+				alt='Icon1'
+			/>
+			{/* mobile icons */}
+				<Image
+				className='block md:hidden absolute left-10 opacity-10 filter grayscale'
+				width={70}
+				height={70}
+				src={Icon1}
+				alt='Icon1'
+			/>
+			<Image
+				className='block md:hidden absolute right-10 opacity-10 filter grayscale'
+				width={50}
+				height={50}
+				src={Icon2}
+				alt='Icon1'
+			/>
+			<Image
+				className='block md:hidden absolute bottom-10 left-10 opacity-10 filter grayscale'
+				width={30}
+				height={30}
+				src={Icon3}
+				alt='Icon1'
+			/>
+			<Image
+				className='block md:hidden absolute right-10 bottom-10 opacity-10 filter grayscale'
+				width={40}
+				height={40}
+				src={Icon4}
+				alt='Icon1'
+			/>
+			<Image
+				className='block md:hidden absolute left-50 top-80 opacity-10 filter grayscale'
+				width={40}
+				height={40}
+				src={Icon5}
+				alt='Icon1'
+			/>
+			<Image
+				className='block md:hidden absolute right-50 top-80 opacity-10 filter grayscale'
+				width={40}
+				height={40}
+				src={Icon6}
+				alt='Icon1'
+			/>
+			<Image
+				className='block md:hidden absolute right-40 top-12 opacity-10 filter invert'
+				width={80}
+				height={80}
+				src={Icon7}
+				alt='Icon1'
+			/>
+			<Testimonials />
 			{/* cards */}
 			{/* <motion.div
 				initial={{ opacity: 0, x: 120 }}

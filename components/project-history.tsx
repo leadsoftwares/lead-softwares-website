@@ -85,7 +85,7 @@ const ProjectHistory = () => {
 		}
 	}, [activeSlide , ProjectView.length])
   return (
-    <div className='w-full py-25 mt-16 md:mt-16'>
+    <div className='w-full py-10 lg:py-25 md:mt-16'>
                     {/* header */}
                     <motion.div
                     initial={{ opacity: 0, y: -100 }}

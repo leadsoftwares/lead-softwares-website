@@ -1,6 +1,7 @@
 'use client'
 import MidIMG from '@/public/png/City 17 M.png'
 import SectionBG from '@/public/png/why-choose-three-bg-shape.png'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 export default function WhyChooseThree() {
@@ -8,7 +9,7 @@ export default function WhyChooseThree() {
 		<section className='relative py-20 bg-[#182536] overflow-hidden mb-10'>
 			{/* Background Shape */}
 			<div
-				className='absolute bottom-0 left-0 right-0 h-1/2 opacity-40 bg-contain bg-bottom bg-no-repeat animate-float-bob-x'
+				className='absolute bottom-0 left-0 right-0 h-1/2 opacity-50 bg-contain bg-bottom bg-no-repeat animate-float-bob-x'
 				style={{
 					backgroundImage: `url(${SectionBG.src})`,
 				}}
@@ -21,19 +22,27 @@ export default function WhyChooseThree() {
 			<div className='relative container mx-auto px-4'>
 				{/* Section Title */}
 				<div className='text-center mb-16'>
-					<div className='inline-flex items-center gap-3 mb-4'>
+					<motion.div
+						initial={{ opacity: 0, x: -100 }}
+						whileInView={{ opacity: 1, x: 0 }}
+						viewport={{ once: true, amount: 0.3 }}
+						transition={{ duration: 0.8, ease: 'easeInOut' }}
+						className='inline-flex items-center gap-3 mb-4'
+					>
 						<div className='w-10 h-0.5 bg-blue-600' />
 						<span className='text-blue-500 font-medium'>Why Choose Us</span>
 						<div className='w-10 h-0.5 bg-blue-600' />
-					</div>
-					<h2 className='text-3xl md:text-5xl font-bold leading-snug text-white'>
+					</motion.div>
+					<motion.h2
+                    
+                    className='text-3xl md:text-5xl font-bold leading-snug text-white'>
 						Your Business with{' '}
 						<span className='text-[#fbd169]'>
 							Reliable &amp; <br className='hidden md:block' />
 							Future-Ready{' '}
 						</span>
 						IT Solutions
-					</h2>
+					</motion.h2>
 				</div>
 
 				{/* Content Grid */}

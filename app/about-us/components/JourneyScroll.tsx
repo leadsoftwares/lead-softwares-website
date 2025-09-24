@@ -29,7 +29,7 @@ export default function PortfolioSection() {
 	}, [])
 
 	return (
-		<section ref={sectionRef} className='bg-black text-white py-12 xl:py-66 mt-50 md:mt-30 lg:mt-0'>
+		<section ref={sectionRef} className='bg-black text-white py-12 xl:py-66 mt-4 md:mt-30 lg:mt-0'>
 			<div className='container mx-auto flex flex-col xl:flex-row gap-20 lg:max-w-6xl px-2'>
 				{/* LEFT IMAGE (Pinned) */}
 				<div ref={leftRef} className='hidden xl:flex w-480 max-h-100 px-4 justify-center items-center rounded-lg'>

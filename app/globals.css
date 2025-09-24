@@ -142,12 +142,22 @@ html {
   animation: float 6s ease-in-out infinite;
 } */
 
-
 /* About Us / Why choose us  */
 @keyframes float-bob-x {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(20px); }
+	0%,
+	100% {
+		transform: translateX(0) translateY(0);
+	}
+	25% {
+		transform: translateX(15px) translateY(-10px);
+	}
+	50% {
+		transform: translateX(20px) translateY(0);
+	}
+	75% {
+		transform: translateX(10px) translateY(10px);
+	}
 }
 .animate-float-bob-x {
-  animation: float-bob-x 6s ease-in-out infinite;
+	animation: float-bob-x 8s ease-in-out infinite;
 }
