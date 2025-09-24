@@ -3,11 +3,10 @@ import { DM_Sans } from 'next/font/google'
 import Footer from '../components/footer-component'
 import MicrosoftClarity from '../components/microsoft-clarity'
 import Navbar from '../components/navbar-component'
-import ScrollToTop from '../components/scroll-to-top'
 import './globals.css'
 // Initialize Firebase
-import SmoothScroll from '@/components/smoothScroll'
 import '../lib/firebase'
+import SmoothScroll from '@/components/smoothScroll'
 
 const dmSans = DM_Sans({
 	subsets: ['latin'],
@@ -19,8 +18,8 @@ export const metadata: Metadata = {
 	title: 'Lead Softwares',
 	description: 'Created by Hassan King',
 	icons: {
-		icon: '/png/White-01.png',
-	},
+		icon: '/White-01.png'
+	}
 }
 
 export default function RootLayout({
@@ -31,14 +30,12 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={dmSans.className} suppressHydrationWarning>
-					<Navbar />
 				<SmoothScroll>
-					<MicrosoftClarity />
-				
-					{children}
-					<Footer />
+				<MicrosoftClarity />
+				<Navbar />
+				{children}
+				<Footer />
 				</SmoothScroll>
-				<ScrollToTop />
 			</body>
 		</html>
 	)

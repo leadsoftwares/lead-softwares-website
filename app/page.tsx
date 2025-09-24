@@ -8,7 +8,7 @@ import Image from 'next/image'
 import CustomButton from '../components/custom-btn'
 import Partners from '../components/partners-components'
 import Strategy from '../components/strategy'
-import MobileView from '../public/png/mobileview.webp'
+import MobileView from '@/public/png/mobileview.webp'
 import MobileViewCard from '../public/png/mobileviewCard.png'
 import Account from '../public/svg/account.svg'
 import Briefcase from '../public/svg/briefcase.svg'
@@ -19,6 +19,7 @@ import Trophy from '../public/svg/trophy.svg'
 import Tv from '../public/svg/tv.svg'
 import Link from 'next/link'
 import CustomerReviews from '@/components/customerReviews'
+
 const strategy = [
 	{
 		icon: Rocket,
