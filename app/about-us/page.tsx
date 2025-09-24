@@ -16,6 +16,7 @@ import TeamSection from '../../components/team-section'
 import Link from 'next/link'
 import ProjectHistory from '@/components/project-history'
 import AboutSectionImg from "@/public/png/Lead software pages Images/about uss.png"
+import JourneyScroll from "@/app/about-us/components/JourneyScroll"
 import { motion } from 'framer-motion'
 
 const About = () => {
@@ -24,6 +25,8 @@ const About = () => {
 		<div className='w-full overflow-hidden'>
 			{/* navbar + title */}
 			<NavbarTitle title='About Us' src={AboutSectionImg} />
+			{/*  */}
+			<JourneyScroll />
 			{/*  */}
 			<div className='w-full gap-20 md:gap-40 flex flex-col lg:flex-row items-center px-10 lg:px-30 py-30'>
 				<motion.div

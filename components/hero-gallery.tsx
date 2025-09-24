@@ -2,18 +2,18 @@
 
 import Image from 'next/image'
 
-import Img1 from "@/public/png/City 17 D.png"
-import Img2 from "@/public/png/City 17 M.png"
-import Img3 from "@/public/png/Crazy By Rasel D.png"
-import Img4 from "@/public/png/Crazy By Rasel App M.png"
-import Img5 from "@/public/png/Super Aurora D.png"
+import Img1 from "@/public/png/website pages ui/Barq e Shop 2.png"
+import Img2 from "@/public/png/website pages ui/City 17 1.png"
+import Img3 from "@/public/png/website pages ui/Crazy by rasel 2.png"
+import Img4 from "@/public/png/website pages ui/IDN 2.png"
+import Img5 from "@/public/png/website pages ui/Lawraze 1.png"
 
 const galleryData = [
-  { src: Img1, speed: 0.7 },
-  { src: Img2, speed: 0.9 },
-  { src: Img3, speed: 0.7 },
-  { src: Img4, speed: 0.9 },
-  { src: Img5, speed: 0.7 },
+  { src: Img3, speed: 0.6 },
+  { src: Img2, speed: 1.0 },
+  { src: Img1, speed: 0.6 },
+  { src: Img4, speed: 1.0 },
+  { src: Img5, speed: 0.6 },
 ]
 
 export default function HeroGallery() {
@@ -22,13 +22,13 @@ export default function HeroGallery() {
       {/* 🔲 OUTER BIG BORDER BOX */}
       <div
         className="
-          w-[95%] max-w-7xl
-          border-4 border-black rounded-2xl bg-zinc-900
+          w-[95%] max-w-10xl
+          border-14 border-zinc-700 rounded-4xl bg-zinc-900
           p-6
           shadow-lg
           overflow-hidden
           relative
-          h-[600px]
+          h-screen
         "
       >
         {/* Inner grid of columns */}
@@ -47,12 +47,12 @@ export default function HeroGallery() {
                 "
                 data-speed={item.speed}
               >
-                {Array.from({ length: 6 }).map((_, i) => (
+                {Array.from({ length: 8 }).map((_, i) => (
                   <Image
                     key={i}
                     src={item.src}
                     alt={`hero-thumb-${colIndex + 1}`}
-                    width={250}
+                    width={350}
                     height={150}
                     className="
                       rounded-md
@@ -61,7 +61,7 @@ export default function HeroGallery() {
                       object-cover
                       transition
                       duration-300
-                      hover:scale-[1.05]
+                      hover:scale-[1.001]
                     "
                   />
                 ))}
