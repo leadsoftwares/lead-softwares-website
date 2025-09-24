@@ -1,22 +1,24 @@
 'use client'
 
-import { Box, Check, Medal} from 'lucide-react'
+import JourneyScroll from '@/app/about-us/components/JourneyScroll'
+import ProjectHistory from '@/components/project-history'
+import AboutSectionImg from '@/public/png/Lead software pages Images/about uss.png'
+import { motion } from 'framer-motion'
+import { Box, Check, Medal } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from 'react'
-import  CustomButton from '../../components/custom-btn'
+import CustomButton from '../../components/custom-btn'
 import Partners from '../../components/partners-components'
+import TeamSection from '../../components/team-section'
 import AboutusImg from '../../public/jpeg/about-us-thumbnail.jpeg'
 import AboutGrowth3 from '../../public/png/about-Growth3.png'
+import RoadMap from '../../public/svg/roadmap.svg'
 import AboutGrowth1 from '../../public/webp/about-Growth1.webp'
 import AboutGrowth2 from '../../public/webp/about-Growth2.webp'
 import AboutGrowth4 from '../../public/webp/about-Growth4.webp'
-import RoadMap from '../../public/svg/roadmap.svg'
 import NavbarTitle from './components/NavbarTitle'
-import TeamSection from '../../components/team-section'
-import Link from 'next/link'
-import ProjectHistory from '@/components/project-history'
-import AboutSectionImg from "@/public/png/Lead software pages Images/about uss.png"
-import { motion } from 'framer-motion'
+import WhyChooseThree from './components/whychooseus'
 
 const About = () => {
 	const [isPlaying, setIsPlaying] = useState(false)
@@ -25,13 +27,16 @@ const About = () => {
 			{/* navbar + title */}
 			<NavbarTitle title='About Us' src={AboutSectionImg} />
 			{/*  */}
-			<div className='w-full gap-20 md:gap-40 flex flex-col lg:flex-row items-center px-10 lg:px-30 py-30'>
+			<JourneyScroll />
+			{/*  */}
+			<div className='w-full gap-4 md:gap-40 flex flex-col lg:flex-row items-center px-10 lg:px-30 lg:py-30'>
 				<motion.div
-				initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true , amount: 0.3}}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-				className='space-y-10 mt-10 md:mt-0 lg:w-[40%]'>
+					initial={{ opacity: 0, y: 100 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.3 }}
+					transition={{ duration: 0.8, ease: 'easeOut' }}
+					className='space-y-10 mt-10 md:mt-0 lg:w-[40%]'
+				>
 					<div className='title text-primary font-semibold text-4xl'>
 						Growth strategies to be effective & competitive
 					</div>
@@ -40,17 +45,18 @@ const About = () => {
 						human-centered enterprise software that has the polished, snappy
 						feel of the best consumer apps.
 					</div>
-					<Link href={'/consultation'}>
-					<CustomButton title='Get Started' />
+					<Link className='hidden lg:block' href={'/consultation'}>
+						<CustomButton title='Get Started' />
 					</Link>
 				</motion.div>
 
 				<motion.div
-				initial={{ opacity: 0, x: 100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true , amount: 0.4}}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-				 className='lg:w-[60%] h-full max-w-3xl mx-auto rounded-4xl overflow-hidden shadow-2xl'>
+					initial={{ opacity: 0, x: 100 }}
+					whileInView={{ opacity: 1, x: 0 }}
+					viewport={{ once: true, amount: 0.4 }}
+					transition={{ duration: 0.8, ease: 'easeOut' }}
+					className='lg:w-[60%] h-full max-w-3xl mx-auto rounded-4xl overflow-hidden shadow-2xl'
+				>
 					{!isPlaying ? (
 						<div
 							className='relative cursor-pointer'
@@ -79,14 +85,15 @@ const About = () => {
 				</motion.div>
 			</div>
 			{/*  */}
-			<div className='bg-bg py-25 mx-4'>
+			<div className='bg-bg py-25 mt-4 lg:mt-0'>
 				{/* header */}
 				<motion.div
-				initial={{ opacity: 0, x: 0 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true , amount: 0.3}}
-        transition={{ duration: 2, ease: 'easeOut' }}
-				className='space-y-3'>
+					initial={{ opacity: 0, x: 0 }}
+					whileInView={{ opacity: 1, x: 0 }}
+					viewport={{ once: true, amount: 0.3 }}
+					transition={{ duration: 2, ease: 'easeOut' }}
+					className='space-y-3'
+				>
 					{/* subtitle */}
 					<div className='text-sm text-lightBlue text-center'>
 						It’s Time for a Blockchain Revolution
@@ -97,14 +104,15 @@ const About = () => {
 					</div>
 				</motion.div>
 				{/* blockchain detail */}
-				<div className='w-full flex flex-col lg:flex-row items-center gap-40 px-8 lg:px-25 mt-40'>
+				<div className='w-full flex flex-col lg:flex-row items-center gap-10 lg:gap-40 px-8 lg:px-25 mt-14 lg:mt-40'>
 					{/* left side (boxes side) */}
 					<motion.div
-					initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true , amount: 0.3}}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-					className='space-y-8 lg:space-y-4'>
+						initial={{ opacity: 0, x: -100 }}
+						whileInView={{ opacity: 1, x: 0 }}
+						viewport={{ once: true, amount: 0.3 }}
+						transition={{ duration: 0.8, ease: 'easeOut' }}
+						className='space-y-8 lg:space-y-4'
+					>
 						{/* box 1 */}
 						<div className='bg-white md:gap-4 flex flex-col items-center lg:flex-row space-x-3 w-full lg:w-120 rounded-2xl shadow-lg p-6'>
 							<div className='w-14 h-14 lg:w-20 lg:h-12 mb-6 lg:mb-15 flex justify-center mx-auto lg:mx-0 items-center rounded-full bg-blue-100'>
@@ -153,11 +161,12 @@ const About = () => {
 					</motion.div>
 					{/* right side */}
 					<motion.div
-					initial={{ opacity: 0, x: 100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true , amount: 0.3}}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-					className='w-full'>
+						initial={{ opacity: 0, x: 100 }}
+						whileInView={{ opacity: 1, x: 0 }}
+						viewport={{ once: true, amount: 0.3 }}
+						transition={{ duration: 0.8, ease: 'easeOut' }}
+						className='w-full'
+					>
 						<div className='lg:w-[70%] flex flex-col gap-8'>
 							{/* title */}
 							<div className='text-primary text-4xl font-semibold leading-12'>
@@ -171,7 +180,7 @@ const About = () => {
 								to evolve rapidly while remaining competitive in the market.
 							</div>
 							{/* btn */}
-							<Link href={'/consultation'} className='flex gap-4'>
+							<Link href={'/consultation'} className='lg:flex gap-4 hidden'>
 								<CustomButton title='Get Started' />
 							</Link>
 						</div>
@@ -181,17 +190,18 @@ const About = () => {
 			{/* Our History Section */}
 			<div className='w-full'>
 				{/* Project History */}
-				<ProjectHistory/>
+				<ProjectHistory />
 			</div>
 			{/* Growth Section */}
-			<div className='mx-4 bg-bg py-30 px-8 lg:px-30 flex flex-col lg:flex-row gap-40'>
+			<div className='bg-bg py-8 lg:py-30 px-8 lg:px-30 flex flex-col lg:flex-row gap-40'>
 				{/* Left Side */}
 				<motion.div
-				initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true , amount: 0.3}}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-				className='lg:w-[35%] space-y-10'>
+					initial={{ opacity: 0, x: -100 }}
+					whileInView={{ opacity: 1, x: 0 }}
+					viewport={{ once: true, amount: 0.3 }}
+					transition={{ duration: 0.8, ease: 'easeOut' }}
+					className='lg:w-[35%] space-y-10'
+				>
 					{/* title */}
 					<div className='text-4xl text-primary font-semibold'>
 						Growth strategies to be effective & competitive
@@ -249,29 +259,36 @@ const About = () => {
 				</motion.div>
 				{/* Right Side */}
 				<motion.div
-				initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true , amount: 0.3}}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-				className='grid grid-cols-1 lg:grid-cols-2 mx-auto gap-10'>
-					<Image className='shadow-xl rounded-4xl' src={AboutGrowth1} alt='G' />
+					initial={{ opacity: 0, y: 100 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.3 }}
+					transition={{ duration: 0.8, ease: 'easeOut' }}
+					className='grid grid-cols-1 lg:grid-cols-2 mx-auto gap-10'
+				>
 					<Image
-						className='shadow-xl rounded-4xl lg:relative bottom-10'
+						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full lg:rounded-4xl'
+						src={AboutGrowth1}
+						alt='G'
+					/>
+					<Image
+						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full lg:rounded-4xl lg:relative bottom-10'
 						src={AboutGrowth2}
 						alt='G'
 					/>
-					<Image className='shadow-xl rounded-4xl' src={AboutGrowth3} alt='G' />
+					<Image className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full lg:rounded-4xl' src={AboutGrowth3} alt='G' />
 					<Image
-						className='shadow-xl rounded-4xl lg:relative bottom-10'
+						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full lg:rounded-4xl lg:relative bottom-10'
 						src={AboutGrowth4}
 						alt='G'
 					/>
 				</motion.div>
 			</div>
 			{/* Team Section */}
-			<TeamSection/>
+			<TeamSection />
 			{/* partnership logos */}
 			<Partners />
+			{/*  */}
+			<WhyChooseThree />
 			{/* email section */}
 			<div
 				style={{

@@ -3,6 +3,7 @@ import { Facebook, Twitter, Youtube } from 'lucide-react'
 import Image from 'next/image'
 import Logo from '../public/png/Lead Logo White with white Text-02-02.png'
 import { motion } from 'framer-motion'																				
+import Link from 'next/link'
 const Footer = () => {
 	return (
 		<div>
@@ -44,28 +45,18 @@ const Footer = () => {
 							<a className='text-zinc-200 font-semibold' href='#'>
 								Products
 							</a>
-							<a href='#'>Unify App</a>
-							<a href='#'>Page Builder</a>
-							<a href='#'>Templates</a>
-							<a href='#'>Pricing</a>
+							<Link href='/about-us'>About Us</Link>
+							<Link href='/portfolio'>Portfolio</Link>
+							<Link href='/services'>Services</Link>
+							<Link href='/team'>Team</Link>
 						</ul>
 						<ul className='flex flex-col gap-6 text-zinc-400 text-sm'>
 							<a className='text-zinc-200 font-semibold' href='#'>
 								Resources
 							</a>
-							<a href='#'>Design</a>
-							<a href='#'>Inspiration</a>
-							<a href='#'>Blog</a>
-							<a href='#'>Jobs</a>
-						</ul>
-						<ul className='flex flex-col gap-6 text-zinc-400 text-sm'>
-							<a className='text-zinc-200 font-semibold' href='#'>
-								Support
-							</a>
-							<a href='#'>Documentation</a>
-							<a href='#'>Help Desk</a>
-							<a href='#'>Video Guides</a>
-							<a href='#'>Security</a>
+							<Link href='/consultation'>Quote</Link>
+							<Link href='/contact'>Contact Us</Link>
+							<Link href='/career'>Career</Link>
 						</ul>
 					</motion.div>
 					{/* gradient */}
