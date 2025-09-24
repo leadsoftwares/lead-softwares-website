@@ -17,6 +17,9 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
 	title: 'Lead Softwares',
 	description: 'Created by Hassan King',
+	icons: {
+		icon: '/White-01.png'
+	}
 }
 
 export default function RootLayout({
