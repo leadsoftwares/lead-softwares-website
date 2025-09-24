@@ -8,7 +8,6 @@ import './globals.css'
 // Initialize Firebase
 import SmoothScroll from '@/components/smoothScroll'
 import '../lib/firebase'
-import Fav from "@/public/png/White-01.png"
 
 const dmSans = DM_Sans({
 	subsets: ['latin'],

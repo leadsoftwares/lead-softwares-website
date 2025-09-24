@@ -28,7 +28,8 @@ export default function HeroGallery() {
           shadow-lg
           overflow-hidden
           relative
-          h-screen
+          h-200
+          lg:h-screen
         "
       >
         {/* Inner grid of columns */}
