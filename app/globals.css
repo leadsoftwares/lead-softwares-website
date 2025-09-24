@@ -141,3 +141,13 @@ html {
 .animate-float {
   animation: float 6s ease-in-out infinite;
 } */
+
+
+/* About Us / Why choose us  */
+@keyframes float-bob-x {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(20px); }
+}
+.animate-float-bob-x {
+  animation: float-bob-x 6s ease-in-out infinite;
+}

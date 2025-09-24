@@ -8,6 +8,7 @@ import './globals.css'
 // Initialize Firebase
 import SmoothScroll from '@/components/smoothScroll'
 import '../lib/firebase'
+import Fav from "@/public/png/White-01.png"
 
 const dmSans = DM_Sans({
 	subsets: ['latin'],
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 	title: 'Lead Softwares',
 	description: 'Created by Hassan King',
 	icons: {
-		icon: '/White-01.png',
+		icon: '/png/White-01.png',
 	},
 }
 
@@ -31,9 +32,10 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={dmSans.className} suppressHydrationWarning>
+					<Navbar />
 				<SmoothScroll>
 					<MicrosoftClarity />
-					<Navbar />
+				
 					{children}
 					<Footer />
 				</SmoothScroll>

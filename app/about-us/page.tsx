@@ -18,6 +18,7 @@ import ProjectHistory from '@/components/project-history'
 import AboutSectionImg from "@/public/png/Lead software pages Images/about uss.png"
 import JourneyScroll from "@/app/about-us/components/JourneyScroll"
 import { motion } from 'framer-motion'
+import WhyChooseThree from './components/whychooseus'
 
 const About = () => {
 	const [isPlaying, setIsPlaying] = useState(false)
@@ -275,6 +276,8 @@ const About = () => {
 			<TeamSection/>
 			{/* partnership logos */}
 			<Partners />
+			{/*  */}
+			<WhyChooseThree/>
 			{/* email section */}
 			<div
 				style={{
@@ -295,6 +298,7 @@ const About = () => {
 					<CustomButton title='Sign Up' />
 				</div>
 			</div>
+			
 		</div>
 	)
 }
