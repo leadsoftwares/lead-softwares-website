@@ -100,14 +100,14 @@ const page = () => {
 					transition={{ duration: 0.8, ease: 'easeOut' }}
 					className='title text-5xl w-full flex justify-center mt-14  text-primary font-semibold'
 				>
-					<h2 className='hidden md:block leading-14'>
+					<h2 className='hidden lg:block leading-14'>
 						Make your business future-proof <br /> to anticipate the challenges
 						to be
 					</h2>
 
-					<h2 className='block md:hidden leading-11 text-center text-3xl'>
-						Make your business <br /> future-proof to <br /> anticipate the{' '}
-						<br /> challenges to be
+					<h2 className='block lg:hidden leading-11 text-center text-3xl md:text-4xl'>
+						Make your business <br className='block md:hidden' /> future-proof to <br className='block md:hidden' /> anticipate the{' '}
+						<br className='block md:hidden' /> challenges to be
 					</h2>
 				</motion.div>
 				<motion.div

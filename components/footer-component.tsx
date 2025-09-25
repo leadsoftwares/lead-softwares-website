@@ -29,9 +29,9 @@ const Footer = () => {
 					 className='flex flex-col items-center md:items-start text-center md:text-left'>
 						<Image width={150} height={150} src={Logo} alt='Leadsoftwares' />
 						{/* desc */}
-						<div className='text-zinc-300 text-sm font-light mt-6'>
+						<div className='text-zinc-300 text-sm font-light mt-6 max-w-[380px]'>
 							Creative-powered to fuel your growth goals. We build world-class
-							digital <br /> products, software and branding.
+							digital products, software and branding.
 						</div>
 					</motion.div>
 					{/* right side */}
