@@ -28,7 +28,7 @@ const strategy = [
 	},
 	{
 		icon: Tv,
-		title: 'Transition to sustainable futures',
+		title: 'Transition to sustain futures',
 		text: 'We combine business opportunities with customer expectations to design, transform and deliver useful products, and unique brand experiences.',
 	},
 	{
@@ -115,7 +115,7 @@ const page = () => {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 					transition={{ duration: 0.8, ease: 'easeOut' }}
-					className='boxes flex flex-col flex-wrap lg:flex-row md:flex-nowrap gap-8 mx-auto items-center lg:justify-center lg::mx-auto mt-24 pb-20 border-b border-gray-300 lg:px-60'
+					className='boxes flex flex-col flex-wrap lg:flex-row md:flex-nowrap gap-8 mx-auto items-center lg:justify-center lg::mx-auto mt-24 pb-20 border-b border-gray-300 lg:px-30 xl:px-60'
 				>
 					{strategy.map((item, i) => (
 						<div key={i} className='flex flex-col gap-6 w-80 md:w-160'>
@@ -231,7 +231,7 @@ const page = () => {
 				</motion.div>
 				<div className='main w-full mt-18 flex justify-evenly flex-col lg:flex-row gap-16'>
 					<div className='left'>
-						<div className='boxes flex flex-col items-center md:flex-row md:w-160 md:flex-wrap gap-6 mx-auto'>
+						<div className='boxes flex flex-col items-center md:flex-row md:w-160 lg:w-120 xl:w-160 md:flex-wrap gap-6 mx-auto'>
 							{strategyBoxes.map((strategyBox, i) => (
 								<motion.div
 									key={i}
@@ -239,14 +239,14 @@ const page = () => {
 									whileInView={{ opacity: 1, y: 0 }}
 									viewport={{ once: true }}
 									transition={{ duration: 0.8, ease: 'easeOut' }}
-									className='box hover:-translate-y-2 transition-all duration-300 pb-18 cursor-pointer shadow-md bg-white rounded-2xl flex items-center gap-6 flex-col py-12 max-w-65 sm:w-70 mx-auto'
+									className='box hover:-translate-y-2 transition-all duration-300 pb-18 cursor-pointer shadow-md bg-white rounded-2xl flex items-center gap-6 flex-col py-12 max-w-65 sm:w-70 lg:w-50 xl:w-70 mx-auto'
 								>
 									<div
 										className={`icon ${strategyBox.bg} w-14 h-14 rounded-full flex items-center justify-center`}
 									>
 										<Image src={strategyBox.icon} alt={strategyBox.title} />
 									</div>
-									<div className='title text-center text-primary text-2xl font-semibold px-4'>
+									<div className='title text-center text-primary text-xl xl:text-2xl font-semibold px-4'>
 										{strategyBox.title}
 									</div>
 								</motion.div>

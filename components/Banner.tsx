@@ -20,7 +20,7 @@ const Banner = () => {
 				viewport={{ once: true }}
 				transition={{ duration: 0.8, ease: 'easeOut' }}
 				style={{
-					backgroundImage: `url(${Bannerbg.src})`, // ✅ correct
+					backgroundImage: `url(${Bannerbg.src})`,
 				}}
 				className='relative pt-10 md:pt-0 w-full max-h-[100vh] bg-no-repeat bg-cover text-white flex items-center'
 			>
@@ -29,8 +29,8 @@ const Banner = () => {
 				whileInView={{ opacity: 1, x: 0 }}
 				viewport={{ once: true }}
 				transition={{ duration: 0.8, ease: 'easeOut' }}
-				className='container mx-auto px-6 lg:px-20 py-20 lg:py-40 flex flex-col items-center lg:items-start space-y-10 z-90'>
-					<div className='font-[700] text-4xl lg:text-7xl text-center lg:text-left'>
+				className='container mx-auto px-6 lg:px-10 xl:px-20 py-20 lg:py-40 flex flex-col items-center lg:items-start space-y-10 z-90'>
+					<div className='font-[700] text-4xl lg:text-6xl xl:text-7xl text-center lg:text-left'>
 						<h1 className='hidden md:block'>
 							We manage your{' '}
 							<span>
