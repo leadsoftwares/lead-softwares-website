@@ -30,9 +30,9 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={dmSans.className} suppressHydrationWarning>
+				<Navbar />
 				<SmoothScroll>
 				<MicrosoftClarity />
-				<Navbar />
 				{children}
 				<Footer />
 				</SmoothScroll>
