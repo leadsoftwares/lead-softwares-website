@@ -46,7 +46,7 @@ const Partners = () => {
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true }}
 				transition={{ duration: 1, ease: 'easeOut' }}
-				className='hidden md:flex w-full flex-wrap justify-center lg:flex-row items-center gap-26 md:gap-20 lg:gap-26 mt-10 pb-28'
+				className='hidden lg:flex w-full flex-wrap justify-center lg:flex-row items-center gap-26 md:gap-20 lg:gap-26 mt-10 pb-28'
 			>
 				{partners.map((partner, index) => (
 					<Image
@@ -60,7 +60,7 @@ const Partners = () => {
 			</motion.div>
 {/*  */}
 			{/* Mobile View - Infinite Horizontal Scroll */}
-			<div className='md:hidden overflow-hidden pb-28'>
+			<div className='lg:hidden overflow-hidden pb-28'>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
 					whileInView={{ opacity: 1, y: 0 }}

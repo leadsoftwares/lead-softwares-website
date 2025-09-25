@@ -12,7 +12,7 @@ const Footer = () => {
 				// whileInView={{ opacity: 1, x: 0 }}
 				// viewport={{ once: true }}
 				// transition={{ duration: 0.8, ease: 'easeOut' }}
-				className='relative overflow-hidden w-full bg-[#12032F] h-290 md:h-175 lg:h-110'
+				className='relative overflow-hidden w-full bg-[#12032F] h-210 md:h-155 lg:h-110'
 			>
 				{/* gradient */}
 				<div className='ml-30 h-110 w-120 flex items-center'>

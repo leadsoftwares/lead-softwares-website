@@ -36,11 +36,11 @@ const NavbarTitle = ({ title, src }: TitleProps) => {
 					</div>
 					{/* title */}
 					<div className='px-6'>
-						<div className='text-center lg:text-left lg:w-full title text-primary font-bold text-5xl md:text-7xl'>
+						<div className='text-center md:text-left lg:w-full title text-primary font-bold text-5xl md:text-7xl'>
 							{title}
 						</div>
 						{/* desc */}
-						<div className=' text-text text-center lg:text-left mt-6 text-xl mb-12'>
+						<div className=' text-text text-center md:text-left mt-6 text-xl mb-12'>
 							The Engitech Token is the key to unlocking thefull potential of
 							Engitech. Get eve higher earning rates and our lowest rates
 						</div>

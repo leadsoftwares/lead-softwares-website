@@ -6,6 +6,10 @@ import Barq from '@/public/png/mobile-4.png'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import { Pagination } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
 const MobileProjects = () => {
 	const [activeSlide, setActiveSlide] = useState(0)
 	const sliderRef = useRef<HTMLDivElement>(null)
@@ -136,69 +140,42 @@ const MobileProjects = () => {
 				transition={{ duration: 0.8, ease: 'easeOut' }}
 				className='md:hidden mt-8 w-full relative'
 			>
-				<div className='w-full overflow-x-hidden touch-pan-x'>
-					<div
-						ref={sliderRef}
-						className='flex w-full snap-x snap-mandatory overflow-x-auto scrollbar-hide'
-						style={{
-							scrollSnapType: 'x mandatory',
-							WebkitOverflowScrolling: 'touch', // For better iOS scroll performance
-						}}
-					>
-						{ProjectView.map((project) => (
-							<div
-								key={project.id}
-								className='w-full flex-shrink-0 flex-grow-0 snap-center px-6'
-								style={{
-									scrollSnapAlign: 'center',
-									minWidth: '100%',
-									maxWidth: '100%',
-								}}
+				{/* Swiper Slider */}
+				<Swiper
+					modules={[Pagination]}
+					spaceBetween={20} // gap between slides
+					slidesPerView={1} // show one full slide
+					pagination={{ clickable: true }} // dots enabled
+					className='w-full'
+				>
+					{ProjectView.map((project) => (
+						<SwiperSlide key={project.id}>
+							<a
+								href={project.href}
+								target='_blank'
+								className='relative space-y-4 block w-full px-6 mb-8'
 							>
-								<a
-									href={project.href}
-									target='_blank'
-									className='relative space-y-4 block w-full'
-								>
-									<div className='relative rounded-xl overflow-hidden'>
-										<Image
-											className='transition-transform duration-300'
-											width={200}
-											height={400}
-											src={project.img}
-											alt={project.alt}
-											style={{
-												width: '100%',
-												height: 'auto',
-												objectFit: 'cover',
-											}}
-										/>
-									</div>
-									<div className='text-xl font-semibold text-primary'>
-										{project.title}
-									</div>
-								</a>
-							</div>
-						))}
-					</div>
-				</div>
-
-				{/* Slide indicators - with active state */}
-				<div className='flex justify-center mt-6 space-x-3'>
-					{ProjectView.map((_, index) => (
-						<button
-							key={index}
-							onClick={() => handleSlideChange(index)}
-							className={`w-3 h-3 rounded-full transition-all duration-300 ${
-								activeSlide === index
-									? 'bg-primary scale-110'
-									: 'bg-gray-300 hover:bg-gray-400'
-							}`}
-							aria-label={`Go to slide ${index + 1}`}
-							aria-current={activeSlide === index ? 'true' : 'false'}
-						/>
+								<div className='relative rounded-xl overflow-hidden'>
+									<Image
+										width={200}
+										height={400}
+										src={project.img}
+										alt={project.alt}
+										className='transition-transform duration-300'
+										style={{
+											width: '100%',
+											height: 'auto',
+											objectFit: 'cover',
+										}}
+									/>
+								</div>
+								<div className='text-xl font-semibold text-primary'>
+									{project.title}
+								</div>
+							</a>
+						</SwiperSlide>
 					))}
-				</div>
+				</Swiper>
 			</motion.div>
 		</div>
 	)
