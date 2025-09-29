@@ -11,7 +11,7 @@ const TeamSection = () => {
 		{ name: 'Marta Smith', info: 'Product Designer', img: AboutStaff1 },
 		{ name: 'Thomas Smith', info: 'Developer', img: AboutStaff2 },
 		{ name: 'Stella Smith', info: 'Project Manager', img: AboutStaff3 },
-		{ name: 'Martin Smith', info: 'Artificial Intelligence', img: AboutStaff4 },
+		{ name: 'Martin Smith', info: 'AI Specialist', img: AboutStaff4 },
 	]
 	return (
 		<div className='lg:px-20 py-15'>
@@ -31,7 +31,7 @@ const TeamSection = () => {
 				whileInView={{ opacity: 1, x: 0 }}
 				viewport={{ once: true, amount: 0.1 }}
 				transition={{ duration: 0.8, ease: 'easeOut' }}
-				className='flex flex-col lg:flex-row justify-center space-y-8 mt-20'
+				className='flex flex-col lg:flex-row flex-wrap justify-center space-y-8 mt-20'
 			>
 				{staffData.map((person, index) => (
 					<Card

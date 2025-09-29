@@ -36,7 +36,7 @@ const ProjectHistory = () => {
 	return (
 		<div className='w-full py-6 lg:py-25 md:mt-16'>
 			{/* header */}
-			<div className='lg:w-[65%] px-6 lg:px-0 text-primary text-3xl md:text-4xl lg:text-4xl font-semibold mx-auto text-center lg:leading-16'>
+			<div className='lg:w-[75%] xl:w-[65%] px-6 lg:px-0 text-primary text-3xl md:text-4xl lg:text-4xl font-semibold mx-auto text-center lg:leading-14 xl:leading-16'>
 				Explore our recent client success stories and witness our full 360
 				transformations come to life
 			</div>

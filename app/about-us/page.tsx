@@ -99,12 +99,12 @@ const About = () => {
 						It’s Time for a Blockchain Revolution
 					</div>
 					{/* title */}
-					<div className='text-3xl lg:text-5xl text-primary lg:w-[45%] leading-10 md:leading-14 font-semibold text-center mx-auto'>
+					<div className='text-3xl lg:text-5xl text-primary xl:w-[45%] leading-10 md:leading-14 font-semibold text-center mx-auto'>
 						Developing sustainable and innovative blockchain solutions
 					</div>
 				</motion.div>
 				{/* blockchain detail */}
-				<div className='w-full flex flex-col lg:flex-row items-center gap-10 lg:gap-40 px-8 lg:px-25 mt-14 lg:mt-40'>
+				<div className='w-full flex flex-col lg:flex-row items-center gap-10 xl:gap-40 px-8 lg:px-25 mt-14 lg:mt-40'>
 					{/* left side (boxes side) */}
 					<motion.div
 						initial={{ opacity: 0, x: -100 }}
@@ -167,7 +167,7 @@ const About = () => {
 						transition={{ duration: 0.8, ease: 'easeOut' }}
 						className='w-full'
 					>
-						<div className='lg:w-[70%] flex flex-col gap-8'>
+						<div className='xl:w-[70%] flex flex-col gap-8'>
 							{/* title */}
 							<div className='text-primary text-3xl md:text-4xl font-semibold md:leading-12'>
 								Strategies that get you on the path to success
@@ -193,14 +193,14 @@ const About = () => {
 				<ProjectHistory />
 			</div>
 			{/* Growth Section */}
-			<div className='bg-bg py-8 lg:py-30 px-8 lg:px-30 flex flex-col lg:flex-row gap-10 md:gap-40'>
+			<div className='bg-bg py-8 lg:py-30 px-8 lg:px-16 xl:px-30 flex flex-col lg:flex-row gap-10 md:gap-30 xl:gap-40'>
 				{/* Left Side */}
 				<motion.div
 					initial={{ opacity: 0, x: -100 }}
 					whileInView={{ opacity: 1, x: 0 }}
 					viewport={{ once: true, amount: 0.3 }}
 					transition={{ duration: 0.8, ease: 'easeOut' }}
-					className='lg:w-[35%] space-y-10'
+					className='lg:w-[55%] xl:w-[35%] space-y-10'
 				>
 					{/* title */}
 					<div className='text-3xl md:text-4xl text-primary font-semibold'>
@@ -266,18 +266,22 @@ const About = () => {
 					className='grid grid-cols-1 lg:grid-cols-2 mx-auto gap-10'
 				>
 					<Image
-						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full lg:rounded-4xl'
+						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full lg:rounded-2xl'
 						src={AboutGrowth1}
 						alt='G'
 					/>
 					<Image
-						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full lg:rounded-4xl lg:relative bottom-10'
+						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full lg:rounded-2xl lg:relative bottom-10'
 						src={AboutGrowth2}
 						alt='G'
 					/>
-					<Image className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full lg:rounded-4xl' src={AboutGrowth3} alt='G' />
 					<Image
-						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full lg:rounded-4xl lg:relative bottom-10'
+						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full lg:rounded-2xl'
+						src={AboutGrowth3}
+						alt='G'
+					/>
+					<Image
+						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full lg:rounded-2xl lg:relative bottom-10'
 						src={AboutGrowth4}
 						alt='G'
 					/>

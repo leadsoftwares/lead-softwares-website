@@ -35,7 +35,7 @@ const MobileProjects = () => {
 
 	return (
 		<div className='w-full py-10'>
-			{/* Project History - Desktop View */}
+			{/* Desktop View */}
 			<div className='lg:w-full justify-center hidden md:flex flex-wrap gap-8 mt-30 mx-4 lg:mx-0'>
 				{ProjectView.map((project) => (
 					<a
@@ -73,14 +73,14 @@ const MobileProjects = () => {
 				))}
 			</div>
 
-			{/* Mobile Projects - Mobile View (Full-width Swipe Slider) */}
+			{/* Mobile Projects */}
 			<div className='md:hidden mt-8 w-full relative'>
 				{/* Swiper Slider */}
 				<Swiper
 					modules={[Pagination]}
-					spaceBetween={20} // gap between slides
-					slidesPerView={1} // show one full slide
-					pagination={{ clickable: true }} // dots enabled
+					spaceBetween={20} 
+					slidesPerView={1} 
+					pagination={{ clickable: true }}
 					className='w-full'
 				>
 					{ProjectView.map((project) => (
