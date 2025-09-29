@@ -49,7 +49,7 @@ const Contact = () => {
 				</motion.div>
 			</div>
 			{/*  */}
-			<div className='bg-bg lg:px-15 py-30'>
+			<div className='bg-bg lg:px-15 py-16 md:py-30'>
 				<motion.div
 					initial={{ opacity: 0, x: -100 }}
 					whileInView={{ opacity: 1, x: 0 }}
