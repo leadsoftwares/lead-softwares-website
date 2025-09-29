@@ -3,16 +3,12 @@
 import Crazy from '@/public/png/Crazy By Rasel D.png'
 import TigerIT from '@/public/png/portfolio1.png'
 import Barq from '@/public/png/portfolio4.png'
-import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { useEffect, useRef, useState } from 'react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 const ProjectHistory = () => {
-	const [activeSlide, setActiveSlide] = useState(0)
-	const sliderRef = useRef<HTMLDivElement>(null)
 	const ProjectView = [
 		{
 			id: 1,
@@ -37,76 +33,15 @@ const ProjectHistory = () => {
 		},
 	]
 
-	const handleSlideChange = (index: number) => {
-		setActiveSlide(index)
-		if (sliderRef.current) {
-			const slideWidth = sliderRef.current.offsetWidth
-			sliderRef.current.scrollTo({
-				left: slideWidth * index,
-				behavior: 'smooth',
-			})
-		}
-	}
-
-	// Handle scroll events to update active slide indicator
-	useEffect(() => {
-		const handleScroll = () => {
-			if (sliderRef.current) {
-				const scrollPosition = sliderRef.current.scrollLeft
-				const slideWidth = sliderRef.current.offsetWidth
-
-				// Calculate which slide is most visible
-				const newActiveSlide = Math.round(scrollPosition / slideWidth)
-				const maxSlide = ProjectView.length - 1
-
-				// Only update if actually changed
-				if (
-					newActiveSlide !== activeSlide &&
-					newActiveSlide >= 0 &&
-					newActiveSlide <= maxSlide
-				) {
-					setActiveSlide(newActiveSlide)
-				}
-			}
-		}
-
-		const sliderElement = sliderRef.current
-		if (sliderElement) {
-			// Use passive listener for better scroll performance
-			sliderElement.addEventListener('scroll', handleScroll, { passive: true })
-
-			// Also listen for touchend to catch the final position after swipe
-			sliderElement.addEventListener('touchend', handleScroll, {
-				passive: true,
-			})
-
-			return () => {
-				sliderElement.removeEventListener('scroll', handleScroll)
-				sliderElement.removeEventListener('touchend', handleScroll)
-			}
-		}
-	}, [activeSlide, ProjectView.length])
 	return (
 		<div className='w-full py-6 lg:py-25 md:mt-16'>
 			{/* header */}
-			<motion.div
-				initial={{ opacity: 0, y: -100 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				viewport={{ once: true, amount: 0.3 }}
-				transition={{ duration: 0.8, ease: 'easeOut' }}
-				className='lg:w-[65%] px-6 lg:px-0 text-primary text-3xl md:text-4xl lg:text-4xl font-semibold mx-auto text-center lg:leading-16'
-			>
+			<div className='lg:w-[65%] px-6 lg:px-0 text-primary text-3xl md:text-4xl lg:text-4xl font-semibold mx-auto text-center lg:leading-16'>
 				Explore our recent client success stories and witness our full 360
 				transformations come to life
-			</motion.div>
+			</div>
 			{/* Project History - Desktop View */}
-			<motion.div
-				initial={{ opacity: 0, y: 100 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				viewport={{ once: true, amount: 0.3 }}
-				transition={{ duration: 0.8, ease: 'easeOut' }}
-				className='lg:w-full justify-center hidden md:flex flex-wrap gap-8 mt-30 mx-4 lg:mx-0'
-			>
+			<div className='lg:w-full justify-center hidden md:flex flex-wrap gap-8 mt-30 mx-4 lg:mx-0'>
 				{ProjectView.map((project) => (
 					<a
 						key={project.id}
@@ -141,7 +76,7 @@ const ProjectHistory = () => {
 						</div>
 					</a>
 				))}
-			</motion.div>
+			</div>
 
 			{/* Project History - Mobile View (Full-width Swipe Slider) */}
 
