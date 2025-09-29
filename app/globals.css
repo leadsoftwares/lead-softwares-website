@@ -4,6 +4,8 @@ html {
 	scroll-behavior: smooth;
 }
 
+/* @theme directive is from Tailwind CSS v4 - ignore unknown at-rule warning */
+/* stylelint-disable-next-line at-rule-no-unknown -- Tailwind CSS v4 @theme directive */
 @theme {
 	--color-primary: #321270;
 	--color-text: #7b88a8;
