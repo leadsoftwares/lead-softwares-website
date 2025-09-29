@@ -12,7 +12,7 @@ const Footer = () => {
 				// whileInView={{ opacity: 1, x: 0 }}
 				// viewport={{ once: true }}
 				// transition={{ duration: 0.8, ease: 'easeOut' }}
-				className='relative overflow-hidden w-full bg-[#12032F] h-290 md:h-175 lg:h-110'
+				className='relative overflow-hidden w-full bg-[#12032F] h-210 md:h-155 lg:h-110'
 			>
 				{/* gradient */}
 				<div className='ml-30 h-110 w-120 flex items-center'>
@@ -29,9 +29,9 @@ const Footer = () => {
 					 className='flex flex-col items-center md:items-start text-center md:text-left'>
 						<Image width={150} height={150} src={Logo} alt='Leadsoftwares' />
 						{/* desc */}
-						<div className='text-zinc-300 text-sm font-light mt-6'>
+						<div className='text-zinc-300 text-sm font-light mt-6 max-w-[380px]'>
 							Creative-powered to fuel your growth goals. We build world-class
-							digital <br /> products, software and branding.
+							digital products, software and branding.
 						</div>
 					</motion.div>
 					{/* right side */}

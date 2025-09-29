@@ -67,7 +67,7 @@ export default function Strategy() {
 	return (
 		<section
 			ref={sectionRef}
-			className='relative bg-gradient-to-br from-[#F7F9FC] to-[#EAEAF9]'
+			className='w-full relative bg-gradient-to-br from-[#F7F9FC] to-[#EAEAF9] mt-8'
 		>
 			<div className='container mx-auto flex flex-col lg:flex-row px-6 py-24 gap-16'>
 				{/* LEFT SIDE */}

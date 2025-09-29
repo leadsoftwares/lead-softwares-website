@@ -3,12 +3,12 @@
 import Crazy from '@/public/png/Crazy By Rasel App M.png'
 import TigerIT from '@/public/png/mobile-3.png'
 import Barq from '@/public/png/mobile-4.png'
-import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { useEffect, useRef, useState } from 'react'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import { Pagination } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
 const MobileProjects = () => {
-	const [activeSlide, setActiveSlide] = useState(0)
-	const sliderRef = useRef<HTMLDivElement>(null)
 	const ProjectView = [
 		{
 			id: 1,
@@ -33,65 +33,10 @@ const MobileProjects = () => {
 		},
 	]
 
-	const handleSlideChange = (index: number) => {
-		setActiveSlide(index)
-		if (sliderRef.current) {
-			const slideWidth = sliderRef.current.offsetWidth
-			sliderRef.current.scrollTo({
-				left: slideWidth * index,
-				behavior: 'smooth',
-			})
-		}
-	}
-
-	// Handle scroll events to update active slide indicator
-	useEffect(() => {
-		const handleScroll = () => {
-			if (sliderRef.current) {
-				const scrollPosition = sliderRef.current.scrollLeft
-				const slideWidth = sliderRef.current.offsetWidth
-
-				// Calculate which slide is most visible
-				const newActiveSlide = Math.round(scrollPosition / slideWidth)
-				const maxSlide = ProjectView.length - 1
-
-				// Only update if actually changed
-				if (
-					newActiveSlide !== activeSlide &&
-					newActiveSlide >= 0 &&
-					newActiveSlide <= maxSlide
-				) {
-					setActiveSlide(newActiveSlide)
-				}
-			}
-		}
-
-		const sliderElement = sliderRef.current
-		if (sliderElement) {
-			// Use passive listener for better scroll performance
-			sliderElement.addEventListener('scroll', handleScroll, { passive: true })
-
-			// Also listen for touchend to catch the final position after swipe
-			sliderElement.addEventListener('touchend', handleScroll, {
-				passive: true,
-			})
-
-			return () => {
-				sliderElement.removeEventListener('scroll', handleScroll)
-				sliderElement.removeEventListener('touchend', handleScroll)
-			}
-		}
-	}, [activeSlide, ProjectView.length])
 	return (
 		<div className='w-full py-10'>
-			{/* Project History - Desktop View */}
-			<motion.div
-				initial={{ opacity: 0, x: -100 }}
-				whileInView={{ opacity: 1, x: 0 }}
-				viewport={{ once: true, amount: 0.3 }}
-				transition={{ duration: 0.8, ease: 'easeOut' }}
-				className='lg:w-full justify-center hidden md:flex flex-wrap gap-8 mt-30 mx-4 lg:mx-0'
-			>
+			{/* Desktop View */}
+			<div className='lg:w-full justify-center hidden md:flex flex-wrap gap-8 mt-30 mx-4 lg:mx-0'>
 				{ProjectView.map((project) => (
 					<a
 						key={project.id}
@@ -126,80 +71,47 @@ const MobileProjects = () => {
 						</div>
 					</a>
 				))}
-			</motion.div>
+			</div>
 
-			{/* Mobile Projects - Mobile View (Full-width Swipe Slider) */}
-			<motion.div
-				initial={{ opacity: 0, y: 80 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				viewport={{ once: true, amount: 0.3 }}
-				transition={{ duration: 0.8, ease: 'easeOut' }}
-				className='md:hidden mt-8 w-full relative'
-			>
-				<div className='w-full overflow-x-hidden touch-pan-x'>
-					<div
-						ref={sliderRef}
-						className='flex w-full snap-x snap-mandatory overflow-x-auto scrollbar-hide'
-						style={{
-							scrollSnapType: 'x mandatory',
-							WebkitOverflowScrolling: 'touch', // For better iOS scroll performance
-						}}
-					>
-						{ProjectView.map((project) => (
-							<div
-								key={project.id}
-								className='w-full flex-shrink-0 flex-grow-0 snap-center px-6'
-								style={{
-									scrollSnapAlign: 'center',
-									minWidth: '100%',
-									maxWidth: '100%',
-								}}
+			{/* Mobile Projects */}
+			<div className='md:hidden mt-8 w-full relative'>
+				{/* Swiper Slider */}
+				<Swiper
+					modules={[Pagination]}
+					spaceBetween={20} 
+					slidesPerView={1} 
+					pagination={{ clickable: true }}
+					className='w-full'
+				>
+					{ProjectView.map((project) => (
+						<SwiperSlide key={project.id}>
+							<a
+								href={project.href}
+								target='_blank'
+								className='relative space-y-4 block w-full px-6 mb-8'
 							>
-								<a
-									href={project.href}
-									target='_blank'
-									className='relative space-y-4 block w-full'
-								>
-									<div className='relative rounded-xl overflow-hidden'>
-										<Image
-											className='transition-transform duration-300'
-											width={200}
-											height={400}
-											src={project.img}
-											alt={project.alt}
-											style={{
-												width: '100%',
-												height: 'auto',
-												objectFit: 'cover',
-											}}
-										/>
-									</div>
-									<div className='text-xl font-semibold text-primary'>
-										{project.title}
-									</div>
-								</a>
-							</div>
-						))}
-					</div>
-				</div>
-
-				{/* Slide indicators - with active state */}
-				<div className='flex justify-center mt-6 space-x-3'>
-					{ProjectView.map((_, index) => (
-						<button
-							key={index}
-							onClick={() => handleSlideChange(index)}
-							className={`w-3 h-3 rounded-full transition-all duration-300 ${
-								activeSlide === index
-									? 'bg-primary scale-110'
-									: 'bg-gray-300 hover:bg-gray-400'
-							}`}
-							aria-label={`Go to slide ${index + 1}`}
-							aria-current={activeSlide === index ? 'true' : 'false'}
-						/>
+								<div className='relative rounded-xl overflow-hidden'>
+									<Image
+										width={200}
+										height={400}
+										src={project.img}
+										alt={project.alt}
+										className='transition-transform duration-300'
+										style={{
+											width: '100%',
+											height: 'auto',
+											objectFit: 'cover',
+										}}
+									/>
+								</div>
+								<div className='text-xl font-semibold text-primary'>
+									{project.title}
+								</div>
+							</a>
+						</SwiperSlide>
 					))}
-				</div>
-			</motion.div>
+				</Swiper>
+			</div>
 		</div>
 	)
 }

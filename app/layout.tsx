@@ -5,9 +5,8 @@ import MicrosoftClarity from '../components/microsoft-clarity'
 import Navbar from '../components/navbar-component'
 import './globals.css'
 // Initialize Firebase
-import '../lib/firebase'
 import SmoothScroll from '@/components/smoothScroll'
-
+import '../lib/firebase'
 const dmSans = DM_Sans({
 	subsets: ['latin'],
 	weight: ['400', '500', '700'], // choose weights you need
@@ -18,8 +17,8 @@ export const metadata: Metadata = {
 	title: 'Lead Softwares',
 	description: 'Created by Hassan King',
 	icons: {
-		icon: '/White-01.png'
-	}
+		icon: '/White-01.png',
+	},
 }
 
 export default function RootLayout({
@@ -30,11 +29,11 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={dmSans.className} suppressHydrationWarning>
-				<SmoothScroll>
-				<MicrosoftClarity />
 				<Navbar />
-				{children}
-				<Footer />
+				<SmoothScroll>
+					<MicrosoftClarity />
+					{children}
+					<Footer />
 				</SmoothScroll>
 			</body>
 		</html>

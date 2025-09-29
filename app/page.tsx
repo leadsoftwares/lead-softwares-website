@@ -28,7 +28,7 @@ const strategy = [
 	},
 	{
 		icon: Tv,
-		title: 'Transition to sustainable futures',
+		title: 'Transition to sustain futures',
 		text: 'We combine business opportunities with customer expectations to design, transform and deliver useful products, and unique brand experiences.',
 	},
 	{
@@ -100,14 +100,14 @@ const page = () => {
 					transition={{ duration: 0.8, ease: 'easeOut' }}
 					className='title text-5xl w-full flex justify-center mt-14  text-primary font-semibold'
 				>
-					<h2 className='hidden md:block leading-14'>
+					<h2 className='hidden lg:block leading-14'>
 						Make your business future-proof <br /> to anticipate the challenges
 						to be
 					</h2>
 
-					<h2 className='block md:hidden leading-11 text-center text-3xl'>
-						Make your business <br /> future-proof to <br /> anticipate the{' '}
-						<br /> challenges to be
+					<h2 className='block lg:hidden leading-11 text-center text-3xl md:text-4xl'>
+						Make your business <br className='block md:hidden' /> future-proof to <br className='block md:hidden' /> anticipate the{' '}
+						<br className='block md:hidden' /> challenges to be
 					</h2>
 				</motion.div>
 				<motion.div
@@ -115,7 +115,7 @@ const page = () => {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 					transition={{ duration: 0.8, ease: 'easeOut' }}
-					className='boxes flex flex-col flex-wrap lg:flex-row md:flex-nowrap gap-8 mx-auto items-center lg:justify-center lg::mx-auto mt-24 pb-20 border-b border-gray-300 lg:px-60'
+					className='boxes flex flex-col flex-wrap lg:flex-row md:flex-nowrap gap-8 mx-auto items-center lg:justify-center lg::mx-auto mt-24 pb-20 border-b border-gray-300 lg:px-30 xl:px-60'
 				>
 					{strategy.map((item, i) => (
 						<div key={i} className='flex flex-col gap-6 w-80 md:w-160'>
@@ -148,7 +148,7 @@ const page = () => {
 				whileInView={{ opacity: 1, x: 0 }}
 				viewport={{ once: true , amount: 0.3}}													
 				transition={{ duration: 0.8, ease: 'easeOut' }}
-					className='relative img mt-30 md:mt-0'>
+					className='relative img mt-10 md:mt-0'>
 						<Image
 							className='w-90 h-90 md:w-145 md:h-150'
 							src={MobileView}
@@ -169,7 +169,7 @@ const page = () => {
 						<div className='hidden md:block title text-4xl font-bold text-primary'>
 							We&apos;re building business for <br /> your digital economy
 						</div>
-						<div className='block md:hidden title text-4xl font-semibold text-primary'>
+						<div className='block md:hidden title text-3xl font-semibold text-primary'>
 							We&apos;re building business <br /> for your digital <br />{' '}
 							economy
 						</div>
@@ -217,21 +217,21 @@ const page = () => {
 					transition={{ duration: 0.8, ease: 'easeOut' }}
 					className='header text-center w-full space-y-4 mx-auto'
 				>
-					<div className='title text-4xl md:text-5xl leading-10 md:leading-14 font-semibold text-primary'>
+					<div className='title text-3xl md:text-5xl leading-9 md:leading-14 font-semibold text-primary'>
 						Develop your next business today
 					</div>
 					<div className='hidden md:block subTitle text-text text-lg'>
 						We design new concepts, prototypes and processes for the next <br />{' '}
 						generation of services and experiences, ready for the market.
 					</div>
-					<div className='block md:hidden subTitle text-text text-lg'>
+					<div className='block md:hidden subTitle text-text'>
 						We design new concepts, prototypes and processes for the next
 						generation of services and experiences, ready for the market.
 					</div>
 				</motion.div>
 				<div className='main w-full mt-18 flex justify-evenly flex-col lg:flex-row gap-16'>
 					<div className='left'>
-						<div className='boxes flex flex-col items-center md:flex-row md:w-160 md:flex-wrap gap-6 mx-auto'>
+						<div className='boxes flex flex-col items-center md:flex-row md:w-160 lg:w-120 xl:w-160 md:flex-wrap gap-6 mx-auto'>
 							{strategyBoxes.map((strategyBox, i) => (
 								<motion.div
 									key={i}
@@ -239,14 +239,14 @@ const page = () => {
 									whileInView={{ opacity: 1, y: 0 }}
 									viewport={{ once: true }}
 									transition={{ duration: 0.8, ease: 'easeOut' }}
-									className='box hover:-translate-y-2 transition-all duration-300 pb-18 cursor-pointer shadow-md bg-white rounded-2xl flex items-center gap-6 flex-col py-12 max-w-65 sm:w-70 mx-auto'
+									className='box hover:-translate-y-2 transition-all duration-300 pb-18 cursor-pointer shadow-md bg-white rounded-2xl flex items-center gap-6 flex-col py-12 max-w-65 sm:w-70 lg:w-50 xl:w-70 mx-auto'
 								>
 									<div
 										className={`icon ${strategyBox.bg} w-14 h-14 rounded-full flex items-center justify-center`}
 									>
 										<Image src={strategyBox.icon} alt={strategyBox.title} />
 									</div>
-									<div className='title text-center text-primary text-2xl font-semibold px-4'>
+									<div className='title text-center text-primary text-xl xl:text-2xl font-semibold px-4'>
 										{strategyBox.title}
 									</div>
 								</motion.div>
@@ -265,11 +265,11 @@ const page = () => {
 							<div className='hidden lg:block text-primary text-4xl font-semibold leading-12'>
 								Strategies that get you on <br /> the path to success
 							</div>
-							<div className='block lg:hidden text-primary text-4xl font-semibold leading-12'>
+							<div className='block lg:hidden text-primary text-3xl md:text-4xl font-semibold leading-10 md:leading-12'>
 								Strategies that get you on the path to success
 							</div>
 							{/* desc */}
-							<div className='text-text text-lg'>
+							<div className='text-text md:text-lg'>
 								Through an in-depth knowledge of all industrial sectors and the
 								application of approaches such as Lean Strategy, and Business
 								Design, we prepare organizations to welcome change, to be ready
@@ -298,11 +298,11 @@ const page = () => {
 				<div className='hidden md:block text-5xl leading-14 font-semibold text-primary text-center'>
 					Plan for big expenses, manage profits, <br /> vendors, and much more
 				</div>
-				<div className='block md:hidden text-4xl leading-10 font-semibold text-primary text-center'>
+				<div className='block md:hidden text-3xl leading-9 font-semibold text-primary text-center'>
 					Plan for big expenses, manage profits, vendors, and much more
 				</div>
 				{/* desc */}
-				<div className='text-lg text-text text-center'>
+				<div className='md:text-lg text-text text-center'>
 					We work with organizations of all sizes, from early start-ups to
 					global brands, in <br /> the private, public, and social sector.
 				</div>

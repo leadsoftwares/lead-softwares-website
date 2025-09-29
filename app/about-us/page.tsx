@@ -37,10 +37,10 @@ const About = () => {
 					transition={{ duration: 0.8, ease: 'easeOut' }}
 					className='space-y-10 mt-10 md:mt-0 lg:w-[40%]'
 				>
-					<div className='title text-primary font-semibold text-4xl'>
+					<div className='title text-primary font-semibold text-3xl md:text-4xl'>
 						Growth strategies to be effective & competitive
 					</div>
-					<div className='text-zinc-500 text-lg font-light'>
+					<div className='text-zinc-500 md:text-lg font-light'>
 						Everything we do and dream up has a solid design impact. We create
 						human-centered enterprise software that has the polished, snappy
 						feel of the best consumer apps.
@@ -85,7 +85,7 @@ const About = () => {
 				</motion.div>
 			</div>
 			{/*  */}
-			<div className='bg-bg py-25 mt-4 lg:mt-0'>
+			<div className='bg-bg py-15 md:py-25 mt-4 lg:mt-0'>
 				{/* header */}
 				<motion.div
 					initial={{ opacity: 0, x: 0 }}
@@ -99,12 +99,12 @@ const About = () => {
 						It’s Time for a Blockchain Revolution
 					</div>
 					{/* title */}
-					<div className='text-4xl lg:text-5xl text-primary lg:w-[45%] leading-10 md:leading-14 font-semibold text-center mx-auto'>
+					<div className='text-3xl lg:text-5xl text-primary xl:w-[45%] leading-10 md:leading-14 font-semibold text-center mx-auto'>
 						Developing sustainable and innovative blockchain solutions
 					</div>
 				</motion.div>
 				{/* blockchain detail */}
-				<div className='w-full flex flex-col lg:flex-row items-center gap-10 lg:gap-40 px-8 lg:px-25 mt-14 lg:mt-40'>
+				<div className='w-full flex flex-col lg:flex-row items-center gap-10 xl:gap-40 px-8 lg:px-25 mt-14 lg:mt-40'>
 					{/* left side (boxes side) */}
 					<motion.div
 						initial={{ opacity: 0, x: -100 }}
@@ -167,13 +167,13 @@ const About = () => {
 						transition={{ duration: 0.8, ease: 'easeOut' }}
 						className='w-full'
 					>
-						<div className='lg:w-[70%] flex flex-col gap-8'>
+						<div className='xl:w-[70%] flex flex-col gap-8'>
 							{/* title */}
-							<div className='text-primary text-4xl font-semibold leading-12'>
+							<div className='text-primary text-3xl md:text-4xl font-semibold md:leading-12'>
 								Strategies that get you on the path to success
 							</div>
 							{/* desc */}
-							<div className='text-zinc-400 text-lg'>
+							<div className='text-zinc-400 md:text-lg'>
 								Through an in-depth knowledge of all industrial sectors and the
 								application of approaches such as Lean Strategy, and Business
 								Design, we prepare organizations to welcome change, to be ready
@@ -193,29 +193,29 @@ const About = () => {
 				<ProjectHistory />
 			</div>
 			{/* Growth Section */}
-			<div className='bg-bg py-8 lg:py-30 px-8 lg:px-30 flex flex-col lg:flex-row gap-40'>
+			<div className='bg-bg py-8 lg:py-30 px-8 lg:px-16 xl:px-30 flex flex-col lg:flex-row gap-10 md:gap-30 xl:gap-40'>
 				{/* Left Side */}
 				<motion.div
 					initial={{ opacity: 0, x: -100 }}
 					whileInView={{ opacity: 1, x: 0 }}
 					viewport={{ once: true, amount: 0.3 }}
 					transition={{ duration: 0.8, ease: 'easeOut' }}
-					className='lg:w-[35%] space-y-10'
+					className='lg:w-[55%] xl:w-[35%] space-y-10'
 				>
 					{/* title */}
-					<div className='text-4xl text-primary font-semibold'>
+					<div className='text-3xl md:text-4xl text-primary font-semibold'>
 						Growth strategies to be effective & competitive
 					</div>
 					{/* desc */}
-					<div className='text-lg text-text font-light'>
+					<div className='md:text-lg text-text font-light'>
 						Money should never sit still. Achieve capital efficiency with our
 						apps: as a leading DeFi yield aggregator, we offer first-rate yield
 						optimization and risk teaching strategies. Get the best yield by
 						using, integrating or building on top of Idle’s products.
 					</div>
 					{/* lists */}
-					<div className='flex flex-col lg:flex-row gap-20 text-lg font-light'>
-						<ul className='text-text space-y-4'>
+					<div className='flex flex-col lg:flex-row gap-16 md:gap-20 md:text-lg font-light'>
+						<ul className='text-text space-y-2 md:space-y-4'>
 							<li className='flex items-center gap-2'>
 								<span>
 									<Check color='green' size={18} />
@@ -266,18 +266,22 @@ const About = () => {
 					className='grid grid-cols-1 lg:grid-cols-2 mx-auto gap-10'
 				>
 					<Image
-						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full lg:rounded-4xl'
+						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full lg:rounded-2xl'
 						src={AboutGrowth1}
 						alt='G'
 					/>
 					<Image
-						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full lg:rounded-4xl lg:relative bottom-10'
+						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full lg:rounded-2xl lg:relative bottom-10'
 						src={AboutGrowth2}
 						alt='G'
 					/>
-					<Image className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full lg:rounded-4xl' src={AboutGrowth3} alt='G' />
 					<Image
-						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full lg:rounded-4xl lg:relative bottom-10'
+						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full lg:rounded-2xl'
+						src={AboutGrowth3}
+						alt='G'
+					/>
+					<Image
+						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full lg:rounded-2xl lg:relative bottom-10'
 						src={AboutGrowth4}
 						alt='G'
 					/>
@@ -290,7 +294,7 @@ const About = () => {
 			{/*  */}
 			<WhyChooseThree />
 			{/* email section */}
-			<div
+			{/* <div
 				style={{
 					background:
 						'linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #7209b7 100%)',
@@ -308,7 +312,7 @@ const About = () => {
 					/>
 					<CustomButton title='Sign Up' />
 				</div>
-			</div>
+			</div> */}
 		</div>
 	)
 }

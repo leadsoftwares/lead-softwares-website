@@ -79,11 +79,11 @@ const Navbar = () => {
 						<li
 							onMouseEnter={() => setOpenDropdown('pages')}
 							onMouseLeave={() => setOpenDropdown(null)}
-							className='cursor-pointer hover:text-blue-500 flex items-center gap-3 relative'
+							className='cursor-pointer hover:text-blue-500 flex items-center relative ml-4 mr-2'
 						>
-							<span className={`flex items-center text-text`}>
+						
 								Pages <ChevronDown size={15} />
-							</span>
+							
 							{openDropdown === 'pages' && (
 								<ul className='absolute flex flex-col top-full text-text w-52 bg-white shadow-lg rounded-xl py-2 z-50'>
 									<NavLink href='/services'>Services</NavLink>
@@ -92,9 +92,9 @@ const Navbar = () => {
 								</ul>
 							)}
 						</li>
-						<li className='cursor-pointer hover:text-blue-500 flex items-center gap-3'>
+						
 							<NavLink href='/portfolio'>Portfolio</NavLink>
-						</li>
+						
 						<NavLink href='/contact'>Contact</NavLink>
 					</ul>
 				</div>
