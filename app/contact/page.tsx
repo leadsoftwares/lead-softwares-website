@@ -117,7 +117,7 @@ const Contact = () => {
 				</motion.div>
 			</div>
 			{/*  */}
-			<div className='py-25'>
+			<div className='py-10 md:py-25'>
 				<motion.div
 					initial={{ opacity: 0, y: 80 }}
 					whileInView={{ opacity: 1, y: 0 }}
