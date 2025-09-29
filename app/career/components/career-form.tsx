@@ -286,7 +286,7 @@ const CareerForm = () => {
 					</div>
 				</div>
 			)}
-			<h1 className='font-bold mt-18 md:mt-0 text-4xl md:text-6xl text-primary text-center pb-12 border-b border-text'>
+			<h1 className='font-bold mt-18 md:mt-0 text-3xl md:text-6xl text-primary text-center pb-12 border-b border-text'>
 				Job Application Create
 			</h1>
 			{/* ---------------- Personal Info ---------------- */}

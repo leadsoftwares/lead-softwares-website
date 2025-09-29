@@ -1,9 +1,9 @@
 'use client'
 import CustomButton from '@/components/custom-btn'
 import ContactImg from '@/public/png/Lead software pages Images/Contact Us.png'
-import Box1 from '@/public/svg/box1.svg'
-import Box2 from '@/public/svg/box2.svg'
-import Box3 from '@/public/svg/box3.svg'
+// import Box1 from '@/public/svg/box1.svg'
+// import Box2 from '@/public/svg/box2.svg'
+// import Box3 from '@/public/svg/box3.svg'
 import Email from '@/public/svg/email.svg'
 import Location from '@/public/svg/location.svg'
 import Phone from '@/public/svg/phone.svg'
@@ -35,10 +35,10 @@ const Contact = () => {
 					transition={{ duration: 0.8, ease: 'easeOut' }}
 					className='px-4 lg:px-0 lg:w-[55%] space-y-12'
 				>
-					<div className='text-4xl font-bold text-primary'>
+					<div className='text-3xl md:text-5xl font-bold text-primary'>
 						Growth strategies to be effective & competitive
 					</div>
-					<div className='w-[90%] lg:w-[80%] text-text text-lg'>
+					<div className='w-[90%] lg:w-[80%] text-text md:text-lg'>
 						Everything we do and dream up has a solid design impact. We create
 						human-centered enterprise software that has the polished, snappy
 						feel of the best consumer apps.
@@ -55,7 +55,7 @@ const Contact = () => {
 					whileInView={{ opacity: 1, x: 0 }}
 					viewport={{ once: true, amount: 0.3 }}
 					transition={{ duration: 0.8, ease: 'easeOut' }}
-					className='text-primary text-center text-5xl lg:text-6xl font-bold'
+					className='text-primary text-center text-3xl lg:text-6xl font-bold'
 				>
 					Have some questions?
 				</motion.div>
@@ -117,19 +117,19 @@ const Contact = () => {
 				</motion.div>
 			</div>
 			{/*  */}
-			<div className='py-10 md:py-25'>
+			{/* <div className='py-10 md:py-25'>
 				<motion.div
 					initial={{ opacity: 0, y: 80 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true, amount: 0.3 }}
 					transition={{ duration: 0.8, ease: 'easeOut' }}
-					className='px-6 lg:w-[70%] text-4xl lg:text-5xl text-primary font-semibold leading-11 lg:leading-14 text-center mx-auto'
+					className='px-6 lg:w-[70%] text-3xl lg:text-5xl text-primary font-semibold leading-10 lg:leading-14 text-center mx-auto'
 				>
 					A proficient software development boutique focuses on cutting-edge
 					technologies
 				</motion.div>
 				<div className='flex flex-col lg:flex-row gap-10 justify-center mt-20 px-4 lg:px-20'>
-					{/* box1 */}
+					
 					<motion.div
 						initial={{ opacity: 0, x: -100 }}
 						whileInView={{ opacity: 1, x: 0 }}
@@ -150,7 +150,7 @@ const Contact = () => {
 							Learn More
 						</button>
 					</motion.div>
-					{/* box2 */}
+					
 					<div className=' bg-blue-500 text-white rounded-2xl px-8 py-10 space-y-6'>
 						<div>
 							<Image src={Box2} alt='box1' />
@@ -165,7 +165,7 @@ const Contact = () => {
 							Learn More
 						</button>
 					</div>
-					{/* box3 */}
+					
 					<motion.div
 						initial={{ opacity: 0, x: 100 }}
 						whileInView={{ opacity: 1, x: 0 }}
@@ -187,7 +187,7 @@ const Contact = () => {
 						</button>
 					</motion.div>
 				</div>
-			</div>
+			</div> */}
 			{/*  */}
 			<FAQPage />
 		</div>

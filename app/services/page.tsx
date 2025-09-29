@@ -93,7 +93,7 @@ const Services = () => {
 					whileInView={{ opacity: 1, x: 0 }}
 					viewport={{ once: true, amount: 0.3 }}
 					transition={{ duration: 0.8, ease: 'easeIn' }}
-					className='px-6 text-center text-5xl md:text-6xl font-semibold mb-26 text-primary'
+					className='px-6 text-center text-3xl md:text-6xl font-semibold mb-26 text-primary'
 				>
 					Technologies that we work with
 				</motion.h2>
@@ -217,10 +217,10 @@ const Services = () => {
 					transition={{ duration: 0.8, ease: 'easeInOut' }}
 					className='text-center w-full space-y-2 mx-auto'
 				>
-					<div className='subTitle text-blue-500 text-lg lg:text-xs px-2'>
+					<div className='subTitle text-blue-500 lg:text-xs px-2'>
 						We work mainly with digital agencies and software companies
 					</div>
-					<div className='lg:w-[55%] mx-auto text-4xl lg:text-5xl lg:leading-14 font-semibold text-primary'>
+					<div className='lg:w-[55%] mx-auto text-3xl lg:text-5xl lg:leading-14 font-semibold text-primary'>
 						Outstanding software and services that solve your hassle
 					</div>
 				</motion.div>
@@ -274,7 +274,7 @@ const Services = () => {
 			>
 				<div className='flex flex-col lg:flex-row items-center lg:justify-between'>
 					<div className='space-y-8'>
-						<div className='text-4xl lg:text-5xl font-bold text-primary text-center'>
+						<div className='text-3xl lg:text-5xl font-bold text-primary text-center'>
 							Frequently asked questions
 						</div>
 						<p className='px-8 lg:px-0 text-text text-center'>
@@ -294,11 +294,11 @@ const Services = () => {
 			<Partners />
 
 			{/*  */}
-			<div className="bg-[url('https://preview.codeless.co/converta/default/wp-content/uploads/2023/03/bg-footer-sub-min.png')] bg-cover bg-center py-30 text-center space-y-6 mx-4 lg:mx-25 rounded-3xl mb-10">
-				<div className='text-white text-5xl font-bold'>
+			{/* <div className="bg-[url('https://preview.codeless.co/converta/default/wp-content/uploads/2023/03/bg-footer-sub-min.png')] bg-cover bg-center py-30 text-center space-y-6 mx-4 lg:mx-25 rounded-3xl mb-10">
+				<div className='text-white text-3xl md:text-5xl font-bold'>
 					Subscribe to Our Newsletter
 				</div>
-				<p className='w-[90%] lg:w-[35%] text-white text-lg mx-auto'>
+				<p className='w-[90%] lg:w-[35%] text-white md:text-lg mx-auto'>
 					Receive the latest technology & business news in your inbox. Select
 					the newsletters you&apos;d like to receive.
 				</p>
@@ -310,7 +310,7 @@ const Services = () => {
 					/>
 					<CustomButton title='Sign Up' />
 				</div>
-			</div>
+			</div> */}
 		</div>
 	)
 }

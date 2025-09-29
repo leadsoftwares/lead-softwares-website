@@ -169,7 +169,7 @@ const page = () => {
 						<div className='hidden md:block title text-4xl font-bold text-primary'>
 							We&apos;re building business for <br /> your digital economy
 						</div>
-						<div className='block md:hidden title text-4xl font-semibold text-primary'>
+						<div className='block md:hidden title text-3xl font-semibold text-primary'>
 							We&apos;re building business <br /> for your digital <br />{' '}
 							economy
 						</div>
@@ -217,14 +217,14 @@ const page = () => {
 					transition={{ duration: 0.8, ease: 'easeOut' }}
 					className='header text-center w-full space-y-4 mx-auto'
 				>
-					<div className='title text-4xl md:text-5xl leading-10 md:leading-14 font-semibold text-primary'>
+					<div className='title text-3xl md:text-5xl leading-9 md:leading-14 font-semibold text-primary'>
 						Develop your next business today
 					</div>
 					<div className='hidden md:block subTitle text-text text-lg'>
 						We design new concepts, prototypes and processes for the next <br />{' '}
 						generation of services and experiences, ready for the market.
 					</div>
-					<div className='block md:hidden subTitle text-text text-lg'>
+					<div className='block md:hidden subTitle text-text'>
 						We design new concepts, prototypes and processes for the next
 						generation of services and experiences, ready for the market.
 					</div>
@@ -265,11 +265,11 @@ const page = () => {
 							<div className='hidden lg:block text-primary text-4xl font-semibold leading-12'>
 								Strategies that get you on <br /> the path to success
 							</div>
-							<div className='block lg:hidden text-primary text-4xl font-semibold leading-12'>
+							<div className='block lg:hidden text-primary text-3xl md:text-4xl font-semibold leading-10 md:leading-12'>
 								Strategies that get you on the path to success
 							</div>
 							{/* desc */}
-							<div className='text-text text-lg'>
+							<div className='text-text md:text-lg'>
 								Through an in-depth knowledge of all industrial sectors and the
 								application of approaches such as Lean Strategy, and Business
 								Design, we prepare organizations to welcome change, to be ready
@@ -298,11 +298,11 @@ const page = () => {
 				<div className='hidden md:block text-5xl leading-14 font-semibold text-primary text-center'>
 					Plan for big expenses, manage profits, <br /> vendors, and much more
 				</div>
-				<div className='block md:hidden text-4xl leading-10 font-semibold text-primary text-center'>
+				<div className='block md:hidden text-3xl leading-9 font-semibold text-primary text-center'>
 					Plan for big expenses, manage profits, vendors, and much more
 				</div>
 				{/* desc */}
-				<div className='text-lg text-text text-center'>
+				<div className='md:text-lg text-text text-center'>
 					We work with organizations of all sizes, from early start-ups to
 					global brands, in <br /> the private, public, and social sector.
 				</div>

@@ -44,7 +44,7 @@ const testimonials = [
 
 export default function Testimonials() {
 	return (
-		<section className='py-10'>
+		<section className='md:py-10'>
 			<style jsx global>{`
 				.testimonial-swiper .swiper-pagination-bullet {
 					width: 12px !important;
@@ -91,7 +91,7 @@ export default function Testimonials() {
 								</div>
 
 								{/* Description */}
-								<p className='testimonial-description text-xl leading-11 md:text-2xl text-zinc-200 mb-8'>
+								<p className='testimonial-description text-xl leading-9 md:leading-11 md:text-2xl text-zinc-200 mb-8'>
 									{item.text}
 								</p>
 

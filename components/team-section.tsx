@@ -21,7 +21,7 @@ const TeamSection = () => {
 				whileInView={{ opacity: 1, x: 0 }}
 				viewport={{ once: true, amount: 0.1 }}
 				transition={{ duration: 0.8, ease: 'easeOut' }}
-				className='text-4xl lg:text5xl font-semibold text-primary text-center'
+				className='text-3xl lg:text5xl font-semibold text-primary text-center'
 			>
 				Meet our awesome and professional team
 			</motion.div>

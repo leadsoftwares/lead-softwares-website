@@ -94,7 +94,7 @@ const ProjectHistory = () => {
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true, amount: 0.3 }}
 				transition={{ duration: 0.8, ease: 'easeOut' }}
-				className='lg:w-[65%] px-6 lg:px-0 text-primary text-3xl md:text-4xl lg:text-4xl font-semibold mx-auto text-center leading-10 lg:leading-16'
+				className='lg:w-[65%] px-6 lg:px-0 text-primary text-3xl md:text-4xl lg:text-4xl font-semibold mx-auto text-center lg:leading-16'
 			>
 				Explore our recent client success stories and witness our full 360
 				transformations come to life

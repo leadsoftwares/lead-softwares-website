@@ -1,6 +1,7 @@
 @import 'tailwindcss';
+
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 @theme {
@@ -20,12 +21,14 @@ html {
 ::-webkit-scrollbar {
 	width: 5px;
 	height: 8px; /* for horizontal scroll */
+	display: none;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
 	/* dark background (Tailwind slate-900) */
 	border-radius: 10px;
+	display: none;
 }
 
 /* Handle */
@@ -132,19 +135,23 @@ html {
 	animation-play-state: paused;
 }
 
-
 /* hero Gallery Component */
 /* globals.css (optional extra styles) */
 .tp-hero-gallery-item img {
-  transition: transform 0.4s ease;
+	transition: transform 0.4s ease;
 }
 .tp-hero-gallery-item img:hover {
-  transform: scale(1.05);
+	transform: scale(1.05);
 }
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+	0%,
+	100% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
 }
 .animate-float {
-  animation: float 6s ease-in-out infinite;
+	animation: float 6s ease-in-out infinite;
 }
