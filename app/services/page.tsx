@@ -87,7 +87,7 @@ const Services = () => {
 		<div className='w-full overflow-hidden'>
 			<NavbarTitle title='Services' src={ServicesImg} />
 			{/* images scroll */}
-			<div className='overflow-hidden py-8 bg-white mt-40 md:mt-0'>
+			<div className='overflow-hidden py-8 bg-white mt-10 md:mt-0'>
 				<motion.h2
 					initial={{ opacity: 0, x: -100 }}
 					whileInView={{ opacity: 1, x: 0 }}
@@ -259,7 +259,7 @@ const Services = () => {
 				</div> */}
 			</div>
 			{/* strategy */}
-			<div className='-mt-60 lg:mt-0'>
+			<div className='-mt-30 lg:mt-0'>
 				<Strategy />
 			</div>
 			{/*  */}

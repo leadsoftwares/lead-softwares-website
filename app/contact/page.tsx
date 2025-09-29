@@ -19,7 +19,7 @@ const Contact = () => {
 		<div className='w-full overflow-hidden'>
 			<NavbarTitle title='Contact Us' src={ContactImg} />
 			{/*  */}
-			<div className='flex flex-col lg:flex-row justify-between items-center gap-35 px-4 lg:px-25 py-30'>
+			<div className='flex flex-col lg:flex-row justify-between items-center gap-15 md:gap-35 px-4 lg:px-25 py-10 md:py-30'>
 				<motion.div
 					initial={{ opacity: 0, x: -100 }}
 					whileInView={{ opacity: 1, x: 0 }}
@@ -59,13 +59,13 @@ const Contact = () => {
 				>
 					Have some questions?
 				</motion.div>
-				<div className='mt-20 px-4 flex gap-20 flex-col lg:flex-row'>
+				<div className='mt-20 flex gap-20 flex-col lg:flex-row'>
 					<motion.div
 						initial={{ opacity: 0, x: -100 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						viewport={{ once: true, amount: 0.3 }}
 						transition={{ duration: 0.8, ease: 'easeOut' }}
-						className='lg:w-[50%] h-140 lg:h-[500px]'
+						className='lg:w-[50%] h-140 lg:h-[500px] px-2'
 					>
 						<iframe
 							src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.1160972569!2d72.74109918983905!3d33.684420199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbf2fda0895f1%3A0x999f9db6e49389c!2sIslamabad!5e0!3m2!1sen!2s!4v1693946400000!5m2!1sen!2s'
@@ -84,7 +84,7 @@ const Contact = () => {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true, amount: 0.3 }}
 					transition={{ duration: 0.8, ease: 'easeOut' }}
-					className='px-4 mt-30 flex gap-10 flex-col lg:flex-row'
+					className='px-4 mt-20 md:mt-30 flex gap-10 flex-col lg:flex-row'
 				>
 					{/* card 1 */}
 					<div className='bg-white rounded-2xl shadow-xl w-full md:w-100 py-10 text-center mx-auto'>

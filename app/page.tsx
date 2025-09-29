@@ -148,7 +148,7 @@ const page = () => {
 				whileInView={{ opacity: 1, x: 0 }}
 				viewport={{ once: true , amount: 0.3}}													
 				transition={{ duration: 0.8, ease: 'easeOut' }}
-					className='relative img mt-30 md:mt-0'>
+					className='relative img mt-10 md:mt-0'>
 						<Image
 							className='w-90 h-90 md:w-145 md:h-150'
 							src={MobileView}

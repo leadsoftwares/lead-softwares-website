@@ -193,7 +193,7 @@ const About = () => {
 				<ProjectHistory />
 			</div>
 			{/* Growth Section */}
-			<div className='bg-bg py-8 lg:py-30 px-8 lg:px-30 flex flex-col lg:flex-row gap-40'>
+			<div className='bg-bg py-8 lg:py-30 px-8 lg:px-30 flex flex-col lg:flex-row gap-10 md:gap-40'>
 				{/* Left Side */}
 				<motion.div
 					initial={{ opacity: 0, x: -100 }}

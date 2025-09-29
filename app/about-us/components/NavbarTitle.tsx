@@ -20,7 +20,7 @@ const NavbarTitle = ({ title, src }: TitleProps) => {
 				backgroundPosition: 'center',
 			}}
 		>
-			{/* About us title */}
+			
 			<div className='w-full h-full flex justify-evenly items-center lg:pb-10 gap-10 md:px-10'>
 				{/* left */}
 				<motion.div
