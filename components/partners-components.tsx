@@ -35,12 +35,12 @@ const Partners = () => {
 		}
 	}, [])
 	return (
-		<div className='w-full space-y-20'>
+		<div className='w-full space-y-12 md:space-y-20'>
 			<div className='text-primary text-center mx-4 lg:mx-0 text-2xl font-semibold mt-8 lg:mt-30'>
 				Trusted by nearly 5000+ customers & startups
 			</div>
 
-			{/* Desktop View - Grid Layout */}
+			{/* Desktop View */}
 			<motion.div
 				initial={{ opacity: 0, y: 50 }}
 				whileInView={{ opacity: 1, y: 0 }}
@@ -60,7 +60,7 @@ const Partners = () => {
 			</motion.div>
 {/*  */}
 			{/* Mobile View - Infinite Horizontal Scroll */}
-			<div className='lg:hidden overflow-hidden pb-28'>
+			<div className='lg:hidden overflow-hidden pb-14 md:pb-28'>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
 					whileInView={{ opacity: 1, y: 0 }}

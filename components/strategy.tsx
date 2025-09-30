@@ -67,9 +67,10 @@ export default function Strategy() {
 	return (
 		<section
 			ref={sectionRef}
-			className='w-full relative bg-gradient-to-br from-[#F7F9FC] to-[#EAEAF9] mt-8'
+			className='w-full relative bg-gradient-to-br from-[#F7F9FC] to-[#EAEAF9] mt-8 py-10 md:py-20'
 		>
-			<div className='container mx-auto flex flex-col lg:flex-row px-6 py-24 gap-16'>
+			<h1 className='text-3xl md:text-5xl font-bold text-center text-primary'>Building Success Step by Step</h1>
+			<div className='container mx-auto flex flex-col lg:flex-row px-6 py-14 md:py-24 gap-16'>
 				{/* LEFT SIDE */}
 				<div className='w-full lg:w-1/2 flex flex-col justify-center space-y-10'>
 					{[
@@ -94,14 +95,14 @@ export default function Strategy() {
 								{i === 1 &&
 									'We develop and rigorously test software applications for top-notch quality.'}
 								{i === 2 &&
-									'We perform audits, scale infrastructure, and uphold standards for efficiency.'}
+									'We monitor results closely and optimize continuously for better outcomes.'}
 							</p>
 						</button>
 					))}
 				</div>
 
 				{/* RIGHT SIDE */}
-				<div className='w-full lg:w-1/2 relative h-[28rem] lg:h-[36rem] border-4 border-black rounded-2xl overflow-hidden'>
+				<div className='w-full lg:w-1/2 relative h-[22rem] lg:h-[36rem] border-4 border-black rounded-2xl overflow-hidden'>
 					<div
 						className='flex h-full w-full transition-transform duration-700 ease-in-out'
 						style={{ transform: `translateX(-${activeIndex * 100}%)` }}

@@ -37,7 +37,7 @@ const testimonials = [
      {
 		text: '"As a startup, we needed more than just developers — and Lead Softwares delivered. They built a scalable MVP, offered strategic insights, and felt like an extension of our team from day one."',
 		name: 'Maria Gonzalez',
-		role: 'Marteking Director',
+		role: 'Marketing Director',
 		img: Avatar2,
 	},
 ]

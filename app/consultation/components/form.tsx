@@ -244,8 +244,6 @@ const ConsultationForm = () => {
 						<p className='text-red-500 text-sm'>{errors.phone.message}</p>
 					)}
 				</div>
-
-				
 			</div>
 
 			{/* country */}
@@ -284,12 +282,12 @@ const ConsultationForm = () => {
 				)}
 			</div>
 			{/* Dropdowns */}
-				<Dropdown
-					label='Estimated Budget'
-					name='budgetValue'
-					options={budgets}
-					index={2}
-				/>
+			<Dropdown
+				label='Estimated Budget'
+				name='budgetValue'
+				options={budgets}
+				index={2}
+			/>
 
 			{/* Submit */}
 			<div className='mt-6 flex justify-end'>

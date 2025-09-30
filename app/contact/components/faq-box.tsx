@@ -155,7 +155,7 @@ export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
-    <div className="bg-bg flex flex-col lg:flex-row py-10 md:py-30 px-6 lg:px-20">
+    <div className="bg-bg flex flex-col lg:flex-row py-10 md:py-16 px-6 lg:px-20">
       {/* Sidebar */}
       <motion.aside
       initial={{ opacity: 0, x: -100 }}

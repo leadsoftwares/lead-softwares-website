@@ -25,11 +25,12 @@ const Banner = () => {
 				className='relative pt-10 md:pt-0 w-full max-h-[100vh] bg-no-repeat bg-cover text-white flex items-center'
 			>
 				<motion.div
-				initial={{ opacity: 0, x: -100 }}
-				whileInView={{ opacity: 1, x: 0 }}
-				viewport={{ once: true }}
-				transition={{ duration: 0.8, ease: 'easeOut' }}
-				className='container mx-auto px-6 lg:px-10 xl:px-20 py-20 lg:py-40 flex flex-col items-center lg:items-start space-y-10 z-90'>
+					initial={{ opacity: 0, x: -100 }}
+					whileInView={{ opacity: 1, x: 0 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.8, ease: 'easeOut' }}
+					className='container mx-auto px-6 lg:px-10 xl:px-20 py-20 lg:py-40 flex flex-col items-center lg:items-start space-y-10 z-90'
+				>
 					<div className='font-[700] text-4xl lg:text-6xl xl:text-7xl text-center lg:text-left'>
 						<h1 className='hidden md:block'>
 							We manage your{' '}
@@ -65,9 +66,9 @@ const Banner = () => {
 						<h1>You handle success</h1>
 					</div>
 					<p className='max-w-2xl text-zinc-300 text-lg text-center lg:text-left'>
-						An incredible theme for modern Software and SaaS businesses. With a
-						sleek and professional design, customizable layouts, and
-						integrations with popular plugins.
+						Let us take care of your IT challenges so you can focus on achieving
+						your goals. Seamless technology, smarter solutions, and dedicated
+						support — all in one place.
 					</p>
 					<Link href='/consultation' className='flex gap-5 cursor-pointer'>
 						<CustomButton title={'Get Started'} />

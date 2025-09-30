@@ -49,13 +49,13 @@ const Contact = () => {
 				</motion.div>
 			</div>
 			{/*  */}
-			<div className='bg-bg lg:px-15 py-16 md:py-30'>
+			<div className='bg-bg lg:px-15 py-16 md:py-20 lg:py-30'>
 				<motion.div
 					initial={{ opacity: 0, x: -100 }}
 					whileInView={{ opacity: 1, x: 0 }}
 					viewport={{ once: true, amount: 0.3 }}
 					transition={{ duration: 0.8, ease: 'easeOut' }}
-					className='text-primary text-center text-3xl lg:text-6xl font-bold'
+					className='text-primary text-center text-3xl md:text-5xl lg:text-6xl font-bold'
 				>
 					Have some questions?
 				</motion.div>
