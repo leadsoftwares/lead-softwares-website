@@ -270,7 +270,7 @@ const Services = () => {
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true, amount: 0.3 }}
 				transition={{ duration: 0.8, ease: 'easeOut' }}
-				className='pt-30 px-4 lg:px-25'
+				className='pt-10 md:pt-30 px-4 lg:px-25'
 			>
 				<div className='flex flex-col lg:flex-row items-center lg:justify-between'>
 					<div className='space-y-8'>
