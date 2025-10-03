@@ -6,11 +6,9 @@ import { useEffect } from 'react'
 import NavbarTitle from '../about-us/components/NavbarTitle'
 
 const Page = () => {
-	// Automatically scroll to top when page loads
+	
 	useEffect(() => {
-		// Immediate scroll to top
 		window.scrollTo(0, 0)
-
 		setTimeout(() => {
 			window.scrollTo({ top: 0, behavior: 'smooth' })
 		}, 50)
