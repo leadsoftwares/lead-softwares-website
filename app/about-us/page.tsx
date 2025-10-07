@@ -10,7 +10,6 @@ import Link from 'next/link'
 import { useState } from 'react'
 import CustomButton from '../../components/custom-btn'
 import Partners from '../../components/partners-components'
-import TeamSection from '../../components/team-section'
 import AboutusImg from '../../public/jpeg/about-us-thumbnail.jpeg'
 import AboutGrowth3 from '../../public/png/about-Growth3.png'
 import RoadMap from '../../public/svg/roadmap.svg'
@@ -19,6 +18,7 @@ import AboutGrowth2 from '../../public/webp/about-Growth2.webp'
 import AboutGrowth4 from '../../public/webp/about-Growth4.webp'
 import NavbarTitle from './components/NavbarTitle'
 import WhyChooseThree from './components/whychooseus'
+import Team from './components/team'
 
 const About = () => {
 	const [isPlaying, setIsPlaying] = useState(false)
@@ -67,7 +67,6 @@ const About = () => {
 								alt='Video Preview'
 								className='w-full lg:h-100 shadow-3xl'
 							/>
-							{/* get the hell out of here  */}
 						</div>
 					) : (
 						<div className='relative w-full aspect-video'>
@@ -84,7 +83,7 @@ const About = () => {
 					)}
 				</motion.div>
 			</div>
-			{/*  */}
+
 			<div className='bg-bg py-15 md:py-25 mt-4 lg:mt-0'>
 				{/* header */}
 				<motion.div
@@ -103,7 +102,6 @@ const About = () => {
 						Developing sustainable and innovative blockchain solutions
 					</div>
 				</motion.div>
-				{/* blockchain detail */}
 				<div className='w-full flex flex-col lg:flex-row items-center gap-10 xl:gap-40 px-8 lg:px-25 mt-14 lg:mt-40'>
 					{/* left side (boxes side) */}
 					<motion.div
@@ -168,18 +166,15 @@ const About = () => {
 						className='w-full'
 					>
 						<div className='xl:w-[70%] flex flex-col gap-8'>
-							{/* title */}
 							<div className='text-primary text-3xl md:text-4xl font-semibold md:leading-12'>
 								Strategies that get you on the path to success
 							</div>
-							{/* desc */}
 							<div className='text-zinc-400 md:text-lg'>
 								Through an in-depth knowledge of all industrial sectors and the
 								application of approaches such as Lean Strategy, and Business
 								Design, we prepare organizations to welcome change, to be ready
 								to evolve rapidly while remaining competitive in the market.
-							</div>
-							{/* btn */}
+							</div>						
 							<Link href={'/consultation'} className='lg:flex gap-4 hidden'>
 								<CustomButton title='Get Started' />
 							</Link>
@@ -187,12 +182,9 @@ const About = () => {
 					</motion.div>
 				</div>
 			</div>
-			{/* Our History Section */}
 			<div className='w-full'>
-				{/* Project History */}
 				<ProjectHistory />
 			</div>
-			{/* Growth Section */}
 			<div className='bg-bg py-8 lg:py-30 px-8 lg:px-16 xl:px-30 flex flex-col lg:flex-row gap-10 md:gap-30 xl:gap-40'>
 				{/* Left Side */}
 				<motion.div
@@ -287,11 +279,8 @@ const About = () => {
 					/>
 				</motion.div>
 			</div>
-			{/* Team Section */}
-			<TeamSection />
-			{/* partnership logos */}
+			<Team/>
 			<Partners />
-			{/*  */}
 			<WhyChooseThree />
 			{/* email section */}
 			{/* <div

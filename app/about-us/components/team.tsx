@@ -1,5 +1,4 @@
 'use client'
-
 import SectionBG from '@/public/jpeg/team-section-bg.jpg'
 import AboutStaff1 from '@/public/webp/team/team-01.webp'
 import AboutStaff2 from '@/public/webp/team/team-02.webp'
@@ -46,7 +45,7 @@ const teamMembers = [
 	},
 	{
 		id: 4,
-		name: 'Elizabet Kate',
+		name: 'Elizabet Kathy',
 		role: 'CEO Founder',
 		img: AboutStaff4,
 		socials: [
@@ -56,46 +55,8 @@ const teamMembers = [
 		],
 	},
 ]
-const teamStaff = [
-	{
-		id: 1,
-		name: 'Marta Smith',
-		role: 'Product Designer',
-		img: AboutStaff1,
-	},
-	{
-		id: 2,
-		name: 'Thomas Smith',
-		role: 'Developer',
-		img: AboutStaff2,
-	},
-	{
-		id: 3,
-		name: 'Marta Smith',
-		role: 'Product Designer',
-		img: AboutStaff1,
-	},
-	{
-		id: 4,
-		name: 'Thomas Smith',
-		role: 'Developer',
-		img: AboutStaff2,
-	},
-	{
-		id: 5,
-		name: 'Marta Smith',
-		role: 'Product Designer',
-		img: AboutStaff1,
-	},
-	{
-		id: 6,
-		name: 'Thomas Smith',
-		role: 'Developer',
-		img: AboutStaff2,
-	},
-]
 
-export default function TeamSection() {
+const Team = () => {
 	const [active, setActive] = useState<number | null>(null)
 	const [isMobile, setIsMobile] = useState(false)
 
@@ -109,7 +70,6 @@ export default function TeamSection() {
 
 		return () => window.removeEventListener('resize', checkIsMobile)
 	}, [])
-
 	return (
 		<section
 			className='w-full py-16'
@@ -125,13 +85,13 @@ export default function TeamSection() {
 				</h1>
 			</header>
 			{/* Team Flex Row */}
-			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:flex flex-col lg:flex-row w-full max-w-6xl mx-auto gap-4 h-550 sm:h-700 md:h-300 lg:h-[500px] overflow-hidden rounded-xl'>
+			<div className='flex flex-col md:flex-row w-full max-w-6xl mx-auto gap-4 h-500 md:h-[500px] overflow-hidden rounded-xl'>
 				{teamMembers.map((member, index) => (
 					<div
 						key={member.id}
 						onMouseEnter={() => !isMobile && setActive(index)}
 						onMouseLeave={() => !isMobile && setActive(null)}
-						className={`relative flex-1 mx-2 transition-[flex] duration-800 ease-in-out
+						className={`relative flex-1 mx-2 transition-[flex] duration-800 ease-in-out 
               ${!isMobile && active === index ? 'flex-[2]' : 'flex-[1]'}`}
 					>
 						{/* Image */}
@@ -140,6 +100,7 @@ export default function TeamSection() {
 							alt={member.name}
 							fill
 							className='object-cover transition-transform duration-800 ease-in-out rounded-2xl'
+							//   style={{ transform: active === index ? "scale(0.98)" : "scale(1)" }}
 						/>
 
 						{/* Overlay */}
@@ -280,31 +241,8 @@ export default function TeamSection() {
 					</div>
 				))}
 			</div>
-			<div>
-				<h3 className='text-center text-3xl md:text-4xl font-bold text-primary mt-20'>
-					Here are the most talented Staff
-				</h3>
-			</div>
-			<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center gap-8 md:gap-20 max-w-[80%] mx-auto mt-10 md:mt-30 px-4'>
-				{teamStaff.map((staff) => (
-					<div key={staff.id} className='rounded-xl overflow-hidden'>
-						<div className='border-6 md:border-12 border-blue-700 rounded-full p-2'>
-							<div className='relative rounded-full w-100% h-100% aspect-square overflow-hidden'>
-								<Image
-									src={staff.img}
-									alt={staff.name}
-									fill
-									className='object-cover w-94 h-94 rounded-full'
-								/>
-							</div>
-						</div>
-						<div className='p-4 text-center space-y-2'>
-							<h3 className='text-3xl font-bold text-primary'>{staff.name}</h3>
-							<p className='text-lg text-gray-500'>{staff.role}</p>
-						</div>
-					</div>
-				))}
-			</div>
 		</section>
 	)
 }
+
+export default Team

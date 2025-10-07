@@ -24,6 +24,7 @@ const items = [
 	{
 		id: '01',
 		imgSrc: TigerIT,
+		href: "https://tigerit.app/",
 		title: 'Tiger IT',
 		description: 'DIFFERENT STYLES',
 		minidesc: 'Different Styles',
@@ -31,6 +32,7 @@ const items = [
 	{
 		id: '02',
 		imgSrc: Quotelyn,
+		href: "https://www.quotelyn.com/",
 		title: 'Quotelyn',
 		description: 'DIFFERENT CAPTIONS',
 		minidesc: 'Different Captions',
@@ -38,12 +40,14 @@ const items = [
 	{
 		id: '03',
 		imgSrc: Lawraze,
+		href: "https://www.lawraze.com/",
 		title: 'Lawraze',
 		description: 'DIFFERENT STYLES',
 		minidesc: 'Different Styles',
 	},
 	{
 		id: '04',
+		href: "https://www.barqeshop.com/",
 		imgSrc: Barq,
 		title: 'Barq-e-Shop',
 		description: 'DIFFERENT CAPTIONS',
@@ -52,6 +56,7 @@ const items = [
 	{
 		id: '05',
 		imgSrc: IDN,
+		href: "#",
 		title: 'IDN Network',
 		description: 'DIFFERENT CAPTIONS',
 		minidesc: 'Different Captions',
@@ -59,12 +64,14 @@ const items = [
 	{
 		id: '06',
 		imgSrc: City17,
+		href: "#",
 		title: 'City 17',
 		description: 'DIFFERENT CAPTIONS',
 		minidesc: 'Different Captions',
 	},
 	{
 		id: '07',
+		href: "https://www.crazybyrasel.com/",
 		imgSrc: Crazy,
 		title: 'Crazy by Rasel',
 		description: 'DIFFERENT CAPTIONS',
@@ -72,6 +79,7 @@ const items = [
 	},
 	{
 		id: '08',
+		href: "https://superaurorafestival.com/",
 		imgSrc: SuperA,
 		title: 'Super Aurora',
 		description: 'DIFFERENT CAPTIONS',
@@ -142,7 +150,7 @@ const PortfolioStyles = () => {
 										key={`web-${index}`}
 										className='mx-4 md:mx-6 flex-shrink-0'
 									>
-										<div className='w-[340px] md:w-[340px] lg:w-[340px]'>
+										<a href={item.href} target='_blank' className='w-[340px] md:w-[340px] lg:w-[340px]'>
 											<Image
 												width={340}
 												height={340}
@@ -150,7 +158,7 @@ const PortfolioStyles = () => {
 												alt={item.title || ''}
 												className='object-cover w-full h-[220px] md:h-[210px] lg:h-[240px] rounded-xl'
 											/>
-										</div>
+										</a>
 										{item.title && (
 											<div className='font-bold text-lg md:text-xl text-primary mt-3'>
 												{item.title}
