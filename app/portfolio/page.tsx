@@ -56,7 +56,7 @@ const items = [
 	{
 		id: '05',
 		imgSrc: IDN,
-		href: "#",
+		href: "https://idn.betesla.com/",
 		title: 'IDN Network',
 		description: 'DIFFERENT CAPTIONS',
 		minidesc: 'Different Captions',
@@ -205,7 +205,6 @@ const PortfolioStyles = () => {
 									whiteSpace: 'nowrap',
 								}}
 							>
-								{/* First set of mobile projects */}
 								{MobileProjects.map((item, index) => (
 									<div key={`mobile-${index}`} className='mx-6 flex-shrink-0'>
 										<div className='w-[340px] md:w-[200px] lg:w-[300px]'>
@@ -225,7 +224,6 @@ const PortfolioStyles = () => {
 									</div>
 								))}
 
-								{/* Duplicate set for seamless looping */}
 								{MobileProjects.map((item, index) => (
 									<div
 										key={`mobile-dup-${index}`}
