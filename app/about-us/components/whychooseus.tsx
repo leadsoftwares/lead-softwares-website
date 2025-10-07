@@ -7,20 +7,16 @@ import Image from 'next/image'
 export default function WhyChooseThree() {
 	return (
 		<section className='relative py-20 bg-[#182536] overflow-hidden mb-10'>
-			{/* Background Shape */}
 			<div
 				className='absolute bottom-0 left-0 right-0 h-1/2 opacity-50 bg-contain bg-bottom bg-no-repeat animate-float-bob-x'
 				style={{
 					backgroundImage: `url(${SectionBG.src})`,
 				}}
 			/>
-
-			{/* Decorative Blur Elements */}
 			<div className='absolute top-80 left-10 w-140 h-140 rounded-full bg-blue-400/15 blur-3xl' />
 			<div className='absolute top-80 right-60 w-140 h-140 rounded-full bg-red-400/15 blur-3xl' />
 
 			<div className='relative container mx-auto px-4'>
-				{/* Section Title */}
 				<div className='text-center mb-16'>
 					<motion.div
 						initial={{ opacity: 0, x: -100 }}
@@ -44,8 +40,7 @@ export default function WhyChooseThree() {
 						IT Solutions
 					</motion.h2>
 				</div>
-
-				{/* Content Grid */}
+				
 				<div className='grid grid-cols-1 xl:grid-cols-3 gap-10'>
 					{/* Left Features */}
 					<div className='space-y-10'>

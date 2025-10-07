@@ -17,18 +17,15 @@ import AboutGrowth1 from '../../public/webp/about-Growth1.webp'
 import AboutGrowth2 from '../../public/webp/about-Growth2.webp'
 import AboutGrowth4 from '../../public/webp/about-Growth4.webp'
 import NavbarTitle from './components/NavbarTitle'
-import WhyChooseThree from './components/whychooseus'
 import Team from './components/team'
+import WhyChooseThree from './components/whychooseus'
 
 const About = () => {
 	const [isPlaying, setIsPlaying] = useState(false)
 	return (
 		<div className='w-full overflow-hidden'>
-			{/* navbar + title */}
 			<NavbarTitle title='About Us' src={AboutSectionImg} />
-			{/*  */}
 			<JourneyScroll />
-			{/*  */}
 			<div className='w-full gap-4 md:gap-40 flex flex-col lg:flex-row items-center px-10 lg:px-30 lg:py-30'>
 				<motion.div
 					initial={{ opacity: 0, y: 100 }}
@@ -93,11 +90,9 @@ const About = () => {
 					transition={{ duration: 2, ease: 'easeOut' }}
 					className='space-y-3'
 				>
-					{/* subtitle */}
 					<div className='text-sm text-lightBlue text-center'>
 						It’s Time for a Blockchain Revolution
 					</div>
-					{/* title */}
 					<div className='text-3xl lg:text-5xl text-primary xl:w-[45%] leading-10 md:leading-14 font-semibold text-center mx-auto'>
 						Developing sustainable and innovative blockchain solutions
 					</div>
@@ -174,7 +169,7 @@ const About = () => {
 								application of approaches such as Lean Strategy, and Business
 								Design, we prepare organizations to welcome change, to be ready
 								to evolve rapidly while remaining competitive in the market.
-							</div>						
+							</div>
 							<Link href={'/consultation'} className='lg:flex gap-4 hidden'>
 								<CustomButton title='Get Started' />
 							</Link>
@@ -279,7 +274,7 @@ const About = () => {
 					/>
 				</motion.div>
 			</div>
-			<Team/>
+			<Team />
 			<Partners />
 			<WhyChooseThree />
 			{/* email section */}

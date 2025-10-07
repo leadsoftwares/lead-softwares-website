@@ -45,7 +45,7 @@ const teamMembers = [
 	},
 	{
 		id: 4,
-		name: 'Elizabet Kathy',
+		name: 'Elizabeth Kathy',
 		role: 'CEO Founder',
 		img: AboutStaff4,
 		socials: [

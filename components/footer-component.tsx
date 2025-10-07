@@ -7,13 +7,7 @@ import Logo from '../public/png/Lead Logo White with white Text-02-02.png'
 const Footer = () => {
 	return (
 		<div>
-			<div
-				// initial={{ opacity: 0, x: 50 }}
-				// whileInView={{ opacity: 1, x: 0 }}
-				// viewport={{ once: true }}
-				// transition={{ duration: 0.8, ease: 'easeOut' }}
-				className='relative overflow-hidden w-full bg-[#12032F] h-196 md:h-155 lg:h-110'
-			>
+			<div className='relative overflow-hidden w-full bg-[#12032F] h-196 md:h-155 lg:h-110'>
 				{/* gradient */}
 				<div className='ml-30 h-110 w-120 flex items-center'>
 					<div className='hidden lg:block h-100 w-120 blur-3xl bg-[#31096A] rounded-full'></div>
@@ -29,7 +23,6 @@ const Footer = () => {
 						className='flex flex-col items-center md:items-start text-center md:text-left'
 					>
 						<Image width={150} height={150} src={Logo} alt='Lead-softwares' />
-						{/* desc */}
 						<div className='text-zinc-300 text-sm font-light mt-6 max-w-[380px]'>
 							Creative-powered to fuel your growth goals. We build world-class
 							digital products, software and branding.
@@ -67,7 +60,6 @@ const Footer = () => {
 						<div className='text-zinc-400 text-xs mt-2'>
 							© Lead Softwares 2024. All rights reserved.
 						</div>
-						{/* icons */}
 						<div className='flex gap-6 mt-2'>
 							<a href='https://www.facebook.com/leadsoft' target='_blank'>
 								<Facebook color='white' size={18} />
