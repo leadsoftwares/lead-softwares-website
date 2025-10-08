@@ -85,7 +85,7 @@ const Team = () => {
 				</h1>
 			</header>
 			{/* Team Flex Row */}
-			<div className='flex flex-col md:flex-row w-full max-w-6xl mx-auto gap-4 h-500 md:h-[500px] overflow-hidden rounded-xl'>
+			<div className='grid grid-cols-1 sm:grid-cols-2 h-[500px] lg:grid-cols-4 w-full max-w-6xl mx-auto gap-4 overflow-hidden rounded-xl'>
 				{teamMembers.map((member, index) => (
 					<div
 						key={member.id}
