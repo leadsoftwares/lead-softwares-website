@@ -1,20 +1,25 @@
-"use client"
-import Image from 'next/image'
-import MobileProject from '@/components/mobile-projects'
-import PortfolioImg from "@/public/png/Lead software pages Images/Portfolio.png"
-import NavbarTitle from '../about-us/components/NavbarTitle'
-import ProjectHistory from '@/components/project-history'
+'use client'
 import HeroGallery from '@/components/hero-gallery'
+import PortfolioImg from '@/public/png/Lead software pages Images/Portfolio.png'
+import Image from 'next/image'
+import NavbarTitle from '../about-us/components/NavbarTitle'
 import { Items } from './Data/Desktop-Projects'
 import { MobileProjects } from './Data/Mobile-Projects'
+import { useEffect } from 'react'
 
 const PortfolioStyles = () => {
+	useEffect(() => {
+		window.scrollTo(0, 0)
+		setTimeout(() => {
+			window.scrollTo({ top: 0, behavior: 'smooth' })
+		}, 50)
+	}, [])
 	return (
 		<div className='w-full overflow-hidden'>
-			<NavbarTitle title='Portfolio' src={PortfolioImg}/>
-			<HeroGallery/>
-			<ProjectHistory />
-			<MobileProject />
+			<NavbarTitle title='Portfolio' src={PortfolioImg} />
+			<HeroGallery />
+			{/* <ProjectHistory />
+			<MobileProject /> */}
 
 			<div className='w-full py-10 md:py-12 lg:py-16 bg-bg overflow-hidden'>
 				<div className='w-[100%] md:w-[85%] lg:w-[80%] mx-auto'>
@@ -33,13 +38,16 @@ const PortfolioStyles = () => {
 									whiteSpace: 'nowrap',
 								}}
 							>
-
 								{Items.slice(0, 8).map((item, index) => (
 									<div
 										key={`web-${index}`}
 										className='mx-4 md:mx-6 flex-shrink-0'
 									>
-										<a href={item.href} target='_blank' className='w-[340px] md:w-[340px] lg:w-[340px]'>
+										<a
+											href={item.href}
+											target='_blank'
+											className='w-[340px] md:w-[340px] lg:w-[340px]'
+										>
 											<Image
 												width={340}
 												height={340}
@@ -94,7 +102,11 @@ const PortfolioStyles = () => {
 							>
 								{MobileProjects.map((item, index) => (
 									<div key={`mobile-${index}`} className='mx-6 flex-shrink-0'>
-										<a href={item.href} target='_blank' className='w-[340px] md:w-[200px] lg:w-[300px]'>
+										<a
+											href={item.href}
+											target='_blank'
+											className='w-[340px] md:w-[200px] lg:w-[300px]'
+										>
 											<Image
 												width={280}
 												height={400}
@@ -116,7 +128,11 @@ const PortfolioStyles = () => {
 										key={`mobile-dup-${index}`}
 										className='mx-6 flex-shrink-0'
 									>
-										<a href={item.href} target='_blank' className='w-[340px] md:w-[200px] lg:w-[300px]'>
+										<a
+											href={item.href}
+											target='_blank'
+											className='w-[340px] md:w-[200px] lg:w-[300px]'
+										>
 											<Image
 												width={280}
 												height={400}
@@ -138,7 +154,11 @@ const PortfolioStyles = () => {
 										key={`mobile-triple-${index}`}
 										className='mx-6 flex-shrink-0'
 									>
-										<a href={item.href} target='_blank' className='w-[180px] md:w-[200px] lg:w-[240px]'>
+										<a
+											href={item.href}
+											target='_blank'
+											className='w-[180px] md:w-[200px] lg:w-[240px]'
+										>
 											<Image
 												width={240}
 												height={400}

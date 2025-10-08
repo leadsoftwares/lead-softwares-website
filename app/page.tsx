@@ -48,45 +48,6 @@ const page = () => {
 	return (
 		<div className='w-full [scroll-behavior:smooth] overflow-hidden'>
 			<Banner />
-			{/* <motion.div
-				initial={{ opacity: 0, y: 50 }} // start invisible, move down
-				whileInView={{ opacity: 1, y: 0 }} // when scrolled into view
-				viewport={{ once: true }} // animate only once
-				transition={{ duration: 1, ease: 'easeOut' }}
-				className='hero px-2 lg:px-17 flex gap-16 w-full h-120 lg:h-160 bg-bg'
-			>
-				<div className='left py-8 md:mx-auto lg:pl-16 flex flex-col gap-6 justify-center h-120 lg:h-160 text-center lg:text-start'>
-					<div className='title text-4xl lg:text-6xl font-bold text-primary'>
-						We Handle IT, <br /> So you can Handle{' '}
-						<span className='bg-gradient-to-r from-[#857FFF] via-[#BB7BFF] to-pink-300 bg-clip-text text-transparent'>
-							business.
-						</span>
-					</div>
-					<div className='desc text-lg text-zinc-500'>
-						Leveraging technology to turn your business potential <br /> into
-						performance.
-					</div>
-					<div className='bts mt-5 flex mx-auto lg:mx-0'>
-						<CustomButton title='Get Started' />
-						<button className='hidden md:block text-blue-500 outline-1 outline-blue-500 hover:outline-purple-900 py-3 px-6 cursor-pointer  rounded-md transition mr-4'>
-							Services
-						</button>
-					</div>
-				</div>
-				<div className='hidden lg:block'>
-					<div className='relative right h-160 flex items-center justify-center'>
-						<Image
-							className='absolute bottom-0 rounded-2xl z-10 right-0'
-							src={LandingBG}
-							alt=''
-						/>
-						<div className='relative circle bg-linear-to-br blur-3xl from-[#F2A296] via-[#E68B56] to-[#AD60A9] to-40% border border-amber-400 w-130 h-130 rounded-full flex items-center justify-center'></div>
-						<div className='absolute cards flex gap-4 z-100'>
-							<Card /> <AccountCard />
-						</div>
-					</div>
-				</div>
-			</motion.div> */}
 
 			<div className='main w-full min-h-196 lg:px-10'>
 				<motion.div
@@ -125,14 +86,6 @@ const page = () => {
 								{item.title}
 							</div>
 							<div className='desc text-text font-'>{item.text}</div>
-							<div className='link'>
-								<a
-									href='#'
-									className='text-text font-medium text-[16px] hover:text-blue-500'
-								>
-									Learn More
-								</a>
-							</div>
 						</div>
 					))}
 				</motion.div>
@@ -169,19 +122,18 @@ const page = () => {
 						className='detail md:w-120 flex flex-col gap-6 md:ml-16 px-4'
 					>
 						<div className='hidden md:block title text-4xl font-bold text-primary'>
-							We&apos;re building business for <br /> your digital economy
+							We&apos;re building business for your digital economy
 						</div>
-						<div className='block md:hidden title text-3xl font-semibold text-primary'>
-							We&apos;re building business <br /> for your digital <br />{' '}
-							economy
+						<div className='block md:hidden title text-3xl font-semibold text-primary text-center'>
+							We&apos;re building business <br /> for your digital economy
 						</div>
-						<div className='desc w-[90vw] md:w-full text-text'>
+						<div className='desc w-[90vw] md:w-full text-text text-center md:text-left'>
 							Your business deserves more than just an online presence — it
 							deserves real impact. We build powerful digital solutions that
 							drive growth, reach new audiences, and keep you ahead in a
 							fast-changing market.
 						</div>
-						<div className='infos flex gap-12 mt-4'>
+						<div className='flex justify-center md:justify-normal gap-12 mt-4'>
 							<div className='1 space-y-2'>
 								<div className='numbers text-6xl text-[#22c55e] font-bold flex items-center'>
 									<Number number={25} />+

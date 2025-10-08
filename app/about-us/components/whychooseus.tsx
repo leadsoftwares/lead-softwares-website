@@ -42,7 +42,7 @@ export default function WhyChooseThree() {
 				</div>
 				
 				<div className='grid grid-cols-1 xl:grid-cols-3 gap-10'>
-					{/* Left Features */}
+					
 					<div className='space-y-10'>
 						<div className='rounded-xl p-6'>
 							<div className='mb-4 text-4xl flex justify-center'>⭐</div>
@@ -55,7 +55,6 @@ export default function WhyChooseThree() {
 								expectations every time.
 							</p>
 						</div>
-
 						<div className='rounded-xl p-6'>
 							<div className='mb-4 text-4xl flex justify-center'>👥</div>
 							<h3 className='text-xl text-white font-semibold mb-2 text-center'>
@@ -69,7 +68,6 @@ export default function WhyChooseThree() {
 						</div>
 					</div>
 
-					{/* Center Image */}
 					<div className='flex justify-center'>
 						<div className='relative w-full max-w-md aspect-[4/5] rounded-2xl overflow-hidden shadow-xl'>
 							<Image
@@ -82,7 +80,6 @@ export default function WhyChooseThree() {
 						</div>
 					</div>
 
-					{/* Right Features */}
 					<div className='space-y-10'>
 						<div className='rounded-xl p-6'>
 							<div className='mb-4 text-4xl flex justify-center'>💡</div>
