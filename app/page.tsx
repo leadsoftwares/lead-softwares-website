@@ -86,14 +86,6 @@ const page = () => {
 								{item.title}
 							</div>
 							<div className='desc text-text font-'>{item.text}</div>
-							<div className='link'>
-								<a
-									href='#'
-									className='text-text font-medium text-[16px] hover:text-blue-500'
-								>
-									Learn More
-								</a>
-							</div>
 						</div>
 					))}
 				</motion.div>
@@ -133,8 +125,7 @@ const page = () => {
 							We&apos;re building business for your digital economy
 						</div>
 						<div className='block md:hidden title text-3xl font-semibold text-primary text-center'>
-							We&apos;re building business <br /> for your digital
-							economy
+							We&apos;re building business <br /> for your digital economy
 						</div>
 						<div className='desc w-[90vw] md:w-full text-text text-center md:text-left'>
 							Your business deserves more than just an online presence — it
