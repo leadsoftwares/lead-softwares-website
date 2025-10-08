@@ -47,10 +47,7 @@ const strategyBoxes = [
 const page = () => {
 	return (
 		<div className='w-full [scroll-behavior:smooth] overflow-hidden'>
-			{/* hero section */}
 			<Banner />
-
-			{/*  */}
 			{/* <motion.div
 				initial={{ opacity: 0, y: 50 }} // start invisible, move down
 				whileInView={{ opacity: 1, y: 0 }} // when scrolled into view
@@ -91,7 +88,6 @@ const page = () => {
 				</div>
 			</motion.div> */}
 
-			{/*  */}
 			<div className='main w-full min-h-196 lg:px-10'>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
@@ -203,17 +199,11 @@ const page = () => {
 								</div>
 							</div>
 						</div>
-						{/* <Link href='/consultation' className='btn mt-8'>
-							<CustomButton title='Get Started' />
-						</Link> */}
 					</motion.div>
 				</motion.div>
 			</div>
-			{/*  */}
 			<Strategy />
-			{/*  */}
 			<Partners />
-			{/*  */}
 			<div className='goals py-8 md:py-18 px-4 md:px-17 h-full lg:min-h-210 xl:h-210 bg-gradient-to-br from-[#F7F9FC] to-[#EAEAF9]'>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
@@ -268,20 +258,17 @@ const page = () => {
 						className='right my-auto lg:w-[30%]'
 					>
 						<div className='flex flex-col gap-8 w-full'>
-							{/* title */}
 							<div className='hidden lg:block text-primary text-4xl font-semibold leading-12'>
 								Strategies that get you on <br /> the path to success
 							</div>
 							<div className='block lg:hidden text-primary text-3xl md:text-4xl font-semibold leading-10 md:leading-12'>
 								Strategies that get you on the path to success
 							</div>
-							{/* desc */}
 							<div className='text-text md:text-lg'>
 								Our proven strategies put your business on the right track from
 								day one. With data-driven insights and creative thinking, we
 								help you achieve sustainable growth and long-term success.
 							</div>
-							{/* btn */}
 							<div className='text-blue-500 hover:text-blue-900'>
 								<a className='flex items-center gap-4' href='#'>
 									See how it works <ArrowRight size={14} />
@@ -291,9 +278,7 @@ const page = () => {
 					</motion.div>
 				</div>
 			</div>
-			{/* Customer Reviews Section */}
 			<CustomerReviews />
-			{/*  */}
 
 			<motion.div
 				initial={{ opacity: 0, y: 50 }}
@@ -302,24 +287,20 @@ const page = () => {
 				transition={{ duration: 1, ease: 'easeOut' }}
 				className='w-full mt-16 md:mt-26 mb-12 md:mb-22 flex flex-col gap-12 items-center px-2'
 			>
-				{/* title */}
 				<div className='hidden md:block text-5xl leading-14 font-semibold text-primary text-center'>
 					Plan for big expenses, manage profits, <br /> vendors, and much more
 				</div>
 				<div className='block md:hidden text-3xl leading-9 font-semibold text-primary text-center'>
 					Plan for big expenses, manage profits, vendors, and much more
 				</div>
-				{/* desc */}
 				<div className='md:text-lg text-text text-center'>
 					We work with organizations of all sizes, from early start-ups to
 					global brands, in <br /> the private, public, and social sector.
 				</div>
-				{/* btn */}
 				<Link href='/consultation'>
 					<CustomButton title='Get Started' />
 				</Link>
 			</motion.div>
-			
 		</div>
 	)
 }

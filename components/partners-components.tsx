@@ -11,8 +11,6 @@ import { useEffect, useState } from 'react'
 
 const Partners = () => {
 	const [isVisible, setIsVisible] = useState(true)
-
-	// Define partners array for infinite scroll
 	const partners = [
 		{ src: Barq, alt: 'Barq e Shop' },
 		{ src: Crazy, alt: 'Crazy By Rasel' },
@@ -22,8 +20,6 @@ const Partners = () => {
 		{ src: City17, alt: 'City 17' },
 		{ src: SuperA, alt: 'Super Aurora' },
 	]
-
-	// Optional: Hide the scroll temporarily if window loses focus
 	useEffect(() => {
 		const handleVisibilityChange = () => {
 			setIsVisible(!document.hidden)
@@ -58,8 +54,7 @@ const Partners = () => {
 					/>
 				))}
 			</motion.div>
-{/*  */}
-			{/* Mobile View - Infinite Horizontal Scroll */}
+
 			<div className='lg:hidden overflow-hidden pb-14 md:pb-28'>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
@@ -73,7 +68,7 @@ const Partners = () => {
 						whiteSpace: 'nowrap',
 					}}
 				>
-					{/* First set of partners */}
+		
 					{partners.map((partner, index) => (
 						<div
 							key={`partner-${index}`}
@@ -88,7 +83,7 @@ const Partners = () => {
 							/>
 						</div>
 					))}
-					{/* Duplicate set for seamless looping */}
+		
 					{partners.map((partner, index) => (
 						<div
 							key={`partner-dup-${index}`}

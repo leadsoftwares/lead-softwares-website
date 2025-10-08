@@ -39,7 +39,6 @@ type FormData = {
 	cvFile: File | null
 }
 
-// Custom File Upload Component
 interface FileUploadProps {
 	onFileChange: (file: File | null) => void
 	file: File | null
@@ -153,22 +152,18 @@ const CareerForm = () => {
 			],
 			skills: [],
 		},
-		mode: 'onChange', // Validate on change to get real-time validation
+		mode: 'onChange',
 	})
 
-	// Watch the skills array for changes
 	const watchedSkills = watch('skills')
 
-	// Validate skills on submission
 	useEffect(() => {
-		// If skills array is empty, set validation error
 		if (watchedSkills && watchedSkills.length === 0) {
 			setError('skills', {
 				type: 'required',
 				message: 'At least one skill is required',
 			})
 		} else if (watchedSkills && watchedSkills.length > 0) {
-			// Clear the error if there are skills
 			clearErrors('skills')
 		}
 	}, [watchedSkills, setError, clearErrors])
@@ -187,7 +182,6 @@ const CareerForm = () => {
 		name: 'experience',
 	})
 
-	// Setup for dropdowns
 	const [openDropdown, setOpenDropdown] = useState<string | null>(null)
 	const genderDropdownRef = useRef<HTMLUListElement>(null)
 	const [showSuccess, setShowSuccess] = useState(false)
@@ -196,7 +190,6 @@ const CareerForm = () => {
 	const genderOptions = ['Male', 'Female', 'Not Specified']
 	const [newSkill, setNewSkill] = useState<string>('')
 
-	// Watch clicks outside the dropdown to close it
 	useEffect(() => {
 		const handleClickOutside = (event: MouseEvent) => {
 			if (
@@ -212,9 +205,8 @@ const CareerForm = () => {
 
 	const onSubmit = async (data: FormData) => {
 		console.log('Form Submitted:', data)
-		setIsLoading(true) // Start loading
+		setIsLoading(true)
 
-		// Log the CV file details for debugging
 		if (data.cvFile) {
 			console.log('CV File:', {
 				name: data.cvFile.name,
@@ -223,7 +215,6 @@ const CareerForm = () => {
 			})
 		}
 
-		// Log the Cover Letter file details for debugging
 		if (data.coverLetterFile) {
 			console.log('Cover Letter File:', {
 				name: data.coverLetterFile.name,
@@ -232,7 +223,6 @@ const CareerForm = () => {
 			})
 		}
 
-		// Prepare data for Firebase (without files)
 		const applicationData = {
 			personalInfo: data.personalInfo,
 			education: data.education,
@@ -245,12 +235,12 @@ const CareerForm = () => {
 
 		FirebaseUtils.addDocument('career', applicationData)
 			.then(() => {
-				setIsLoading(false) // Stop loading
+				setIsLoading(false)
 				setShowSuccess(true)
 				reset()
 			})
 			.catch((error) => {
-				setIsLoading(false) // Stop loading on error
+				setIsLoading(false)
 				console.error('Error submitting career application:', error)
 				alert('Error submitting application. Please try again.')
 			})
@@ -262,7 +252,6 @@ const CareerForm = () => {
 			className='lg:relative lg:bottom-20 lg:max-w-[60%] rounded-xl shadow-xl lg:mx-auto lg:mb-40 py-10 px-6 lg:px-30 z-100 bg-white'
 			noValidate
 		>
-			{/* ✅ Success Modal */}
 			{showSuccess && (
 				<div className='fixed inset-0 bg-black/40 flex items-center justify-center z-50'>
 					<div className='bg-white rounded-2xl shadow-xl p-6 text-center w-[300px]'>
@@ -289,14 +278,12 @@ const CareerForm = () => {
 			<h1 className='font-bold mt-18 md:mt-0 text-3xl md:text-6xl text-primary text-center pb-12 border-b border-text'>
 				Job Application Create
 			</h1>
-			{/* ---------------- Personal Info ---------------- */}
 			<div className='mt-10'>
 				<h1 className='text-2xl md:text-3xl text-primary font-semibold text-center pb-10'>
 					Personal Info
 				</h1>
 
 				<div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-6'>
-					{/* First Name */}
 					<div className='flex flex-col'>
 						<label className='text-text'>First Name</label>
 						<input
@@ -310,7 +297,7 @@ const CareerForm = () => {
 									e.key !== 'Backspace' &&
 									e.key !== 'Tab'
 								) {
-									e.preventDefault() // block numbers, symbols, spaces
+									e.preventDefault()
 								}
 							}}
 							className='border border-text rounded-md p-2'
@@ -322,7 +309,6 @@ const CareerForm = () => {
 						)}
 					</div>
 
-					{/* Last Name */}
 					<div className='flex flex-col'>
 						<label className='text-text'>Last Name</label>
 						<input
@@ -336,7 +322,7 @@ const CareerForm = () => {
 									e.key !== 'Backspace' &&
 									e.key !== 'Tab'
 								) {
-									e.preventDefault() // block numbers, symbols, spaces
+									e.preventDefault()
 								}
 							}}
 							className='border border-text rounded-md p-2'
@@ -349,14 +335,13 @@ const CareerForm = () => {
 						)}
 					</div>
 
-					{/* Email */}
 					<div className='flex flex-col'>
 						<label className='text-text'>Email</label>
 						<input
 							{...register('personalInfo.email', {
 								required: 'Email is required',
 								pattern: {
-									value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, // basic email regex
+									value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
 									message: 'Invalid email format',
 								},
 							})}
@@ -370,7 +355,6 @@ const CareerForm = () => {
 						)}
 					</div>
 
-					{/* DOB */}
 					<div className='flex flex-col'>
 						<label className='text-text'>Date of Birth</label>
 						<input
@@ -378,7 +362,7 @@ const CareerForm = () => {
 								required: 'Date of Birth is required',
 								validate: (value) => {
 									const today = new Date()
-									today.setHours(0, 0, 0, 0) // reset time
+									today.setHours(0, 0, 0, 0) 
 									const selectedDate = new Date(value as string)
 									selectedDate.setHours(0, 0, 0, 0)
 
@@ -398,7 +382,6 @@ const CareerForm = () => {
 						)}
 					</div>
 
-					{/* Phone */}
 					<div>
 						<label className='text-text'>Phone</label>
 						<Controller
@@ -435,7 +418,6 @@ const CareerForm = () => {
 						)}
 					</div>
 
-					{/* Gender */}
 					<div className='relative'>
 						<label className='text-text'>Gender</label>
 						<input
@@ -483,7 +465,6 @@ const CareerForm = () => {
 					</div>
 				</div>
 
-				{/* Address */}
 				<div className='flex flex-col mt-6'>
 					<label className='text-text'>Address</label>
 					<input
@@ -505,7 +486,6 @@ const CareerForm = () => {
 				</div>
 			</div>
 
-			{/* ---------------- Education ---------------- */}
 			<div className='relative mt-14'>
 				<h1 className='text-2xl md:text-3xl text-primary font-semibold text-center pb-10'>
 					Education
@@ -523,7 +503,6 @@ const CareerForm = () => {
 						key={field.id}
 						className='grid grid-cols-1 md:grid-cols-3 gap-6 mb-4 relative'
 					>
-						{/* Degree */}
 						<div className='flex flex-col'>
 							<input
 								placeholder='Degree'
@@ -539,7 +518,6 @@ const CareerForm = () => {
 							)}
 						</div>
 
-						{/* Institution */}
 						<div className='flex flex-col'>
 							<input
 								placeholder='Institution'
@@ -555,7 +533,6 @@ const CareerForm = () => {
 							)}
 						</div>
 
-						{/* Year */}
 						<div className='flex flex-col'>
 							<input
 								type='date'
@@ -579,7 +556,6 @@ const CareerForm = () => {
 							)}
 						</div>
 
-						{/* Remove button (don't show for first education entry) */}
 						{i > 0 && (
 							<button
 								type='button'
@@ -608,7 +584,6 @@ const CareerForm = () => {
 				))}
 			</div>
 
-			{/* ---------------- Experience ---------------- */}
 			<div className='relative mt-14'>
 				<h1 className='text-2xl md:text-3xl text-primary font-semibold text-center pb-10'>
 					Experience
@@ -634,7 +609,6 @@ const CareerForm = () => {
 						key={field.id}
 						className='grid grid-cols-1 md:grid-cols-5 gap-6 mb-4 relative'
 					>
-						{/* Company */}
 						<div className='flex flex-col'>
 							<input
 								placeholder='Company'
@@ -650,7 +624,6 @@ const CareerForm = () => {
 							)}
 						</div>
 
-						{/* Position */}
 						<div className='flex flex-col'>
 							<input
 								placeholder='Position'
@@ -666,7 +639,6 @@ const CareerForm = () => {
 							)}
 						</div>
 
-						{/* Start Date */}
 						<div className='flex flex-col'>
 							<input
 								type='date'
@@ -691,7 +663,6 @@ const CareerForm = () => {
 							)}
 						</div>
 
-						{/* End Date */}
 						<div className='flex flex-col'>
 							<input
 								type='date'
@@ -701,7 +672,7 @@ const CareerForm = () => {
 									validate: (value, formValues) => {
 										const startDate = formValues.experience[i].startDate
 
-										if (!startDate) return true // If no start date, can't compare
+										if (!startDate) return true
 
 										const start = new Date(startDate)
 										const end = new Date(value)
@@ -721,7 +692,6 @@ const CareerForm = () => {
 							)}
 						</div>
 
-						{/* Description */}
 						<div className='flex flex-col'>
 							<input
 								placeholder='Description'
@@ -741,7 +711,6 @@ const CareerForm = () => {
 							)}
 						</div>
 
-						{/* Remove button (don't show for first experience entry) */}
 						{i > 0 && (
 							<button
 								type='button'
@@ -769,14 +738,11 @@ const CareerForm = () => {
 					</div>
 				))}
 			</div>
-
-			{/* ---------------- Skills ---------------- */}
 			<div className='mt-14'>
 				<h1 className='text-2xl md:text-3xl text-primary font-semibold text-center pb-6'>
 					Skills <span className='text-red-500 text-sm'>*</span>
 				</h1>
 
-				{/* Skills input and add button */}
 				<div className='flex gap-2 mb-4'>
 					<input
 						type='text'
@@ -810,7 +776,6 @@ const CareerForm = () => {
 					</button>
 				</div>
 
-				{/* Display skills as tags */}
 				<div className='flex flex-wrap gap-2 mb-2'>
 					{watch('skills').map((skill, i) => (
 						<div
@@ -835,8 +800,6 @@ const CareerForm = () => {
 						</div>
 					))}
 				</div>
-
-				{/* Show error message if skills validation fails */}
 				{errors.skills && (
 					<p className='text-red-500 text-sm'>
 						{errors.skills.message as string}
@@ -844,7 +807,6 @@ const CareerForm = () => {
 				)}
 			</div>
 
-			{/* ---------------- Cover Letter ---------------- */}
 			<div className='mt-14'>
 				<h1 className='text-2xl md:text-3xl text-primary font-semibold text-center pb-6'>
 					Cover Letter <span className='text-red-500 text-sm'>*</span>
@@ -856,14 +818,11 @@ const CareerForm = () => {
 						required: 'Cover letter file is required',
 						validate: (file) => {
 							if (!file) return 'Cover letter file is required'
-
-							// Check file size (5MB limit)
-							const maxSize = 5 * 1024 * 1024 // 5MB in bytes
+							const maxSize = 5 * 1024 * 1024
 							if (file.size > maxSize) {
 								return 'File size must be less than 5MB'
 							}
 
-							// Check file type
 							const allowedTypes = [
 								'application/pdf',
 								'application/msword',
@@ -898,7 +857,6 @@ const CareerForm = () => {
 				)}
 			</div>
 
-			{/* ---------------- CV Upload ---------------- */}
 			<div className='mt-14'>
 				<h1 className='text-2xl md:text-3xl text-primary font-semibold text-center pb-6'>
 					Upload CV <span className='text-red-500 text-sm'>*</span>
@@ -911,13 +869,11 @@ const CareerForm = () => {
 						validate: (file) => {
 							if (!file) return 'CV file is required'
 
-							// Check file size (5MB limit)
-							const maxSize = 5 * 1024 * 1024 // 5MB in bytes
+							const maxSize = 5 * 1024 * 1024
 							if (file.size > maxSize) {
 								return 'File size must be less than 5MB'
 							}
 
-							// Check file type
 							const allowedTypes = [
 								'application/pdf',
 								'application/msword',
@@ -950,7 +906,6 @@ const CareerForm = () => {
 				)}
 			</div>
 
-			{/* Submit */}
 			<div className='mt-10 flex justify-end'>
 				<button
 					type='submit'

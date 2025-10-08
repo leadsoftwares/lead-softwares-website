@@ -30,18 +30,15 @@ const NavbarTitle = ({ title, src }: TitleProps) => {
 					transition={{ duration: 0.8, ease: 'easeOut' }}
 					className='w-170'
 				>
-					{/* mobile-view img */}
 					<div className='md:hidden mx-auto flex justify-center mb-6'>
 						<Image width={300} height={300} src={src} alt='' />
 					</div>
-					{/* title */}
 					<div className='px-6'>
 						<div className='text-center md:text-left lg:w-full title text-primary font-bold text-3xl md:text-7xl'>
 							{title}
 						</div>
-						{/* desc */}
 						<div className=' text-text text-center md:text-left mt-6 text-md md:text-xl mb-12'>
-							The Engitech Token is the key to unlocking thefull potential of
+							The Engitech Token is the key to unlocking the full potential of
 							Engitech. Get eve higher earning rates and our lowest rates
 						</div>
 						<Link className='hidden lg:block' href={'/consultation'}>

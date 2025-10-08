@@ -40,7 +40,6 @@ const ProjectHistory = () => {
 				Explore our recent client success stories and witness our full 360
 				transformations come to life
 			</div>
-			{/* Project History - Desktop View */}
 			<div className='lg:w-full justify-center hidden md:flex flex-wrap gap-8 mt-30 mx-4 lg:mx-0'>
 				{ProjectView.map((project) => (
 					<a
@@ -48,8 +47,7 @@ const ProjectHistory = () => {
 						href={project.href}
 						target='_blank'
 						className='relative space-y-6 group block w-fit'
-					>
-						{/* Wrapper for image + overlay */}
+					>				
 						<div className='relative rounded-xl md:rounded-4xl overflow-hidden'>
 							<Image
 								className='transition-transform duration-300 hover:shadow-2xl group-hover:scale-105'
@@ -58,11 +56,8 @@ const ProjectHistory = () => {
 								src={project.img}
 								alt={project.alt}
 							/>
-
-							{/* Dark overlay */}
 							<div className='absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
 
-							{/* Button on hover */}
 							<div className='absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 cursor-pointer'>
 								<button className='border border-white text-white font-semibold py-2 px-6 rounded-xl cursor-pointer'>
 									View
@@ -70,7 +65,6 @@ const ProjectHistory = () => {
 							</div>
 						</div>
 
-						{/* Title below */}
 						<div className='text-xl font-semibold text-primary'>
 							{project.title}
 						</div>
@@ -78,13 +72,11 @@ const ProjectHistory = () => {
 				))}
 			</div>
 
-			{/* Project History - Mobile View (Full-width Swipe Slider) */}
-
 			<div className='md:hidden mt-16 w-full relative'>
 				<Swiper
 					modules={[Pagination]}
-					spaceBetween={20} // gap between slides
-					slidesPerView={1} // 1 full slide per view
+					spaceBetween={20} 
+					slidesPerView={1} 
 					pagination={{ clickable: true }}
 					className='w-full'
 				>
