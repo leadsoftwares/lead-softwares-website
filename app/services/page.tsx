@@ -193,25 +193,6 @@ const Services = () => {
 				<Strategy />
 			</div>
 			<Partners />
-
-			{/*  */}
-			{/* <div className="bg-[url('https://preview.codeless.co/converta/default/wp-content/uploads/2023/03/bg-footer-sub-min.png')] bg-cover bg-center py-30 text-center space-y-6 mx-4 lg:mx-25 rounded-3xl mb-10">
-				<div className='text-white text-3xl md:text-5xl font-bold'>
-					Subscribe to Our Newsletter
-				</div>
-				<p className='w-[90%] lg:w-[35%] text-white md:text-lg mx-auto'>
-					Receive the latest technology & business news in your inbox. Select
-					the newsletters you&apos;d like to receive.
-				</p>
-				<div className='w-full text-center space-y-4 md:space-x-4'>
-					<input
-						className='bg-white py-3 w-60 lg:w-80 px-3 rounded'
-						type='text'
-						placeholder='Your Email Address'
-					/>
-					<CustomButton title='Sign Up' />
-				</div>
-			</div> */}
 		</div>
 	)
 }
