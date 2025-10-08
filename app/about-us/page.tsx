@@ -1,7 +1,6 @@
 'use client'
 
 import JourneyScroll from '@/app/about-us/components/JourneyScroll'
-import ProjectHistory from '@/components/project-history'
 import AboutSectionImg from '@/public/png/Lead software pages Images/about uss.png'
 import { motion } from 'framer-motion'
 import { Box, Check, Medal } from 'lucide-react'
@@ -19,6 +18,12 @@ import AboutGrowth4 from '../../public/webp/about-Growth4.webp'
 import NavbarTitle from './components/NavbarTitle'
 import Team from './components/team'
 import WhyChooseThree from './components/whychooseus'
+
+const lists = [
+	{ name: 'Boost SEO'},
+	{ name: 'Visual Reviews'},
+	{ name: 'Social Sharing'},
+]
 
 const About = () => {
 	const [isPlaying, setIsPlaying] = useState(false)
@@ -82,7 +87,6 @@ const About = () => {
 			</div>
 
 			<div className='bg-bg py-15 md:py-25 mt-4 lg:mt-0'>
-				{/* header */}
 				<motion.div
 					initial={{ opacity: 0, x: 0 }}
 					whileInView={{ opacity: 1, x: 0 }}
@@ -98,7 +102,6 @@ const About = () => {
 					</div>
 				</motion.div>
 				<div className='w-full flex flex-col lg:flex-row items-center gap-10 xl:gap-40 px-8 lg:px-25 mt-14 lg:mt-40'>
-					{/* left side (boxes side) */}
 					<motion.div
 						initial={{ opacity: 0, x: -100 }}
 						whileInView={{ opacity: 1, x: 0 }}
@@ -106,7 +109,6 @@ const About = () => {
 						transition={{ duration: 0.8, ease: 'easeOut' }}
 						className='space-y-8 lg:space-y-4'
 					>
-						{/* box 1 */}
 						<div className='bg-white md:gap-4 flex flex-col items-center lg:flex-row space-x-3 w-full lg:w-120 rounded-2xl shadow-lg p-6'>
 							<div className='w-14 h-14 lg:w-20 lg:h-12 mb-6 lg:mb-15 flex justify-center mx-auto lg:mx-0 items-center rounded-full bg-blue-100'>
 								<Image src={RoadMap} alt='RoadMap' />
@@ -121,7 +123,6 @@ const About = () => {
 								</div>
 							</div>
 						</div>
-						{/* box 2 */}
 						<div className='bg-white md:gap-4 flex flex-col items-center lg:flex-row space-x-3 w-full lg:w-120 rounded-2xl shadow-lg p-6'>
 							<div className='w-14 h-14 lg:w-20 lg:h-12 mb-6 lg:mb-15 flex justify-center mx-auto lg:mx-0 items-center rounded-full bg-green-100'>
 								<Box className='text-green-500' />
@@ -136,7 +137,6 @@ const About = () => {
 								</div>
 							</div>
 						</div>
-						{/* box 3 */}
 						<div className='bg-white flex flex-col md:gap-4 items-center lg:flex-row space-x-3 w-full lg:w-120 rounded-2xl shadow-lg p-6'>
 							<div className='w-14 h-14 lg:w-20 lg:h-12 mb-6 lg:mb-15 flex justify-center mx-auto lg:mx-0 items-center rounded-full bg-red-100'>
 								<Medal className='text-red-400' />
@@ -152,7 +152,6 @@ const About = () => {
 							</div>
 						</div>
 					</motion.div>
-					{/* right side */}
 					<motion.div
 						initial={{ opacity: 0, x: 100 }}
 						whileInView={{ opacity: 1, x: 0 }}
@@ -177,11 +176,7 @@ const About = () => {
 					</motion.div>
 				</div>
 			</div>
-			<div className='w-full'>
-				<ProjectHistory />
-			</div>
-			<div className='bg-bg py-8 lg:py-30 px-8 lg:px-16 xl:px-30 flex flex-col lg:flex-row gap-10 md:gap-30 xl:gap-40'>
-				{/* Left Side */}
+			<div className='py-8 lg:py-30 px-8 lg:px-16 xl:px-30 flex flex-col lg:flex-row gap-10 md:gap-30 xl:gap-40'>
 				<motion.div
 					initial={{ opacity: 0, x: -100 }}
 					whileInView={{ opacity: 1, x: 0 }}
@@ -189,40 +184,28 @@ const About = () => {
 					transition={{ duration: 0.8, ease: 'easeOut' }}
 					className='lg:w-[55%] xl:w-[35%] space-y-10'
 				>
-					{/* title */}
 					<div className='text-3xl md:text-4xl text-primary font-semibold'>
 						Growth strategies to be effective & competitive
 					</div>
-					{/* desc */}
 					<div className='md:text-lg text-text font-light'>
 						Money should never sit still. Achieve capital efficiency with our
 						apps: as a leading DeFi yield aggregator, we offer first-rate yield
 						optimization and risk teaching strategies. Get the best yield by
-						using, integrating or building on top of Idle’s products.
+						using, integrating or building on top of Idle&apos;s products.
 					</div>
-					{/* lists */}
 					<div className='flex flex-col lg:flex-row gap-16 md:gap-20 md:text-lg font-light'>
+							<ul className='text-text space-y-2 md:space-y-4'>
+							{lists.map((list , index) => (
+									<li key={index} className='flex items-center gap-2'>
+									<span>
+										<Check color='green' size={18} />
+									</span>
+									{list.name}
+								</li>
+								))}
+							</ul>
+						
 						<ul className='text-text space-y-2 md:space-y-4'>
-							<li className='flex items-center gap-2'>
-								<span>
-									<Check color='green' size={18} />
-								</span>
-								Boost SEO
-							</li>
-							<li className='flex items-center gap-2'>
-								<span>
-									<Check color='green' size={18} />
-								</span>
-								Visual Reviews
-							</li>
-							<li className='flex items-center gap-2'>
-								<span>
-									<Check color='green' size={18} />
-								</span>
-								Social Sharing
-							</li>
-						</ul>
-						<ul className='text-text space-y-4'>
 							<li className='flex items-center gap-2'>
 								<span>
 									<Check color='green' size={18} />
@@ -244,7 +227,6 @@ const About = () => {
 						</ul>
 					</div>
 				</motion.div>
-				{/* Right Side */}
 				<motion.div
 					initial={{ opacity: 0, y: 100 }}
 					whileInView={{ opacity: 1, y: 0 }}
@@ -253,22 +235,22 @@ const About = () => {
 					className='grid grid-cols-1 lg:grid-cols-2 mx-auto gap-10'
 				>
 					<Image
-						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full lg:rounded-2xl'
+						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full md:h-50 lg:rounded-2xl'
 						src={AboutGrowth1}
 						alt='G'
 					/>
 					<Image
-						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full lg:rounded-2xl lg:relative bottom-10'
+						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full md:h-50 lg:rounded-2xl lg:relative bottom-10'
 						src={AboutGrowth2}
 						alt='G'
 					/>
 					<Image
-						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full lg:rounded-2xl'
+						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full md:h-50 lg:rounded-2xl'
 						src={AboutGrowth3}
 						alt='G'
 					/>
 					<Image
-						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full lg:rounded-2xl lg:relative bottom-10'
+						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full md:h-50 lg:rounded-2xl lg:relative bottom-10'
 						src={AboutGrowth4}
 						alt='G'
 					/>
@@ -277,26 +259,6 @@ const About = () => {
 			<Team />
 			<Partners />
 			<WhyChooseThree />
-			{/* email section */}
-			{/* <div
-				style={{
-					background:
-						'linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #7209b7 100%)',
-				}}
-				className='mx-4 lg:mx-20 py-30 space-y-9 mb-10 rounded-xl'
-			>
-				<div className='w-[90%] lg:w-[60%] mx-auto text-white font-semibold text-4xl lg:text-5xl text-center'>
-					Receive the latest technology & business news in your inbox
-				</div>
-				<div className='w-full text-center md:space-x-4 space-y-4'>
-					<input
-						className='bg-white py-3 w-60 lg:w-80 px-3 rounded'
-						type='text'
-						placeholder='Your Email Address'
-					/>
-					<CustomButton title='Sign Up' />
-				</div>
-			</div> */}
 		</div>
 	)
 }

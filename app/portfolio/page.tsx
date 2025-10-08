@@ -1,9 +1,7 @@
 "use client"
 import Image from 'next/image'
-import MobileProject from '@/components/mobile-projects'
 import PortfolioImg from "@/public/png/Lead software pages Images/Portfolio.png"
 import NavbarTitle from '../about-us/components/NavbarTitle'
-import ProjectHistory from '@/components/project-history'
 import HeroGallery from '@/components/hero-gallery'
 import { Items } from './Data/Desktop-Projects'
 import { MobileProjects } from './Data/Mobile-Projects'
@@ -13,8 +11,8 @@ const PortfolioStyles = () => {
 		<div className='w-full overflow-hidden'>
 			<NavbarTitle title='Portfolio' src={PortfolioImg}/>
 			<HeroGallery/>
-			<ProjectHistory />
-			<MobileProject />
+			{/* <ProjectHistory />
+			<MobileProject /> */}
 
 			<div className='w-full py-10 md:py-12 lg:py-16 bg-bg overflow-hidden'>
 				<div className='w-[100%] md:w-[85%] lg:w-[80%] mx-auto'>
