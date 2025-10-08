@@ -7,12 +7,9 @@ import { useEffect, useState } from 'react'
 const ScrollToTop = () => {
 	const [isVisible, setIsVisible] = useState(false)
 
-	// Show button when page is scrolled up to given distance
 	const toggleVisibility = () => {
-		// Check multiple scroll positions to work with GSAP ScrollSmoother
 		let scrollTop = 0
 
-		// Try different methods to get scroll position
 		if (window.pageYOffset !== undefined) {
 			scrollTop = window.pageYOffset
 		} else if (document.documentElement && document.documentElement.scrollTop) {
@@ -20,8 +17,6 @@ const ScrollToTop = () => {
 		} else if (document.body && document.body.scrollTop) {
 			scrollTop = document.body.scrollTop
 		}
-
-		// Also check if there's a smooth-wrapper element (GSAP ScrollSmoother)
 		const smoothWrapper = document.getElementById('smooth-wrapper')
 		if (smoothWrapper) {
 			scrollTop = Math.max(scrollTop, smoothWrapper.scrollTop || 0)
@@ -34,23 +29,20 @@ const ScrollToTop = () => {
 		}
 	}
 
-	// Set the scroll event listener
 	useEffect(() => {
 		const handleScroll = () => {
 			toggleVisibility()
 		}
 
-		// Add listeners to multiple elements to catch all scroll events
+
 		window.addEventListener('scroll', handleScroll, { passive: true })
 		document.addEventListener('scroll', handleScroll, { passive: true })
 
-		// Also listen to the smooth-wrapper if it exists
 		const smoothWrapper = document.getElementById('smooth-wrapper')
 		if (smoothWrapper) {
 			smoothWrapper.addEventListener('scroll', handleScroll, { passive: true })
 		}
 
-		// Initial check
 		toggleVisibility()
 
 		return () => {
@@ -62,9 +54,8 @@ const ScrollToTop = () => {
 		}
 	}, [])
 
-	// Scroll to top smoothly
 	const scrollToTop = () => {
-		// Try different methods to ensure compatibility
+	
 		if (window.scrollTo) {
 			window.scrollTo({
 				top: 0,
@@ -72,7 +63,7 @@ const ScrollToTop = () => {
 				behavior: 'smooth',
 			})
 		} else {
-			// Fallback for older browsers
+			
 			document.documentElement.scrollTop = 0
 			document.body.scrollTop = 0
 		}
