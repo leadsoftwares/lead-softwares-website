@@ -85,13 +85,13 @@ const Team = () => {
 				</h1>
 			</header>
 			{/* Team Flex Row */}
-			<div className='grid grid-cols-1 sm:grid-cols-2 h-[500px] lg:grid-cols-4 w-full max-w-6xl mx-auto gap-4 overflow-hidden rounded-xl'>
+			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:flex flex-col lg:flex-row w-full max-w-6xl mx-auto gap-4 h-550 sm:h-700 md:h-300 lg:h-[500px] overflow-hidden rounded-xl'>
 				{teamMembers.map((member, index) => (
 					<div
 						key={member.id}
 						onMouseEnter={() => !isMobile && setActive(index)}
 						onMouseLeave={() => !isMobile && setActive(null)}
-						className={`relative flex-1 mx-2 transition-[flex] duration-800 ease-in-out 
+						className={`relative flex-1 mx-2 transition-[flex] duration-800 ease-in-out
               ${!isMobile && active === index ? 'flex-[2]' : 'flex-[1]'}`}
 					>
 						{/* Image */}
@@ -100,7 +100,6 @@ const Team = () => {
 							alt={member.name}
 							fill
 							className='object-cover transition-transform duration-800 ease-in-out rounded-2xl'
-							//   style={{ transform: active === index ? "scale(0.98)" : "scale(1)" }}
 						/>
 
 						{/* Overlay */}

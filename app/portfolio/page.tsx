@@ -94,7 +94,7 @@ const PortfolioStyles = () => {
 							>
 								{MobileProjects.map((item, index) => (
 									<div key={`mobile-${index}`} className='mx-6 flex-shrink-0'>
-										<a href={item.href} className='w-[340px] md:w-[200px] lg:w-[300px]'>
+										<a href={item.href} target='_blank' className='w-[340px] md:w-[200px] lg:w-[300px]'>
 											<Image
 												width={280}
 												height={400}
@@ -116,7 +116,7 @@ const PortfolioStyles = () => {
 										key={`mobile-dup-${index}`}
 										className='mx-6 flex-shrink-0'
 									>
-										<a href={item.href} className='w-[340px] md:w-[200px] lg:w-[300px]'>
+										<a href={item.href} target='_blank' className='w-[340px] md:w-[200px] lg:w-[300px]'>
 											<Image
 												width={280}
 												height={400}
@@ -138,7 +138,7 @@ const PortfolioStyles = () => {
 										key={`mobile-triple-${index}`}
 										className='mx-6 flex-shrink-0'
 									>
-										<a href={item.href} className='w-[180px] md:w-[200px] lg:w-[240px]'>
+										<a href={item.href} target='_blank' className='w-[180px] md:w-[200px] lg:w-[240px]'>
 											<Image
 												width={240}
 												height={400}
