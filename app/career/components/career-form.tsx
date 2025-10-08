@@ -5,8 +5,7 @@ import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import { Controller, useFieldArray, useForm } from 'react-hook-form'
 import PhoneInput from 'react-phone-input-2'
-import 'react-phone-input-2/lib/style.css'
-import { motion } from 'framer-motion'												
+import 'react-phone-input-2/lib/style.css'											
 
 type Education = {
 	degree: string
@@ -258,12 +257,8 @@ const CareerForm = () => {
 	}
 
 	return (
-		<motion.form
+		<form
 			onSubmit={handleSubmit(onSubmit)}
-			initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true , amount: 0.2}}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
 			className='lg:relative lg:bottom-20 lg:max-w-[60%] rounded-xl shadow-xl lg:mx-auto lg:mb-40 py-10 px-6 lg:px-30 z-100 bg-white'
 			noValidate
 		>
@@ -291,7 +286,7 @@ const CareerForm = () => {
 					</div>
 				</div>
 			)}
-			<h1 className='font-bold mt-18 md:mt-0 text-4xl md:text-6xl text-primary text-center pb-12 border-b border-text'>
+			<h1 className='font-bold mt-18 md:mt-0 text-3xl md:text-6xl text-primary text-center pb-12 border-b border-text'>
 				Job Application Create
 			</h1>
 			{/* ---------------- Personal Info ---------------- */}
@@ -970,7 +965,7 @@ const CareerForm = () => {
 					{isLoading ? 'Submitting...' : 'Submit'}
 				</button>
 			</div>
-		</motion.form>
+		</form>
 	)
 }
 

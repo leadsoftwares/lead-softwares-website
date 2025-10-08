@@ -1,5 +1,6 @@
 'use client'
-import { motion } from 'motion/react'
+import CustomerReviews from '@/components/customerReviews'
+import ServicesImg from '@/public/png/Lead software pages Images/Portfolio 1.png'
 import Mongo from '@/public/png/Tech logos/MongoDB_ForestGreen.png'
 import Ex from '@/public/png/Tech logos/ex.png'
 import Flutter from '@/public/png/Tech logos/flu.png'
@@ -12,6 +13,7 @@ import NodeJs from '@/public/png/Tech logos/node.png'
 import ReactJs from '@/public/png/Tech logos/react.png'
 import Tailwind from '@/public/png/Tech logos/ta.png'
 import TypeScript from '@/public/png/Tech logos/ts.png'
+import { motion } from 'motion/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -23,8 +25,6 @@ import Shop from '../../public/svg/shop.svg'
 import Speaker from '../../public/svg/speaker.svg'
 import NavbarTitle from '../about-us/components/NavbarTitle'
 import FAQ from './components/faq'
-import ServicesImg from "@/public/png/Lead software pages Images/Portfolio 1.png"
-import CustomerReviews from '@/components/customerReviews'
 
 // const stats = [
 // 	{ value: '50k', label: 'Total Users', bg: 'bg-green-100' },
@@ -87,17 +87,20 @@ const Services = () => {
 		<div className='w-full overflow-hidden'>
 			<NavbarTitle title='Services' src={ServicesImg} />
 			{/* images scroll */}
-			<div className='overflow-hidden py-8 bg-white mt-40 md:mt-0'>
+			<div className='overflow-hidden py-8 bg-white mt-10 md:mt-0'>
 				<motion.h2
-				initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true , amount: 0.3}}
-        transition={{ duration: 0.8, ease: 'easeIn' }}
-				className='px-6 text-center text-5xl md:text-6xl font-semibold mb-26 text-primary'>
+					initial={{ opacity: 0, x: -100 }}
+					whileInView={{ opacity: 1, x: 0 }}
+					viewport={{ once: true, amount: 0.3 }}
+					transition={{ duration: 0.8, ease: 'easeIn' }}
+					className='px-6 text-center text-3xl md:text-6xl font-semibold mb-26 text-primary'
+				>
 					Technologies that we work with
 				</motion.h2>
 				<div
-					className={`mb-20 inline-flex items-center ${isVisible ? 'animate-marquee' : ''}`}
+					className={`mb-20 inline-flex items-center ${
+						isVisible ? 'animate-marquee' : ''
+					}`}
 					style={{
 						whiteSpace: 'nowrap',
 					}}
@@ -114,7 +117,6 @@ const Services = () => {
 								src={logo.src}
 								alt={logo.alt}
 								className='object-contain'
-								
 							/>
 						</div>
 					))}
@@ -130,7 +132,6 @@ const Services = () => {
 								src={logo.src}
 								alt={logo.alt}
 								className='object-contain'
-								
 							/>
 						</div>
 					))}
@@ -151,8 +152,10 @@ const Services = () => {
 						</div>
 					))}
 				</div>
-					<div
-					className={`inline-flex items-center ${isVisible ? 'animate-marquee2' : ''}`}
+				<div
+					className={`inline-flex items-center ${
+						isVisible ? 'animate-marquee2' : ''
+					}`}
 					style={{
 						whiteSpace: 'nowrap',
 					}}
@@ -169,7 +172,6 @@ const Services = () => {
 								src={logo.src}
 								alt={logo.alt}
 								className='object-contain'
-								
 							/>
 						</div>
 					))}
@@ -185,7 +187,6 @@ const Services = () => {
 								src={logo.src}
 								alt={logo.alt}
 								className='object-contain'
-								
 							/>
 						</div>
 					))}
@@ -210,24 +211,26 @@ const Services = () => {
 			{/*  */}
 			<div className='px-2 py-30'>
 				<motion.div
-				initial={{ opacity: 0, x: 100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true , amount: 0.3}}
-        transition={{ duration: 0.8, ease: 'easeInOut' }}
-				className='text-center w-full space-y-2 mx-auto'>
-					<div className='subTitle text-blue-500 text-lg lg:text-xs px-2'>
+					initial={{ opacity: 0, x: 100 }}
+					whileInView={{ opacity: 1, x: 0 }}
+					viewport={{ once: true, amount: 0.3 }}
+					transition={{ duration: 0.8, ease: 'easeInOut' }}
+					className='text-center w-full space-y-2 mx-auto'
+				>
+					<div className='subTitle text-blue-500 lg:text-xs px-2'>
 						We work mainly with digital agencies and software companies
 					</div>
-					<div className='lg:w-[55%] mx-auto text-4xl lg:text-5xl lg:leading-14 font-semibold text-primary'>
+					<div className='lg:w-[55%] mx-auto text-3xl lg:text-5xl lg:leading-14 font-semibold text-primary'>
 						Outstanding software and services that solve your hassle
 					</div>
 				</motion.div>
 				<motion.div
-				initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true , amount: 0.3}}
-        transition={{ duration: 0.8, ease: 'easeInOut' }}
-				className='flex flex-col lg:flex-row gap-10 justify-center px-2 lg:px-30 mt-20'>
+					initial={{ opacity: 0, x: -100 }}
+					whileInView={{ opacity: 1, x: 0 }}
+					viewport={{ once: true, amount: 0.3 }}
+					transition={{ duration: 0.8, ease: 'easeInOut' }}
+					className='flex flex-col lg:flex-row gap-10 justify-center px-2 lg:px-20 mt-20'
+				>
 					{serviceData.map((service, i) => (
 						<div
 							key={i}
@@ -237,7 +240,7 @@ const Services = () => {
 							<div className='font-bold'>{service.title}</div>
 							<p className='text-zinc-500'>{service.text}</p>
 							<Link href={'/consultation'}>
-							<CustomButton title='Learn More' />
+								<CustomButton title='Learn More' />
 							</Link>
 						</div>
 					))}
@@ -256,21 +259,22 @@ const Services = () => {
 				</div> */}
 			</div>
 			{/* strategy */}
-			<div className='-mt-60 lg:mt-0'>
+			<div className='-mt-30 lg:mt-0'>
 				<Strategy />
 			</div>
 			{/*  */}
-			<CustomerReviews/>
+			<CustomerReviews />
 			{/*  */}
 			<motion.div
-			initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true , amount: 0.3}}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-			className='pt-30 px-4 lg:px-25'>
+				initial={{ opacity: 0, y: 100 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true, amount: 0.3 }}
+				transition={{ duration: 0.8, ease: 'easeOut' }}
+				className='pt-10 md:pt-30 px-4 lg:px-25'
+			>
 				<div className='flex flex-col lg:flex-row items-center lg:justify-between'>
 					<div className='space-y-8'>
-						<div className='text-4xl lg:text-5xl font-bold text-primary text-center'>
+						<div className='text-3xl lg:text-5xl font-bold text-primary text-center'>
 							Frequently asked questions
 						</div>
 						<p className='px-8 lg:px-0 text-text text-center'>
@@ -288,13 +292,13 @@ const Services = () => {
 			</motion.div>
 			{/* Partners */}
 			<Partners />
-			
+
 			{/*  */}
-			<div className="bg-[url('https://preview.codeless.co/converta/default/wp-content/uploads/2023/03/bg-footer-sub-min.png')] bg-cover bg-center py-30 text-center space-y-6 mx-4 lg:mx-25 rounded-3xl mb-10">
-				<div className='text-white text-5xl font-bold'>
+			{/* <div className="bg-[url('https://preview.codeless.co/converta/default/wp-content/uploads/2023/03/bg-footer-sub-min.png')] bg-cover bg-center py-30 text-center space-y-6 mx-4 lg:mx-25 rounded-3xl mb-10">
+				<div className='text-white text-3xl md:text-5xl font-bold'>
 					Subscribe to Our Newsletter
 				</div>
-				<p className='w-[90%] lg:w-[35%] text-white text-lg mx-auto'>
+				<p className='w-[90%] lg:w-[35%] text-white md:text-lg mx-auto'>
 					Receive the latest technology & business news in your inbox. Select
 					the newsletters you&apos;d like to receive.
 				</p>
@@ -306,7 +310,7 @@ const Services = () => {
 					/>
 					<CustomButton title='Sign Up' />
 				</div>
-			</div>
+			</div> */}
 		</div>
 	)
 }

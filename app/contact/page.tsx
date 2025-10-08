@@ -1,43 +1,44 @@
 'use client'
 import CustomButton from '@/components/custom-btn'
 import ContactImg from '@/public/png/Lead software pages Images/Contact Us.png'
-import Box1 from '@/public/svg/box1.svg'
-import Box2 from '@/public/svg/box2.svg'
-import Box3 from '@/public/svg/box3.svg'
+// import Box1 from '@/public/svg/box1.svg'
+// import Box2 from '@/public/svg/box2.svg'
+// import Box3 from '@/public/svg/box3.svg'
 import Email from '@/public/svg/email.svg'
 import Location from '@/public/svg/location.svg'
 import Phone from '@/public/svg/phone.svg'
 import Contact1 from '@/public/webp/contact-1.webp'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import NavbarTitle from '../about-us/components/NavbarTitle'
 import Form from '../contact/components/form'
 import FAQPage from './components/faq-box'
-import { motion } from 'framer-motion'
 const Contact = () => {
 	return (
 		<div className='w-full overflow-hidden'>
 			<NavbarTitle title='Contact Us' src={ContactImg} />
 			{/*  */}
-			<div className='flex flex-col lg:flex-row items-center gap-35 px-4 lg:px-25 py-30'>
+			<div className='flex flex-col lg:flex-row justify-between items-center gap-15 md:gap-35 px-4 lg:px-25 py-10 md:py-30'>
 				<motion.div
-				initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true , amount: 0.3}}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
+					initial={{ opacity: 0, x: -100 }}
+					whileInView={{ opacity: 1, x: 0 }}
+					viewport={{ once: true, amount: 0.3 }}
+					transition={{ duration: 0.8, ease: 'easeOut' }}
 				>
 					<Image src={Contact1} alt='Contact' />
 				</motion.div>
 				<motion.div
-				initial={{ opacity: 0, x: 100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true , amount: 0.3}}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-				className='lg:w-[35%] space-y-12'>
-					<div className='text-4xl font-bold text-primary'>
+					initial={{ opacity: 0, x: 100 }}
+					whileInView={{ opacity: 1, x: 0 }}
+					viewport={{ once: true, amount: 0.3 }}
+					transition={{ duration: 0.8, ease: 'easeOut' }}
+					className='px-4 lg:px-0 lg:w-[55%] space-y-12'
+				>
+					<div className='text-3xl md:text-5xl font-bold text-primary'>
 						Growth strategies to be effective & competitive
 					</div>
-					<div className='w-[90%] lg:w-[80%] text-text text-lg'>
+					<div className='w-[90%] lg:w-[80%] text-text md:text-lg'>
 						Everything we do and dream up has a solid design impact. We create
 						human-centered enterprise software that has the polished, snappy
 						feel of the best consumer apps.
@@ -48,22 +49,24 @@ const Contact = () => {
 				</motion.div>
 			</div>
 			{/*  */}
-			<div className='bg-bg lg:px-30 py-30'>
+			<div className='bg-bg lg:px-15 py-16 md:py-20 lg:py-30'>
 				<motion.div
-				initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true , amount: 0.3}}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-				className='text-primary text-center text-5xl lg:text-6xl font-bold'>
+					initial={{ opacity: 0, x: -100 }}
+					whileInView={{ opacity: 1, x: 0 }}
+					viewport={{ once: true, amount: 0.3 }}
+					transition={{ duration: 0.8, ease: 'easeOut' }}
+					className='text-primary text-center text-3xl md:text-5xl lg:text-6xl font-bold'
+				>
 					Have some questions?
 				</motion.div>
-				<div className='mt-20 px-4 flex gap-20 flex-col lg:flex-row'>
+				<div className='mt-20 flex gap-20 flex-col lg:flex-row'>
 					<motion.div
-					initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true , amount: 0.3}}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-					className='lg:w-[50%] h-140 lg:h-[500px]'>
+						initial={{ opacity: 0, x: -100 }}
+						whileInView={{ opacity: 1, x: 0 }}
+						viewport={{ once: true, amount: 0.3 }}
+						transition={{ duration: 0.8, ease: 'easeOut' }}
+						className='lg:w-[50%] h-140 lg:h-[500px] px-2'
+					>
 						<iframe
 							src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.1160972569!2d72.74109918983905!3d33.684420199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbf2fda0895f1%3A0x999f9db6e49389c!2sIslamabad!5e0!3m2!1sen!2s!4v1693946400000!5m2!1sen!2s'
 							width='100%'
@@ -77,11 +80,12 @@ const Contact = () => {
 				</div>
 				{/* cards */}
 				<motion.div
-				initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true , amount: 0.3}}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-				className='px-4 mt-30 flex gap-10 flex-col lg:flex-row'>
+					initial={{ opacity: 0, y: 100 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.3 }}
+					transition={{ duration: 0.8, ease: 'easeOut' }}
+					className='px-4 mt-20 md:mt-30 flex gap-10 flex-col lg:flex-row'
+				>
 					{/* card 1 */}
 					<div className='bg-white rounded-2xl shadow-xl w-full md:w-100 py-10 text-center mx-auto'>
 						<div className='w-16 h-16 rounded-full bg-blue-500 mx-auto mb-2 flex items-center justify-center'>
@@ -113,24 +117,26 @@ const Contact = () => {
 				</motion.div>
 			</div>
 			{/*  */}
-			<div className='py-25'>
+			{/* <div className='py-10 md:py-25'>
 				<motion.div
-				initial={{ opacity: 0, y: 80 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true , amount: 0.3}}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-				className='px-6 lg:w-[70%] text-4xl lg:text-5xl text-primary font-semibold leading-11 lg:leading-14 text-center mx-auto'>
+					initial={{ opacity: 0, y: 80 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.3 }}
+					transition={{ duration: 0.8, ease: 'easeOut' }}
+					className='px-6 lg:w-[70%] text-3xl lg:text-5xl text-primary font-semibold leading-10 lg:leading-14 text-center mx-auto'
+				>
 					A proficient software development boutique focuses on cutting-edge
 					technologies
 				</motion.div>
-				<div className='flex flex-col lg:flex-row gap-10 justify-center mt-20 px-4 lg:px-30'>
-					{/* box1 */}
+				<div className='flex flex-col lg:flex-row gap-10 justify-center mt-20 px-4 lg:px-20'>
+					
 					<motion.div
-					initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true , amount: 0.4}}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-					className='bg-blue-500 text-white rounded-2xl px-8 py-10 space-y-6'>
+						initial={{ opacity: 0, x: -100 }}
+						whileInView={{ opacity: 1, x: 0 }}
+						viewport={{ once: true, amount: 0.4 }}
+						transition={{ duration: 0.8, ease: 'easeOut' }}
+						className='bg-blue-500 text-white rounded-2xl px-8 py-10 space-y-6'
+					>
 						<div>
 							<Image src={Box1} alt='box1' />
 						</div>
@@ -144,7 +150,7 @@ const Contact = () => {
 							Learn More
 						</button>
 					</motion.div>
-					{/* box2 */}
+					
 					<div className=' bg-blue-500 text-white rounded-2xl px-8 py-10 space-y-6'>
 						<div>
 							<Image src={Box2} alt='box1' />
@@ -159,13 +165,14 @@ const Contact = () => {
 							Learn More
 						</button>
 					</div>
-					{/* box3 */}
+					
 					<motion.div
-					initial={{ opacity: 0, x: 100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true , amount: 0.4}}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-					className=' bg-blue-500 text-white rounded-2xl px-8 py-10 space-y-6'>
+						initial={{ opacity: 0, x: 100 }}
+						whileInView={{ opacity: 1, x: 0 }}
+						viewport={{ once: true, amount: 0.4 }}
+						transition={{ duration: 0.8, ease: 'easeOut' }}
+						className=' bg-blue-500 text-white rounded-2xl px-8 py-10 space-y-6'
+					>
 						<div>
 							<Image src={Box3} alt='box1' />
 						</div>
@@ -180,7 +187,7 @@ const Contact = () => {
 						</button>
 					</motion.div>
 				</div>
-			</div>
+			</div> */}
 			{/*  */}
 			<FAQPage />
 		</div>
