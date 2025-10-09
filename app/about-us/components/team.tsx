@@ -1,9 +1,9 @@
 'use client'
 import SectionBG from '@/public/jpeg/team-section-bg.jpg'
-import AboutStaff1 from '@/public/webp/team/team-01.webp'
-import AboutStaff2 from '@/public/webp/team/team-02.webp'
-import AboutStaff3 from '@/public/webp/team/team-03.webp'
-import AboutStaff4 from '@/public/webp/team/team-04.webp'
+import AliIMG from '@/public/png/Lead Software Team Images Transparent/Ali Haider.png'
+import KhuramIMG from '@/public/png/Lead Software Team Images Transparent/Khuram.png'
+import LuisIMG from '@/public/png/Lead Software Team Images Transparent/Luis.png'
+import SufiyanIMG from '@/public/png/Lead Software Team Images Transparent/Sufian.png'
 import { motion } from 'framer-motion'
 import { Facebook, Linkedin, Twitter } from 'lucide-react'
 import Image from 'next/image'
@@ -14,7 +14,7 @@ const teamMembers = [
 		id: 1,
 		name: 'Kane Shiffert',
 		role: 'Developer',
-		img: AboutStaff1,
+		img: KhuramIMG,
 		socials: [
 			{ href: 'https://facebook.com', icon: Facebook, label: 'Facebook' },
 			{ href: 'https://linkedin.com', icon: Linkedin, label: 'LinkedIn' },
@@ -25,7 +25,7 @@ const teamMembers = [
 		id: 2,
 		name: 'Jasi Duffy',
 		role: 'CEO Founder',
-		img: AboutStaff2,
+		img: LuisIMG,
 		socials: [
 			{ href: 'https://facebook.com', icon: Facebook, label: 'Facebook' },
 			{ href: 'https://linkedin.com', icon: Linkedin, label: 'LinkedIn' },
@@ -36,7 +36,7 @@ const teamMembers = [
 		id: 3,
 		name: 'Sara William',
 		role: 'CEO Founder',
-		img: AboutStaff3,
+		img: AliIMG ,
 		socials: [
 			{ href: 'https://facebook.com', icon: Facebook, label: 'Facebook' },
 			{ href: 'https://linkedin.com', icon: Linkedin, label: 'LinkedIn' },
@@ -45,9 +45,9 @@ const teamMembers = [
 	},
 	{
 		id: 4,
-		name: 'Elizabeth Kathy',
+		name: 'Elizabeth Kate',
 		role: 'CEO Founder',
-		img: AboutStaff4,
+		img: SufiyanIMG,
 		socials: [
 			{ href: 'https://facebook.com', icon: Facebook, label: 'Facebook' },
 			{ href: 'https://linkedin.com', icon: Linkedin, label: 'LinkedIn' },
@@ -71,7 +71,7 @@ const Team = () => {
 		return () => window.removeEventListener('resize', checkIsMobile)
 	}, [])
 	return (
-		<section
+			<section
 			className='w-full py-16'
 			style={{
 				backgroundImage: `url(${SectionBG.src})`,
@@ -84,7 +84,6 @@ const Team = () => {
 					Meet Our Team
 				</h1>
 			</header>
-			{/* Team Flex Row */}
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:flex flex-col lg:flex-row w-full max-w-6xl mx-auto gap-4 h-550 sm:h-700 md:h-300 lg:h-[500px] overflow-hidden rounded-xl'>
 				{teamMembers.map((member, index) => (
 					<div
@@ -94,12 +93,11 @@ const Team = () => {
 						className={`relative flex-1 mx-2 transition-[flex] duration-800 ease-in-out
               ${!isMobile && active === index ? 'flex-[2]' : 'flex-[1]'}`}
 					>
-						{/* Image */}
 						<Image
 							src={member.img}
 							alt={member.name}
 							fill
-							className='object-cover transition-transform duration-800 ease-in-out rounded-2xl'
+							className='object-cover transition-transform duration-800 ease-in-out rounded-2xl grayscale hover:grayscale-0'
 						/>
 
 						{/* Overlay */}

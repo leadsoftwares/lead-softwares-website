@@ -54,7 +54,7 @@ const teamMembers = [
 	},
 	{
 		id: 4,
-		name: 'Elizabet Kate',
+		name: 'Elizabeth Kate',
 		role: 'CEO Founder',
 		img: SufiyanIMG,
 		socials: [
@@ -306,7 +306,7 @@ export default function TeamSection() {
 									src={staff.img}
 									alt={staff.name}
 									fill
-									className='object-cover w-94 h-94 rounded-full grayscale hover:grayscale-0 transition-all duration-400'
+									className='object-cover w-94 h-94 rounded-full'
 								/>
 							</div>
 						</div>
