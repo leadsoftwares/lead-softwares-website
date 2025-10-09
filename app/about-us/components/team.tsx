@@ -36,7 +36,7 @@ const teamMembers = [
 		id: 3,
 		name: 'Sara William',
 		role: 'CEO Founder',
-		img: AliIMG ,
+		img: AliIMG,
 		socials: [
 			{ href: 'https://facebook.com', icon: Facebook, label: 'Facebook' },
 			{ href: 'https://linkedin.com', icon: Linkedin, label: 'LinkedIn' },
@@ -71,7 +71,7 @@ const Team = () => {
 		return () => window.removeEventListener('resize', checkIsMobile)
 	}, [])
 	return (
-			<section
+		<section
 			className='w-full py-16'
 			style={{
 				backgroundImage: `url(${SectionBG.src})`,
@@ -80,8 +80,8 @@ const Team = () => {
 			}}
 		>
 			<header>
-				<h1 className='text-3xl md:text-6xl text-primary font-bold text-center mb-20'>
-					Meet Our Team
+				<h1 className='text-3xl md:text-6xl text-primary font-bold text-center mb-20 max-w-4xl mx-auto'>
+					Meet the professionals driving our vision and goal.
 				</h1>
 			</header>
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:flex flex-col lg:flex-row w-full max-w-6xl mx-auto gap-4 h-550 sm:h-700 md:h-300 lg:h-[500px] overflow-hidden rounded-xl'>

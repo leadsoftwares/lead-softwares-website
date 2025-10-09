@@ -2,16 +2,16 @@
 
 import SectionBG from '@/public/jpeg/team-section-bg.jpg'
 import AliIMG from '@/public/png/Lead Software Team Images Transparent/Ali Haider.png'
+import FazeelIMG from '@/public/png/Lead Software Team Images Transparent/Fazeel.png'
+import HassanIMG from '@/public/png/Lead Software Team Images Transparent/Hassan.png'
+import JunaidIMG from '@/public/png/Lead Software Team Images Transparent/Juniad.png'
 import KhuramIMG from '@/public/png/Lead Software Team Images Transparent/Khuram.png'
 import LuisIMG from '@/public/png/Lead Software Team Images Transparent/Luis.png'
+import RomanIMG from '@/public/png/Lead Software Team Images Transparent/Roman.png'
+import ShahzadIMG from '@/public/png/Lead Software Team Images Transparent/Shehzad.png'
 import SufiyanIMG from '@/public/png/Lead Software Team Images Transparent/Sufian.png'
+import ZaeemIMG from '@/public/png/Lead Software Team Images Transparent/Zaeem.png'
 import AhmadIMG from '@/public/png/Lead Software Team Images/Ahmad.png'
-import JunaidIMG from "@/public/png/Lead Software Team Images Transparent/Juniad.png"
-import ShahzadIMG from "@/public/png/Lead Software Team Images Transparent/Shehzad.png"
-import HassanIMG from "@/public/png/Lead Software Team Images Transparent/Hassan.png"
-import ZaeemIMG from "@/public/png/Lead Software Team Images Transparent/Zaeem.png"
-import FazeelIMG from "@/public/png/Lead Software Team Images Transparent/Fazeel.png"
-import RomanIMG from "@/public/png/Lead Software Team Images Transparent/Roman.png"
 
 import { motion } from 'framer-motion'
 import { Facebook, Linkedin, Twitter } from 'lucide-react'
@@ -45,7 +45,7 @@ const teamMembers = [
 		id: 3,
 		name: 'Sara William',
 		role: 'CEO Founder',
-		img: AliIMG ,
+		img: AliIMG,
 		socials: [
 			{ href: 'https://facebook.com', icon: Facebook, label: 'Facebook' },
 			{ href: 'https://linkedin.com', icon: Linkedin, label: 'LinkedIn' },
@@ -134,8 +134,8 @@ export default function TeamSection() {
 			}}
 		>
 			<header>
-				<h1 className='text-3xl md:text-6xl text-primary font-bold text-center mb-20'>
-					Meet Our Team
+				<h1 className='text-3xl md:text-6xl text-primary font-bold text-center mb-20 max-w-4xl mx-auto'>
+					Meet the professionals driving our vision and goal.
 				</h1>
 			</header>
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:flex flex-col lg:flex-row w-full max-w-6xl mx-auto gap-4 h-550 sm:h-700 md:h-300 lg:h-[500px] overflow-hidden rounded-xl'>
@@ -293,8 +293,8 @@ export default function TeamSection() {
 				))}
 			</div>
 			<div>
-				<h3 className='text-center text-3xl md:text-4xl font-bold text-primary mt-20'>
-					Here are the most talented Staff
+				<h3 className='text-center text-3xl md:text-6xl font-bold text-primary mt-10 md:mt-30 max-w-4xl mx-auto'>
+					Our awesome technology Team experts
 				</h3>
 			</div>
 			<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center gap-8 md:gap-20 max-w-[80%] mx-auto mt-10 md:mt-30 px-4'>
