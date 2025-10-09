@@ -13,5 +13,5 @@ export const MobileProjects = [
 	{ id: 4, img: Mobile4, title: 'Barq-e-Shop', href: "https://www.barqeshop.com/" },
 	{ id: 5, img: City17Mobile, title: 'City 17', href: "https://city17.betesla.com/" },
 	{ id: 6, img: SolaBranM, title: 'Sola Bran', href: "https://www.solabran.ca/" },
-	{ id: 7, img: IDNM, title: 'IDN Network', href: "https://idn.betesla.com/" },
+	{ id: 7, img: IDNM, title: 'IDN Network', href: "https://idn.betesla.com/" }
 ]

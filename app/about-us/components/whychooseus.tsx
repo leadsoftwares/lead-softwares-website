@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 export default function WhyChooseThree() {
 	return (
-		<section className='relative py-20 bg-[#182536] overflow-hidden mb-10'>
+		<section className='relative py-20 bg-[#edf3ff] overflow-hidden'>
 			<div
 				className='absolute bottom-0 left-0 right-0 h-1/2 opacity-50 bg-contain bg-bottom bg-no-repeat animate-float-bob-x'
 				style={{
@@ -29,16 +29,15 @@ export default function WhyChooseThree() {
 						<span className='text-blue-500 font-medium'>Why Choose Us</span>
 						<div className='w-10 h-0.5 bg-blue-600' />
 					</motion.div>
-					<motion.h2
-                    
-                    className='text-3xl md:text-5xl font-bold leading-snug text-white'>
+					<h2
+                    className='text-3xl md:text-5xl font-bold leading-snug text-zinc-800'>
 						Your Business with{' '}
-						<span className='text-[#fbd169]'>
+						<span className='text-primary'>
 							Reliable &amp; <br className='hidden md:block' />
 							Future-Ready{' '}
 						</span>
 						IT Solutions
-					</motion.h2>
+					</h2>
 				</div>
 				
 				<div className='grid grid-cols-1 xl:grid-cols-3 gap-10'>
@@ -46,22 +45,22 @@ export default function WhyChooseThree() {
 					<div className='space-y-10'>
 						<div className='rounded-xl p-6'>
 							<div className='mb-4 text-4xl flex justify-center'>⭐</div>
-							<h3 className='text-xl text-white font-semibold mb-2 text-center'>
+							<h3 className='text-xl font-semibold mb-2 text-center'>
 								Unmatched Quality
 							</h3>
 							<div className='w-10 h-0.5 bg-blue-500 mb-3 mx-auto' />
-							<p className='text-gray-200 text-center text-lg'>
+							<p className='text-zinc-800 text-center text-lg'>
 								We deliver exceptional products and services that exceed
 								expectations every time.
 							</p>
 						</div>
 						<div className='rounded-xl p-6'>
 							<div className='mb-4 text-4xl flex justify-center'>👥</div>
-							<h3 className='text-xl text-white font-semibold mb-2 text-center'>
+							<h3 className='text-xl font-semibold mb-2 text-center'>
 								Trusted Expertise
 							</h3>
 							<div className='w-10 h-0.5 bg-blue-500 mb-3 mx-auto' />
-							<p className='text-gray-200 text-center text-lg'>
+							<p className='text-zinc-800 text-center text-lg'>
 								Backed by years of experience and a proven track record, we are
 								your reliable partner for success.
 							</p>
@@ -83,11 +82,11 @@ export default function WhyChooseThree() {
 					<div className='space-y-10'>
 						<div className='rounded-xl p-6'>
 							<div className='mb-4 text-4xl flex justify-center'>💡</div>
-							<h3 className='text-xl text-white font-semibold mb-2 text-center'>
+							<h3 className='text-xl font-semibold mb-2 text-center'>
 								User-Centric Approach
 							</h3>
 							<div className='w-10 h-0.5 bg-blue-500 mb-3 mx-auto' />
-							<p className='text-gray-200 text-center text-lg'>
+							<p className='text-zinc-800 text-center text-lg'>
 								Your satisfaction is our priority, and we tailor solutions to
 								meet your unique needs. Your happiness comes first.
 							</p>
@@ -95,11 +94,11 @@ export default function WhyChooseThree() {
 
 						<div className='rounded-xl p-6'>
 							<div className='mb-4 text-4xl flex justify-center'>🏆</div>
-							<h3 className='text-xl text-white font-semibold mb-2 text-center'>
+							<h3 className='text-xl font-semibold mb-2 text-center'>
 								Trusted by Many
 							</h3>
 							<div className='w-10 h-0.5 bg-blue-500 mb-3 mx-auto' />
-							<p className='text-gray-200 text-center text-lg'>
+							<p className='text-zinc-800 text-center text-lg'>
 								We have built a strong reputation over the years by consistently
 								delivering excellent results.
 							</p>

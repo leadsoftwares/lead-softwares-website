@@ -47,12 +47,12 @@ const Services = () => {
 					whileInView={{ opacity: 1, x: 0 }}
 					viewport={{ once: true, amount: 0.3 }}
 					transition={{ duration: 0.8, ease: 'easeInOut' }}
-					className='flex flex-col md:flex-row flex-wrap xl:w-[70vw] mx-auto items-center gap-4 md:gap-6 justify-center lg:px-10 xl:px-20 mt-20'
+					className='flex flex-col md:flex-row flex-wrap xl:grid xl:grid-cols-3 mx-auto max-w-6xl items-center gap-4 md:gap-6 justify-center lg:px-10 xl:px-20 mt-20'
 				>
 					{ServiceData.map((service, i) => (
 						<div
 							key={i}
-							className='p-6 md:p-8 border mx-auto border-zinc-300 rounded-xl w-80 h-88 md:h-96 space-y-6 hover:shadow-2xl transition-all duration-500 flex flex-col justify-between'
+							className='p-6 md:p-8 border mx-auto border-zinc-300 rounded-xl w-80 h-88 md:h-96 space-y-6 hover:bg-zinc-100 hover:shadow-2xl transition-all duration-500 flex flex-col justify-between'
 						>
 							<div className='space-y-6'>
 								<Image
@@ -104,9 +104,9 @@ const Services = () => {
 							/>
 						</div>
 					))}
-					{Logos1.map((logo, index) => (
+						{Logos1.map((logo, index) => (
 						<div
-							key={`logo-dup-${index}`}
+							key={`logo-${index}`}
 							className='mx-12 flex-shrink-0 hover:scale-110 transition-transform duration-300'
 						>
 							<Image
@@ -118,10 +118,9 @@ const Services = () => {
 							/>
 						</div>
 					))}
-					{/*  */}
-					{Logos1.map((logo, index) => (
+						{Logos1.map((logo, index) => (
 						<div
-							key={`logo-dup-${index}`}
+							key={`logo-${index}`}
 							className='mx-12 flex-shrink-0 hover:scale-110 transition-transform duration-300'
 						>
 							<Image
@@ -130,7 +129,6 @@ const Services = () => {
 								src={logo.src}
 								alt={logo.alt}
 								className='object-contain'
-								style={{ maxHeight: '80px' }}
 							/>
 						</div>
 					))}

@@ -1,91 +1,25 @@
 'use client'
 
 import JourneyScroll from '@/app/about-us/components/JourneyScroll'
+import SectionBG from '@/public/jpeg/about-us-section-bg.jpg'
+import WhyIMG from '@/public/png/about-us-why-section-img.png'
 import AboutSectionImg from '@/public/png/Lead software pages Images/about uss.png'
 import { motion } from 'framer-motion'
 import { Box, Check, Medal } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
 import CustomButton from '../../components/custom-btn'
 import Partners from '../../components/partners-components'
-import AboutusImg from '../../public/jpeg/about-us-thumbnail.jpeg'
-import AboutGrowth3 from '../../public/png/about-Growth3.png'
 import RoadMap from '../../public/svg/roadmap.svg'
-import AboutGrowth1 from '../../public/webp/about-Growth1.webp'
-import AboutGrowth2 from '../../public/webp/about-Growth2.webp'
-import AboutGrowth4 from '../../public/webp/about-Growth4.webp'
 import NavbarTitle from './components/NavbarTitle'
 import Team from './components/team'
 import WhyChooseThree from './components/whychooseus'
 
-const lists = [
-	{ name: 'Boost SEO'},
-	{ name: 'Visual Reviews'},
-	{ name: 'Social Sharing'},
-]
-
 const About = () => {
-	const [isPlaying, setIsPlaying] = useState(false)
 	return (
 		<div className='w-full overflow-hidden'>
 			<NavbarTitle title='About Us' src={AboutSectionImg} />
-			<JourneyScroll />
-			<div className='w-full gap-4 md:gap-40 flex flex-col lg:flex-row items-center px-10 lg:px-30 lg:py-30'>
-				<motion.div
-					initial={{ opacity: 0, y: 100 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, amount: 0.3 }}
-					transition={{ duration: 0.8, ease: 'easeOut' }}
-					className='space-y-10 mt-10 md:mt-0 lg:w-[40%]'
-				>
-					<div className='title text-primary font-semibold text-3xl md:text-4xl'>
-						Growth strategies to be effective & competitive
-					</div>
-					<div className='text-zinc-500 md:text-lg font-light'>
-						Everything we do and dream up has a solid design impact. We create
-						human-centered enterprise software that has the polished, snappy
-						feel of the best consumer apps.
-					</div>
-					<Link className='hidden lg:block' href={'/consultation'}>
-						<CustomButton title='Get Started' />
-					</Link>
-				</motion.div>
-
-				<motion.div
-					initial={{ opacity: 0, x: 100 }}
-					whileInView={{ opacity: 1, x: 0 }}
-					viewport={{ once: true, amount: 0.4 }}
-					transition={{ duration: 0.8, ease: 'easeOut' }}
-					className='lg:w-[60%] h-full max-w-3xl mx-auto rounded-4xl overflow-hidden shadow-2xl'
-				>
-					{!isPlaying ? (
-						<div
-							className='relative cursor-pointer'
-							onClick={() => setIsPlaying(true)}
-						>
-							<Image
-								src={AboutusImg}
-								alt='Video Preview'
-								className='w-full lg:h-100 shadow-3xl'
-							/>
-						</div>
-					) : (
-						<div className='relative w-full aspect-video'>
-							<iframe
-								className='w-full h-full'
-								src='https://www.youtube.com/embed/XHOmBV4js_E?autoplay=1'
-								title='Video Placeholder'
-								frameBorder='0'
-								allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-								referrerPolicy='strict-origin-when-cross-origin'
-								allowFullScreen
-							></iframe>
-						</div>
-					)}
-				</motion.div>
-			</div>
-
+			<WhyChooseThree />
 			<div className='bg-bg py-15 md:py-25 mt-4 lg:mt-0'>
 				<motion.div
 					initial={{ opacity: 0, x: 0 }}
@@ -101,7 +35,7 @@ const About = () => {
 						Developing sustainable and innovative blockchain solutions
 					</div>
 				</motion.div>
-				<div className='w-full flex flex-col lg:flex-row items-center gap-10 xl:gap-40 px-8 lg:px-25 mt-14 lg:mt-40'>
+				<div className='w-full flex flex-col lg:flex-row items-center justify-center gap-10 xl:gap-40 px-8 lg:px-25 mt-14 lg:mt-40'>
 					<motion.div
 						initial={{ opacity: 0, x: -100 }}
 						whileInView={{ opacity: 1, x: 0 }}
@@ -157,9 +91,9 @@ const About = () => {
 						whileInView={{ opacity: 1, x: 0 }}
 						viewport={{ once: true, amount: 0.3 }}
 						transition={{ duration: 0.8, ease: 'easeOut' }}
-						className='w-full'
+						className='xl:w-[35%] '
 					>
-						<div className='xl:w-[70%] flex flex-col gap-8'>
+						<div className='flex flex-col gap-8'>
 							<div className='text-primary text-3xl md:text-4xl font-semibold md:leading-12'>
 								Strategies that get you on the path to success
 							</div>
@@ -176,89 +110,93 @@ const About = () => {
 					</motion.div>
 				</div>
 			</div>
-			<div className='py-8 lg:py-30 px-8 lg:px-16 xl:px-30 flex flex-col lg:flex-row gap-10 md:gap-30 xl:gap-40'>
-				<motion.div
-					initial={{ opacity: 0, x: -100 }}
-					whileInView={{ opacity: 1, x: 0 }}
-					viewport={{ once: true, amount: 0.3 }}
-					transition={{ duration: 0.8, ease: 'easeOut' }}
-					className='lg:w-[55%] xl:w-[35%] space-y-10'
-				>
-					<div className='text-3xl md:text-4xl text-primary font-semibold'>
-						Growth strategies to be effective & competitive
-					</div>
-					<div className='md:text-lg text-text font-light'>
-						Money should never sit still. Achieve capital efficiency with our
-						apps: as a leading DeFi yield aggregator, we offer first-rate yield
-						optimization and risk teaching strategies. Get the best yield by
-						using, integrating or building on top of Idle&apos;s products.
-					</div>
-					<div className='flex flex-col lg:flex-row gap-16 md:gap-20 md:text-lg font-light'>
-							<ul className='text-text space-y-2 md:space-y-4'>
-							{lists.map((list , index) => (
-									<li key={index} className='flex items-center gap-2'>
-									<span>
-										<Check color='green' size={18} />
-									</span>
-									{list.name}
-								</li>
-								))}
-							</ul>
-						
-						<ul className='text-text space-y-2 md:space-y-4'>
-							<li className='flex items-center gap-2'>
-								<span>
-									<Check color='green' size={18} />
-								</span>
-								Manage Buying
-							</li>
-							<li className='flex items-center gap-2'>
-								<span>
-									<Check color='green' size={18} />
-								</span>
-								Buying Protection
-							</li>
-							<li className='flex items-center gap-2'>
-								<span>
-									<Check color='green' size={18} />
-								</span>
-								Virtual Card
-							</li>
-						</ul>
-					</div>
-				</motion.div>
-				<motion.div
-					initial={{ opacity: 0, y: 100 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, amount: 0.3 }}
-					transition={{ duration: 0.8, ease: 'easeOut' }}
-					className='grid grid-cols-1 lg:grid-cols-2 mx-auto gap-10'
-				>
-					<Image
-						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full md:h-50 lg:rounded-2xl'
-						src={AboutGrowth1}
-						alt='G'
-					/>
-					<Image
-						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full md:h-50 lg:rounded-2xl lg:relative bottom-10'
-						src={AboutGrowth2}
-						alt='G'
-					/>
-					<Image
-						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full md:h-50 lg:rounded-2xl'
-						src={AboutGrowth3}
-						alt='G'
-					/>
-					<Image
-						className='lg:shadow-xl bg-white rounded-2xl w-80 md:w-full md:h-50 lg:rounded-2xl lg:relative bottom-10'
-						src={AboutGrowth4}
-						alt='G'
-					/>
-				</motion.div>
+			<JourneyScroll />
+			{/*  */}
+			<div
+				style={{
+					backgroundImage: `url(${SectionBG.src})`,
+					backgroundSize: 'cover',
+					backgroundPosition: 'center',
+				}}
+				className='relative w-full h-[60vh] flex items-center justify-center'
+			>
+				{/* <div className='absolute inset-0'>
+					<div className='absolute inset-0 bg-black/50' />
+				</div> */}
+				<div className='relative z-10 text-center text-black px-6'>
+					<p className='flex items-center justify-center gap-2 mb-3 bg-blue-800 text-white w-30 py-2 rounded-md mx-auto'>
+						<span className='h-2 w-2 bg-white rounded'></span>
+						<span className='font-medium tracking-wider uppercase text-sm'>
+							About Us
+						</span>
+					</p>
+					<h1 className='text-3xl md:text-6xl font-bold leading-tight space-y-2'>
+						<span className='block'>Discover who we are</span>
+						<span className='block'>what drives us every day</span>
+					</h1>
+
+					<p className='mt-4 text-zinc-500 md:text-lg font-medium'>
+						We&apos;re driven by passion, innovation, and a commitment to making
+						a positive impact
+					</p>
+				</div>
 			</div>
+			{/*  */}
+			<div className='text-white pb-20'>
+				<div className='bg-[#edf3ff] mx-auto w-[66vw] flex flex-col gap-12 px-8 py-8 md:px-12'>
+					<div className='w-full flex justify-center'>
+						<Image
+							src={WhyIMG}
+							alt='Why collaborate with us'
+							className='object-contain'
+							priority
+						/>
+					</div>
+
+					<div className='w-full'>
+						<p className='text-zinc-800 font-bold text-2xl mb-3'>
+							Why you need to Collaborate with Us?
+						</p>
+						<div className='space-y-4 text-zinc-500 font-medium'>
+							<p>
+								We offer unparalleled expertise and innovative IT solutions
+								tailored to meet the unique needs of your business. Our team of
+								professionals combines cutting-edge technology with years of
+								experience to deliver results that drive success and growth. We
+								prioritize understanding your objectives and challenges to
+								provide customized, scalable solutions that ensure seamless
+								integration and sustainable outcomes.
+							</p>
+							<p>
+								By choosing us, you&apos;re not just selecting a service
+								provider — you&apos;re gaining a trusted partner committed to
+								your long-term success with custom-designed strategies to
+								address your specific needs.
+							</p>
+						</div>
+						<div className='w-full h-[1px] bg-zinc-200 my-6' />
+						<div className='grid grid-cols-1 sm:grid-cols-2 gap-y-4 max-w-md'>
+							{[
+								'Tailored IT Solutions',
+								'Scalability & Flexibility',
+								'Expertise & Innovation',
+								'Seamless Integration',
+							].map((item, i) => (
+								<div key={i} className='flex items-center gap-3'>
+									<div className='bg-blue-800 p-0.5 rounded'>
+										<Check className='text-white w-4 h-4' />
+									</div>
+									<p className='text-zinc-500 font-medium'>{item}</p>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+			</div>
+			{/*  */}
 			<Team />
 			<Partners />
-			<WhyChooseThree />
+			
 		</div>
 	)
 }
