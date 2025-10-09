@@ -21,7 +21,7 @@ import { useEffect, useState } from 'react'
 const teamMembers = [
 	{
 		id: 1,
-		name: 'Kane Shiffert',
+		name: 'Kane shiff',
 		role: 'Developer',
 		img: KhuramIMG,
 		socials: [
@@ -43,7 +43,7 @@ const teamMembers = [
 	},
 	{
 		id: 3,
-		name: 'Sara William',
+		name: 'Sara Will',
 		role: 'CEO Founder',
 		img: AliIMG,
 		socials: [
@@ -54,7 +54,7 @@ const teamMembers = [
 	},
 	{
 		id: 4,
-		name: 'Elizabeth Kate',
+		name: 'Elizabeth',
 		role: 'CEO Founder',
 		img: SufiyanIMG,
 		socials: [
@@ -151,7 +151,7 @@ export default function TeamSection() {
 							src={member.img}
 							alt={member.name}
 							fill
-							className='object-cover transition-transform duration-800 ease-in-out rounded-2xl grayscale hover:grayscale-0'
+							className='object-cover mx-auto max-w-[96%] max-h-[92%] transition-transform duration-800 ease-in-out rounded-2xl md:grayscale md:hover:grayscale-0'
 						/>
 
 						{/* Overlay */}
