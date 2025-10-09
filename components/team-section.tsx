@@ -151,7 +151,7 @@ export default function TeamSection() {
 							src={member.img}
 							alt={member.name}
 							fill
-							className='object-cover mx-auto max-w-[96%] max-h-[92%] transition-transform duration-800 ease-in-out rounded-2xl md:grayscale md:hover:grayscale-0'
+							className='object-cover mx-auto max-w-[96%] max-h-[92%] sm:max-w-[100%] sm:max-h-[100%] transition-transform duration-800 ease-in-out rounded-2xl lg:grayscale lg:hover:grayscale-0'
 						/>
 
 						{/* Overlay */}
@@ -167,7 +167,7 @@ export default function TeamSection() {
 							transition={
 								isMobile ? { duration: 0 } : { duration: 0.4, ease: 'easeOut' }
 							}
-							className='absolute bottom-5 left-5 bg-black/70 text-white p-4 rounded-xl'
+							className='absolute bottom-12 sm:bottom-5 left-5 bg-black/70 text-white p-4 rounded-xl'
 						>
 							<div className='flex items-center justify-between gap-20'>
 								<motion.div
@@ -293,7 +293,7 @@ export default function TeamSection() {
 				))}
 			</div>
 			<div>
-				<h3 className='text-center text-3xl md:text-6xl font-bold text-primary mt-10 md:mt-30 max-w-4xl mx-auto'>
+				<h3 className='text-center text-3xl md:text-5xl font-bold text-primary mt-10 md:mt-30 max-w-4xl mx-auto'>
 					Our awesome technology Team experts
 				</h3>
 			</div>
