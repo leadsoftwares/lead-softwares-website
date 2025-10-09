@@ -42,19 +42,19 @@ const Services = () => {
 						Outstanding software and services that solve your hassle
 					</div>
 				</motion.div>
-				<motion.div
-					initial={{ opacity: 0, x: -100 }}
-					whileInView={{ opacity: 1, x: 0 }}
-					viewport={{ once: true, amount: 0.3 }}
-					transition={{ duration: 0.8, ease: 'easeInOut' }}
-					className='flex flex-col md:flex-row flex-wrap xl:grid xl:grid-cols-3 mx-auto max-w-6xl items-center gap-4 md:gap-6 justify-center lg:px-10 xl:px-20 mt-20'
-				>
+				<div className='flex flex-col md:flex-row flex-wrap xl:grid xl:grid-cols-3 mx-auto max-w-6xl items-center gap-4 md:gap-6 justify-center lg:px-10 xl:px-20 mt-20'>
 					{ServiceData.map((service, i) => (
 						<div
 							key={i}
 							className='p-6 md:p-8 border mx-auto border-zinc-300 rounded-xl w-80 h-88 md:h-96 space-y-6 hover:bg-zinc-100 hover:shadow-2xl transition-all duration-500 flex flex-col justify-between'
 						>
-							<div className='space-y-6'>
+							<motion.div
+								initial={{ opacity: 0, x: 100 }}
+								whileInView={{ opacity: 1, x: 0 }}
+								viewport={{ once: true, amount: 0.3 }}
+								transition={{ duration: 0.8, ease: 'easeOut' }}
+								className='space-y-6'
+							>
 								<Image
 									width={40}
 									height={40}
@@ -63,13 +63,20 @@ const Services = () => {
 								/>
 								<div className='font-bold text-xl'>{service.title}</div>
 								<p className='text-zinc-500 flex-grow'>{service.text}</p>
-							</div>
-							<Link href={'/consultation'}>
-								<CustomButton title='Learn More' />
-							</Link>
+							</motion.div>
+							<motion.div
+								initial={{ opacity: 0, x: 100 }}
+								whileInView={{ opacity: 1, x: 0 }}
+								viewport={{ once: true, amount: 0.3 }}
+								transition={{ duration: 0.8, ease: 'easeOut' }}
+							>
+								<Link href={'/consultation'}>
+									<CustomButton title='Learn More' />
+								</Link>
+							</motion.div>
 						</div>
 					))}
-				</motion.div>
+				</div>
 			</div>
 
 			<div className='overflow-hidden py-8 bg-white'>
@@ -104,7 +111,7 @@ const Services = () => {
 							/>
 						</div>
 					))}
-						{Logos1.map((logo, index) => (
+					{Logos1.map((logo, index) => (
 						<div
 							key={`logo-${index}`}
 							className='mx-12 flex-shrink-0 hover:scale-110 transition-transform duration-300'
@@ -118,7 +125,7 @@ const Services = () => {
 							/>
 						</div>
 					))}
-						{Logos1.map((logo, index) => (
+					{Logos1.map((logo, index) => (
 						<div
 							key={`logo-${index}`}
 							className='mx-12 flex-shrink-0 hover:scale-110 transition-transform duration-300'

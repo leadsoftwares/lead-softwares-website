@@ -12,7 +12,7 @@ import { useEffect, useState } from 'react'
 const teamMembers = [
 	{
 		id: 1,
-		name: 'Kane Shiffert',
+		name: 'Kane Shiff',
 		role: 'Developer',
 		img: KhuramIMG,
 		socials: [
@@ -45,7 +45,7 @@ const teamMembers = [
 	},
 	{
 		id: 4,
-		name: 'Elizabeth Kate',
+		name: 'Elizabeth',
 		role: 'CEO Founder',
 		img: SufiyanIMG,
 		socials: [
@@ -97,7 +97,7 @@ const Team = () => {
 							src={member.img}
 							alt={member.name}
 							fill
-							className='object-cover transition-transform duration-800 ease-in-out rounded-2xl grayscale hover:grayscale-0'
+							className='object-cover transition-transform duration-800 ease-in-out rounded-2xl md:grayscale md:hover:grayscale-0'
 						/>
 
 						{/* Overlay */}

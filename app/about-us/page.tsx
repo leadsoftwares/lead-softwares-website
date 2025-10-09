@@ -143,7 +143,7 @@ const About = () => {
 			</div>
 			{/*  */}
 			<div className='text-white pb-20'>
-				<div className='bg-[#edf3ff] mx-auto w-[66vw] flex flex-col gap-12 px-8 py-8 md:px-12'>
+				<div className='bg-[#edf3ff] mx-auto md:w-[66vw] flex flex-col gap-12 px-8 py-8 md:px-12'>
 					<div className='w-full flex justify-center'>
 						<Image
 							src={WhyIMG}

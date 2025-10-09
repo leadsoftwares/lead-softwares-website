@@ -25,7 +25,7 @@ const sections: Section[] = [
       {
         question: "How can I get in touch with Lead Softwares?",
         answer:
-          "You can reach us via email at contact@leadsoftwares.com. You can also fill out the contact form on our Contact Us page, and we’ll get back to you as soon as possible.",
+          "You can reach us via email at contact@leadsoftwares.com. You can also fill out the contact form on our Contact Us page, and we'll get back to you as soon as possible.",
       },
       {
         question: "Where is lead Softwares located?",
