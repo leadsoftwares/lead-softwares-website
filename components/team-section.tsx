@@ -1,10 +1,18 @@
 'use client'
 
 import SectionBG from '@/public/jpeg/team-section-bg.jpg'
-import AboutStaff1 from '@/public/webp/team/team-01.webp'
-import AboutStaff2 from '@/public/webp/team/team-02.webp'
-import AboutStaff3 from '@/public/webp/team/team-03.webp'
-import AboutStaff4 from '@/public/webp/team/team-04.webp'
+import AliIMG from '@/public/png/Lead Software Team Images Transparent/Ali Haider.png'
+import FazeelIMG from '@/public/png/Lead Software Team Images Transparent/Fazeel.png'
+import HassanIMG from '@/public/png/Lead Software Team Images Transparent/Hassan.png'
+import JunaidIMG from '@/public/png/Lead Software Team Images Transparent/Juniad.png'
+import KhuramIMG from '@/public/png/Lead Software Team Images Transparent/Khuram.png'
+import LuisIMG from '@/public/png/Lead Software Team Images Transparent/Luis.png'
+import RomanIMG from '@/public/png/Lead Software Team Images Transparent/Roman.png'
+import ShahzadIMG from '@/public/png/Lead Software Team Images Transparent/Shehzad.png'
+import SufiyanIMG from '@/public/png/Lead Software Team Images Transparent/Sufian.png'
+import ZaeemIMG from '@/public/png/Lead Software Team Images Transparent/Zaeem.png'
+import AhmadIMG from '@/public/png/Lead Software Team Images/Ahmad.png'
+
 import { motion } from 'framer-motion'
 import { Facebook, Linkedin, Twitter } from 'lucide-react'
 import Image from 'next/image'
@@ -13,9 +21,9 @@ import { useEffect, useState } from 'react'
 const teamMembers = [
 	{
 		id: 1,
-		name: 'Kane Shiffert',
+		name: 'Kane shiff',
 		role: 'Developer',
-		img: AboutStaff1,
+		img: KhuramIMG,
 		socials: [
 			{ href: 'https://facebook.com', icon: Facebook, label: 'Facebook' },
 			{ href: 'https://linkedin.com', icon: Linkedin, label: 'LinkedIn' },
@@ -26,7 +34,7 @@ const teamMembers = [
 		id: 2,
 		name: 'Jasi Duffy',
 		role: 'CEO Founder',
-		img: AboutStaff2,
+		img: LuisIMG,
 		socials: [
 			{ href: 'https://facebook.com', icon: Facebook, label: 'Facebook' },
 			{ href: 'https://linkedin.com', icon: Linkedin, label: 'LinkedIn' },
@@ -35,9 +43,9 @@ const teamMembers = [
 	},
 	{
 		id: 3,
-		name: 'Sara William',
+		name: 'Sara Will',
 		role: 'CEO Founder',
-		img: AboutStaff3,
+		img: AliIMG,
 		socials: [
 			{ href: 'https://facebook.com', icon: Facebook, label: 'Facebook' },
 			{ href: 'https://linkedin.com', icon: Linkedin, label: 'LinkedIn' },
@@ -46,9 +54,9 @@ const teamMembers = [
 	},
 	{
 		id: 4,
-		name: 'Elizabet Kate',
+		name: 'Elizabeth',
 		role: 'CEO Founder',
-		img: AboutStaff4,
+		img: SufiyanIMG,
 		socials: [
 			{ href: 'https://facebook.com', icon: Facebook, label: 'Facebook' },
 			{ href: 'https://linkedin.com', icon: Linkedin, label: 'LinkedIn' },
@@ -61,37 +69,43 @@ const teamStaff = [
 		id: 1,
 		name: 'Marta Smith',
 		role: 'Product Designer',
-		img: AboutStaff1,
+		img: AhmadIMG,
 	},
 	{
 		id: 2,
 		name: 'Thomas Smith',
 		role: 'Developer',
-		img: AboutStaff2,
+		img: JunaidIMG,
 	},
 	{
 		id: 3,
 		name: 'Marta Smith',
 		role: 'Product Designer',
-		img: AboutStaff1,
+		img: ZaeemIMG,
 	},
 	{
 		id: 4,
 		name: 'Thomas Smith',
 		role: 'Developer',
-		img: AboutStaff2,
+		img: HassanIMG,
 	},
 	{
 		id: 5,
 		name: 'Marta Smith',
 		role: 'Product Designer',
-		img: AboutStaff1,
+		img: ShahzadIMG,
 	},
 	{
 		id: 6,
 		name: 'Thomas Smith',
 		role: 'Developer',
-		img: AboutStaff2,
+		img: FazeelIMG,
+	},
+	{
+		id: 7,
+		name: 'Thomas Smith',
+		role: 'Developer',
+		img: RomanIMG,
 	},
 ]
 
@@ -120,11 +134,10 @@ export default function TeamSection() {
 			}}
 		>
 			<header>
-				<h1 className='text-3xl md:text-6xl text-primary font-bold text-center mb-20'>
-					Meet Our Team
+				<h1 className='text-3xl md:text-6xl text-primary font-bold text-center mb-20 max-w-4xl mx-auto'>
+					Meet the professionals driving our vision and goal.
 				</h1>
 			</header>
-			{/* Team Flex Row */}
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:flex flex-col lg:flex-row w-full max-w-6xl mx-auto gap-4 h-550 sm:h-700 md:h-300 lg:h-[500px] overflow-hidden rounded-xl'>
 				{teamMembers.map((member, index) => (
 					<div
@@ -134,12 +147,11 @@ export default function TeamSection() {
 						className={`relative flex-1 mx-2 transition-[flex] duration-800 ease-in-out
               ${!isMobile && active === index ? 'flex-[2]' : 'flex-[1]'}`}
 					>
-						{/* Image */}
 						<Image
 							src={member.img}
 							alt={member.name}
 							fill
-							className='object-cover transition-transform duration-800 ease-in-out rounded-2xl'
+							className='object-cover mx-auto max-w-[96%] max-h-[92%] sm:max-w-[100%] sm:max-h-[100%] transition-transform duration-800 ease-in-out rounded-2xl lg:grayscale lg:hover:grayscale-0'
 						/>
 
 						{/* Overlay */}
@@ -155,7 +167,7 @@ export default function TeamSection() {
 							transition={
 								isMobile ? { duration: 0 } : { duration: 0.4, ease: 'easeOut' }
 							}
-							className='absolute bottom-5 left-5 bg-black/70 text-white p-4 rounded-xl'
+							className='absolute bottom-12 sm:bottom-5 left-5 bg-black/70 text-white p-4 rounded-xl'
 						>
 							<div className='flex items-center justify-between gap-20'>
 								<motion.div
@@ -281,8 +293,8 @@ export default function TeamSection() {
 				))}
 			</div>
 			<div>
-				<h3 className='text-center text-3xl md:text-4xl font-bold text-primary mt-20'>
-					Here are the most talented Staff
+				<h3 className='text-center text-3xl md:text-5xl font-bold text-primary mt-10 md:mt-30 max-w-4xl mx-auto'>
+					Our awesome technology Team experts
 				</h3>
 			</div>
 			<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center gap-8 md:gap-20 max-w-[80%] mx-auto mt-10 md:mt-30 px-4'>

@@ -101,7 +101,7 @@ const PortfolioStyles = () => {
 								}}
 							>
 								{MobileProjects.map((item, index) => (
-									<div key={`mobile-${index}`} className='mx-6 flex-shrink-0'>
+									<div key={`mobile-${index}`} className='mx-2 flex-shrink-0'>
 										<a
 											href={item.href}
 											target='_blank'
@@ -126,7 +126,7 @@ const PortfolioStyles = () => {
 								{MobileProjects.map((item, index) => (
 									<div
 										key={`mobile-dup-${index}`}
-										className='mx-6 flex-shrink-0'
+										className='mx-2 flex-shrink-0'
 									>
 										<a
 											href={item.href}
@@ -152,7 +152,7 @@ const PortfolioStyles = () => {
 								{MobileProjects.map((item, index) => (
 									<div
 										key={`mobile-triple-${index}`}
-										className='mx-6 flex-shrink-0'
+										className='mx-2 flex-shrink-0'
 									>
 										<a
 											href={item.href}

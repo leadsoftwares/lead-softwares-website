@@ -48,7 +48,6 @@ const page = () => {
 	return (
 		<div className='w-full [scroll-behavior:smooth] overflow-hidden'>
 			<Banner />
-
 			<div className='main w-full min-h-196 lg:px-10'>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}

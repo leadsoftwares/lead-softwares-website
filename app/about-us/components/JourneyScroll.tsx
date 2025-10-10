@@ -61,20 +61,20 @@ export default function PortfolioSection() {
 					<div className='space-y-12'>
 						{[
 							{
-								title: '18 Pre-Defined Grids',
-								text: 'Display your projects in unique grids and see what works best for you. Display your projects in unique grids and see what works best for you. Display your projects in unique grids and see what works best for you. Parallax effects, adaptive colors, RGB effects, 3D depth, custom cursor & more. Display your projects in unique grids and see what works best for you. Display your projects in unique grids and see what works best for you.',
+								title: 'May 2023 – The Beginning',
+								text: 'Lead Softwares was established with a vision to deliver innovative and reliable digital solutions. Starting as a small team of passionate developers and designers, we began offering custom software development, UI/UX design, and mobile app solutions for startups and growing businesses. Our focus was clear — build technology that empowers success.'
 							},
 							{
-								title: 'Always-on-Modules',
-								text: 'Show extra content without distraction using vertical header modules. Display your projects in unique grids and see what works best for you. Display your projects in unique grids and see what works best for you. Parallax effects, adaptive colors, RGB effects, 3D depth, custom cursor & more. Display your projects in unique grids and see what works best for you. Display your projects in unique grids and see what works best for you.',
+								title: 'March 2024 – Growing Stronger',
+								text: 'Within less than a year, Lead Softwares expanded its service line to include end-to-end product deployment and quality assurance testing. We introduced agile development practices and partnered with several local and international clients. Our portfolio grew rapidly as we gained recognition for timely delivery and modern software design.',
 							},
 							{
-								title: 'Custom Detail Pages',
-								text: 'Create fully customizable portfolio detail pages. Display your projects in unique grids and see what works best for you. Display your projects in unique grids and see what works best for you. Parallax effects, adaptive colors, RGB effects, 3D depth, custom cursor & more. Display your projects in unique grids and see what works best for you. Display your projects in unique grids and see what works best for you.',
+								title: 'January 2025 – Going Global',
+								text: 'Lead Softwares entered the global market, delivering custom enterprise solutions across multiple industries. With a growing team of software engineers, UI/UX experts, and project managers, we began offering cloud-based systems, mobile app development, and digital transformation consulting for businesses worldwide.',
 							},
 							{
-								title: 'Impressive Animations',
-								text: 'Parallax effects, adaptive colors, RGB effects, 3D depth, custom cursor & more. Display your projects in unique grids and see what works best for you. Display your projects in unique grids and see what works best for you.Parallax effects, adaptive colors, RGB effects, 3D depth, custom cursor & more. Display your projects in unique grids and see what works best for you. Display your projects in unique grids and see what works best for you. ',
+								title: 'June 2025 – Leading with Innovation',
+								text: 'Today, Lead Softwares stands as a trusted IT partner for clients across different regions. With a strong focus on innovation, design excellence, and user satisfaction, we continue to shape the future of technology — developing powerful, scalable, and secure digital products that drive real-world impact.',
 							},
 						].map((item, i) => (
 							<div key={i}>

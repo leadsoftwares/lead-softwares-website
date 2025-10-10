@@ -86,17 +86,17 @@ const Contact = () => {
 				>
 					Have some questions?
 				</motion.div>
-				<div className='mt-20 flex gap-20 flex-col lg:flex-row'>
+				<div className='mt-20 flex md:gap-20 flex-col lg:flex-row'>
 					<motion.div
 						initial={{ opacity: 0, x: -100 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						viewport={{ once: true, amount: 0.3 }}
 						transition={{ duration: 0.8, ease: 'easeOut' }}
-						className='lg:w-[50%] h-140 lg:h-[500px] px-2'
+						className='lg:w-[50%] h-120 lg:h-[500px] px-2'
 					>
 						<iframe
 							loading='lazy'
-							className='w-full h-[50%] md:h-full rounded-2xl border-0'
+							className='w-full h-[100%] md:h-full rounded-2xl border-0'
 							src='https://www.google.com/maps?q=30.240904984729816,71.48171433334791&hl=en&z=15&output=embed'
 						></iframe>
 					</motion.div>
@@ -119,7 +119,7 @@ const Contact = () => {
 							</div>
 							<h2 className='font-extrabold text-2xl mb-4'>{card.title}</h2>
 							<p className='text-text mb-4'>{card.text}</p>
-							<p className='text-black font-bold break-words px-20'>
+							<p className='text-black font-bold break-words px-10 md:px-20'>
 								{card.info}
 							</p>
 						</div>
