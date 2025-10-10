@@ -1,5 +1,6 @@
 'use client'
 import ServicesImg from '@/public/png/Lead software pages Images/Portfolio 1.png'
+import { Check } from 'lucide-react'
 import { motion } from 'motion/react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -9,7 +10,7 @@ import Partners from '../../components/partners-components'
 import Strategy from '../../components/strategy'
 import NavbarTitle from '../about-us/components/NavbarTitle'
 import { Logos1, Logos2, ServiceData } from './Data/services-data'
-
+import SectionMobiles from "@/public/png/services-mob-img.png"
 const Services = () => {
 	const [isVisible, setIsVisible] = useState(true)
 
@@ -198,6 +199,56 @@ const Services = () => {
 				<Strategy />
 			</div>
 			<Partners />
+			<section className='relative py-16 lg:pb-24 overflow-hidden '>
+				<div className='container flex flex-col lg:flex-row justify-between items-center xl:w-[65%] mx-auto px-6 lg:px-6 relative bg-[#edf3ff]'>
+					<div className='relative w-full rounded-3xl overflow-hidden'>
+						<div className='relative z-10 p-10 md:p-16 lg:p-20'>
+							<p className='flex items-center justify-center gap-2 mb-3 bg-blue-800 text-white w-40 py-2 rounded-md'>
+								<span className='h-2 w-2 bg-white rounded'></span>
+								<span className='font-medium tracking-wider uppercase text-sm'>
+									Your Benefits
+								</span>
+							</p>
+							<h2 className='text-3xl md:text-5xl font-semibold text-zinc-800 mb-4 leading-snug'>
+								How our services outshine <br className='hidden md:block' />
+								the competition.
+							</h2>
+							<p className='text-lg text-zinc-500 font-medium mb-10'>
+								Our services stand out for their quality, customization,{' '}
+								<br className='hidden md:block' />
+								and dedication to delivering the best results.
+							</p>
+							<div className='grid grid-cols-1 sm:grid-cols-2 gap-5 w-max'>
+								{[
+									'Customized Solution',
+									'Advanced Technology',
+									'Virtual Technology',
+									'Scalable and Cost-Effective',
+								].map((item, i) => (
+									<div
+										key={i}
+										className='flex items-center gap-3 group hover:translate-x-1 transition-transform duration-300'
+									>
+										<div className='w-6 h-6 flex items-center justify-center rounded-full bg-blue-800'>
+											<Check className='text-white w-4 h-4' />
+										</div>
+										<p className='text-zinc-600 font-medium'>{item}</p>
+									</div>
+								))}
+							</div>
+						</div>
+					</div>
+					<div>
+						<Image
+								width={600}
+								height={600}
+								src={SectionMobiles}
+								alt={"SectionMobiles"}
+							/>
+					</div>
+				</div>
+			</section>
+			
 		</div>
 	)
 }

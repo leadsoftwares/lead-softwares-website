@@ -1,130 +1,73 @@
-'use client'
-
+"use client"
+import Team from '@/app/about-us/components/team'
 import SectionBG from '@/public/jpeg/team-section-bg.jpg'
-import AliIMG from '@/public/png/Lead Software Team Images Transparent/Ali Haider.png'
+import AhmadIMG from '@/public/png/Lead Software Team Images Transparent/Ahmad.png'
+import SectionBorder from '@/public/png/Lead Software Team Images Transparent/border-o.png'
 import FazeelIMG from '@/public/png/Lead Software Team Images Transparent/Fazeel.png'
 import HassanIMG from '@/public/png/Lead Software Team Images Transparent/Hassan.png'
 import JunaidIMG from '@/public/png/Lead Software Team Images Transparent/Juniad.png'
-import KhuramIMG from '@/public/png/Lead Software Team Images Transparent/Khuram.png'
-import LuisIMG from '@/public/png/Lead Software Team Images Transparent/Luis.png'
+import RimshaIMG from '@/public/png/Lead Software Team Images Transparent/Rimsha.png'
 import RomanIMG from '@/public/png/Lead Software Team Images Transparent/Roman.png'
 import ShahzadIMG from '@/public/png/Lead Software Team Images Transparent/Shehzad.png'
-import SufiyanIMG from '@/public/png/Lead Software Team Images Transparent/Sufian.png'
 import ZaeemIMG from '@/public/png/Lead Software Team Images Transparent/Zaeem.png'
-import AhmadIMG from '@/public/png/Lead Software Team Images/Ahmad.png'
-
-import { motion } from 'framer-motion'
-import { Facebook, Linkedin, Twitter } from 'lucide-react'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
 
-const teamMembers = [
-	{
-		id: 1,
-		name: 'Kane shiff',
-		role: 'Developer',
-		img: KhuramIMG,
-		socials: [
-			{ href: 'https://facebook.com', icon: Facebook, label: 'Facebook' },
-			{ href: 'https://linkedin.com', icon: Linkedin, label: 'LinkedIn' },
-			{ href: 'https://twitter.com', icon: Twitter, label: 'Twitter' },
-		],
-	},
-	{
-		id: 2,
-		name: 'Jasi Duffy',
-		role: 'CEO Founder',
-		img: LuisIMG,
-		socials: [
-			{ href: 'https://facebook.com', icon: Facebook, label: 'Facebook' },
-			{ href: 'https://linkedin.com', icon: Linkedin, label: 'LinkedIn' },
-			{ href: 'https://twitter.com', icon: Twitter, label: 'Twitter' },
-		],
-	},
-	{
-		id: 3,
-		name: 'Sara Will',
-		role: 'CEO Founder',
-		img: AliIMG,
-		socials: [
-			{ href: 'https://facebook.com', icon: Facebook, label: 'Facebook' },
-			{ href: 'https://linkedin.com', icon: Linkedin, label: 'LinkedIn' },
-			{ href: 'https://twitter.com', icon: Twitter, label: 'Twitter' },
-		],
-	},
-	{
-		id: 4,
-		name: 'Elizabeth',
-		role: 'CEO Founder',
-		img: SufiyanIMG,
-		socials: [
-			{ href: 'https://facebook.com', icon: Facebook, label: 'Facebook' },
-			{ href: 'https://linkedin.com', icon: Linkedin, label: 'LinkedIn' },
-			{ href: 'https://twitter.com', icon: Twitter, label: 'Twitter' },
-		],
-	},
-]
 const teamStaff = [
 	{
 		id: 1,
-		name: 'Marta Smith',
-		role: 'Product Designer',
+		name: 'Ahmad Yar',
+		role: 'Web Team Lead',
 		img: AhmadIMG,
 	},
 	{
 		id: 2,
-		name: 'Thomas Smith',
-		role: 'Developer',
+		name: 'Junaid Mureed',
+		role: 'Backend Team Lead',
 		img: JunaidIMG,
 	},
 	{
 		id: 3,
-		name: 'Marta Smith',
-		role: 'Product Designer',
-		img: ZaeemIMG,
+		name: 'Ume Roman',
+		role: 'UI/UX Designer',
+		img: RomanIMG,
 	},
 	{
 		id: 4,
-		name: 'Thomas Smith',
-		role: 'Developer',
-		img: HassanIMG,
+		name: 'Rimsha Ramzan',
+		role: 'Mobile Developer',
+		img: RimshaIMG,
 	},
 	{
 		id: 5,
-		name: 'Marta Smith',
-		role: 'Product Designer',
-		img: ShahzadIMG,
+		name: 'Hassan Sajjad',
+		role: 'Web Developer',
+		img: HassanIMG,
 	},
 	{
 		id: 6,
-		name: 'Thomas Smith',
-		role: 'Developer',
-		img: FazeelIMG,
+		name: 'Muhammad Shahzad',
+		role: 'Mobile Developer',
+		img: ShahzadIMG,
 	},
 	{
 		id: 7,
-		name: 'Thomas Smith',
-		role: 'Developer',
-		img: RomanIMG,
+		name: 'Muhammad Zaeem',
+		role: 'Web Developer',
+		img: ZaeemIMG,
+	},
+	{
+		id: 8,
+		name: 'Fazeel Ahmad',
+		role: 'QA Engineer',
+		img: FazeelIMG,
 	},
 ]
 
 export default function TeamSection() {
-	const [active, setActive] = useState<number | null>(null)
-	const [isMobile, setIsMobile] = useState(false)
-
-	useEffect(() => {
-		const checkIsMobile = () => {
-			setIsMobile(window.innerWidth < 768)
-		}
-
-		checkIsMobile()
-		window.addEventListener('resize', checkIsMobile)
-
-		return () => window.removeEventListener('resize', checkIsMobile)
-	}, [])
 
 	return (
+		<div>
+				<Team/>
 		<section
 			className='w-full py-16'
 			style={{
@@ -133,190 +76,47 @@ export default function TeamSection() {
 				backgroundPosition: 'center',
 			}}
 		>
-			<header>
-				<h1 className='text-3xl md:text-6xl text-primary font-bold text-center mb-20 max-w-4xl mx-auto'>
-					Meet the professionals driving our vision and goal.
-				</h1>
-			</header>
-			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:flex flex-col lg:flex-row w-full max-w-6xl mx-auto gap-4 h-550 sm:h-700 md:h-300 lg:h-[500px] overflow-hidden rounded-xl'>
-				{teamMembers.map((member, index) => (
-					<div
-						key={member.id}
-						onMouseEnter={() => !isMobile && setActive(index)}
-						onMouseLeave={() => !isMobile && setActive(null)}
-						className={`relative flex-1 mx-2 transition-[flex] duration-800 ease-in-out
-              ${!isMobile && active === index ? 'flex-[2]' : 'flex-[1]'}`}
-					>
-						<Image
-							src={member.img}
-							alt={member.name}
-							fill
-							className='object-cover mx-auto max-w-[96%] max-h-[92%] sm:max-w-[100%] sm:max-h-[100%] transition-transform duration-800 ease-in-out rounded-2xl lg:grayscale lg:hover:grayscale-0'
-						/>
-
-						{/* Overlay */}
-						<motion.div
-							initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-							animate={
-								isMobile
-									? { opacity: 1, y: 0 }
-									: active === index
-									? { opacity: 1, y: 0 }
-									: { opacity: 0, y: 50 }
-							}
-							transition={
-								isMobile ? { duration: 0 } : { duration: 0.4, ease: 'easeOut' }
-							}
-							className='absolute bottom-12 sm:bottom-5 left-5 bg-black/70 text-white p-4 rounded-xl'
-						>
-							<div className='flex items-center justify-between gap-20'>
-								<motion.div
-									initial={
-										isMobile ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }
-									}
-									animate={
-										isMobile
-											? { opacity: 1, x: 0 }
-											: active === index
-											? { opacity: 1, x: 0 }
-											: { opacity: 0, x: -30 }
-									}
-									transition={
-										isMobile
-											? { duration: 0 }
-											: { duration: 0.5, delay: 0.1, ease: 'easeOut' }
-									}
-								>
-									<motion.span
-										className='block text-sm text-gray-200'
-										initial={
-											isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }
-										}
-										animate={
-											isMobile
-												? { opacity: 1, y: 0 }
-												: active === index
-												? { opacity: 1, y: 0 }
-												: { opacity: 0, y: 30 }
-										}
-										transition={
-											isMobile
-												? { duration: 0 }
-												: { duration: 0.3, delay: 0.2, ease: 'easeOut' }
-										}
-									>
-										{member.role}
-									</motion.span>
-									<motion.h5
-										className='text-lg font-semibold'
-										initial={
-											isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }
-										}
-										animate={
-											isMobile
-												? { opacity: 1, y: 0 }
-												: active === index
-												? { opacity: 1, y: 0 }
-												: { opacity: 0, y: 25 }
-										}
-										transition={
-											isMobile
-												? { duration: 0 }
-												: { duration: 0.4, delay: 0.3, ease: 'easeOut' }
-										}
-									>
-										{member.name}
-									</motion.h5>
-								</motion.div>
-								<motion.div
-									className='flex gap-6'
-									initial={
-										isMobile
-											? { opacity: 1, scale: 1 }
-											: { opacity: 0, scale: 0.8 }
-									}
-									animate={
-										isMobile
-											? { opacity: 1, scale: 1 }
-											: active === index
-											? { opacity: 1, scale: 1 }
-											: { opacity: 0, scale: 0.8 }
-									}
-									transition={
-										isMobile
-											? { duration: 0 }
-											: { duration: 0.4, delay: 0.4, ease: 'easeOut' }
-									}
-								>
-									{member.socials.map((social, i) => {
-										const IconComponent = social.icon
-										return (
-											<motion.a
-												key={i}
-												href={social.href}
-												target='_blank'
-												rel='noreferrer'
-												className='hover:text-blue-400 transition-colors duration-200'
-												title={social.label}
-												initial={
-													isMobile
-														? { opacity: 1, y: 0 }
-														: { opacity: 0, y: 10 }
-												}
-												animate={
-													isMobile
-														? { opacity: 1, y: 0 }
-														: active === index
-														? { opacity: 1, y: 0 }
-														: { opacity: 0, y: 10 }
-												}
-												transition={
-													isMobile
-														? { duration: 0 }
-														: {
-																duration: 0.3,
-																delay: 0.5 + i * 0.1,
-																ease: 'easeOut',
-														  }
-												}
-												whileHover={isMobile ? {} : { scale: 1.2 }}
-												whileTap={isMobile ? {} : { scale: 0.9 }}
-											>
-												<IconComponent size={18} />
-											</motion.a>
-										)
-									})}
-								</motion.div>
-							</div>
-						</motion.div>
-					</div>
-				))}
-			</div>
 			<div>
 				<h3 className='text-center text-3xl md:text-5xl font-bold text-primary mt-10 md:mt-30 max-w-4xl mx-auto'>
 					Our awesome technology Team experts
 				</h3>
 			</div>
-			<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center gap-8 md:gap-20 max-w-[80%] mx-auto mt-10 md:mt-30 px-4'>
+			<div className='grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 justify-center gap-8 md:gap-20 max-w-[80%] mx-auto mt-10 md:mt-30 px-4'>
 				{teamStaff.map((staff) => (
-					<div key={staff.id} className='rounded-xl overflow-hidden'>
-						<div className='border-6 md:border-12 border-blue-700 rounded-full p-2'>
-							<div className='relative rounded-full w-100% h-100% aspect-square overflow-hidden'>
-								<Image
-									src={staff.img}
-									alt={staff.name}
-									fill
-									className='object-cover w-94 h-94 rounded-full'
-								/>
+					<div
+						key={staff.id}
+						className='group rounded-xl overflow-hidden z-10 cursor-pointer transition-all duration-500'
+					>
+						<div
+							style={{
+								backgroundImage: `url(${SectionBorder.src})`,
+								backgroundSize: 'cover',
+								backgroundPosition: 'center',
+							}}
+							className='p-[26px] rounded-full relative z-10 overflow-hidden'
+						>
+							<div className='rounded-full bg-white z-10'>
+								<div className='relative top-3 rounded-full overflow-hidden aspect-square'>
+									<div className='absolute -left-8 top-30 bottom-0 w-1/3 -rotate-40 bg-blue-700 -translate-x-full group-hover:translate-x-0 opacity-0 group-hover:opacity-40 transition-all duration-500 ease-out delay-[0ms] z-0 rounded-l-full' />
+
+									<div className='absolute -right-8 top-30 bottom-0 w-1/3 rotate-40 bg-blue-700 translate-x-full group-hover:translate-x-0 opacity-0 group-hover:opacity-40 transition-all duration-500 ease-out delay-[200ms] z-0 rounded-r-full' />
+									<Image
+										src={staff.img}
+										alt={staff.name}
+										fill
+										className='object-cover rounded-full'
+									/>
+								</div>
 							</div>
 						</div>
-						<div className='p-4 text-center space-y-2'>
-							<h3 className='text-3xl font-bold text-primary'>{staff.name}</h3>
-							<p className='text-lg text-gray-500'>{staff.role}</p>
+						<div className='p-4 text-center space-y-1 relative z-10'>
+							<h3 className='text-2xl font-bold text-primary'>{staff.name}</h3>
+							<p className='text-gray-500 text-lg'>{staff.role}</p>
 						</div>
 					</div>
 				))}
 			</div>
 		</section>
+		</div>
 	)
 }
