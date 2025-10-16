@@ -20,7 +20,6 @@ export default function Strategy() {
 	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger)
 
-		// Only enable GSAP scroll animation on desktop
 		if (window.innerWidth >= 1024) {
 			const ctx = gsap.context(() => {
 				const panels = gsap.utils.toArray('.step') as HTMLElement[]
@@ -52,7 +51,7 @@ export default function Strategy() {
 	}, [steps])
 
 	const handleClick = (index: number) => {
-		// Scroll animation only if GSAP trigger exists (desktop)
+
 		if (scrollTriggerRef.current) {
 			const st = scrollTriggerRef.current
 			const scrollDistance = st.end - st.start

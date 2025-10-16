@@ -109,8 +109,9 @@ const About = () => {
 					</motion.div>
 				</div>
 			</div>
+
 			<JourneyScroll />
-			{/*  */}
+
 			<div
 				style={{
 					backgroundImage: `url(${SectionBG.src})`,
