@@ -24,8 +24,7 @@ const Footer = () => {
 					>
 						<Image width={150} height={150} src={Logo} alt='Lead-softwares' />
 						<div className='text-zinc-300 text-sm font-light mt-6 max-w-[380px]'>
-							Creative-powered to fuel your growth goals. We build world-class
-							digital products, software and branding.
+							Let us take care of your IT challenges so you can focus on achieving your goals. Seamless technology, smarter solutions, and dedicated support — all in one place.
 						</div>
 					</motion.div>
 					{/* right side */}
@@ -55,7 +54,7 @@ const Footer = () => {
 						</ul>
 					</motion.div>
 					{/* gradient */}
-					<div className='hidden lg:block absolute right-0 top-10 blur-3xl h-90 w-100 bg-[#412855] rounded-full'></div>
+					<div className='hidden lg:block absolute right-50 top-10 blur-3xl h-90 w-100 bg-[#412855] rounded-full'></div>
 					<footer className='w-[80vw] border-t border-zinc-600 z-110 flex justify-between'>
 						<div className='text-zinc-400 text-xs mt-2'>
 							© Lead Softwares 2024. All rights reserved.

@@ -20,7 +20,7 @@ const About = () => {
 		<div className='w-full overflow-hidden'>
 			<NavbarTitle title='About Us' src={AboutSectionImg} />
 			<WhyChooseThree />
-			<div className='bg-bg py-15 md:py-25 mt-4 lg:mt-0'>
+			<div className='bg-bg py-15 md:py-25'>
 				<motion.div
 					initial={{ opacity: 0, x: 0 }}
 					whileInView={{ opacity: 1, x: 0 }}
@@ -29,9 +29,9 @@ const About = () => {
 					className='space-y-3'
 				>
 					<div className='text-sm text-lightBlue text-center'>
-						It’s Time for a Blockchain Revolution
+						It&apos;s Time for a Blockchain Revolution
 					</div>
-					<div className='text-3xl lg:text-5xl text-primary xl:w-[45%] leading-10 md:leading-14 font-semibold text-center mx-auto'>
+					<div className='text-3xl lg:text-5xl text-primary xl:w-[45%] leading-10 md:leading-14 font-semibold text-center mx-auto px-2'>
 						Developing sustainable and innovative blockchain solutions
 					</div>
 				</motion.div>
@@ -48,10 +48,10 @@ const About = () => {
 								<Image src={RoadMap} alt='RoadMap' />
 							</div>
 							<div className='space-y-4'>
-								<div className='title text-center lg:text-start text-2xl text-primary font-semibold'>
+								<div className='text-center lg:text-start text-2xl text-primary font-semibold'>
 									Strategy & Business
 								</div>
-								<div className='desc text-center lg:text-start text-zinc-400'>
+								<div className='text-center lg:text-start text-zinc-400'>
 									We design business models and growth strategies to be
 									effective and competitive.
 								</div>
@@ -62,10 +62,10 @@ const About = () => {
 								<Box className='text-green-500' />
 							</div>
 							<div className='space-y-4'>
-								<div className='title text-center lg:text-start text-2xl text-primary font-semibold'>
+								<div className='text-center lg:text-start text-2xl text-primary font-semibold'>
 									Product Design
 								</div>
-								<div className='desc text-center lg:text-start text-zinc-400'>
+								<div className='text-center lg:text-start text-zinc-400'>
 									We design business models and growth strategies to be
 									effective and competitive.
 								</div>
@@ -98,10 +98,9 @@ const About = () => {
 								Strategies that get you on the path to success
 							</div>
 							<div className='text-zinc-400 md:text-lg'>
-								Through an in-depth knowledge of all industrial sectors and the
-								application of approaches such as Lean Strategy, and Business
-								Design, we prepare organizations to welcome change, to be ready
-								to evolve rapidly while remaining competitive in the market.
+								We help organizations embrace change and stay competitive
+								through Lean Strategy, Business Design, and deep industry
+								expertise.
 							</div>
 							<Link href={'/consultation'} className='lg:flex gap-4 hidden'>
 								<CustomButton title='Get Started' />
@@ -110,15 +109,16 @@ const About = () => {
 					</motion.div>
 				</div>
 			</div>
+
 			<JourneyScroll />
-			{/*  */}
+
 			<div
 				style={{
 					backgroundImage: `url(${SectionBG.src})`,
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
 				}}
-				className='relative w-full h-[60vh] flex items-center justify-center'
+				className='relative w-full h-[40vh] md:h-[60vh] flex items-center justify-center'
 			>
 				{/* <div className='absolute inset-0'>
 					<div className='absolute inset-0 bg-black/50' />
@@ -142,7 +142,7 @@ const About = () => {
 				</div>
 			</div>
 			{/*  */}
-			<div className='text-white pb-20'>
+			<div className='text-white md:pb-20'>
 				<div className='bg-[#edf3ff] mx-auto md:w-[66vw] flex flex-col gap-12 px-8 py-8 md:px-12'>
 					<div className='w-full flex justify-center'>
 						<Image
@@ -158,7 +158,13 @@ const About = () => {
 							Why you need to Collaborate with Us?
 						</p>
 						<div className='space-y-4 text-zinc-500 font-medium'>
-							<p>
+							<p className='block md:hidden'>
+								We deliver innovative, tailored IT solutions that drive your
+								business growth. Our expert team combines technology and
+								experience to create scalable, seamless, and results-driven
+								outcomes.
+							</p>
+							<p className='hidden md:block'>
 								We offer unparalleled expertise and innovative IT solutions
 								tailored to meet the unique needs of your business. Our team of
 								professionals combines cutting-edge technology with years of
@@ -166,12 +172,6 @@ const About = () => {
 								prioritize understanding your objectives and challenges to
 								provide customized, scalable solutions that ensure seamless
 								integration and sustainable outcomes.
-							</p>
-							<p>
-								By choosing us, you&apos;re not just selecting a service
-								provider — you&apos;re gaining a trusted partner committed to
-								your long-term success with custom-designed strategies to
-								address your specific needs.
 							</p>
 						</div>
 						<div className='w-full h-[1px] bg-zinc-200 my-6' />
@@ -196,7 +196,6 @@ const About = () => {
 			{/*  */}
 			<Team />
 			<Partners />
-			
 		</div>
 	)
 }

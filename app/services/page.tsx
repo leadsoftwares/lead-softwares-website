@@ -199,7 +199,7 @@ const Services = () => {
 				<Strategy />
 			</div>
 			<Partners />
-			<section className='relative py-16 lg:pb-24 overflow-hidden '>
+			<section className='relative lg:pb-24 overflow-hidden '>
 				<div className='container flex flex-col lg:flex-row justify-between items-center xl:w-[65%] mx-auto px-6 lg:px-6 relative bg-[#edf3ff]'>
 					<div className='relative w-full rounded-3xl overflow-hidden'>
 						<div className='relative z-10 p-10 md:p-16 lg:p-20'>

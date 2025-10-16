@@ -1,10 +1,8 @@
 'use client'
-import CustomButton from '@/components/custom-btn'
 import SectionBG from '@/public/section-bg.jpg'
 import { motion } from 'framer-motion'
 import type { StaticImageData } from 'next/image'
 import Image from 'next/image'
-import Link from 'next/link'
 interface TitleProps {
 	title: string
 	src: string | StaticImageData
@@ -20,9 +18,7 @@ const NavbarTitle = ({ title, src }: TitleProps) => {
 				backgroundPosition: 'center',
 			}}
 		>
-			
 			<div className='w-full h-full flex justify-evenly items-center lg:pb-10 gap-10 md:px-10'>
-				{/* left */}
 				<motion.div
 					initial={{ opacity: 0, x: -100 }}
 					whileInView={{ opacity: 1, x: 0 }}
@@ -41,12 +37,12 @@ const NavbarTitle = ({ title, src }: TitleProps) => {
 							The Engitech Token is the key to unlocking the full potential of
 							Engitech. Get eve higher earning rates and our lowest rates
 						</div>
-						<Link className='hidden lg:block' href={'/consultation'}>
+						{/* <Link className='hidden lg:block' href={'/consultation'}>
 							<CustomButton title='Get Started' />
-						</Link>
+						</Link> */}
 					</div>
 				</motion.div>
-				{/* right */}
+
 				<motion.div
 					initial={{ opacity: 0, x: 100 }}
 					whileInView={{ opacity: 1, x: 0 }}

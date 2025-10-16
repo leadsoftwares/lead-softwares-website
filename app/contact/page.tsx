@@ -1,5 +1,4 @@
 'use client'
-import CustomButton from '@/components/custom-btn'
 import ContactImg from '@/public/png/Lead software pages Images/Contact Us.png'
 import Email from '@/public/svg/email.svg'
 import Location from '@/public/svg/location.svg'
@@ -7,7 +6,6 @@ import Phone from '@/public/svg/phone.svg'
 import Contact1 from '@/public/webp/contact-1.webp'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import Link from 'next/link'
 import { useEffect } from 'react'
 import NavbarTitle from '../about-us/components/NavbarTitle'
 import Form from '../contact/components/form'
@@ -71,12 +69,9 @@ const Contact = () => {
 						human-centered enterprise software that has the polished, snappy
 						feel of the best consumer apps.
 					</div>
-					<Link href={'/consultation'}>
-						<CustomButton title='Get Started' />
-					</Link>
 				</motion.div>
 			</div>
-			<div className='bg-bg lg:px-15 py-16 md:py-20 lg:py-30'>
+			<div className='bg-bg lg:px-15 py-10 md:py-20 lg:py-30'>
 				<motion.div
 					initial={{ opacity: 0, x: -100 }}
 					whileInView={{ opacity: 1, x: 0 }}

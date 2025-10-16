@@ -26,45 +26,19 @@ html {
 	);
 }
 
-/* width */
 ::-webkit-scrollbar {
 	width: 5px;
-	height: 8px; /* for horizontal scroll */
+	height: 8px; 
 	display: none;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
-	/* dark background (Tailwind slate-900) */
 	border-radius: 10px;
 	display: none;
 }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-	background: linear-gradient(
-		180deg,
-		#38bdf8,
-		#3b82f6,
-		#2563eb
-	); /* cyan → blue */
-	border-radius: 20px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-	background: linear-gradient(180deg, #60a5fa, #2563eb);
-}
-
-/* Hide scrollbar for Chrome, Safari and Opera */
 .scrollbar-hide::-webkit-scrollbar {
 	display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.scrollbar-hide {
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
 }
 
 @keyframes blink {
@@ -83,14 +57,13 @@ html {
 	animation: blink 1s step-start infinite;
 }
 
-/* Move images UP (looping) */
 @keyframes scroll-up {
 	0% {
 		transform: translateY(0);
 	}
 	100% {
 		transform: translateY(-50%);
-	} /* move half content up */
+	} 
 }
 
 @keyframes scroll-down {
@@ -99,7 +72,7 @@ html {
 	}
 	100% {
 		transform: translateY(0);
-	} /* move half content down */
+	} 
 }
 
 .animate-scroll-up {
@@ -110,13 +83,12 @@ html {
 	animation: scroll-down 30s linear infinite;
 }
 
-/* Horizontal infinite scroll (marquee) */
 @keyframes marquee {
 	0% {
 		transform: translateX(0);
 	}
 	100% {
-		transform: translateX(-50%); /* Move halfway to create seamless loop */
+		transform: translateX(-50%);
 	}
 }
 
@@ -125,7 +97,7 @@ html {
 		transform: translateX(-50%);
 	}
 	100% {
-		transform: translateX(0); /* Move halfway to create seamless loop */
+		transform: translateX(0);
 	}
 }
 
@@ -133,10 +105,10 @@ html {
 	animation: marquee 25s linear infinite;
 }
 .animate-marquee2 {
-	animation: marquee2 25s linear infinite;
+	animation: marquee2 60s linear infinite;
+	display: inline-flex;
 }
 
-/* Pause the animation on hover */
 .animate-marquee:hover {
 	animation-play-state: paused;
 }
@@ -147,7 +119,6 @@ html {
 
 
 /* hero Gallery Component */
-/* globals.css (optional extra styles) */
 .tp-hero-gallery-item img {
 	transition: transform 0.4s ease;
 }

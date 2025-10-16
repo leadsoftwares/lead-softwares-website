@@ -24,17 +24,17 @@ const strategy = [
 	{
 		icon: Rocket,
 		title: 'Design-led digital transformation',
-		text: 'We blend innovative design thinking with cutting-edge technology to create seamless digital experiences. Our approach ensures your business stays adaptable, user-focused, and ready to meet future demands with confidence and creativity.',
+		text: 'We combine design thinking and advanced technology to build seamless, user-focused digital experiences that keep your business future-ready.',
 	},
 	{
 		icon: Tv,
 		title: 'Transition to sustain futures',
-		text: 'We guide your business through seamless digital transitions, building scalable and secure systems that adapt as you grow. Our future-ready solutions ensure resilience, efficiency, and sustained success in a rapidly changing world.',
+		text: 'We help businesses achieve smooth digital transformation with scalable, secure, and future-ready systems that drive efficiency and long-term success.',
 	},
 	{
 		icon: Trophy,
 		title: 'We empower our partners',
-		text: 'Collaboration is at our core. We empower partners with customized solutions, expert guidance, and collaborative support — helping you innovate faster, overcome challenges, and thrive in a dynamic and competitive marketplace.',
+		text: 'Collaboration drives us — we empower partners with tailored solutions and expert support to innovate faster, overcome challenges, and succeed in a dynamic market.',
 	},
 ]
 const strategyBoxes = [
@@ -127,10 +127,7 @@ const page = () => {
 							We&apos;re building business <br /> for your digital economy
 						</div>
 						<div className='desc w-[90vw] md:w-full text-text text-center md:text-left'>
-							Your business deserves more than just an online presence — it
-							deserves real impact. We build powerful digital solutions that
-							drive growth, reach new audiences, and keep you ahead in a
-							fast-changing market.
+							Your business deserves more than visibility — it deserves impact. We craft digital solutions that fuel growth, expand reach, and keep you ahead in a fast-evolving market.
 						</div>
 						<div className='flex justify-center md:justify-normal gap-12 mt-4'>
 							<div className='1 space-y-2'>
@@ -155,7 +152,7 @@ const page = () => {
 			</div>
 			<Strategy />
 			<Partners />
-			<div className='goals py-8 md:py-18 px-4 md:px-17 h-full lg:min-h-210 xl:h-210 bg-gradient-to-br from-[#F7F9FC] to-[#EAEAF9]'>
+			<div className='goals py-8 md:py-18 px-4 md:px-17 h-full lg:min-h-210 xl:min-h-210 bg-gradient-to-br from-[#F7F9FC] to-[#EAEAF9]'>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
 					whileInView={{ opacity: 1, y: 0 }}
@@ -184,7 +181,7 @@ const page = () => {
 							{strategyBoxes.map((strategyBox, i) => (
 								<div
 									key={i}
-									className={`box h-58 hover:-translate-y-2 transition-all duration-300 pb-18 cursor-pointer hover:shadow-xl shadow-lg bg-white rounded-2xl flex items-center gap-6 flex-col py-12 w-65 sm:w-70 lg:w-50 xl:w-70 mx-auto ${
+									className={`box h-58 hover:-translate-y-2 transition-all duration-300 pb-18 cursor-pointer hover:shadow-xl shadow-lg bg-white rounded-2xl flex items-center gap-6 flex-col py-12 w-65 sm:w-70 lg:w-50 xl:w-60 mx-auto ${
 										i % 2 === 0 ? 'md:-mt-8' : 'md:mt-8'
 									}`}
 								>

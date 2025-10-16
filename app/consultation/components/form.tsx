@@ -31,16 +31,13 @@ const ConsultationForm = () => {
 		formState: { errors },
 	} = useForm<FormData>()
 
-	// dropdown states
 	const [openDropdown, setOpenDropdown] = useState<string | null>(null)
 	const dropdownRefs = useRef<(HTMLUListElement | null)[]>([])
 	const [showSuccess, setShowSuccess] = useState(false)
 	const [isLoading, setIsLoading] = useState(false)
 
-	// dropdown options
 	const budgets = ['$1000 - $5000', '$5000 - $10000', 'More than $10000']
 
-	// close dropdown on outside click
 	useEffect(() => {
 		const handleClickOutside = (event: MouseEvent) => {
 			if (
@@ -55,10 +52,9 @@ const ConsultationForm = () => {
 		return () => document.removeEventListener('mousedown', handleClickOutside)
 	}, [])
 
-	// onSubmit
 	const onSubmit = (data: FormData) => {
 		console.log('Form Submitted:', data)
-		setIsLoading(true) // Start loading
+		setIsLoading(true)
 
 		FirebaseUtils.addDocument('consultation', {
 			fullName: data.fullName,
@@ -70,17 +66,16 @@ const ConsultationForm = () => {
 			createdAt: new Date(),
 		})
 			.then(() => {
-				setIsLoading(false) // Stop loading
+				setIsLoading(false)
 				setShowSuccess(true)
 				reset()
 			})
 			.catch((error) => {
-				setIsLoading(false) // Stop loading on error
+				setIsLoading(false)
 				console.error('Error submitting form:', error)
 			})
 	}
 
-	// reusable dropdown
 	const Dropdown = ({
 		label,
 		name,
@@ -140,7 +135,7 @@ const ConsultationForm = () => {
 			onSubmit={handleSubmit(onSubmit)}
 			className='lg:relative lg:bottom-20 lg:max-w-[60%] rounded-xl shadow-xl lg:mx-auto lg:mb-40 py-10 px-6 lg:px-30 z-100 bg-white'
 		>
-			{/* ✅ Success Box */}
+			{/* Success Box */}
 			{showSuccess && (
 				<div className='fixed inset-0 bg-black/40 flex items-center justify-center z-50'>
 					<div className='bg-white rounded-2xl shadow-xl p-6 text-center w-[300px]'>
@@ -168,9 +163,7 @@ const ConsultationForm = () => {
 				Schedule a Free Consultation
 			</h1>
 
-			{/* Grid Section */}
 			<div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-				{/* Full Name */}
 				<div className='flex flex-col'>
 					<label className='text-text'>Full Name</label>
 					<input
@@ -192,7 +185,7 @@ const ConsultationForm = () => {
 								e.key !== 'Backspace' &&
 								e.key !== 'Tab'
 							) {
-								e.preventDefault() // block numbers and symbols, but allow spaces
+								e.preventDefault()
 							}
 						}}
 						className='border border-text rounded-md p-2'
@@ -202,7 +195,6 @@ const ConsultationForm = () => {
 					)}
 				</div>
 
-				{/* Email */}
 				<div className='flex flex-col'>
 					<label className='text-text'>Email</label>
 					<input
@@ -221,7 +213,6 @@ const ConsultationForm = () => {
 					)}
 				</div>
 
-				{/* Phone */}
 				<div>
 					<label className='text-text'>Phone</label>
 					<Controller
@@ -246,7 +237,6 @@ const ConsultationForm = () => {
 				</div>
 			</div>
 
-			{/* country */}
 			<div className='pt-6 space-y-8'>
 				<div>
 					<label className='text-text'>Country</label>
@@ -263,7 +253,6 @@ const ConsultationForm = () => {
 					)}
 				</div>
 			</div>
-			{/* Requirement */}
 			<div className='pt-6'>
 				<label className='text-text'>Project Requirements</label>
 				<textarea
@@ -281,7 +270,7 @@ const ConsultationForm = () => {
 					<p className='text-red-500 text-sm'>{errors.requirement.message}</p>
 				)}
 			</div>
-			{/* Dropdowns */}
+			
 			<Dropdown
 				label='Estimated Budget'
 				name='budgetValue'
@@ -289,7 +278,6 @@ const ConsultationForm = () => {
 				index={2}
 			/>
 
-			{/* Submit */}
 			<div className='mt-6 flex justify-end'>
 				<button
 					type='submit'
