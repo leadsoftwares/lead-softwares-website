@@ -29,6 +29,7 @@ export default function Strategy() {
 						trigger: sectionRef.current,
 						start: 'top top',
 						end: `+=${panels.length * 40}%`,
+						// end: () => "+=" + window.innerHeight * panels.length,
 						scrub: true,
 						pin: true,
 						anticipatePin: 1,

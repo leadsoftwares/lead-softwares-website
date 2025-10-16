@@ -20,7 +20,7 @@ const About = () => {
 		<div className='w-full overflow-hidden'>
 			<NavbarTitle title='About Us' src={AboutSectionImg} />
 			<WhyChooseThree />
-			<div className='bg-bg py-15 md:py-25 mt-4 lg:mt-0'>
+			<div className='bg-bg py-15 md:py-25'>
 				<motion.div
 					initial={{ opacity: 0, x: 0 }}
 					whileInView={{ opacity: 1, x: 0 }}
@@ -29,9 +29,9 @@ const About = () => {
 					className='space-y-3'
 				>
 					<div className='text-sm text-lightBlue text-center'>
-						It’s Time for a Blockchain Revolution
+						It&apos;s Time for a Blockchain Revolution
 					</div>
-					<div className='text-3xl lg:text-5xl text-primary xl:w-[45%] leading-10 md:leading-14 font-semibold text-center mx-auto'>
+					<div className='text-3xl lg:text-5xl text-primary xl:w-[45%] leading-10 md:leading-14 font-semibold text-center mx-auto px-2'>
 						Developing sustainable and innovative blockchain solutions
 					</div>
 				</motion.div>
@@ -48,10 +48,10 @@ const About = () => {
 								<Image src={RoadMap} alt='RoadMap' />
 							</div>
 							<div className='space-y-4'>
-								<div className='title text-center lg:text-start text-2xl text-primary font-semibold'>
+								<div className='text-center lg:text-start text-2xl text-primary font-semibold'>
 									Strategy & Business
 								</div>
-								<div className='desc text-center lg:text-start text-zinc-400'>
+								<div className='text-center lg:text-start text-zinc-400'>
 									We design business models and growth strategies to be
 									effective and competitive.
 								</div>
@@ -62,10 +62,10 @@ const About = () => {
 								<Box className='text-green-500' />
 							</div>
 							<div className='space-y-4'>
-								<div className='title text-center lg:text-start text-2xl text-primary font-semibold'>
+								<div className='text-center lg:text-start text-2xl text-primary font-semibold'>
 									Product Design
 								</div>
-								<div className='desc text-center lg:text-start text-zinc-400'>
+								<div className='text-center lg:text-start text-zinc-400'>
 									We design business models and growth strategies to be
 									effective and competitive.
 								</div>

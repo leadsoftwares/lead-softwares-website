@@ -24,8 +24,7 @@ const Footer = () => {
 					>
 						<Image width={150} height={150} src={Logo} alt='Lead-softwares' />
 						<div className='text-zinc-300 text-sm font-light mt-6 max-w-[380px]'>
-							Creative-powered to fuel your growth goals. We build world-class
-							digital products, software and branding.
+							Let us take care of your IT challenges so you can focus on achieving your goals. Seamless technology, smarter solutions, and dedicated support — all in one place.
 						</div>
 					</motion.div>
 					{/* right side */}

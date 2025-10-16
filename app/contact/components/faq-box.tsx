@@ -172,7 +172,7 @@ export default function FAQPage() {
             }}
             className={`block w-full text-left px-3 py-2 rounded-md transition ${
               activeSection === i
-                ? "text-blue-600 font-medium bg-blue-50"
+                ? "text-blue-900 font-medium bg-blue-50"
                 : "text-gray-700 hover:bg-gray-100"
             }`}
           >

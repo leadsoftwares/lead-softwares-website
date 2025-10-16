@@ -152,7 +152,7 @@ const page = () => {
 			</div>
 			<Strategy />
 			<Partners />
-			<div className='goals py-8 md:py-18 px-4 md:px-17 h-full lg:min-h-210 xl:h-210 bg-gradient-to-br from-[#F7F9FC] to-[#EAEAF9]'>
+			<div className='goals py-8 md:py-18 px-4 md:px-17 h-full lg:min-h-210 xl:min-h-210 bg-gradient-to-br from-[#F7F9FC] to-[#EAEAF9]'>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
 					whileInView={{ opacity: 1, y: 0 }}
@@ -181,7 +181,7 @@ const page = () => {
 							{strategyBoxes.map((strategyBox, i) => (
 								<div
 									key={i}
-									className={`box h-58 hover:-translate-y-2 transition-all duration-300 pb-18 cursor-pointer hover:shadow-xl shadow-lg bg-white rounded-2xl flex items-center gap-6 flex-col py-12 w-65 sm:w-70 lg:w-50 xl:w-70 mx-auto ${
+									className={`box h-58 hover:-translate-y-2 transition-all duration-300 pb-18 cursor-pointer hover:shadow-xl shadow-lg bg-white rounded-2xl flex items-center gap-6 flex-col py-12 w-65 sm:w-70 lg:w-50 xl:w-60 mx-auto ${
 										i % 2 === 0 ? 'md:-mt-8' : 'md:mt-8'
 									}`}
 								>
