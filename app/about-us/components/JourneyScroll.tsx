@@ -25,17 +25,17 @@ export default function PortfolioSection() {
 
 		return () => {
 			ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
-		} // clean up on unmount
+		}
 	}, [])
 
 	return (
-		<section ref={sectionRef} className='bg-black text-white py-12 xl:py-66 mt-4 md:mt-30 lg:mt-0'>
+		<section ref={sectionRef} className='hidden md:block bg-black text-white py-12 xl:py-66 mt-4 md:mt-30 lg:mt-0'>
 			<div className='container mx-auto flex flex-col xl:flex-row gap-20 lg:max-w-6xl px-2'>
-				{/* LEFT IMAGE (Pinned) */}
+				
 				<div ref={leftRef} className='hidden xl:flex w-480 max-h-100 px-4 justify-center items-center rounded-lg'>
                    
 					<Image
-						src={IMG} // place an image in /public/images/
+						src={IMG} 
 						width={200}
 						height={50}
 						alt='Portfolio'
@@ -46,7 +46,7 @@ export default function PortfolioSection() {
                 	<div  className='block xl:hidden w-full max-h-100 px-4 rounded-lg'>
                    
 					<Image
-						src={IMG} // place an image in /public/images/
+						src={IMG}
 						width={200}
 						height={50}
 						alt='Portfolio'
@@ -54,7 +54,7 @@ export default function PortfolioSection() {
 					/>
 				</div>
 
-				{/* RIGHT SCROLLING TEXT */}
+			
 				<div className='xl:w-300 space-y-10 px-4'>
 					<h2 className='text-4xl font-bold leading-tight'>Our Journey</h2>
 

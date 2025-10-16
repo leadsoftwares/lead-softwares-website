@@ -2,10 +2,10 @@
 import HeroGallery from '@/components/hero-gallery'
 import PortfolioImg from '@/public/png/Lead software pages Images/Portfolio.png'
 import Image from 'next/image'
+import React, { useEffect } from 'react'
 import NavbarTitle from '../about-us/components/NavbarTitle'
-import { Items } from './Data/Desktop-Projects'
+import { DesktopProjects } from './Data/Desktop-Projects'
 import { MobileProjects } from './Data/Mobile-Projects'
-import { useEffect } from 'react'
 
 const PortfolioStyles = () => {
 	useEffect(() => {
@@ -18,8 +18,6 @@ const PortfolioStyles = () => {
 		<div className='w-full overflow-hidden'>
 			<NavbarTitle title='Portfolio' src={PortfolioImg} />
 			<HeroGallery />
-			{/* <ProjectHistory />
-			<MobileProject /> */}
 
 			<div className='w-full py-10 md:py-12 lg:py-16 bg-bg overflow-hidden'>
 				<div className='w-[100%] md:w-[85%] lg:w-[80%] mx-auto'>
@@ -33,56 +31,36 @@ const PortfolioStyles = () => {
 						</h3>
 						<div className='overflow-hidden py-4'>
 							<div
-								className='inline-flex items-center animate-marquee'
-								style={{
-									whiteSpace: 'nowrap',
-								}}
+								className='flex whitespace-nowrap animate-marquee'
+								style={{ width: 'max-content' }}
 							>
-								{Items.slice(0, 8).map((item, index) => (
-									<div
-										key={`web-${index}`}
-										className='mx-4 md:mx-6 flex-shrink-0'
-									>
-										<a
-											href={item.href}
-											target='_blank'
-											className='w-[340px] md:w-[340px] lg:w-[340px]'
-										>
-											<Image
-												width={340}
-												height={340}
-												src={item.imgSrc}
-												alt={item.title || ''}
-												className='object-cover w-full h-[220px] md:h-[210px] lg:h-[240px] rounded-xl'
-											/>
-										</a>
-										{item.title && (
-											<div className='font-bold text-lg md:text-xl text-primary mt-3'>
-												{item.title}
+								{[...Array(2)].map((_, repeatIndex) => (
+									<div key={repeatIndex} className='flex'>
+										{DesktopProjects.slice(0, 8).map((item, index) => (
+											<div
+												key={`web-${repeatIndex}-${index}`}
+												className='mx-4 md:mx-6 flex-shrink-0 md:hover:scale-104 transition-all duration-300 bg-gradient-to-br from-[#f0f0fa] to-[#EAEAF9] rounded-xl'
+											>
+												<a
+													href={item.href}
+													target='_blank'
+													className='w-[340px] md:w-[340px] lg:w-[340px]'
+												>
+													<Image
+														width={340}
+														height={340}
+														src={item.imgSrc}
+														alt={item.title || ''}
+														className='object-cover w-full h-[220px] md:h-[210px] lg:h-[240px] rounded-xl'
+													/>
+												</a>
+												{item.title && (
+													<div className='font-bold text-lg md:text-[18px] text-black px-4 py-2'>
+														{item.title}
+													</div>
+												)}
 											</div>
-										)}
-									</div>
-								))}
-
-								{Items.slice(0, 8).map((item, index) => (
-									<div
-										key={`web-dup-${index}`}
-										className='mx-4 md:mx-6 flex-shrink-0'
-									>
-										<div className='w-[340px] md:w-[340px] lg:w-[340px]'>
-											<Image
-												width={340}
-												height={340}
-												src={item.imgSrc}
-												alt={item.title || ''}
-												className='object-cover w-full h-[220px] md:h-[210px] lg:h-[240px] rounded-xl'
-											/>
-										</div>
-										{item.title && (
-											<div className='font-bold text-lg md:text-xl text-primary mt-3'>
-												{item.title}
-											</div>
-										)}
+										))}
 									</div>
 								))}
 							</div>
@@ -93,86 +71,36 @@ const PortfolioStyles = () => {
 						<h3 className='px-4 md:px-4 text-xl md:text-2xl font-semibold text-primary mb-4 md:mb-6'>
 							Mobile Applications
 						</h3>
-						<div className='overflow-hidden py-4'>
-							<div
-								className='inline-flex items-center animate-marquee2'
-								style={{
-									whiteSpace: 'nowrap',
-								}}
-							>
-								{MobileProjects.map((item, index) => (
-									<div key={`mobile-${index}`} className='mx-2 flex-shrink-0'>
-										<a
-											href={item.href}
-											target='_blank'
-											className='w-[340px] md:w-[200px] lg:w-[300px]'
-										>
-											<Image
-												width={280}
-												height={400}
-												src={item.img}
-												alt={item.title || ''}
-												className='object-cover w-full h-[480px] md:h-[340px] lg:h-[400px] rounded-xl'
-											/>
-										</a>
-										{item.title && (
-											<div className='font-bold text-lg md:text-xl text-primary mt-3'>
-												{item.title}
+						<div className='relative overflow-x-hidden py-4'>
+							<div className='flex animate-marquee2 whitespace-nowrap'>
+								{[...Array(6)].map((_, repeatIndex) => (
+									<React.Fragment key={repeatIndex}>
+										{MobileProjects.map((item, index) => (
+											<div
+												key={`${repeatIndex}-${index}`}
+												className='mx-2 flex-shrink-0 bg-gradient-to-br from-[#f0f0fa] to-[#EAEAF9] rounded-xl md:hover:scale-103 transition-all duration-300'
+											>
+												<a
+													href={item.href}
+													target='_blank'
+													className='block w-[340px] md:w-[200px] lg:w-[300px]'
+												>
+													<Image
+														width={280}
+														height={400}
+														src={item.img}
+														alt={item.title || ''}
+														className='object-cover w-full h-[400px] md:h-[340px] lg:h-[400px] rounded-xl'
+													/>
+												</a>
+												{item.title && (
+													<div className='font-semibold text-lg md:text-[18px] text-black p-4'>
+														{item.title}
+													</div>
+												)}
 											</div>
-										)}
-									</div>
-								))}
-
-								{MobileProjects.map((item, index) => (
-									<div
-										key={`mobile-dup-${index}`}
-										className='mx-2 flex-shrink-0'
-									>
-										<a
-											href={item.href}
-											target='_blank'
-											className='w-[340px] md:w-[200px] lg:w-[300px]'
-										>
-											<Image
-												width={280}
-												height={400}
-												src={item.img}
-												alt={item.title || ''}
-												className='object-cover w-full h-[480px] md:h-[340px] lg:h-[400px] rounded-xl'
-											/>
-										</a>
-										{item.title && (
-											<div className='font-bold text-lg md:text-xl text-primary mt-3'>
-												{item.title}
-											</div>
-										)}
-									</div>
-								))}
-
-								{MobileProjects.map((item, index) => (
-									<div
-										key={`mobile-triple-${index}`}
-										className='mx-2 flex-shrink-0'
-									>
-										<a
-											href={item.href}
-											target='_blank'
-											className='w-[180px] md:w-[200px] lg:w-[240px]'
-										>
-											<Image
-												width={240}
-												height={400}
-												src={item.img}
-												alt={item.title || ''}
-												className='object-cover w-full h-[320px] md:h-[340px] lg:h-[400px] rounded-xl'
-											/>
-										</a>
-										{item.title && (
-											<div className='font-bold text-lg md:text-xl text-primary mt-3'>
-												{item.title}
-											</div>
-										)}
-									</div>
+										))}
+									</React.Fragment>
 								))}
 							</div>
 						</div>

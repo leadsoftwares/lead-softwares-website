@@ -1,24 +1,15 @@
-import City17 from '@/public/png/City 17 D.png'
-import Crazy from '@/public/png/Crazy By Rasel D.png'
-import IDN from '@/public/png/IDN Network D.png'
-import TigerIT from '@/public/png/portfolio1.png'
-import Quotelyn from '@/public/png/portfolio2.png'
-import Lawraze from '@/public/png/portfolio3.png'
-import Barq from '@/public/png/portfolio4.png'
-import SuperA from '@/public/png/Super Aurora D.png'
-
-export const Items = [
+export const DesktopProjects = [
 	{
 		id: '01',
-		imgSrc: TigerIT,
+		imgSrc: 'https://res.cloudinary.com/db0mj1uoe/image/upload/v1760608066/Mobile%20Mockups/1_exum7d.png',
 		href: "https://tigerit.app/",
-		title: 'Tiger IT',
+		title: 'TiGERiT',
 		description: 'DIFFERENT STYLES',
 		minidesc: 'Different Styles',
 	},
 	{
 		id: '02',
-		imgSrc: Quotelyn,
+		imgSrc: 'https://res.cloudinary.com/db0mj1uoe/image/upload/v1760608066/Mobile%20Mockups/2_tzgc5f.png',
 		href: "https://www.quotelyn.com/",
 		title: 'Quotelyn',
 		description: 'DIFFERENT CAPTIONS',
@@ -26,7 +17,7 @@ export const Items = [
 	},
 	{
 		id: '03',
-		imgSrc: Lawraze,
+		imgSrc: 'https://res.cloudinary.com/db0mj1uoe/image/upload/v1760608067/Mobile%20Mockups/3_u2p8dg.png',
 		href: "https://www.lawraze.com/",
 		title: 'Lawraze',
 		description: 'DIFFERENT STYLES',
@@ -35,14 +26,14 @@ export const Items = [
 	{
 		id: '04',
 		href: "https://www.barqeshop.com/",
-		imgSrc: Barq,
-		title: 'Barq-e-Shop',
+		imgSrc: 'https://res.cloudinary.com/db0mj1uoe/image/upload/v1760608067/Mobile%20Mockups/4_zzzwsa.png',
+		title: 'Barq e Shop',
 		description: 'DIFFERENT CAPTIONS',
 		minidesc: 'Different Captions',
 	},
 	{
 		id: '05',
-		imgSrc: IDN,
+		imgSrc: 'https://res.cloudinary.com/db0mj1uoe/image/upload/v1760608066/Mobile%20Mockups/8_vycb19.png',
 		href: "https://idn.betesla.com/",
 		title: 'IDN Network',
 		description: 'DIFFERENT CAPTIONS',
@@ -50,7 +41,7 @@ export const Items = [
 	},
 	{
 		id: '06',
-		imgSrc: City17,
+		imgSrc: 'https://res.cloudinary.com/db0mj1uoe/image/upload/v1760608066/Mobile%20Mockups/7_xt4ihw.png',
 		href: "https://city17.betesla.com/",
 		title: 'City 17',
 		description: 'DIFFERENT CAPTIONS',
@@ -59,7 +50,7 @@ export const Items = [
 	{
 		id: '07',
 		href: "https://www.crazybyrasel.com/",
-		imgSrc: Crazy,
+		imgSrc: 'https://res.cloudinary.com/db0mj1uoe/image/upload/v1760608067/Mobile%20Mockups/5_b7iz68.png',
 		title: 'Crazy by Rasel',
 		description: 'DIFFERENT CAPTIONS',
 		minidesc: 'Different Captions',
@@ -67,7 +58,7 @@ export const Items = [
 	{
 		id: '08',
 		href: "https://superaurorafestival.com/",
-		imgSrc: SuperA,
+		imgSrc: 'https://res.cloudinary.com/db0mj1uoe/image/upload/v1760608066/Mobile%20Mockups/6_k8wwxl.png',
 		title: 'Super Aurora',
 		description: 'DIFFERENT CAPTIONS',
 		minidesc: 'Different Captions',

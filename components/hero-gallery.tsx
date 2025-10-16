@@ -26,50 +26,43 @@ export default function HeroGallery() {
 		if (!containerRef.current) return
 
 		gsap.registerPlugin(ScrollTrigger)
-
-		// Create GSAP context for better cleanup
 		const ctx = gsap.context(() => {
-			// select all items inside this container
 			const items = containerRef.current!.querySelectorAll(
 				'.tp-hero-gallery-item'
 			) as NodeListOf<HTMLElement>
 
 			if (!items.length) return
 
-			// create an animation for each column
 			items.forEach((el) => {
-				// read speed from data attribute
+				
 				const speedAttr = el.dataset.speed
 				const speed = speedAttr ? Number(speedAttr) : 0.6
 
-				// create parallax animation
 				gsap.to(el, {
-					yPercent: -30 * (1 - speed), // adjust multiplier for more/less effect
+					yPercent: -30 * (1 - speed),
 					ease: 'none',
 					scrollTrigger: {
 						trigger: containerRef.current,
 						start: 'top bottom',
 						end: 'bottom top',
-						scrub: 1, // smooth scrubbing with 1 second lag
-						invalidateOnRefresh: true, // recalculate on resize
+						scrub: 1, 
+						invalidateOnRefresh: true,
 					},
 				})
 			})
 		}, containerRef.current)
 
-		// refresh ScrollTrigger after layout is complete
+		
 		const refreshTimer = setTimeout(() => {
 			ScrollTrigger.refresh()
 		}, 100)
 
-		// refresh on window load for images
 		const handleLoad = () => ScrollTrigger.refresh()
 		window.addEventListener('load', handleLoad)
 
 		return () => {
 			window.removeEventListener('load', handleLoad)
 			clearTimeout(refreshTimer)
-			// clean up only this component's animations
 			ctx.revert()
 		}
 	}, [])
@@ -91,7 +84,6 @@ export default function HeroGallery() {
           lg:h-screen
         '
 			>
-				{/* Desktop */}
 				<div className='hidden md:grid grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-6'>
 					{galleryData.map((item, colIndex) => (
 						<div key={colIndex} className='flex justify-center'>
@@ -126,7 +118,6 @@ export default function HeroGallery() {
 					))}
 				</div>
 
-				{/* Mobile */}
 				<div className='grid md:hidden grid-cols-3 gap-2'>
 					{galleryData.map((item, colIndex) => (
 						<div key={colIndex} className='flex justify-center'>

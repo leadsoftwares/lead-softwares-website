@@ -55,7 +55,7 @@ const Footer = () => {
 						</ul>
 					</motion.div>
 					{/* gradient */}
-					<div className='hidden lg:block absolute right-0 top-10 blur-3xl h-90 w-100 bg-[#412855] rounded-full'></div>
+					<div className='hidden lg:block absolute right-50 top-10 blur-3xl h-90 w-100 bg-[#412855] rounded-full'></div>
 					<footer className='w-[80vw] border-t border-zinc-600 z-110 flex justify-between'>
 						<div className='text-zinc-400 text-xs mt-2'>
 							© Lead Softwares 2024. All rights reserved.

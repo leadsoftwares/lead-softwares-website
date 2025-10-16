@@ -20,42 +20,43 @@ export default function Strategy() {
 	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger)
 
-		const ctx = gsap.context(() => {
-			const panels = gsap.utils.toArray('.step') as HTMLElement[]
+		// Only enable GSAP scroll animation on desktop
+		if (window.innerWidth >= 1024) {
+			const ctx = gsap.context(() => {
+				const panels = gsap.utils.toArray('.step') as HTMLElement[]
 
-			const tl = gsap.timeline({
-				scrollTrigger: {
-					trigger: sectionRef.current,
-					start: 'top top',
-					end: `+=${panels.length * 40}%`,
-					scrub: true,
-					pin: true,
-					anticipatePin: 1,
-					onUpdate: (self) => {
-						// find current index from progress
-						const index = Math.round(self.progress * (steps - 1))
-						setActiveIndex(index)
+				const tl = gsap.timeline({
+					scrollTrigger: {
+						trigger: sectionRef.current,
+						start: 'top top',
+						end: `+=${panels.length * 40}%`,
+						scrub: true,
+						pin: true,
+						anticipatePin: 1,
+						onUpdate: (self) => {
+							const index = Math.round(self.progress * (steps - 1))
+							setActiveIndex(index)
+						},
 					},
-				},
-			})
+				})
 
-			panels.forEach(() => {
-				tl.to({}, { duration: 1 }) // empty tween per panel
-			})
+				panels.forEach(() => {
+					tl.to({}, { duration: 1 })
+				})
 
-			scrollTriggerRef.current = tl.scrollTrigger as ScrollTrigger
-		}, sectionRef)
+				scrollTriggerRef.current = tl.scrollTrigger as ScrollTrigger
+			}, sectionRef)
 
-		return () => ctx.revert()
+			return () => ctx.revert()
+		}
 	}, [steps])
 
-	// Handle manual click
 	const handleClick = (index: number) => {
+		// Scroll animation only if GSAP trigger exists (desktop)
 		if (scrollTriggerRef.current) {
 			const st = scrollTriggerRef.current
 			const scrollDistance = st.end - st.start
 			const target = st.start + (scrollDistance / (steps - 1)) * index
-			// Use native window.scrollTo with smooth behavior
 			window.scrollTo({
 				top: target,
 				behavior: 'smooth',
@@ -69,7 +70,10 @@ export default function Strategy() {
 			ref={sectionRef}
 			className='w-full relative bg-gradient-to-br from-[#F7F9FC] to-[#EAEAF9] mt-8 py-10 md:py-20'
 		>
-			<h1 className='text-3xl md:text-5xl font-bold text-center text-primary'>Building Success Step by Step</h1>
+			<h1 className='text-3xl md:text-5xl font-bold text-center text-primary'>
+				Building Success Step by Step
+			</h1>
+
 			<div className='container mx-auto flex flex-col lg:flex-row px-6 py-14 md:py-24 gap-16'>
 				{/* LEFT SIDE */}
 				<div className='w-full lg:w-1/2 flex flex-col justify-center space-y-10'>
