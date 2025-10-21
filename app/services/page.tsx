@@ -7,11 +7,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import CustomButton from '../../components/custom-btn'
 import Partners from '../../components/project-logos-components'
-import Strategy from '../../components/strategy'
 import NavbarTitle from '../about/components/NavbarTitle'
-import { Logos1, Logos2, Logos3 ,  ServiceData } from './Data/services-data'
+import { Logos1, Logos2, Logos3, Logos4 , Logos5 , ServiceData } from './Data/services-data'
 const Services = () => {
-
 	return (
 		<div className='w-full overflow-hidden'>
 			<NavbarTitle
@@ -19,7 +17,7 @@ const Services = () => {
 				src={ServicesImg}
 				desc='We specialize in custom software, web, and mobile development. Lead Softwares delivers smart, scalable solutions that simplify processes and drive business growth.'
 			/>
-			<div className='px-2 py-10 md:py-30'>
+			<div className='px-2 py-30 md:py-30'>
 				<motion.div
 					initial={{ opacity: 0, x: 100 }}
 					whileInView={{ opacity: 1, x: 0 }}
@@ -81,14 +79,30 @@ const Services = () => {
 				>
 					Technologies that we work with
 				</motion.h2>
-				<div className={`mb-20 flex justify-center items-center`}>
+				<div className={'hidden sm:flex mb-20 justify-center items-center'}>
 					{Logos1.map((logo, index) => (
 						<div
 							key={`logo-${index}`}
-							className='mx-4 lg:mx-12 flex-shrink-0 w-10 sm:w-20 hover:scale-110 transition-transform duration-300'
+							className='mx-4 lg:mx-12 w-14 h-14 sm:w-20 sm:h-20 hover:scale-110 transition-transform duration-300 bg-zinc-100 rounded-full items-center justify-center flex p-3 md:p-4'
 						>
 							<Image
-								width={60}
+								width={40}
+								height={40}
+								src={logo.src}
+								alt={logo.alt}
+								className='object-contain'
+							/>
+						</div>
+					))}
+				</div>
+				<div className={'flex sm:hidden mb-20 justify-center items-center'}>
+					{Logos4.map((logo, index) => (
+						<div
+							key={`logo-${index}`}
+							className='mx-4 lg:mx-12 w-14 h-14 sm:w-20 sm:h-20 hover:scale-110 transition-transform duration-300 bg-zinc-100 rounded-full items-center justify-center flex p-3 md:p-4'
+						>
+							<Image
+								width={40}
 								height={40}
 								src={logo.src}
 								alt={logo.alt}
@@ -101,10 +115,10 @@ const Services = () => {
 					{Logos2.map((logo, index) => (
 						<div
 							key={`logo-${index}`}
-							className='mx-4 lg:mx-12 flex-shrink-0 w-10 sm:w-20 hover:scale-110 transition-transform duration-300'
+							className='mx-4 lg:mx-12 flex-shrink-0 w-14 h-14 sm:w-20 sm:h-20 hover:scale-110 transition-transform duration-300 bg-zinc-100 rounded-full items-center justify-center flex p-3 md::p-4'
 						>
 							<Image
-								width={60}
+								width={40}
 								height={40}
 								src={logo.src}
 								alt={logo.alt}
@@ -113,14 +127,14 @@ const Services = () => {
 						</div>
 					))}
 				</div>
-				<div className={`flex items-center justify-center`}>
+				<div className={`hidden sm:flex items-center justify-center`}>
 					{Logos3.map((logo, index) => (
 						<div
 							key={`logo-${index}`}
-							className='mx-4 lg:mx-12 flex-shrink-0 w-10 sm:w-20 hover:scale-110 transition-transform duration-300'
+							className='mx-4 lg:mx-12 flex-shrink-0 w-14 h-14 sm:w-20  sm:h-20 hover:scale-110 transition-transform duration-300 bg-zinc-100 rounded-full items-center justify-center flex p-3 md:p-4'
 						>
 							<Image
-								width={60}
+								width={40}
 								height={40}
 								src={logo.src}
 								alt={logo.alt}
@@ -129,10 +143,22 @@ const Services = () => {
 						</div>
 					))}
 				</div>
-			</div>
-
-			<div className='-mt-10 lg:mt-0'>
-				<Strategy />
+					<div className={`flex sm:hidden items-center justify-center`}>
+					{Logos5.map((logo, index) => (
+						<div
+							key={`logo-${index}`}
+							className='mx-4 lg:mx-12 flex-shrink-0 w-14 h-14 sm:w-20  sm:h-20 hover:scale-110 transition-transform duration-300 bg-zinc-100 rounded-full items-center justify-center flex p-3 md:p-4'
+						>
+							<Image
+								width={40}
+								height={40}
+								src={logo.src}
+								alt={logo.alt}
+								className='object-contain'
+							/>
+						</div>
+					))}
+				</div>
 			</div>
 			<Partners />
 			<section className='relative lg:pb-24 overflow-hidden '>

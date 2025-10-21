@@ -23,18 +23,33 @@ export const Logos1 = [
 	{ src: Js, alt: 'Js' },
 	{ src: HTML, alt: 'HTML' },
 	{ src: Flutter, alt: 'Flutter' },
-	{ src: Ex, alt: 'Ex' },
 ]
 
 export const Logos2 = [
+	{ src: Ex, alt: 'Ex' },
 	{ src: Mongo, alt: 'Mongo' },
 	{ src: NextJs, alt: 'Next' },
 	{ src: NodeJs, alt: 'Node' },
-	{ src: ReactJs, alt: 'React' },
 ]
+
 export const Logos3 = [
+	{ src: ReactJs, alt: 'React' },
 	{ src: Tailwind, alt: 'Tailwind' },
 	{ src: TypeScript, alt: 'TypeScript' },
+]
+
+export const Logos4 = [
+	{ src: NestJs, alt: 'Tiger IT' },
+	{ src: JavaScript, alt: 'React' },
+	{ src: Js, alt: 'Tailwind' },
+	{ src: Flutter, alt: 'TypeScript' },
+]
+
+export const Logos5 = [
+	{ src: ReactJs, alt: 'Tiger IT' },
+	{ src: Tailwind, alt: 'React' },
+	{ src: TypeScript, alt: 'Tailwind' },
+	{ src: HTML, alt: 'TypeScript' },
 ]
 
 export const ServiceData = [
