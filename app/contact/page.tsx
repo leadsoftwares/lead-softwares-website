@@ -1,8 +1,5 @@
 'use client'
 import ContactImg from '@/public/png/Lead software pages Images/Contact Us.png'
-import Email from '@/public/svg/email.svg'
-import Location from '@/public/svg/location.svg'
-import Phone from '@/public/svg/phone.svg'
 import Contact1 from '@/public/webp/contact-1.webp'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
@@ -10,30 +7,7 @@ import { useEffect } from 'react'
 import NavbarTitle from '../about/components/NavbarTitle'
 import Form from '../contact/components/form'
 import FAQPage from './components/faq-box'
-
-const contactCards = [
-	{
-		id: 1,
-		icon: Location,
-		title: 'Location',
-		text: 'Find us at our office',
-		info: '7901 4th St N STE 300 Saint Petersburg, FL 33702 US',
-	},
-	{
-		id: 2,
-		icon: Phone,
-		title: 'Phone',
-		text: 'Reach out to us by phone',
-		info: '+92 316 6072132',
-	},
-	{
-		id: 3,
-		icon: Email,
-		title: 'Email',
-		text: 'Contact us at',
-		info: 'contact@leadsoftwares.com',
-	},
-]
+import { contactCards } from './data/contact'
 
 const Contact = () => {
 	useEffect(() => {

@@ -5,29 +5,20 @@ import { Check } from 'lucide-react'
 import { motion } from 'motion/react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
 import CustomButton from '../../components/custom-btn'
 import Partners from '../../components/project-logos-components'
 import Strategy from '../../components/strategy'
 import NavbarTitle from '../about/components/NavbarTitle'
-import { Logos1, Logos2, ServiceData } from './Data/services-data'
+import { Logos1, Logos2, Logos3 ,  ServiceData } from './Data/services-data'
 const Services = () => {
-	const [isVisible, setIsVisible] = useState(true)
-
-	useEffect(() => {
-		const handleVisibilityChange = () => {
-			setIsVisible(!document.hidden)
-		}
-
-		document.addEventListener('visibilitychange', handleVisibilityChange)
-		return () => {
-			document.removeEventListener('visibilitychange', handleVisibilityChange)
-		}
-	}, [])
 
 	return (
 		<div className='w-full overflow-hidden'>
-			<NavbarTitle title='Services' src={ServicesImg} />
+			<NavbarTitle
+				title='Services'
+				src={ServicesImg}
+				desc='We specialize in custom software, web, and mobile development. Lead Softwares delivers smart, scalable solutions that simplify processes and drive business growth.'
+			/>
 			<div className='px-2 py-10 md:py-30'>
 				<motion.div
 					initial={{ opacity: 0, x: 100 }}
@@ -90,50 +81,15 @@ const Services = () => {
 				>
 					Technologies that we work with
 				</motion.h2>
-				<div
-					className={`mb-20 inline-flex items-center ${
-						isVisible ? 'animate-marquee' : ''
-					}`}
-					style={{
-						whiteSpace: 'nowrap',
-					}}
-				>
+				<div className={`mb-20 flex justify-center items-center`}>
 					{Logos1.map((logo, index) => (
 						<div
 							key={`logo-${index}`}
 							className='mx-12 flex-shrink-0 hover:scale-110 transition-transform duration-300'
 						>
 							<Image
-								width={120}
-								height={80}
-								src={logo.src}
-								alt={logo.alt}
-								className='object-contain'
-							/>
-						</div>
-					))}
-					{Logos1.map((logo, index) => (
-						<div
-							key={`logo-${index}`}
-							className='mx-12 flex-shrink-0 hover:scale-110 transition-transform duration-300'
-						>
-							<Image
-								width={120}
-								height={80}
-								src={logo.src}
-								alt={logo.alt}
-								className='object-contain'
-							/>
-						</div>
-					))}
-					{Logos1.map((logo, index) => (
-						<div
-							key={`logo-${index}`}
-							className='mx-12 flex-shrink-0 hover:scale-110 transition-transform duration-300'
-						>
-							<Image
-								width={120}
-								height={80}
+								width={60}
+								height={40}
 								src={logo.src}
 								alt={logo.alt}
 								className='object-contain'
@@ -141,54 +97,34 @@ const Services = () => {
 						</div>
 					))}
 				</div>
-				<div
-					className={`inline-flex items-center ${
-						isVisible ? 'animate-marquee2' : ''
-					}`}
-					style={{
-						whiteSpace: 'nowrap',
-					}}
-				>
+				<div className={`mb-20 flex items-center justify-center`}>
 					{Logos2.map((logo, index) => (
 						<div
 							key={`logo-${index}`}
 							className='mx-12 flex-shrink-0 hover:scale-110 transition-transform duration-300'
 						>
 							<Image
-								width={120}
-								height={80}
+								width={60}
+								height={40}
 								src={logo.src}
 								alt={logo.alt}
 								className='object-contain'
 							/>
 						</div>
 					))}
-					{Logos2.map((logo, index) => (
+				</div>
+				<div className={`flex items-center justify-center`}>
+					{Logos3.map((logo, index) => (
 						<div
-							key={`logo-dup-${index}`}
+							key={`logo-${index}`}
 							className='mx-12 flex-shrink-0 hover:scale-110 transition-transform duration-300'
 						>
 							<Image
-								width={120}
-								height={80}
+								width={60}
+								height={40}
 								src={logo.src}
 								alt={logo.alt}
 								className='object-contain'
-							/>
-						</div>
-					))}
-					{Logos2.map((logo, index) => (
-						<div
-							key={`logo-dup-${index}`}
-							className='mx-12 flex-shrink-0 hover:scale-110 transition-transform duration-300'
-						>
-							<Image
-								width={120}
-								height={80}
-								src={logo.src}
-								alt={logo.alt}
-								className='object-contain'
-								style={{ maxHeight: '80px' }}
 							/>
 						</div>
 					))}

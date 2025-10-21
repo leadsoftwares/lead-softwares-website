@@ -5,10 +5,11 @@ import type { StaticImageData } from 'next/image'
 import Image from 'next/image'
 interface TitleProps {
 	title: string
+	desc?: string
 	src: string | StaticImageData
 }
 
-const NavbarTitle = ({ title, src }: TitleProps) => {
+const NavbarTitle = ({ title, desc,src }: TitleProps) => {
 	return (
 		<div
 			className='w-full h-[70vh] pt-26'
@@ -34,8 +35,7 @@ const NavbarTitle = ({ title, src }: TitleProps) => {
 							{title}
 						</div>
 						<div className=' text-text text-center md:text-left mt-6 text-md md:text-xl mb-12'>
-							The Engitech Token is the key to unlocking the full potential of
-							Engitech. Get eve higher earning rates and our lowest rates
+							{desc}
 						</div>
 					</div>
 				</motion.div>

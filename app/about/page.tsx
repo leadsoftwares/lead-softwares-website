@@ -22,7 +22,11 @@ const About = () => {
 	}, [])
 	return (
 		<div className='w-full overflow-hidden'>
-			<NavbarTitle title='About Us' src={AboutSectionImg} />
+			<NavbarTitle
+				title='About Us'
+				src={AboutSectionImg}
+				desc='At Lead Softwares, we create innovative digital products designed to simplify business operations and drive success. Our team focuses on quality, creativity, and technology to deliver software that makes a real impact.'
+			/>
 			<WhyChooseThree />
 			<JourneyScroll />
 			<div
