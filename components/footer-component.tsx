@@ -24,7 +24,7 @@ const Footer = () => {
 					>
 						<Image width={150} height={150} src={Logo} alt='Lead-softwares' />
 						<div className='text-zinc-300 text-sm font-light mt-6 max-w-[380px]'>
-							Let us take care of your IT challenges so you can focus on achieving your goals. Seamless technology, smarter solutions, and dedicated support — all in one place.
+							Lead Softwares builds cutting-edge digital platforms that help businesses adapt, grow, and lead in the digital era. We focus on creating technology solutions that deliver value, efficiency, and long-lasting impact.
 						</div>
 					</motion.div>
 					{/* right side */}
