@@ -12,8 +12,6 @@ import Link from 'next/link'
 const Banner = () => {
 	return (
 		<div className='relative overflow-hidden h-full'>
-			{/* Banner Section (blue background + text) */}
-
 			<motion.section
 				initial={{ opacity: 0, y: 50 }}
 				whileInView={{ opacity: 1, y: 0 }}
@@ -76,7 +74,6 @@ const Banner = () => {
 				</motion.div>
 			</motion.section>
 
-			{/* Column 1 (scroll UP) */}
 			<motion.div
 				initial={{ opacity: 0, y: 50 }}
 				whileInView={{ opacity: 1, y: 0 }}
@@ -148,7 +145,6 @@ const Banner = () => {
 				</div>
 			</motion.div>
 
-			{/* Column 2 (scroll DOWN) */}
 			<motion.div
 				initial={{ opacity: 0, y: 50 }}
 				whileInView={{ opacity: 1, y: 0 }}

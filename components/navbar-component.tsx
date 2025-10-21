@@ -75,7 +75,7 @@ const Navbar = () => {
 					<ul className={`flex gap-5 list-none text-text`}>
 						<NavLink href={'/'}>Home</NavLink>
 
-						<NavLink href='/about-us'>About us</NavLink>
+						<NavLink href='/about'>About us</NavLink>
 						<li
 							onMouseEnter={() => setOpenDropdown('pages')}
 							onMouseLeave={() => setOpenDropdown(null)}
@@ -129,7 +129,7 @@ const Navbar = () => {
 							</NavLink>
 						</div>
 						<div className='pb-4 -ml-4 text-zinc-600'>
-							<NavLink href='/about-us' onClick={toggleMobileMenu}>
+							<NavLink href='/about' onClick={toggleMobileMenu}>
 								About us
 							</NavLink>
 						</div>

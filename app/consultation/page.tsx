@@ -3,7 +3,7 @@
 import Form from '@/app/consultation/components/form'
 import SectionBg from '@/public/png/Lead software pages Images/Portfolio 2.png'
 import { useEffect } from 'react'
-import NavbarTitle from '../about-us/components/NavbarTitle'
+import NavbarTitle from '../about/components/NavbarTitle'
 
 const Page = () => {
 	

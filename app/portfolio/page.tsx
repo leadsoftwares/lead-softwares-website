@@ -3,7 +3,7 @@ import HeroGallery from '@/components/hero-gallery'
 import PortfolioImg from '@/public/png/Lead software pages Images/Portfolio.png'
 import Image from 'next/image'
 import React, { useEffect } from 'react'
-import NavbarTitle from '../about-us/components/NavbarTitle'
+import NavbarTitle from '../about/components/NavbarTitle'
 import { DesktopProjects } from './Data/Desktop-Projects'
 import { MobileProjects } from './Data/Mobile-Projects'
 

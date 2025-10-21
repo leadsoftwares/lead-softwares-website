@@ -10,13 +10,12 @@ import NodeJs from '@/public/png/Tech logos/node.png'
 import ReactJs from '@/public/png/Tech logos/react.png'
 import Tailwind from '@/public/png/Tech logos/ta.png'
 import TypeScript from '@/public/png/Tech logos/ts.png'
-import Shop from "@/public/png/service imgs/shopping.png"
-import customer from "@/public/png/service imgs/custom.png"
-import Design from "@/public/png/service imgs/ux.png"
-import Auto from "@/public/png/service imgs/operational-system.png"
-import DevOps from "@/public/png/service imgs/process.png"
-import Growth from "@/public/png/service imgs/growth.png"
-
+import customer from '@/public/png/service imgs/custom.png'
+import Growth from '@/public/png/service imgs/growth.png'
+import Auto from '@/public/png/service imgs/operational-system.png'
+import DevOps from '@/public/png/service imgs/process.png'
+import Shop from '@/public/png/service imgs/shopping.png'
+import Design from '@/public/png/service imgs/ux.png'
 
 export const Logos1 = [
 	{ src: NestJs, alt: 'Tiger IT' },
@@ -24,23 +23,40 @@ export const Logos1 = [
 	{ src: Js, alt: 'Js' },
 	{ src: HTML, alt: 'HTML' },
 	{ src: Flutter, alt: 'Flutter' },
-	{ src: Ex, alt: 'Ex' },
 ]
 
 export const Logos2 = [
+	{ src: Ex, alt: 'Ex' },
 	{ src: Mongo, alt: 'Mongo' },
 	{ src: NextJs, alt: 'Next' },
 	{ src: NodeJs, alt: 'Node' },
+]
+
+export const Logos3 = [
 	{ src: ReactJs, alt: 'React' },
 	{ src: Tailwind, alt: 'Tailwind' },
 	{ src: TypeScript, alt: 'TypeScript' },
+]
+
+export const Logos4 = [
+	{ src: NestJs, alt: 'Tiger IT' },
+	{ src: JavaScript, alt: 'React' },
+	{ src: Js, alt: 'Tailwind' },
+	{ src: Flutter, alt: 'TypeScript' },
+]
+
+export const Logos5 = [
+	{ src: ReactJs, alt: 'Tiger IT' },
+	{ src: Tailwind, alt: 'React' },
+	{ src: TypeScript, alt: 'Tailwind' },
+	{ src: HTML, alt: 'TypeScript' },
 ]
 
 export const ServiceData = [
 	{
 		icon: customer,
 		title: 'Custom Software & App Development',
-		text: 'From mobile apps to web platforms, we build scalable, high-performance solutions tailored to your market.'
+		text: 'From mobile apps to web platforms, we build scalable, high-performance solutions tailored to your market.',
 	},
 	{
 		icon: Design,
@@ -55,7 +71,7 @@ export const ServiceData = [
 	{
 		icon: Auto,
 		title: 'AI Integration & Automation',
-		text: 'Enhance your product with AI features — from predictive analytics to smart chatbots — to improve efficiency.'
+		text: 'Enhance your product with AI features — from predictive analytics to smart chatbots — to improve efficiency.',
 	},
 	{
 		icon: DevOps,
@@ -66,6 +82,5 @@ export const ServiceData = [
 		icon: Growth,
 		title: 'Startup Growth Consulting',
 		text: 'We are more than a dev shop — we help you refine your business model, optimize workflows, and prepare for funding rounds.',
-	}
-
+	},
 ]

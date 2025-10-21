@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import { Controller, useFieldArray, useForm } from 'react-hook-form'
 import PhoneInput from 'react-phone-input-2'
-import 'react-phone-input-2/lib/style.css'											
+import 'react-phone-input-2/lib/style.css'
 
 type Education = {
 	degree: string
@@ -362,7 +362,7 @@ const CareerForm = () => {
 								required: 'Date of Birth is required',
 								validate: (value) => {
 									const today = new Date()
-									today.setHours(0, 0, 0, 0) 
+									today.setHours(0, 0, 0, 0)
 									const selectedDate = new Date(value as string)
 									selectedDate.setHours(0, 0, 0, 0)
 
@@ -560,7 +560,7 @@ const CareerForm = () => {
 							<button
 								type='button'
 								onClick={() => remove(i)}
-								className='absolute right-0 top-1/2 -translate-y-1/2 text-red-500 hover:text-red-700'
+								className='absolute -right-10 top-1/2 -translate-y-1/2 text-red-500 hover:text-red-700'
 								title='Remove education entry'
 							>
 								<svg
@@ -715,7 +715,7 @@ const CareerForm = () => {
 							<button
 								type='button'
 								onClick={() => removeExperience(i)}
-								className='absolute right-0 top-1/2 -translate-y-1/2 text-red-500 hover:text-red-700'
+								className='absolute -right-10 top-1/2 -translate-y-1/2 text-red-500 hover:text-red-700'
 								title='Remove experience entry'
 							>
 								<svg
