@@ -8,7 +8,14 @@ import Link from 'next/link'
 import CustomButton from '../../components/custom-btn'
 import Partners from '../../components/project-logos-components'
 import NavbarTitle from '../about/components/NavbarTitle'
-import { Logos1, Logos2, Logos3, Logos4 , Logos5 , ServiceData } from './Data/services-data'
+import {
+	Logos1,
+	Logos2,
+	Logos3,
+	Logos4,
+	Logos5,
+	ServiceData,
+} from './Data/services-data'
 const Services = () => {
 	return (
 		<div className='w-full overflow-hidden'>
@@ -79,18 +86,18 @@ const Services = () => {
 				>
 					Technologies that we work with
 				</motion.h2>
-				<div className={'hidden sm:flex mb-20 justify-center items-center'}>
+				<div className={'hidden sm:flex mb-10 justify-center items-center'}>
 					{Logos1.map((logo, index) => (
 						<div
 							key={`logo-${index}`}
-							className='mx-4 lg:mx-12 w-14 h-14 sm:w-20 sm:h-20 hover:scale-110 transition-transform duration-300 bg-zinc-100 rounded-full items-center justify-center flex p-3 md:p-4'
+							className='mx-4 lg:mx-6 w-14 h-14 sm:w-24 sm:h-24 hover:scale-110 transition-transform duration-300 bg-zinc-100 rounded-full items-center justify-center flex p-3 md:p-4'
 						>
 							<Image
 								width={40}
 								height={40}
 								src={logo.src}
 								alt={logo.alt}
-								className='object-contain'
+								className='object-contain min-w-15 min-h-15'
 							/>
 						</div>
 					))}
@@ -99,11 +106,11 @@ const Services = () => {
 					{Logos4.map((logo, index) => (
 						<div
 							key={`logo-${index}`}
-							className='mx-4 lg:mx-12 w-14 h-14 sm:w-20 sm:h-20 hover:scale-110 transition-transform duration-300 bg-zinc-100 rounded-full items-center justify-center flex p-3 md:p-4'
+							className='mx-4 w-14 h-14 hover:scale-110 transition-transform duration-300 bg-zinc-100 rounded-full items-center justify-center flex p-3 md:p-4'
 						>
 							<Image
-								width={40}
-								height={40}
+								width={45}
+								height={45}
 								src={logo.src}
 								alt={logo.alt}
 								className='object-contain'
@@ -111,18 +118,18 @@ const Services = () => {
 						</div>
 					))}
 				</div>
-				<div className={`mb-20 flex items-center justify-center`}>
+				<div className={`mb-10 flex items-center justify-center`}>
 					{Logos2.map((logo, index) => (
 						<div
 							key={`logo-${index}`}
-							className='mx-4 lg:mx-12 flex-shrink-0 w-14 h-14 sm:w-20 sm:h-20 hover:scale-110 transition-transform duration-300 bg-zinc-100 rounded-full items-center justify-center flex p-3 md::p-4'
+							className='mx-4 lg:mx-6 flex-shrink-0 w-14 h-14 sm:w-24 sm:h-24 hover:scale-110 transition-transform duration-300 bg-zinc-100 rounded-full items-center justify-center flex p-3 md::p-4'
 						>
 							<Image
-								width={40}
-								height={40}
+								width={45}
+								height={45}
 								src={logo.src}
 								alt={logo.alt}
-								className='object-contain'
+								className='object-contain sm:min-w-15 sm:min-h-15'
 							/>
 						</div>
 					))}
@@ -131,23 +138,23 @@ const Services = () => {
 					{Logos3.map((logo, index) => (
 						<div
 							key={`logo-${index}`}
-							className='mx-4 lg:mx-12 flex-shrink-0 w-14 h-14 sm:w-20  sm:h-20 hover:scale-110 transition-transform duration-300 bg-zinc-100 rounded-full items-center justify-center flex p-3 md:p-4'
+							className='mx-4 lg:mx-6 flex-shrink-0 w-14 h-14 sm:w-24  sm:h-24 hover:scale-110 transition-transform duration-300 bg-zinc-100 rounded-full items-center justify-center flex p-3 md:p-4'
 						>
 							<Image
-								width={40}
-								height={40}
+								width={45}
+								height={45}
 								src={logo.src}
 								alt={logo.alt}
-								className='object-contain'
+								className='object-contain min-w-15 min-h-15'
 							/>
 						</div>
 					))}
 				</div>
-					<div className={`flex sm:hidden items-center justify-center`}>
+				<div className={`flex sm:hidden items-center justify-center`}>
 					{Logos5.map((logo, index) => (
 						<div
 							key={`logo-${index}`}
-							className='mx-4 lg:mx-12 flex-shrink-0 w-14 h-14 sm:w-20  sm:h-20 hover:scale-110 transition-transform duration-300 bg-zinc-100 rounded-full items-center justify-center flex p-3 md:p-4'
+							className='mx-4 flex-shrink-0 w-14 h-14 hover:scale-110 transition-transform duration-300 bg-zinc-100 rounded-full items-center justify-center flex p-3'
 						>
 							<Image
 								width={40}

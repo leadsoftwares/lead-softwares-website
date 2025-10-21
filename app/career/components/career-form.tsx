@@ -560,7 +560,7 @@ const CareerForm = () => {
 							<button
 								type='button'
 								onClick={() => remove(i)}
-								className='absolute right-0 top-1/2 -translate-y-1/2 text-red-500 hover:text-red-700'
+								className='absolute -right-10 top-1/2 -translate-y-1/2 text-red-500 hover:text-red-700'
 								title='Remove education entry'
 							>
 								<svg
@@ -715,7 +715,7 @@ const CareerForm = () => {
 							<button
 								type='button'
 								onClick={() => removeExperience(i)}
-								className='absolute right-0 top-1/2 -translate-y-1/2 text-red-500 hover:text-red-700'
+								className='absolute -right-10 top-1/2 -translate-y-1/2 text-red-500 hover:text-red-700'
 								title='Remove experience entry'
 							>
 								<svg
