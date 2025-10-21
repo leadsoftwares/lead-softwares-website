@@ -67,7 +67,6 @@ const ProjectsLogos = () => {
 						whiteSpace: 'nowrap',
 					}}
 				>
-		
 					{ourProjectsLogos.map((partner, index) => (
 						<div
 							key={`partner-${index}`}
@@ -82,7 +81,7 @@ const ProjectsLogos = () => {
 							/>
 						</div>
 					))}
-		
+
 					{ourProjectsLogos.map((partner, index) => (
 						<div
 							key={`partner-dup-${index}`}
@@ -97,7 +96,7 @@ const ProjectsLogos = () => {
 							/>
 						</div>
 					))}
-					
+
 					{ourProjectsLogos.map((partner, index) => (
 						<div
 							key={`partner-triple-${index}`}

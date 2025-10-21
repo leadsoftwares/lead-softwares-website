@@ -7,10 +7,11 @@ import WhyIMG from '@/public/png/about-us-why-section-img.png'
 import AboutSectionImg from '@/public/png/Lead software pages Images/about uss.png'
 import { Check } from 'lucide-react'
 import Image from 'next/image'
-import ProjectsLogos from '../../components/partners-components'
+import { useEffect } from 'react'
+import ProjectsLogos from '../../components/project-logos-components'
 import NavbarTitle from './components/NavbarTitle'
 import WhyChooseThree from './components/whychooseus'
-import { useEffect } from 'react'
+import { ChecksData } from './Data/about'
 
 const About = () => {
 	useEffect(() => {
@@ -85,12 +86,7 @@ const About = () => {
 						</div>
 						<div className='w-full h-[1px] bg-zinc-200 my-6' />
 						<div className='grid grid-cols-1 sm:grid-cols-2 gap-y-4 max-w-md'>
-							{[
-								'Tailored IT Solutions',
-								'Scalability & Flexibility',
-								'Expertise & Innovation',
-								'Seamless Integration',
-							].map((item, i) => (
+							{ChecksData.map((item, i) => (
 								<div key={i} className='flex items-center gap-3'>
 									<div className='bg-blue-800 p-0.5 rounded'>
 										<Check className='text-white w-4 h-4' />

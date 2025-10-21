@@ -40,3 +40,10 @@ export const OurJourneyData = [
 		text: 'Today, Lead Softwares is a trusted global IT partner, delivering innovative, scalable, and secure digital solutions that combine design excellence with real-world impact.',
 	},
 ]
+
+export const ChecksData = [
+	'Tailored IT Solutions',
+	'Scalability & Flexibility',
+	'Expertise & Innovation',
+	'Seamless Integration',
+]

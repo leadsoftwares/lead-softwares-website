@@ -1,4 +1,5 @@
 'use client'
+import { strategy, strategyBoxes } from '@/app/home-components/home'
 import Banner from '@/components/Banner'
 import CustomerReviews from '@/components/customerReviews'
 import Number from '@/components/numbers'
@@ -8,11 +9,9 @@ import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import CustomButton from '../components/custom-btn'
-import Partners from '../components/partners-components'
+import Partners from '../components/project-logos-components'
 import Strategy from '../components/strategy'
 import MobileViewCard from '../public/png/mobileviewCard.png'
-import { strategy } from '@/app/home-components/home'
-import { strategyBoxes } from '@/app/home-components/home'
 
 const page = () => {
 	return (
@@ -97,7 +96,9 @@ const page = () => {
 							We&apos;re building business <br /> for your digital economy
 						</div>
 						<div className='desc w-[90vw] md:w-full text-text text-center md:text-left'>
-							Your business deserves more than visibility — it deserves impact. We craft digital solutions that fuel growth, expand reach, and keep you ahead in a fast-evolving market.
+							Your business deserves more than visibility — it deserves impact.
+							We craft digital solutions that fuel growth, expand reach, and
+							keep you ahead in a fast-evolving market.
 						</div>
 						<div className='flex justify-center md:justify-normal gap-12 mt-4'>
 							<div className='1 space-y-2'>
@@ -177,7 +178,8 @@ const page = () => {
 					>
 						<div className='flex flex-col gap-8 w-full'>
 							<div className='text-primary text-3xl md:text-4xl font-semibold leading-10 lg:leading-12'>
-								Strategies that get you on <br className='hidden lg:block' /> the path to success
+								Strategies that get you on <br className='hidden lg:block' />{' '}
+								the path to success
 							</div>
 							<div className='text-text md:text-lg'>
 								Our proven strategies put your business on the right track from

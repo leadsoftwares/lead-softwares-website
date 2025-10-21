@@ -1,6 +1,6 @@
 'use client'
 import { whyChooseUsData } from '@/app/about/Data/about'
-import MidIMG from '@/public/png/About/whychooseus-img.png'
+import MidIMG from '@/public/png/About/WhyImg.png'
 import SectionBG from '@/public/png/why-choose-three-bg-shape.png'
 import { motion } from 'framer-motion'
 import Image from 'next/image'

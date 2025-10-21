@@ -1,16 +1,16 @@
 'use client'
 import ServicesImg from '@/public/png/Lead software pages Images/Portfolio 1.png'
+import SectionMobiles from '@/public/png/services-mob-img.png'
 import { Check } from 'lucide-react'
 import { motion } from 'motion/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import CustomButton from '../../components/custom-btn'
-import Partners from '../../components/partners-components'
+import Partners from '../../components/project-logos-components'
 import Strategy from '../../components/strategy'
 import NavbarTitle from '../about/components/NavbarTitle'
 import { Logos1, Logos2, ServiceData } from './Data/services-data'
-import SectionMobiles from "@/public/png/services-mob-img.png"
 const Services = () => {
 	const [isVisible, setIsVisible] = useState(true)
 
@@ -240,15 +240,14 @@ const Services = () => {
 					</div>
 					<div>
 						<Image
-								width={600}
-								height={600}
-								src={SectionMobiles}
-								alt={"SectionMobiles"}
-							/>
+							width={600}
+							height={600}
+							src={SectionMobiles}
+							alt={'SectionMobiles'}
+						/>
 					</div>
 				</div>
 			</section>
-			
 		</div>
 	)
 }
