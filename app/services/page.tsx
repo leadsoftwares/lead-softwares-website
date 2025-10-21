@@ -85,7 +85,7 @@ const Services = () => {
 					{Logos1.map((logo, index) => (
 						<div
 							key={`logo-${index}`}
-							className='mx-12 flex-shrink-0 hover:scale-110 transition-transform duration-300'
+							className='mx-4 lg:mx-12 flex-shrink-0 w-10 sm:w-20 hover:scale-110 transition-transform duration-300'
 						>
 							<Image
 								width={60}
@@ -101,7 +101,7 @@ const Services = () => {
 					{Logos2.map((logo, index) => (
 						<div
 							key={`logo-${index}`}
-							className='mx-12 flex-shrink-0 hover:scale-110 transition-transform duration-300'
+							className='mx-4 lg:mx-12 flex-shrink-0 w-10 sm:w-20 hover:scale-110 transition-transform duration-300'
 						>
 							<Image
 								width={60}
@@ -117,7 +117,7 @@ const Services = () => {
 					{Logos3.map((logo, index) => (
 						<div
 							key={`logo-${index}`}
-							className='mx-12 flex-shrink-0 hover:scale-110 transition-transform duration-300'
+							className='mx-4 lg:mx-12 flex-shrink-0 w-10 sm:w-20 hover:scale-110 transition-transform duration-300'
 						>
 							<Image
 								width={60}
