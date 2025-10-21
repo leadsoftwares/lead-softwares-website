@@ -1,17 +1,24 @@
 'use client'
 
-import JourneyScroll from '@/app/about-us/components/JourneyScroll'
+import JourneyScroll from '@/app/about/components/JourneyScroll'
+import Team from '@/app/team/components/team'
 import SectionBG from '@/public/jpeg/about-us-section-bg.jpg'
 import WhyIMG from '@/public/png/about-us-why-section-img.png'
 import AboutSectionImg from '@/public/png/Lead software pages Images/about uss.png'
 import { Check } from 'lucide-react'
 import Image from 'next/image'
 import ProjectsLogos from '../../components/partners-components'
-import Team from '@/app/team/components/team'
 import NavbarTitle from './components/NavbarTitle'
 import WhyChooseThree from './components/whychooseus'
+import { useEffect } from 'react'
 
 const About = () => {
+	useEffect(() => {
+		window.scrollTo(0, 0)
+		setTimeout(() => {
+			window.scrollTo({ top: 0, behavior: 'smooth' })
+		}, 50)
+	}, [])
 	return (
 		<div className='w-full overflow-hidden'>
 			<NavbarTitle title='About Us' src={AboutSectionImg} />

@@ -7,7 +7,7 @@ import Contact1 from '@/public/webp/contact-1.webp'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useEffect } from 'react'
-import NavbarTitle from '../about-us/components/NavbarTitle'
+import NavbarTitle from '../about/components/NavbarTitle'
 import Form from '../contact/components/form'
 import FAQPage from './components/faq-box'
 

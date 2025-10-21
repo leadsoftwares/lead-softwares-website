@@ -2,7 +2,7 @@
 import TeamSection from '@/components/team-section'
 import TeamImg from '@/public/png/Lead software pages Images/Our Team.png'
 import { useEffect } from 'react'
-import NavbarTitle from '../about-us/components/NavbarTitle'
+import NavbarTitle from '../about/components/NavbarTitle'
 import Team from './components/team'
 const page = () => {
 	// eslint-disable-next-line react-hooks/rules-of-hooks

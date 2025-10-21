@@ -39,7 +39,7 @@ const Footer = () => {
 							<a className='text-zinc-200 font-semibold' href='#'>
 								Products
 							</a>
-							<Link href='/about-us'>About Us</Link>
+							<Link href='/about'>About Us</Link>
 							<Link href='/portfolio'>Portfolio</Link>
 							<Link href='/services'>Services</Link>
 							<Link href='/team'>Team</Link>

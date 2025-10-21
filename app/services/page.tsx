@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
 import CustomButton from '../../components/custom-btn'
 import Partners from '../../components/partners-components'
 import Strategy from '../../components/strategy'
-import NavbarTitle from '../about-us/components/NavbarTitle'
+import NavbarTitle from '../about/components/NavbarTitle'
 import { Logos1, Logos2, ServiceData } from './Data/services-data'
 import SectionMobiles from "@/public/png/services-mob-img.png"
 const Services = () => {

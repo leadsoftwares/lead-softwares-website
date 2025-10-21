@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 "use client"
 import React, { useEffect } from 'react'
-import NavbarTitle from '../about-us/components/NavbarTitle'
+import NavbarTitle from '../about/components/NavbarTitle'
 import Form from './components/career-form'
 import CareerImg from "@/public/png/Lead software pages Images/Careers.png"
 
