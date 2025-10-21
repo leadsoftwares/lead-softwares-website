@@ -52,7 +52,6 @@ export default function Strategy() {
 	}, [steps])
 
 	const handleClick = (index: number) => {
-
 		if (scrollTriggerRef.current) {
 			const st = scrollTriggerRef.current
 			const scrollDistance = st.end - st.start

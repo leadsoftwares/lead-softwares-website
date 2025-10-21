@@ -77,7 +77,7 @@ export default function Testimonials() {
 				>
 					{testimonials.map((item, i) => (
 						<SwiperSlide key={i}>
-							<div className='testimonial-item md:p-8 rounded-2xl text-center'>
+							<div className='testimonial-item md:p-8 rounded-2xl text-center px-6'>
 								{/* Quote Icon */}
 								<div className='testimonial-quote mx-auto mb-6 w-10 h-10 md:w-14 md:h-14'>
 									<svg

@@ -11,7 +11,7 @@ interface TitleProps {
 const NavbarTitle = ({ title, src }: TitleProps) => {
 	return (
 		<div
-			className='w-full max-h-[100vh] pt-26'
+			className='w-full h-[70vh] pt-26'
 			style={{
 				backgroundImage: `url(${SectionBG.src})`,
 				backgroundSize: 'cover',
@@ -37,9 +37,6 @@ const NavbarTitle = ({ title, src }: TitleProps) => {
 							The Engitech Token is the key to unlocking the full potential of
 							Engitech. Get eve higher earning rates and our lowest rates
 						</div>
-						{/* <Link className='hidden lg:block' href={'/consultation'}>
-							<CustomButton title='Get Started' />
-						</Link> */}
 					</div>
 				</motion.div>
 
@@ -50,7 +47,7 @@ const NavbarTitle = ({ title, src }: TitleProps) => {
 					transition={{ duration: 0.8, ease: 'easeOut' }}
 					className='hidden md:block'
 				>
-					<Image width={700} height={700} src={src} alt='' />
+					<Image width={500} height={500} src={src} alt='' />
 				</motion.div>
 			</div>
 		</div>

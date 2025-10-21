@@ -9,9 +9,9 @@ import { motion } from 'motion/react'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
-const Partners = () => {
+const ProjectsLogos = () => {
 	const [isVisible, setIsVisible] = useState(true)
-	const partners = [
+	const ourProjectsLogos = [
 		{ src: Barq, alt: 'Barq e Shop' },
 		{ src: Crazy, alt: 'Crazy By Rasel' },
 		{ src: IDN, alt: 'IDN Network' },
@@ -43,7 +43,7 @@ const Partners = () => {
 				transition={{ duration: 1, ease: 'easeOut' }}
 				className='hidden lg:flex w-full flex-wrap justify-center lg:flex-row items-center gap-26 md:gap-20 lg:gap-26 mt-10 pb-28'
 			>
-				{partners.map((partner, index) => (
+				{ourProjectsLogos.map((partner, index) => (
 					<Image
 						key={index}
 						width={100}
@@ -68,7 +68,7 @@ const Partners = () => {
 					}}
 				>
 		
-					{partners.map((partner, index) => (
+					{ourProjectsLogos.map((partner, index) => (
 						<div
 							key={`partner-${index}`}
 							className='mx-8 flex-shrink-0 hover:scale-110 transition-transform duration-300'
@@ -83,7 +83,7 @@ const Partners = () => {
 						</div>
 					))}
 		
-					{partners.map((partner, index) => (
+					{ourProjectsLogos.map((partner, index) => (
 						<div
 							key={`partner-dup-${index}`}
 							className='mx-8 flex-shrink-0 hover:scale-110 transition-transform duration-300'
@@ -98,7 +98,7 @@ const Partners = () => {
 						</div>
 					))}
 					
-					{partners.map((partner, index) => (
+					{ourProjectsLogos.map((partner, index) => (
 						<div
 							key={`partner-triple-${index}`}
 							className='mx-8 flex-shrink-0 hover:scale-110 transition-transform duration-300'
@@ -118,4 +118,4 @@ const Partners = () => {
 	)
 }
 
-export default Partners
+export default ProjectsLogos

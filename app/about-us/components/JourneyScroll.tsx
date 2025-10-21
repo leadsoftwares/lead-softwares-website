@@ -1,87 +1,47 @@
 'use client'
 
-import IMG from '@/public/png/IDN Network D.png'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import SideImg from '@/public/png/About/journey-img-design.png'
+import IMGDown from '@/public/png/About/journey-img-down.jpeg'
+import IMGTop from '@/public/png/About/journey-img-top.jpeg'
 import Image from 'next/image'
-import { useEffect, useRef } from 'react'
-
+import { OurJourneyData } from '../Data/about'
 export default function PortfolioSection() {
-	const sectionRef = useRef<HTMLDivElement>(null)
-	const leftRef = useRef<HTMLDivElement>(null)
-
-	useEffect(() => {
-		gsap.registerPlugin(ScrollTrigger)
-
-		if (sectionRef.current && leftRef.current) {
-			ScrollTrigger.create({
-				trigger: sectionRef.current,
-				start: 'top top',
-				end: 'bottom bottom',
-				pin: leftRef.current,
-				scrub: true,
-			})
-		}
-
-		return () => {
-			ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
-		}
-	}, [])
-
 	return (
-		<section
-			ref={sectionRef}
-			className='hidden md:block bg-black text-white py-12 xl:py-66 mt-4 md:mt-30 lg:mt-0'
-		>
-			<div className='container mx-auto flex flex-col xl:flex-row gap-20 lg:max-w-6xl px-2'>
-				<div
-					ref={leftRef}
-					className='hidden xl:flex w-480 max-h-100 px-4 justify-center items-center rounded-lg'
-				>
+		<section className='py-12 xl:py-45 mt-4 md:mt-30 lg:mt-0'>
+			<div className='container mx-auto flex flex-col xl:flex-row gap-50 lg:max-w-7xl px-2'>
+				<div className='flex relative xl:w-130 xl:max-h-100 px-4 justify-center items-center rounded-lg'>
 					<Image
-						src={IMG}
-						width={200}
-						height={50}
-						alt='Portfolio'
-						className='relative w-full h-[340px] rounded-lg object-cover z-10'
+						src={SideImg}
+						alt='Side-Image'
+						className='absolute right-30 md:right-50 lg:right-95 xl:right-88 xl:top-50 xl:w-280 xl:h-100'
 					/>
-					<div className='hidden xl:block absolute w-158 border-1 border-zinc-800 h-96 rounded-lg top-2 -left-2'></div>
-				</div>
-				<div className='block xl:hidden w-full max-h-100 px-4 rounded-lg'>
 					<Image
-						src={IMG}
-						width={200}
-						height={50}
+						src={IMGTop}
 						alt='Portfolio'
-						className='relative w-full h-[200px] md:h-[400px] rounded-lg object-cover z-10'
+						className='relative md:w-100 xl:w-full w-70 xl:h-[340px] rounded-lg object-cover z-10'
 					/>
+					<div className='absolute top-35 md:top-50 xl:top-70 left-30 md:left-70 lg:left-110 xl:left-30 md:w-90 xl:w-110 xl:max-h-100 rounded-lg flex justify-center items-center p-2'>
+						<Image
+							src={IMGDown}
+							alt='Portfolio'
+							className='relative w-full xl:h-[340px] rounded-lg object-cover z-10 bg-white p-1.5 shadow-lg'
+						/>
+					</div>
+					<div className='bg-white flex items-center justify-center rounded-xl w-30 h-30 md:w-40 md:h-40 lg:w-45 lg:h-45 xl:w-55 xl:h-55 absolute top-40 md:top-60 xl:top-50 left-5 md:left-35 lg:left-70 xl:left-100 shadow-lg z-20'>
+						<h1 className='md:text-lg lg:text-xl xl:text-2xl text-primary font-bold text-center'>
+							3 Year of Experience
+						</h1>
+					</div>
 				</div>
 
-				<div className='xl:w-300 space-y-10 px-4'>
+				<div className='xl:w-160 space-y-10 px-4'>
 					<h2 className='text-4xl font-bold leading-tight'>Our Journey</h2>
 
 					<div className='space-y-12'>
-						{[
-							{
-								title: 'May 2023 - The Beginning',
-								text: 'Lead Softwares began with a vision to create innovative, reliable digital solutions. From a small team of passionate developers, we grew by delivering custom software, UI/UX design, and mobile apps that empower business success.'
-							},
-							{
-								title: 'March 2024 - Growing Stronger',
-								text: 'Within a year, Lead Softwares expanded into full product deployment and QA testing, adopting agile methods and partnering with local and international clients. Our portfolio grew quickly through timely delivery and modern software design.'
-							},
-							{
-								title: 'January 2025 - Going Global',
-								text: 'Lead Softwares entered the global market, delivering enterprise solutions across industries. With an expanding team, we introduced cloud systems, mobile apps, and digital transformation services for businesses worldwide.'
-							},
-							{
-								title: 'June 2025 - Leading with Innovation',
-								text: 'Today, Lead Softwares is a trusted global IT partner, delivering innovative, scalable, and secure digital solutions that combine design excellence with real-world impact.'
-							},
-						].map((item, i) => (
+						{OurJourneyData.map((item, i) => (
 							<div key={i}>
 								<h3 className='text-xl font-semibold mb-2'>{item.title}</h3>
-								<p className='text-gray-300'>{item.text}</p>
+								<p className='text-gray-600'>{item.text}</p>
 							</div>
 						))}
 					</div>

@@ -12,7 +12,7 @@ import Testimonials from './testmonials'
 const customerReviews = () => {
 	return (
 		<div
-			className='py-14 md:py-30 relative'
+			className='py-14 md:py-30 relative '
 			style={{
 				backgroundImage: `url(${SectionBG.src})`,
 				backgroundSize: 'cover',

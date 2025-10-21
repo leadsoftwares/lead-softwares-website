@@ -1,5 +1,4 @@
 "use client"
-import Team from '@/app/about-us/components/team'
 import SectionBG from '@/public/jpeg/team-section-bg.jpg'
 import AhmadIMG from '@/public/png/Lead Software Team Images Transparent/Ahmad.png'
 import SectionBorder from '@/public/png/Lead Software Team Images Transparent/border-o.png'
@@ -67,7 +66,6 @@ export default function TeamSection() {
 
 	return (
 		<div>
-				<Team/>
 		<section
 			className='w-full py-16'
 			style={{
