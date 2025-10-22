@@ -135,7 +135,6 @@ const ConsultationForm = () => {
 			onSubmit={handleSubmit(onSubmit)}
 			className='lg:relative lg:bottom-20 lg:max-w-[60%] rounded-xl shadow-xl lg:mx-auto lg:mb-40 py-10 px-6 lg:px-30 z-100 bg-white'
 		>
-			{/* Success Box */}
 			{showSuccess && (
 				<div className='fixed inset-0 bg-black/40 flex items-center justify-center z-50'>
 					<div className='bg-white rounded-2xl shadow-xl p-6 text-center w-[300px]'>
@@ -270,7 +269,7 @@ const ConsultationForm = () => {
 					<p className='text-red-500 text-sm'>{errors.requirement.message}</p>
 				)}
 			</div>
-			
+
 			<Dropdown
 				label='Estimated Budget'
 				name='budgetValue'

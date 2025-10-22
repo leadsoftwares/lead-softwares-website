@@ -1,9 +1,9 @@
 'use client'
 import FirebaseUtils from '@/lib/firestore-utils'
+import { motion } from 'framer-motion'
 import { CheckCircle, Loader } from 'lucide-react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import {motion} from 'framer-motion'
 type FormValues = {
 	name: string
 	email: string
@@ -32,12 +32,12 @@ const Form = () => {
 			createdAt: new Date(),
 		})
 			.then(() => {
-				setIsLoading(false) 
+				setIsLoading(false)
 				setShowSuccess(true)
-				reset() 
+				reset()
 			})
 			.catch((error) => {
-				setIsLoading(false) 
+				setIsLoading(false)
 				console.error('Error submitting form:', error)
 			})
 	}
@@ -46,12 +46,11 @@ const Form = () => {
 		<motion.form
 			onSubmit={handleSubmit(onSubmit)}
 			initial={{ opacity: 0, x: 100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true , amount: 0.3}}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
+			whileInView={{ opacity: 1, x: 0 }}
+			viewport={{ once: true, amount: 0.3 }}
+			transition={{ duration: 0.8, ease: 'easeOut' }}
 			className='lg:w-[50%] bg-white rounded-2xl shadow-lg p-6 space-y-8 py-10'
 		>
-			{/* ✅ Success Box */}
 			{showSuccess && (
 				<div className='fixed inset-0 bg-black/40 flex items-center justify-center z-50'>
 					<div className='bg-white rounded-2xl shadow-xl p-6 text-center w-[300px]'>
@@ -83,7 +82,7 @@ const Form = () => {
 					{...register('name', {
 						required: 'Name is required',
 						pattern: {
-							value: /^[A-Za-z\s]+$/, // letters + spaces allowed
+							value: /^[A-Za-z\s]+$/,
 							message: 'Name can only contain letters and spaces',
 						},
 						minLength: {
@@ -97,7 +96,7 @@ const Form = () => {
 							e.key !== 'Backspace' &&
 							e.key !== 'Tab'
 						) {
-							e.preventDefault() // block numbers and symbols, but allow spaces
+							e.preventDefault()
 						}
 					}}
 					className={`w-full border rounded-lg px-4 py-4 text-lg focus:outline-none focus:ring-2 ${

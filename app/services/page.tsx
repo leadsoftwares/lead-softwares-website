@@ -138,7 +138,7 @@ const Services = () => {
 					{Logos3.map((logo, index) => (
 						<div
 							key={`logo-${index}`}
-							className='mx-4 lg:mx-6 flex-shrink-0 w-14 h-14 sm:w-24  sm:h-24 hover:scale-110 transition-transform duration-300 bg-zinc-100 rounded-full items-center justify-center flex p-3 md:p-4'
+							className='mx-4 lg:mx-6 flex-shrink-0 w-14 h-14 sm:w-24 sm:h-24 hover:scale-110 transition-transform duration-300 bg-zinc-100 rounded-full items-center justify-center flex p-3 md:p-4'
 						>
 							<Image
 								width={45}
