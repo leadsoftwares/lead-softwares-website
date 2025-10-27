@@ -24,7 +24,7 @@ const Services = () => {
 				src={ServicesImg}
 				desc='We specialize in custom software, web, and mobile development. Lead Softwares delivers smart, scalable solutions that simplify processes and drive business growth.'
 			/>
-			<div className='px-2 py-30 md:py-30'>
+			<div className='px-2 py-20 lg:py-30'>
 				<motion.div
 					initial={{ opacity: 0, x: 100 }}
 					whileInView={{ opacity: 1, x: 0 }}
@@ -35,7 +35,7 @@ const Services = () => {
 					<div className='subTitle text-blue-500 text-md lg:text-xs px-2'>
 						We work mainly with digital agencies and software companies
 					</div>
-					<div className='sm:w-[80%] lg:w-[55%] mx-auto text-3xl lg:text-5xl lg:leading-14 font-semibold text-primary'>
+					<div className='sm:w-[80%] lg:w-[55%] mx-auto text-2xl md:text-3xl lg:text-5xl lg:leading-14 font-semibold text-primary'>
 						Outstanding software and services that solve your hassle
 					</div>
 				</motion.div>
@@ -102,7 +102,7 @@ const Services = () => {
 						</div>
 					))}
 				</div>
-				<div className={'flex sm:hidden mb-20 justify-center items-center'}>
+				<div className={'flex sm:hidden mb-10 justify-center items-center'}>
 					{Logos4.map((logo, index) => (
 						<div
 							key={`logo-${index}`}

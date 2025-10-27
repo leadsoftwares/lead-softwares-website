@@ -14,7 +14,11 @@ const page = () => {
 	}, [])
 	return (
 		<div className='w-full overflow-hidden select-none'>
-			<NavbarTitle title='Our Team' src={TeamImg} />
+			<NavbarTitle
+				title='Our Team'
+				src={TeamImg}
+				desc='Meet the team behind Lead Softwares — a group of passionate developers, designers, and innovators dedicated to delivering technology that drives business success.'
+			/>
 			<Team />
 			<TeamSection />
 		</div>

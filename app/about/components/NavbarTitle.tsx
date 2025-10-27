@@ -7,9 +7,17 @@ interface TitleProps {
 	title: string
 	desc?: string
 	src: string | StaticImageData
+	width?: number
+	height?: number
 }
 
-const NavbarTitle = ({ title, desc,src }: TitleProps) => {
+const NavbarTitle = ({
+	title,
+	desc,
+	src,
+	width = 500,
+	height = 500,
+}: TitleProps) => {
 	return (
 		<div
 			className='w-full h-[70vh] pt-26'
@@ -28,10 +36,10 @@ const NavbarTitle = ({ title, desc,src }: TitleProps) => {
 					className='w-170'
 				>
 					<div className='md:hidden mx-auto flex justify-center mb-6'>
-						<Image width={300} height={300} src={src} alt='' />
+						<Image width={400} height={400} src={src} alt='' />
 					</div>
 					<div className='px-6'>
-						<div className='text-center md:text-left lg:w-full title text-primary font-bold text-3xl md:text-7xl'>
+						<div className='text-center md:text-left lg:w-full title text-primary font-bold text-4xl md:text-7xl'>
 							{title}
 						</div>
 						<div className=' text-text text-center md:text-left mt-6 text-md md:text-xl mb-12'>
@@ -47,7 +55,7 @@ const NavbarTitle = ({ title, desc,src }: TitleProps) => {
 					transition={{ duration: 0.8, ease: 'easeOut' }}
 					className='hidden md:block'
 				>
-					<Image width={500} height={500} src={src} alt='' />
+					<Image width={width} height={height} src={src} alt='' />
 				</motion.div>
 			</div>
 		</div>

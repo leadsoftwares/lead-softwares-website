@@ -1,5 +1,5 @@
 'use client'
-import ContactImg from '@/public/png/Lead software pages Images/Contact Us.png'
+import ContactImg from '@/public/png/Lead software pages Images/Contact us.png'
 import Contact1 from '@/public/webp/contact-1.webp'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
@@ -18,7 +18,13 @@ const Contact = () => {
 	}, [])
 	return (
 		<div className='w-full overflow-hidden'>
-			<NavbarTitle title='Contact Us' src={ContactImg} />
+			<NavbarTitle
+				title='Contact Us'
+				src={ContactImg}
+				width={800}
+				height={800}
+				desc="Need help or have questions about our services? Connect with our team at Lead Softwares — we're here to guide you every step of the way."
+			/>
 			<div className='flex flex-col lg:flex-row justify-between items-center gap-15 md:gap-35 px-4 lg:px-25 py-10 md:py-30'>
 				<motion.div
 					initial={{ opacity: 0, x: -100 }}
