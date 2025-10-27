@@ -75,7 +75,6 @@ const Services = () => {
 					))}
 				</div>
 			</div>
-
 			<div className='overflow-hidden py-8 bg-white'>
 				<motion.h2
 					initial={{ opacity: 0, x: -100 }}
