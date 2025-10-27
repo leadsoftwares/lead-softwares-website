@@ -34,7 +34,6 @@ export default function HeroGallery() {
 			if (!items.length) return
 
 			items.forEach((el) => {
-				
 				const speedAttr = el.dataset.speed
 				const speed = speedAttr ? Number(speedAttr) : 0.6
 
@@ -45,14 +44,13 @@ export default function HeroGallery() {
 						trigger: containerRef.current,
 						start: 'top bottom',
 						end: 'bottom top',
-						scrub: 1, 
+						scrub: 1,
 						invalidateOnRefresh: true,
 					},
 				})
 			})
 		}, containerRef.current)
 
-		
 		const refreshTimer = setTimeout(() => {
 			ScrollTrigger.refresh()
 		}, 100)
@@ -73,7 +71,7 @@ export default function HeroGallery() {
 				ref={containerRef}
 				className='
           w-[95%] max-w-10xl
-          border-4 border-zinc-700 rounded-4xl bg-zinc-900
+          border-4 border-zinc-700 rounded-3xl md:rounded-4xl bg-zinc-900
           p-2 
           md:p-6
           shadow-lg

@@ -16,7 +16,13 @@ const PortfolioStyles = () => {
 	}, [])
 	return (
 		<div className='w-full overflow-hidden'>
-			<NavbarTitle title='Portfolio' src={PortfolioImg} />
+			<NavbarTitle
+				title='Portfolio'
+				desc='Every project tells a story — of innovation, collaboration, and success. Explore how Lead Softwares partners with clients to design and develop solutions that make a difference.'
+				src={PortfolioImg}
+				width={700}
+				height={700}
+			/>
 			<HeroGallery />
 
 			<div className='w-full py-10 md:py-12 lg:py-16 bg-bg overflow-hidden'>

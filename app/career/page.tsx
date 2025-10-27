@@ -15,7 +15,11 @@ const page = () => {
 
 	return (
 		<div className='w-full overflow-hidden select-none'>
-			<NavbarTitle title='Career' src={CareerImg} />
+			<NavbarTitle
+				title='Career'
+				src={CareerImg}
+				desc='Join Lead Softwares and be part of a team that’s shaping the future of technology. We’re always looking for passionate, creative, and driven individuals to grow with us.'
+			/>
 			<Form />
 		</div>
 	)
