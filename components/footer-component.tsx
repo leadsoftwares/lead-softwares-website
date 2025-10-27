@@ -51,6 +51,7 @@ const Footer = () => {
 							<Link href='/consultation'>Quote</Link>
 							<Link href='/contact'>Contact Us</Link>
 							<Link href='/career'>Career</Link>
+							<Link href='/privacy-policy'>Privacy Policy</Link>
 						</ul>
 					</motion.div>
 					{/* gradient */}
