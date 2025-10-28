@@ -3,8 +3,7 @@
 import JourneyScroll from '@/app/about/components/JourneyScroll'
 import Team from '@/app/team/components/team'
 import SectionBG from '@/public/jpeg/about-us-section-bg.jpg'
-import WhyIMG from '@/public/png/about-us-why-section-img.png'
-import AboutSectionImg from '@/public/png/Lead software pages Images/about uss.png'
+import WhyIMG from '@/public/png/About/Building 2.png'
 import { Check } from 'lucide-react'
 import Image from 'next/image'
 import { useEffect } from 'react'
@@ -24,8 +23,9 @@ const About = () => {
 		<div className='w-full overflow-hidden'>
 			<NavbarTitle
 				title='About Us'
-				src={AboutSectionImg}
-				desc='At Lead Softwares, we create innovative digital products designed to simplify business operations and drive success. Our team focuses on quality, creativity, and technology to deliver software that makes a real impact.'
+				desc="We build digital solutions that simplify, scale, and succeed — that's Lead Softwares."
+				bgSrc="url('https://res.cloudinary.com/db0mj1uoe/image/upload/v1761631866/Website/Banners/About_Us_e0ivvp.png')"
+				className='relative max-h-[70vh]'
 			/>
 			<WhyChooseThree />
 			<JourneyScroll />

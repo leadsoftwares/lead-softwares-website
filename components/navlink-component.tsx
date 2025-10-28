@@ -39,7 +39,7 @@ export default function NavLink({
 			className={
 				isActive
 					? 'px-4 py-2 text-blue-500 cursor-pointer'
-					: 'px-4 py-2 text-text hover:text-blue-500 cursor-pointer'
+					: 'px-4 py-2 hover:text-blue-500 cursor-pointer'
 			}
 		>
 			{children}

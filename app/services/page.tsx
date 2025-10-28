@@ -1,10 +1,11 @@
 'use client'
-import ServicesImg from '@/public/png/Lead software pages Images/Portfolio 1.png'
+import ServicesImg from '@/public/png/Lead software pages Images/Services 21.png'
 import SectionMobiles from '@/public/png/services-mob-img.png'
 import { Check } from 'lucide-react'
 import { motion } from 'motion/react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useEffect } from 'react'
 import CustomButton from '../../components/custom-btn'
 import Partners from '../../components/project-logos-components'
 import NavbarTitle from '../about/components/NavbarTitle'
@@ -17,12 +18,20 @@ import {
 	ServiceData,
 } from './Data/services-data'
 const Services = () => {
+	useEffect(() => {
+		window.scrollTo(0, 0)
+		setTimeout(() => {
+			window.scrollTo({ top: 0, behavior: 'smooth' })
+		}, 50)
+	}, [])
 	return (
 		<div className='w-full overflow-hidden'>
 			<NavbarTitle
 				title='Services'
 				src={ServicesImg}
-				desc='We specialize in custom software, web, and mobile development. Lead Softwares delivers smart, scalable solutions that simplify processes and drive business growth.'
+				desc='Where creativity meets code. We develop web and mobile solutions that boost your brand and attract customers.'
+				width={600}
+				height={600}
 			/>
 			<div className='px-2 py-20 lg:py-30'>
 				<motion.div
@@ -168,7 +177,7 @@ const Services = () => {
 			</div>
 			<Partners />
 			<section className='relative lg:pb-24 overflow-hidden '>
-				<div className='container flex flex-col lg:flex-row justify-between items-center xl:w-[65%] mx-auto px-6 lg:px-6 relative bg-[#edf3ff]'>
+				<div className='container flex flex-col lg:flex-row justify-between items-center xl:w-[75%] mx-auto px-6 lg:px-6 relative bg-[#edf3ff]'>
 					<div className='relative w-full rounded-3xl overflow-hidden'>
 						<div className='relative z-10 p-10 md:p-16 lg:p-20'>
 							<p className='flex items-center justify-center gap-2 mb-3 bg-blue-800 text-white w-40 py-2 rounded-md'>
@@ -178,13 +187,11 @@ const Services = () => {
 								</span>
 							</p>
 							<h2 className='text-3xl md:text-5xl font-semibold text-zinc-800 mb-4 leading-snug'>
-								How our services outshine <br className='hidden md:block' />
-								the competition.
+								How our services outshine the competition.
 							</h2>
 							<p className='text-lg text-zinc-500 font-medium mb-10'>
-								Our services stand out for their quality, customization,{' '}
-								<br className='hidden md:block' />
-								and dedication to delivering the best results.
+								Our services stand out for their quality, customization, and
+								dedication to delivering the best results.
 							</p>
 							<div className='grid grid-cols-1 sm:grid-cols-2 gap-5 w-max'>
 								{[

@@ -12,11 +12,12 @@ import NavLink from './navlink-component'
 const Navbar = () => {
 	const pathname = usePathname()
 	const isHomePage = pathname === '/'
+	const isAboutPage = pathname === '/about'
+	const isTeamPage = pathname === '/team'
 	const [openDropdown, setOpenDropdown] = useState<string | null>(null)
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
 	const [isScrolled, setIsScrolled] = useState<boolean>(false)
 
-	// Track scroll position and update navbar style
 	useEffect(() => {
 		const handleScroll = () => {
 			if (window.scrollY > 20) {
@@ -26,13 +27,8 @@ const Navbar = () => {
 			}
 		}
 
-		// Add scroll event listener
 		window.addEventListener('scroll', handleScroll)
-
-		// Initial check in case page loads scrolled
 		handleScroll()
-
-		// Clean up event listener
 		return () => {
 			window.removeEventListener('scroll', handleScroll)
 		}
@@ -43,7 +39,7 @@ const Navbar = () => {
 		setOpenDropdown(null)
 	}
 
-	const handleMobileDropdown = (dropdown: string) => {
+	const mobileDropdown = (dropdown: string) => {
 		setOpenDropdown(openDropdown === dropdown ? null : dropdown)
 	}
 
@@ -62,7 +58,7 @@ const Navbar = () => {
 				href='/'
 				onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}
 			>
-				{isHomePage && !isScrolled ? (
+				{(isHomePage || isAboutPage || isTeamPage) && !isScrolled ? (
 					<Image className='w-35 md:w-35' src={logoWhite} alt='logo' />
 				) : (
 					<Image className='w-35 md:w-35' src={logo} alt='logo' />
@@ -72,41 +68,74 @@ const Navbar = () => {
 			{/* Desktop Navigation */}
 			<nav className='lg:mx-auto flex lg:justify-between items-center'>
 				<div className='hidden lg:flex items-center gap-6'>
-					<ul className={`flex gap-5 list-none text-text`}>
-						<NavLink href={'/'}>Home</NavLink>
+					{(isAboutPage || isTeamPage) && !isScrolled ? (
+						<ul className={`flex gap-5 list-none text-zinc-200`}>
+							<NavLink href={'/'}>Home</NavLink>
 
-						<NavLink href='/about'>About us</NavLink>
-						<li
-							onMouseEnter={() => setOpenDropdown('pages')}
-							onMouseLeave={() => setOpenDropdown(null)}
-							className='cursor-pointer hover:text-blue-500 flex items-center relative ml-4 mr-2'
-						>
-						
+							<NavLink href='/about'>About us</NavLink>
+							<li
+								onMouseEnter={() => setOpenDropdown('pages')}
+								onMouseLeave={() => setOpenDropdown(null)}
+								className='cursor-pointer hover:text-blue-500 flex items-center relative ml-4 mr-2'
+							>
 								Pages <ChevronDown size={15} />
-							
-							{openDropdown === 'pages' && (
-								<ul className='absolute flex flex-col top-full text-text w-52 bg-white shadow-lg rounded-xl py-2 z-50'>
-									<NavLink href='/services'>Services</NavLink>
-									<NavLink href='/team'>Team</NavLink>
-									<NavLink href='/career'>Careers</NavLink>
-								</ul>
-							)}
-						</li>
-						
+								{openDropdown === 'pages' && (
+									<ul className='absolute flex flex-col top-full text-text w-52 bg-white shadow-lg rounded-xl py-2 z-50'>
+										<NavLink href='/services'>Services</NavLink>
+										<NavLink href='/team'>Team</NavLink>
+										<NavLink href='/career'>Careers</NavLink>
+									</ul>
+								)}
+							</li>
+
 							<NavLink href='/portfolio'>Portfolio</NavLink>
-						
-						<NavLink href='/contact'>Contact</NavLink>
-					</ul>
+
+							<NavLink href='/contact'>Contact</NavLink>
+						</ul>
+					) : (
+						<ul className={`flex gap-5 list-none text-text`}>
+							<NavLink href={'/'}>Home</NavLink>
+
+							<NavLink href='/about'>About us</NavLink>
+							<li
+								onMouseEnter={() => setOpenDropdown('pages')}
+								onMouseLeave={() => setOpenDropdown(null)}
+								className='cursor-pointer hover:text-blue-500 flex items-center relative ml-4 mr-2'
+							>
+								Pages <ChevronDown size={15} />
+								{openDropdown === 'pages' && (
+									<ul className='absolute flex flex-col top-full text-text w-52 bg-white shadow-lg rounded-xl py-2 z-50'>
+										<NavLink href='/services'>Services</NavLink>
+										<NavLink href='/team'>Team</NavLink>
+										<NavLink href='/career'>Careers</NavLink>
+									</ul>
+								)}
+							</li>
+
+							<NavLink href='/portfolio'>Portfolio</NavLink>
+
+							<NavLink href='/contact'>Contact</NavLink>
+						</ul>
+					)}
 				</div>
 
 				{/* Mobile Menu Button */}
 				<div className='lg:hidden flex items-center gap-4'>
-					<button
-						onClick={toggleMobileMenu}
-						className={`p-2 hover:text-blue-500 transition text-text`}
-					>
-						{isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-					</button>
+					{(isAboutPage || isTeamPage) && !isScrolled ? (
+						<button
+							onClick={toggleMobileMenu}
+							className={`p-2 hover:text-blue-500 transition text-zinc-200`}
+						>
+							{isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+						</button>
+					) : (
+						<button
+							onClick={toggleMobileMenu}
+							className={`p-2 hover:text-blue-500 transition text-text`}
+						>
+							{isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+						</button>
+					)}
 				</div>
 			</nav>
 
@@ -121,21 +150,21 @@ const Navbar = () => {
 
 			{/* Mobile Menu Dropdown */}
 			{isMobileMenuOpen && (
-				<div className='lg:hidden absolute top-15 left-0 right-0 bg-white shadow-lg z-50'>
+				<div className='lg:hidden absolute top-15 left-0 right-0 bg-white text-text shadow-lg z-50'>
 					<div className='px-4 py-6 space-y-2'>
 						<div className='pb-4 -ml-4'>
 							<NavLink href='/' onClick={toggleMobileMenu}>
 								Home
 							</NavLink>
 						</div>
-						<div className='pb-4 -ml-4 text-zinc-600'>
+						<div className='pb-4 -ml-4'>
 							<NavLink href='/about' onClick={toggleMobileMenu}>
 								About us
 							</NavLink>
 						</div>
 						<div className='pb-4'>
 							<button
-								onClick={() => handleMobileDropdown('pages')}
+								onClick={() => mobileDropdown('pages')}
 								className='w-full flex items-center justify-between hover:text-blue-500'
 							>
 								<span className={'text-text'}>Pages</span>
