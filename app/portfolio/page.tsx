@@ -18,7 +18,7 @@ const PortfolioStyles = () => {
 		<div className='w-full overflow-hidden'>
 			<NavbarTitle
 				title='Portfolio'
-				desc='Every project tells a story — of innovation, collaboration, and success. Explore how Lead Softwares partners with clients to design and develop solutions that make a difference.'
+				desc='From vision to victory — explore how Lead Softwares transforms ideas into results.'
 				src={PortfolioImg}
 				width={700}
 				height={700}

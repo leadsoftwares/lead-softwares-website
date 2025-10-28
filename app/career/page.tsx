@@ -18,7 +18,9 @@ const page = () => {
 			<NavbarTitle
 				title='Career'
 				src={CareerImg}
-				desc='Join Lead Softwares and be part of a team that’s shaping the future of technology. We’re always looking for passionate, creative, and driven individuals to grow with us.'
+				desc="Shape the future with us — join Lead Softwares and turn your passion into progress."
+				width={600}
+				height={600}
 			/>
 			<Form />
 		</div>

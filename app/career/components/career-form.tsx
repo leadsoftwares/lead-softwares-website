@@ -249,7 +249,7 @@ const CareerForm = () => {
 	return (
 		<form
 			onSubmit={handleSubmit(onSubmit)}
-			className='lg:relative lg:bottom-20 lg:max-w-[60%] rounded-xl shadow-xl lg:mx-auto lg:mb-40 py-10 px-6 lg:px-30 z-100 bg-white'
+			className='lg:relative lg:-bottom-6 lg:max-w-[60%] rounded-xl shadow-xl lg:mx-auto lg:mb-40 py-10 px-6 lg:px-30 z-100 bg-white'
 			noValidate
 		>
 			{showSuccess && (

@@ -1,12 +1,12 @@
+import ScrollToTop from '@/components/scroll-to-top'
+import SmoothScroll from '@/components/smoothScroll'
 import type { Metadata } from 'next'
 import { DM_Sans } from 'next/font/google'
 import Footer from '../components/footer-component'
 import MicrosoftClarity from '../components/microsoft-clarity'
 import Navbar from '../components/navbar-component'
-import './globals.css'
-import SmoothScroll from '@/components/smoothScroll'
 import '../lib/firebase'
-import ScrollToTop from '@/components/scroll-to-top'
+import './globals.css'
 const dmSans = DM_Sans({
 	subsets: ['latin'],
 	weight: ['400', '500', '700'],
