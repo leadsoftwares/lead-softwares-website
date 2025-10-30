@@ -1,6 +1,6 @@
 'use client'
-import ContactImg from '@/public/png/Lead software pages Images/Contact us.png'
 import Contact1 from '@/public/webp/contact-1.webp'
+import ContactIMG from '@/public/contact-us.png'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useEffect } from 'react'
@@ -20,7 +20,7 @@ const Contact = () => {
 		<div className='w-full overflow-hidden'>
 			<NavbarTitle
 				title='Contact Us'
-				src={ContactImg}
+				src={ContactIMG}
 				width={800}
 				height={800}
 				desc="Need help or have questions about our services? Connect with our team at Lead Softwares — we're here to guide you every step of the way."
