@@ -6,16 +6,12 @@ import Image from 'next/image'
 import { useLayoutEffect, useRef } from 'react'
 
 import Img1 from '@/public/png/website pages ui/Barq e Shop 2.png'
-import Img2 from '@/public/png/website pages ui/City 17 1.png'
 import Img3 from '@/public/png/website pages ui/Crazy by rasel 2.png'
-import Img4 from '@/public/png/website pages ui/IDN 2.png'
 import Img5 from '@/public/png/website pages ui/Lawraze 1.png'
 
 const galleryData = [
 	{ src: Img3, speed: 0.6 },
-	{ src: Img2, speed: 1.0 },
 	{ src: Img1, speed: 0.6 },
-	{ src: Img4, speed: 1.0 },
 	{ src: Img5, speed: 0.6 },
 ]
 

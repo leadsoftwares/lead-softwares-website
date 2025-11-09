@@ -32,22 +32,6 @@ export const DesktopProjects = [
 		minidesc: 'Different Captions',
 	},
 	{
-		id: '05',
-		imgSrc: 'https://res.cloudinary.com/db0mj1uoe/image/upload/v1760608066/Mobile%20Mockups/8_vycb19.png',
-		href: "https://idn.betesla.com/",
-		title: 'IDN Network',
-		description: 'DIFFERENT CAPTIONS',
-		minidesc: 'Different Captions',
-	},
-	{
-		id: '06',
-		imgSrc: 'https://res.cloudinary.com/db0mj1uoe/image/upload/v1760608066/Mobile%20Mockups/7_xt4ihw.png',
-		href: "https://city17.betesla.com/",
-		title: 'City 17',
-		description: 'DIFFERENT CAPTIONS',
-		minidesc: 'Different Captions',
-	},
-	{
 		id: '07',
 		href: "https://www.crazybyrasel.com/",
 		imgSrc: 'https://res.cloudinary.com/db0mj1uoe/image/upload/v1760608067/Mobile%20Mockups/5_b7iz68.png',
