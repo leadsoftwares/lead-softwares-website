@@ -1,7 +1,5 @@
 import Barq from '@/public/png/Brand Logo/Barq e Shop.png'
-import City17 from '@/public/png/Brand Logo/City 17.png'
 import Crazy from '@/public/png/Brand Logo/Crazy By Rasel.png'
-import IDN from '@/public/png/Brand Logo/IDN Network.png'
 import SolaBran from '@/public/png/Brand Logo/SolaBran.png'
 import SuperA from '@/public/png/Brand Logo/Super Aurora.png'
 import Tiger from '@/public/png/Brand Logo/Tiger it.png'
@@ -14,10 +12,8 @@ const ProjectsLogos = () => {
 	const ourProjectsLogos = [
 		{ src: Barq, alt: 'Barq e Shop' },
 		{ src: Crazy, alt: 'Crazy By Rasel' },
-		{ src: IDN, alt: 'IDN Network' },
 		{ src: SolaBran, alt: 'SolaBran' },
 		{ src: Tiger, alt: 'Tiger IT' },
-		{ src: City17, alt: 'City 17' },
 		{ src: SuperA, alt: 'Super Aurora' },
 	]
 	useEffect(() => {
