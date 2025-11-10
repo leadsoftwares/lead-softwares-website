@@ -5,15 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Image from 'next/image'
 import { useLayoutEffect, useRef } from 'react'
 
-import Img1 from '@/public/png/website pages ui/Barq e Shop 2.png'
-import Img3 from '@/public/png/website pages ui/Crazy by rasel 2.png'
-import Img5 from '@/public/png/website pages ui/Lawraze 1.png'
-
-const galleryData = [
-	{ src: Img3, speed: 0.6 },
-	{ src: Img1, speed: 0.6 },
-	{ src: Img5, speed: 0.6 },
-]
+import { galleryData } from './data/hero-gallery-data'
 
 export default function HeroGallery() {
 	const containerRef = useRef<HTMLDivElement | null>(null)
