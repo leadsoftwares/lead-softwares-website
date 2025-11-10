@@ -1,7 +1,7 @@
 'use client'
 import { teamStaff } from '@/app/team/data/team'
 import SectionBG from '@/public/jpeg/team-section-bg.jpg'
-import SectionBorder from '@/public/png/Lead Software Team Images Transparent/border-o.png'
+import SectionBorder from '@/public/png/border-o.png'
 import Image from 'next/image'
 
 export default function TeamSection() {
