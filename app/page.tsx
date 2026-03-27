@@ -3,7 +3,7 @@ import { strategy, strategyBoxes } from '@/app/home-components/home'
 import Banner from '@/components/Banner'
 import CustomerReviews from '@/components/customerReviews'
 import Number from '@/components/numbers'
-import MobileView from '@/public/png/mobileview.webp'
+import MobileView from '@/public/png/pic1.png'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
@@ -25,15 +25,12 @@ const page = () => {
 					transition={{ duration: 0.8, ease: 'easeOut' }}
 					className='title text-5xl w-full flex justify-center mt-14  text-primary font-semibold'
 				>
-					<h2 className='hidden lg:block leading-14'>
-						Make your business future-proof <br /> to anticipate the challenges
-						to be
+					<h2 className='hidden lg:block leading-14 w-200 text-center'>
+						Future-Proof Your Business with Smarter Technology
 					</h2>
 
-					<h2 className='block lg:hidden leading-10 text-center text-3xl md:text-4xl'>
-						Make your business <br className='block md:hidden' /> future-proof
-						to <br className='block md:hidden' /> anticipate the{' '}
-						<br className='block md:hidden' /> challenges to be
+					<h2 className='block lg:hidden leading-10 text-center text-3xl md:text-4xl w-80 sm:w-160'>
+						Future-Proof Your Business with Smarter Technology
 					</h2>
 				</motion.div>
 				<motion.div
@@ -72,15 +69,15 @@ const page = () => {
 						className='relative img mt-10 md:mt-0'
 					>
 						<Image
-							className='w-90 h-90 md:w-145 md:h-150'
+							className='w-full h-90 md:w-full md:h-150'
 							src={MobileView}
 							alt='MobileView'
 						/>
-						<Image
+						{/* <Image
 							className='absolute -bottom-10 md:bottom-0'
 							src={MobileViewCard}
 							alt='MobileViewCard'
-						/>
+						/> */}
 					</motion.div>
 					<motion.div
 						initial={{ opacity: 0, x: 100 }}
