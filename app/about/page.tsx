@@ -44,10 +44,10 @@ const About = () => {
 							About Us
 						</span>
 					</p>
-					<h1 className='text-3xl md:text-6xl font-bold leading-tight space-y-2'>
+					<h2 className='text-3xl md:text-6xl font-bold leading-tight space-y-2'>
 						<span className='block'>Discover who we are</span>
 						<span className='block'>what drives us every day</span>
-					</h1>
+					</h2>
 
 					<p className='mt-4 text-zinc-500 md:text-lg font-medium'>
 						We&apos;re driven by passion, innovation, and a commitment to making

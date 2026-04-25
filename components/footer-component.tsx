@@ -4,6 +4,7 @@ import { Facebook, Twitter, Youtube } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Logo from '../public/png/Lead Logo White with white Text-02-02.png'
+
 const Footer = () => {
 	return (
 		<div>
@@ -36,22 +37,38 @@ const Footer = () => {
 						className='flex flex-col text-center md:flex-row gap-10 md:gap-30 md:pr-20 relative z-110 md:pb-14'
 					>
 						<ul className='flex flex-col gap-6 text-zinc-400 text-sm'>
-							<a className='text-zinc-200 font-semibold' href='#'>
+							<li className='text-zinc-200 font-semibold'>
 								Products
-							</a>
-							<Link href='/about'>About Us</Link>
-							<Link href='/portfolio'>Portfolio</Link>
-							<Link href='/services'>Services</Link>
-							<Link href='/team'>Team</Link>
+							</li>
+							<li>
+								<Link href='/about'>About Us</Link>
+							</li>
+							<li>
+								<Link href='/portfolio'>Portfolio</Link>
+							</li>
+							<li>
+								<Link href='/services'>Services</Link>
+							</li>
+							<li>
+								<Link href='/team'>Team</Link>
+							</li>
 						</ul>
 						<ul className='flex flex-col gap-6 text-zinc-400 text-sm'>
-							<a className='text-zinc-200 font-semibold' href='#'>
+							<li className='text-zinc-200 font-semibold'>
 								Resources
-							</a>
-							<Link href='/consultation'>Quote</Link>
-							<Link href='/contact'>Contact Us</Link>
-							<Link href='/career'>Career</Link>
-							<Link href='/privacy-policy'>Privacy Policy</Link>
+							</li>
+							<li>
+								<Link href='/consultation'>Quote</Link>
+							</li>
+							<li>
+								<Link href='/contact'>Contact Us</Link>
+							</li>
+							<li>
+								<Link href='/career'>Career</Link>
+							</li>
+							<li>
+								<Link href='/privacy-policy'>Privacy Policy</Link>
+							</li>
 						</ul>
 					</motion.div>
 					{/* gradient */}
@@ -61,15 +78,20 @@ const Footer = () => {
 							&copy; Lead Softwares 2024. All rights reserved.
 						</div>
 						<div className='flex gap-6 mt-2'>
-							<a href='https://www.facebook.com/leadsoft' target='_blank'>
+							<a
+								href='https://www.facebook.com/leadsoft'
+								target='_blank'
+								rel='noopener noreferrer'
+								aria-label='Lead Softwares on Facebook'
+							>
 								<Facebook color='white' size={18} />
 							</a>
-							<a href='#'>
+							<span aria-hidden='true'>
 								<Twitter color='white' size={18} />
-							</a>
-							<a href='#'>
+							</span>
+							<span aria-hidden='true'>
 								<Youtube color='white' size={18} />
-							</a>
+							</span>
 						</div>
 					</footer>
 				</div>
