@@ -14,7 +14,7 @@ import Strategy from '../components/strategy'
 
 const page = () => {
 	return (
-		<div className='w-full [scroll-behavior:smooth] overflow-hidden'>
+		<div className='w-full scroll-smooth overflow-hidden'>
 			<Banner />
 			<div className='main w-full min-h-196 lg:px-10'>
 				<motion.div
@@ -121,7 +121,7 @@ const page = () => {
 			<Partners />
 			<div
 				id='how-it-works'
-				className='goals py-8 md:py-18 px-4 md:px-17 h-full lg:min-h-210 xl:min-h-210 bg-gradient-to-br from-[#F7F9FC] to-[#EAEAF9]'
+				className='goals py-8 md:py-18 px-4 md:px-17 h-full lg:min-h-210 xl:min-h-210 bg-linear-to-br from-[#F7F9FC] to-[#EAEAF9]'
 			>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
