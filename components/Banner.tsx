@@ -20,7 +20,7 @@ const Banner = () => {
 				style={{
 					backgroundImage: `url(${Bannerbg.src})`,
 				}}
-				className='relative pt-10 md:pt-0 w-full max-h-[100vh] bg-no-repeat bg-cover text-white flex items-center'
+				className='relative pt-10 md:pt-0 w-full max-h-screen bg-no-repeat bg-cover text-white flex items-center'
 			>
 				<motion.div
 					initial={{ opacity: 0, x: -100 }}
@@ -29,7 +29,7 @@ const Banner = () => {
 					transition={{ duration: 0.8, ease: 'easeOut' }}
 					className='container mx-auto px-6 lg:px-10 xl:px-20 py-20 lg:py-40 flex flex-col items-center lg:items-start space-y-10 z-90'
 				>
-					<div className='font-[700] text-4xl lg:text-6xl xl:text-7xl text-center lg:text-left'>
+					<div className='font-bold text-4xl lg:text-6xl xl:text-7xl text-center lg:text-left'>
 						<h1 className='leading-tight'>
 							We manage your
 							<br className='md:hidden' />{' '}
