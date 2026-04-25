@@ -30,23 +30,9 @@ const Banner = () => {
 					className='container mx-auto px-6 lg:px-10 xl:px-20 py-20 lg:py-40 flex flex-col items-center lg:items-start space-y-10 z-90'
 				>
 					<div className='font-[700] text-4xl lg:text-6xl xl:text-7xl text-center lg:text-left'>
-						<h1 className='hidden md:block'>
-							We manage your{' '}
-							<span>
-								<Typewriter
-									words={[
-										'IT',
-										'Marketing',
-										'Development',
-										'Business',
-										'Sales',
-										'Software',
-									]}
-								/>
-							</span>
-						</h1>
-						<h1 className='block md:hidden leading-tight'>
-							We manage your <br />
+						<h1 className='leading-tight'>
+							We manage your
+							<br className='md:hidden' />{' '}
 							<span>
 								<Typewriter
 									words={[
@@ -61,7 +47,9 @@ const Banner = () => {
 							</span>
 						</h1>
 
-						<h1>You handle success</h1>
+						<p className='mt-2 text-3xl lg:text-5xl xl:text-6xl'>
+							You handle success
+						</p>
 					</div>
 					<p className='max-w-2xl text-zinc-300 text-lg text-center lg:text-left'>
 						Let us take care of your IT challenges so you can focus on achieving
@@ -89,56 +77,56 @@ const Banner = () => {
 								width={400}
 								height={300}
 								src={LandingIMG}
-								alt='1'
+								alt=''
 							/>
 							<Image
 								className='block md:hidden rounded-lg'
 								width={150}
 								height={50}
 								src={LandingIMG}
-								alt='1'
+								alt=''
 							/>
 							<Image
 								className='hidden md:block rounded-lg'
 								width={400}
 								height={300}
 								src={LandingIMG2}
-								alt='2'
+								alt=''
 							/>
 							<Image
 								className='block md:hidden rounded-lg'
 								width={150}
 								height={50}
 								src={LandingIMG2}
-								alt='2'
+								alt=''
 							/>
 							<Image
 								className='hidden md:block rounded-lg'
 								width={400}
 								height={300}
 								src={LandingIMG3}
-								alt='3'
+								alt=''
 							/>
 							<Image
 								className='block md:hidden rounded-lg'
 								width={150}
 								height={50}
 								src={LandingIMG3}
-								alt='3'
+								alt=''
 							/>
 							<Image
 								className='hidden md:block rounded-lg'
 								width={400}
 								height={300}
 								src={LandingIMG4}
-								alt='4'
+								alt=''
 							/>
 							<Image
 								className='block md:hidden rounded-lg'
 								width={150}
 								height={50}
 								src={LandingIMG4}
-								alt='4'
+								alt=''
 							/>
 						</div>
 					))}
@@ -160,56 +148,56 @@ const Banner = () => {
 								width={400}
 								height={300}
 								src={LandingIMG}
-								alt='1'
+								alt=''
 							/>
 							<Image
 								className='block md:hidden rounded-lg'
 								width={150}
 								height={50}
 								src={LandingIMG}
-								alt='1'
+								alt=''
 							/>
 							<Image
 								className='hidden md:block rounded-lg'
 								width={400}
 								height={300}
 								src={LandingIMG2}
-								alt='2'
+								alt=''
 							/>
 							<Image
 								className='block md:hidden rounded-lg'
 								width={150}
 								height={50}
 								src={LandingIMG2}
-								alt='2'
+								alt=''
 							/>
 							<Image
 								className='hidden md:block rounded-lg'
 								width={400}
 								height={300}
 								src={LandingIMG3}
-								alt='3'
+								alt=''
 							/>
 							<Image
 								className='block md:hidden rounded-lg'
 								width={150}
 								height={50}
 								src={LandingIMG3}
-								alt='3'
+								alt=''
 							/>
 							<Image
 								className='hidden md:block rounded-lg'
 								width={400}
 								height={300}
 								src={LandingIMG4}
-								alt='4'
+								alt=''
 							/>
 							<Image
 								className='block md:hidden rounded-lg'
 								width={150}
 								height={50}
 								src={LandingIMG4}
-								alt='4'
+								alt=''
 							/>
 						</div>
 					))}
