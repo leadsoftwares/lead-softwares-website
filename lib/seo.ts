@@ -5,6 +5,12 @@ const DEFAULT_SITE_URL = 'https://leadsoftwares.com'
 export const siteConfig = {
 	name: 'Lead Softwares',
 	siteUrl: process.env.NEXT_PUBLIC_SITE_URL || DEFAULT_SITE_URL,
+	defaultOgImage: {
+		url: '/png/banner-bg.png',
+		width: 1280,
+		height: 720,
+		alt: 'Lead Softwares branded social preview',
+	},
 	description:
 		'Lead Softwares builds custom web, mobile, and business software solutions that help companies grow with smarter technology.',
 	keywords: [
@@ -44,20 +50,13 @@ export function buildPageMetadata({
 			siteName: siteConfig.name,
 			type: 'website',
 			locale: 'en_US',
-			images: [
-				{
-					url: '/webp/logo.webp',
-					width: 1200,
-					height: 630,
-					alt: `${siteConfig.name} logo`,
-				},
-			],
+			images: [siteConfig.defaultOgImage],
 		},
 		twitter: {
 			card: 'summary_large_image',
 			title,
 			description,
-			images: ['/webp/logo.webp'],
+			images: [siteConfig.defaultOgImage.url],
 		},
 	}
 }

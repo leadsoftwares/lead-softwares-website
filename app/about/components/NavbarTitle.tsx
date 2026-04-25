@@ -51,16 +51,16 @@ const NavbarTitle = ({
 							<Image width={400} height={400} src={src} alt='' />
 						</div>
 						<div className='px-6 z-20'>
-							<div
+							<h1
 								className={`text-center md:text-left lg:w-full title text-primary font-bold text-4xl md:text-7xl`}
 							>
 								{title}
-							</div>
-							<div
+							</h1>
+							<p
 								className={`text-text text-center md:text-left mt-6 text-md md:text-xl mb-12`}
 							>
 								{desc}
-							</div>
+							</p>
 						</div>
 					</motion.div>
 
@@ -85,16 +85,16 @@ const NavbarTitle = ({
 						className='w-170'
 					>
 						<div className='px-6 z-20'>
-							<div
+							<h1
 								className={`text-center md:text-left lg:w-full title text-white font-bold text-5xl md:text-7xl`}
 							>
 								{title}
-							</div>
-							<div
+							</h1>
+							<p
 								className={`text-center md:text-left mt-6 text-md md:text-xl mb-12 text-zinc-200`}
 							>
 								{desc}
-							</div>
+							</p>
 						</div>
 					</motion.div>
 				</div>

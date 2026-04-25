@@ -29,9 +29,9 @@ const Team = () => {
 			}}
 		>
 			<header>
-				<h1 className='text-3xl md:text-6xl text-primary font-bold text-center mb-20 max-w-4xl mx-auto'>
+				<h2 className='text-3xl md:text-6xl text-primary font-bold text-center mb-20 max-w-4xl mx-auto'>
 					Meet the professionals driving our vision and goal.
-				</h1>
+				</h2>
 			</header>
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:flex flex-col lg:flex-row w-full max-w-6xl mx-auto gap-4 h-550 sm:h-700 md:h-300 lg:h-[500px] overflow-hidden rounded-xl'>
 				{teamMembers.map((member, index) => (

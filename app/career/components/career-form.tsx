@@ -275,13 +275,13 @@ const CareerForm = () => {
 					</div>
 				</div>
 			)}
-			<h1 className='font-bold mt-18 md:mt-0 text-3xl md:text-6xl text-primary text-center pb-12 border-b border-text'>
+			<h2 className='font-bold mt-18 md:mt-0 text-3xl md:text-6xl text-primary text-center pb-12 border-b border-text'>
 				Job Application Create
-			</h1>
+			</h2>
 			<div className='mt-10'>
-				<h1 className='text-2xl md:text-3xl text-primary font-semibold text-center pb-10'>
+				<h3 className='text-2xl md:text-3xl text-primary font-semibold text-center pb-10'>
 					Personal Info
-				</h1>
+				</h3>
 
 				<div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-6'>
 					<div className='flex flex-col'>
@@ -487,9 +487,9 @@ const CareerForm = () => {
 			</div>
 
 			<div className='relative mt-14'>
-				<h1 className='text-2xl md:text-3xl text-primary font-semibold text-center pb-10'>
+				<h3 className='text-2xl md:text-3xl text-primary font-semibold text-center pb-10'>
 					Education
-				</h1>
+				</h3>
 				<button
 					type='button'
 					className='absolute right-10 top-0'
@@ -585,9 +585,9 @@ const CareerForm = () => {
 			</div>
 
 			<div className='relative mt-14'>
-				<h1 className='text-2xl md:text-3xl text-primary font-semibold text-center pb-10'>
+				<h3 className='text-2xl md:text-3xl text-primary font-semibold text-center pb-10'>
 					Experience
-				</h1>
+				</h3>
 				<button
 					type='button'
 					className='absolute right-10 top-0'
@@ -739,9 +739,9 @@ const CareerForm = () => {
 				))}
 			</div>
 			<div className='mt-14'>
-				<h1 className='text-2xl md:text-3xl text-primary font-semibold text-center pb-6'>
+				<h3 className='text-2xl md:text-3xl text-primary font-semibold text-center pb-6'>
 					Skills <span className='text-red-500 text-sm'>*</span>
-				</h1>
+				</h3>
 
 				<div className='flex gap-2 mb-4'>
 					<input
@@ -808,9 +808,9 @@ const CareerForm = () => {
 			</div>
 
 			<div className='mt-14'>
-				<h1 className='text-2xl md:text-3xl text-primary font-semibold text-center pb-6'>
+				<h3 className='text-2xl md:text-3xl text-primary font-semibold text-center pb-6'>
 					Cover Letter <span className='text-red-500 text-sm'>*</span>
-				</h1>
+				</h3>
 				<Controller
 					control={control}
 					name='coverLetterFile'
@@ -858,9 +858,9 @@ const CareerForm = () => {
 			</div>
 
 			<div className='mt-14'>
-				<h1 className='text-2xl md:text-3xl text-primary font-semibold text-center pb-6'>
+				<h3 className='text-2xl md:text-3xl text-primary font-semibold text-center pb-6'>
 					Upload CV <span className='text-red-500 text-sm'>*</span>
-				</h1>
+				</h3>
 				<Controller
 					control={control}
 					name='cvFile'

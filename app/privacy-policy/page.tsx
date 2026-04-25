@@ -158,9 +158,8 @@ const Privacy = () => {
 					<p>
 						To exercise these rights, contact us at:{' '}
 						<a
-							href='https://mail.google.com/mail/?view=cm&fs=1&to=contact@leadsoftwares.com'
+							href='mailto:contact@leadsoftwares.com'
 							className='hover:text-primary text-blue-500'
-							target='_blank'
 						>
 							contact@leadsoftwares.com
 						</a>
@@ -204,9 +203,8 @@ const Privacy = () => {
 					<p>
 						📧{' '}
 						<a
-							href='https://mail.google.com/mail/?view=cm&fs=1&to=contact@leadsoftwares.com'
+							href='mailto:contact@leadsoftwares.com'
 							className='hover:text-primary text-blue-500'
-							target='_blank'
 						>
 							contact@leadsoftwares.com
 						</a>
