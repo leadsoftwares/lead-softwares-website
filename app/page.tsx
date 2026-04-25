@@ -119,7 +119,10 @@ const page = () => {
 			</div>
 			<Strategy />
 			<Partners />
-			<div className='goals py-8 md:py-18 px-4 md:px-17 h-full lg:min-h-210 xl:min-h-210 bg-gradient-to-br from-[#F7F9FC] to-[#EAEAF9]'>
+			<div
+				id='how-it-works'
+				className='goals py-8 md:py-18 px-4 md:px-17 h-full lg:min-h-210 xl:min-h-210 bg-gradient-to-br from-[#F7F9FC] to-[#EAEAF9]'
+			>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
 					whileInView={{ opacity: 1, y: 0 }}
@@ -183,7 +186,7 @@ const page = () => {
 								help you achieve sustainable growth and long-term success.
 							</div>
 							<div className='text-blue-500 hover:text-blue-900'>
-								<a className='flex items-center gap-4' href='#'>
+								<a className='flex items-center gap-4' href='#how-it-works'>
 									See how it works <ArrowRight size={14} />
 								</a>
 							</div>

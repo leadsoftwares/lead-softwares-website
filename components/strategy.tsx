@@ -67,11 +67,11 @@ export default function Strategy() {
 	return (
 		<section
 			ref={sectionRef}
-			className='w-full relative bg-gradient-to-br from-[#F7F9FC] to-[#EAEAF9] mt-8 py-10 md:py-20'
+			className='w-full relative bg-linear-to-br from-[#F7F9FC] to-[#EAEAF9] mt-8 py-10 md:py-20'
 		>
-			<h1 className='text-3xl md:text-5xl font-bold text-center text-primary'>
+			<h2 className='text-3xl md:text-5xl font-bold text-center text-primary'>
 				Building Success Step by Step
-			</h1>
+			</h2>
 
 			<div className='container mx-auto flex flex-col lg:flex-row px-6 py-14 md:py-24 gap-16'>
 				{/* LEFT SIDE */}
@@ -105,13 +105,13 @@ export default function Strategy() {
 				</div>
 
 				{/* RIGHT SIDE */}
-				<div className='w-full lg:w-1/2 relative h-[22rem] lg:h-[36rem] border-4 border-black rounded-2xl overflow-hidden'>
+				<div className='w-full lg:w-1/2 relative h-88 lg:h-144 border-4 border-black rounded-2xl overflow-hidden'>
 					<div
 						className='flex h-full w-full transition-transform duration-700 ease-in-out'
 						style={{ transform: `translateX(-${activeIndex * 100}%)` }}
 					>
 						{images.map((img, i) => (
-							<div key={i} className='w-full flex-shrink-0 relative'>
+							<div key={i} className='w-full shrink-0 relative'>
 								<Image
 									src={img}
 									alt={`Slide ${i + 1}`}
