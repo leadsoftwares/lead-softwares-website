@@ -11,7 +11,6 @@ import Link from 'next/link'
 import CustomButton from '../components/custom-btn'
 import Partners from '../components/project-logos-components'
 import Strategy from '../components/strategy'
-import MobileViewCard from '../public/png/mobileviewCard.png'
 
 const page = () => {
 	return (
