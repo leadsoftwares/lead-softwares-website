@@ -96,7 +96,7 @@ const Navbar = () => {
 						<ul className={`flex gap-5 list-none text-text`}>
 							<NavLink href={'/'}>Home</NavLink>
 
-							<NavLink href='/about'>About us</NavLink>
+							<NavLink href='/about'>About</NavLink>
 							<li
 								onMouseEnter={() => setOpenDropdown('pages')}
 								onMouseLeave={() => setOpenDropdown(null)}

@@ -41,7 +41,7 @@ const Footer = () => {
 								Products
 							</li>
 							<li>
-								<Link href='/about'>About Us</Link>
+								<Link href='/about'>About</Link>
 							</li>
 							<li>
 								<Link href='/portfolio'>Portfolio</Link>

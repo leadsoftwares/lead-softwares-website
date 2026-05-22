@@ -24,7 +24,7 @@ export const whyChooseUsData = [
 
 export const OurJourneyData = [
 	{
-		title: 'May 2023 - The Beginning',
+		title: 'May 2022 - The Beginning',
 		text: 'Lead Softwares began with a vision to create innovative, reliable digital solutions. From a small team of passionate developers, we grew by delivering custom software, UI/UX design, and mobile apps that empower business success.',
 	},
 	{
@@ -36,7 +36,7 @@ export const OurJourneyData = [
 		text: 'Lead Softwares entered the global market, delivering enterprise solutions across industries. With an expanding team, we introduced cloud systems, mobile apps, and digital transformation services for businesses worldwide.',
 	},
 	{
-		title: 'June 2025 - Leading with Innovation',
+		title: 'June 2026 - Leading with Innovation',
 		text: 'Today, Lead Softwares is a trusted global IT partner, delivering innovative, scalable, and secure digital solutions that combine design excellence with real-world impact.',
 	},
 ]
