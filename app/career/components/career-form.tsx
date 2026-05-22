@@ -251,7 +251,7 @@ const CareerForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="lg:relative lg:-bottom-6 lg:max-w-[60%] rounded-xl shadow-xl lg:mx-auto lg:mb-40 py-10 px-6 lg:px-10 z-100 bg-white"
+      className="lg:relative lg:-bottom-6 lg:max-w-[60%] rounded-xl shadow-xl lg:mx-auto lg:mb-40 py-8 px-6 lg:px-10 z-100 bg-white"
       noValidate
     >
       {showSuccess && (
@@ -277,17 +277,21 @@ const CareerForm = () => {
           </div>
         </div>
       )}
-      <h2 className="font-bold mt-18 md:mt-0 text-3xl md:text-6xl text-primary text-center pb-12 border-b border-text">
+      <h2 className="font-bold mt-18 md:mt-0 text-3xl md:text-5xl text-primary text-center pb-5 border-b border-text/20">
         Careers
       </h2>
-      <div className="mt-10">
-        <h3 className="text-2xl md:text-3xl text-primary font-semibold text-center pb-10">
-          Personal Info
-        </h3>
+      <div className="mt-6">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="h-px flex-1 bg-gray-100" />
+          <h3 className="text-base font-semibold text-primary uppercase tracking-widest">
+            Personal Info
+          </h3>
+          <div className="h-px flex-1 bg-gray-100" />
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
           <div className="flex flex-col">
-            <label className="text-text">
+            <label className="text-sm font-medium text-gray-700 mb-1">
               First Name <span className="text-red-500">*</span>
             </label>
             <input
@@ -316,7 +320,7 @@ const CareerForm = () => {
           </div>
 
           <div className="flex flex-col">
-            <label className="text-text">
+            <label className="text-sm font-medium text-gray-700 mb-1">
               Last Name <span className="text-red-500">*</span>
             </label>
             <input
@@ -346,7 +350,7 @@ const CareerForm = () => {
           </div>
 
           <div className="flex flex-col">
-            <label className="text-text">
+            <label className="text-sm font-medium text-gray-700 mb-1">
               Email <span className="text-red-500">*</span>
             </label>
             <input
@@ -370,7 +374,7 @@ const CareerForm = () => {
           </div>
 
           <div className="flex flex-col">
-            <label className="text-text">
+            <label className="text-sm font-medium text-gray-700 mb-1">
               Date of Birth <span className="text-red-500">*</span>
             </label>
             <input
@@ -400,7 +404,7 @@ const CareerForm = () => {
           </div>
 
           <div>
-            <label className="text-text">
+            <label className="text-sm font-medium text-gray-700 mb-1">
               Phone <span className="text-red-500">*</span>
             </label>
             <Controller
@@ -439,7 +443,7 @@ const CareerForm = () => {
           </div>
 
           <div className="relative">
-            <label className="text-text">Gender</label>
+            <label className="text-sm font-medium text-gray-700 mb-1 block">Gender <span className="text-red-500">*</span></label>
             <input
               type="text"
               {...register("personalInfo.gender", {
@@ -454,7 +458,7 @@ const CareerForm = () => {
               className="w-full border border-text rounded-md p-2 cursor-pointer bg-white focus:outline-none focus:ring-2 focus:ring-primary/30"
             />
             <ChevronDown
-              className="absolute right-3 top-9 text-gray-500 pointer-events-none"
+              className="absolute right-3 top-8 text-gray-500 pointer-events-none"
               size={18}
             />
             {errors.personalInfo?.gender && (
@@ -464,7 +468,7 @@ const CareerForm = () => {
             )}
             <ul
               ref={genderDropdownRef}
-              className={`absolute w-full top-16 mt-1 border border-gray-300 bg-white rounded-md shadow-lg z-10 ${
+              className={`absolute w-full top-[4.2rem] mt-1 border border-gray-300 bg-white rounded-md shadow-lg z-10 ${
                 openDropdown === "gender" ? "" : "hidden"
               }`}
             >
@@ -486,8 +490,8 @@ const CareerForm = () => {
           </div>
         </div>
 
-        <div className="flex flex-col mt-6">
-          <label className="text-text">Address</label>
+        <div className="flex flex-col mt-4">
+          <label className="text-sm font-medium text-gray-700 mb-1">Address <span className="text-red-500">*</span></label>
           <input
             {...register("personalInfo.address", {
               required: "Address is required",
@@ -509,13 +513,17 @@ const CareerForm = () => {
         </div>
       </div>
 
-      <div className="relative mt-14">
-        <h3 className="text-2xl md:text-3xl text-primary font-semibold text-center pb-10">
-          Education
-        </h3>
+      <div className="relative mt-8 pt-6 border-t border-gray-100">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="h-px flex-1 bg-gray-100" />
+          <h3 className="text-base font-semibold text-primary uppercase tracking-widest">
+            Education
+          </h3>
+          <div className="h-px flex-1 bg-gray-100" />
+        </div>
         <button
           type="button"
-          className="absolute right-10 top-0"
+          className="absolute right-0 top-6"
           onClick={() => append({ degree: "", institution: "", year: "" })}
         >
           <Plus size={32} />
@@ -524,7 +532,7 @@ const CareerForm = () => {
         {fields.map((field, i) => (
           <div
             key={field.id}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4 relative"
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-3 relative"
           >
             <div className="flex flex-col">
               <input
@@ -608,13 +616,17 @@ const CareerForm = () => {
         ))}
       </div>
 
-      <div className="relative mt-14">
-        <h3 className="text-2xl md:text-3xl text-primary font-semibold text-center pb-10">
-          Experience
-        </h3>
+      <div className="relative mt-8 pt-6 border-t border-gray-100">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="h-px flex-1 bg-gray-100" />
+          <h3 className="text-base font-semibold text-primary uppercase tracking-widest">
+            Experience
+          </h3>
+          <div className="h-px flex-1 bg-gray-100" />
+        </div>
         <button
           type="button"
-          className="absolute right-10 top-0"
+          className="absolute right-0 top-6"
           onClick={() =>
             appendExperience({
               company: "",
@@ -631,7 +643,7 @@ const CareerForm = () => {
         {experienceFields.map((field, i) => (
           <div
             key={field.id}
-            className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-4 relative"
+            className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-3 relative"
           >
             <div className="flex flex-col">
               <input
@@ -767,10 +779,14 @@ const CareerForm = () => {
           </div>
         ))}
       </div>
-      <div className="mt-14">
-        <h3 className="text-2xl md:text-3xl text-primary font-semibold text-center pb-6">
-          Skills <span className="text-red-500 text-sm">*</span>
-        </h3>
+      <div className="mt-8 pt-6 border-t border-gray-100">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="h-px flex-1 bg-gray-100" />
+          <h3 className="text-base font-semibold text-primary uppercase tracking-widest">
+            Skills <span className="text-red-500 text-xs normal-case">*</span>
+          </h3>
+          <div className="h-px flex-1 bg-gray-100" />
+        </div>
 
         <div className="flex gap-2 mb-4">
           <input
@@ -838,10 +854,14 @@ const CareerForm = () => {
         )}
       </div>
 
-      <div className="mt-14">
-        <h3 className="text-2xl md:text-3xl text-primary font-semibold text-center pb-6">
-          Cover Letter <span className="text-red-500 text-sm">*</span>
-        </h3>
+      <div className="mt-8 pt-6 border-t border-gray-100">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="h-px flex-1 bg-gray-100" />
+          <h3 className="text-base font-semibold text-primary uppercase tracking-widest">
+            Cover Letter <span className="text-red-500 text-xs normal-case">*</span>
+          </h3>
+          <div className="h-px flex-1 bg-gray-100" />
+        </div>
         <Controller
           control={control}
           name="coverLetterFile"
@@ -888,10 +908,14 @@ const CareerForm = () => {
         )}
       </div>
 
-      <div className="mt-14">
-        <h3 className="text-2xl md:text-3xl text-primary font-semibold text-center pb-6">
-          Upload CV <span className="text-red-500 text-sm">*</span>
-        </h3>
+      <div className="mt-8 pt-6 border-t border-gray-100">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="h-px flex-1 bg-gray-100" />
+          <h3 className="text-base font-semibold text-primary uppercase tracking-widest">
+            Upload CV <span className="text-red-500 text-xs normal-case">*</span>
+          </h3>
+          <div className="h-px flex-1 bg-gray-100" />
+        </div>
         <Controller
           control={control}
           name="cvFile"
@@ -937,7 +961,7 @@ const CareerForm = () => {
         )}
       </div>
 
-      <div className="mt-10 flex justify-end">
+      <div className="mt-6 pt-5 border-t border-gray-100 flex justify-end">
         <button
           type="submit"
           disabled={isLoading}
