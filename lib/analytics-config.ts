@@ -22,7 +22,7 @@ export const analyticsConfig: AnalyticsConfig = {
 		enabledProtocols: ['https:'],
 	},
 	googleTag: {
-		tagId: 'GT-PHRN9GCV',
+		tagId: 'AW-10816304544',
 		enabledDomains: ['www.leadsoftwares.com', 'leadsoftwares.com'],
 		enabledProtocols: ['https:'],
 	},
