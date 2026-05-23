@@ -5,6 +5,7 @@ import type { Metadata } from 'next'
 import { DM_Sans } from 'next/font/google'
 import Script from 'next/script'
 import Footer from '../components/footer-component'
+import GoogleTag from '../components/google-tag'
 import MicrosoftClarity from '../components/microsoft-clarity'
 import Navbar from '../components/navbar-component'
 import '../lib/firebase'
@@ -85,6 +86,7 @@ export default function RootLayout({
 				<Navbar />
 				<ScrollToTop />
 				<SmoothScroll>
+					<GoogleTag />
 					<MicrosoftClarity />
 					{children}
 					<Footer />

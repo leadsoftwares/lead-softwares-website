@@ -1,7 +1,28 @@
+type AnalyticsConfig = {
+	clarity: {
+		projectId: string
+		enabledDomains: string[]
+		enabledProtocols: string[]
+	}
+	googleTag: {
+		tagId: string | undefined
+		enabledDomains: string[]
+		enabledProtocols: string[]
+	}
+	shouldTrack: () => boolean
+	isProduction: () => boolean
+	isDevelopment: () => boolean
+}
+
 // Analytics configuration
-export const analyticsConfig = {
+export const analyticsConfig: AnalyticsConfig = {
 	clarity: {
 		projectId: 't2t8jrmplm',
+		enabledDomains: ['www.leadsoftwares.com', 'leadsoftwares.com'],
+		enabledProtocols: ['https:'],
+	},
+	googleTag: {
+		tagId: 'GT-PHRN9GCV',
 		enabledDomains: ['www.leadsoftwares.com', 'leadsoftwares.com'],
 		enabledProtocols: ['https:'],
 	},
