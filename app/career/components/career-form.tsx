@@ -1,5 +1,6 @@
 "use client";
-import FirebaseUtils from "@/lib/firestore-utils";
+import api from "@/lib/axios-config";
+import ImageUtils from "@/lib/imageUtils";
 import { CheckCircle, ChevronDown, Loader, Plus } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -10,7 +11,7 @@ import "react-phone-input-2/lib/style.css";
 type Education = {
   degree: string;
   institution: string;
-  year: string;
+  graduationDate: string;
 };
 
 type Experience = {
@@ -31,11 +32,12 @@ type PersonalInfo = {
 };
 
 type FormData = {
+  profilePic: File | null;
   personalInfo: PersonalInfo;
   education: Education[];
   experience: Experience[];
   skills: string[];
-  coverLetterFile: File | null;
+  coverLetter: string;
   cvFile: File | null;
 };
 
@@ -142,7 +144,7 @@ const CareerForm = () => {
         address: "",
         gender: "",
       },
-      education: [{ degree: "", institution: "", year: "" }],
+      education: [{ degree: "", institution: "", graduationDate: "" }],
       experience: [
         {
           company: "",
@@ -153,6 +155,9 @@ const CareerForm = () => {
         },
       ],
       skills: [],
+      profilePic: null,
+      cvFile: null,
+      coverLetter: "",
     },
     mode: "onChange",
   });
@@ -189,7 +194,11 @@ const CareerForm = () => {
   const [showSuccess, setShowSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const genderOptions = ["Male", "Female", "Not Specified"];
+  const genderOptions = [
+    { value: "male", label: "Male" },
+    { value: "female", label: "Female" },
+    { value: "other", label: "Other" },
+  ];
   const [newSkill, setNewSkill] = useState<string>("");
 
   useEffect(() => {
@@ -206,23 +215,23 @@ const CareerForm = () => {
   }, []);
 
   const onSubmit = async (data: FormData) => {
-    console.log("Form Submitted:", data);
     setIsLoading(true);
 
-    if (data.cvFile) {
-      console.log("CV File:", {
-        name: data.cvFile.name,
-        size: data.cvFile.size,
-        type: data.cvFile.type,
-      });
-    }
-
-    if (data.coverLetterFile) {
-      console.log("Cover Letter File:", {
-        name: data.coverLetterFile.name,
-        size: data.coverLetterFile.size,
-        type: data.coverLetterFile.type,
-      });
+    // convert files to base64
+    let profilePicBase64 = "";
+    let cvFileBase64 = "";
+    try {
+      if (data.profilePic) {
+        profilePicBase64 = await ImageUtils.convertToBase64(data.profilePic);
+      }
+      if (data.cvFile) {
+        cvFileBase64 = await ImageUtils.convertToBase64(data.cvFile);
+      }
+    } catch (err) {
+      console.error("Error converting files to base64:", err);
+      setIsLoading(false);
+      alert("Error processing files. Please try again.");
+      return;
     }
 
     const applicationData = {
@@ -230,12 +239,14 @@ const CareerForm = () => {
       education: data.education,
       experience: data.experience,
       skills: data.skills,
-      cvFileName: data.cvFile?.name || "",
-      coverLetterFileName: data.coverLetterFile?.name || "",
-      createdAt: new Date(),
+      profilePic: profilePicBase64,
+      cvFile: cvFileBase64,
+      coverLetter: data.coverLetter || "",
     };
 
-    FirebaseUtils.addDocument("career", applicationData)
+    console.log("Submitting application data:", applicationData);
+    await api
+      .post("api/v1/job", applicationData)
       .then(() => {
         setIsLoading(false);
         setShowSuccess(true);
@@ -280,6 +291,31 @@ const CareerForm = () => {
       <h2 className="font-bold mt-18 md:mt-0 text-3xl md:text-5xl text-primary text-center pb-5 border-b border-text/20">
         Careers
       </h2>
+      <div className="mt-4 mb-6">
+        <label className="text-sm font-medium text-gray-700 mb-2 block">
+          Profile Pic
+        </label>
+        <Controller
+          control={control}
+          name="profilePic"
+          render={({ field }) => (
+            <CustomFileUpload
+              onFileChange={(file) => {
+                field.onChange(file);
+                if (file) clearErrors("profilePic");
+              }}
+              file={field.value}
+              accept=".png,.jpg,.jpeg"
+              error={errors.profilePic?.message}
+            />
+          )}
+        />
+        {errors.profilePic && (
+          <p className="text-red-500 text-sm mt-1">
+            {errors.profilePic.message}
+          </p>
+        )}
+      </div>
       <div className="mt-6">
         <div className="flex items-center gap-3 mb-4">
           <div className="h-px flex-1 bg-gray-100" />
@@ -427,9 +463,11 @@ const CareerForm = () => {
               }}
               render={({ field }) => (
                 <PhoneInput
-                  inputClass="w-full p-2 border border-text rounded-md"
+                  containerClass="flex w-full rounded-md border border-text focus:outline-none focus:ring-2 focus:ring-primary/30 overflow-hidden"
+                  inputClass="!w-full !border-none !outline-none !shadow-none !rounded-none p-5 text-sm text-gray-900 placeholder-gray-400"
+                  buttonClass="!border-none !border-r !border-text !bg-gray-50 hover:!bg-gray-100 !rounded-none"
                   country="pk"
-                  placeholder="0300 0000000"
+                  placeholder="+92 300 0000000"
                   value={field.value || ""}
                   onChange={field.onChange}
                 />
@@ -443,12 +481,23 @@ const CareerForm = () => {
           </div>
 
           <div className="relative">
-            <label className="text-sm font-medium text-gray-700 mb-1 block">Gender <span className="text-red-500">*</span></label>
+            <label className="text-sm font-medium text-gray-700 mb-1 block">
+              Gender <span className="text-red-500">*</span>
+            </label>
+            {/* hidden registered field holds the stored value (lowercase) */}
             <input
-              type="text"
+              type="hidden"
               {...register("personalInfo.gender", {
                 required: "Gender is required",
               })}
+            />
+            <input
+              type="text"
+              value={
+                genderOptions.find(
+                  (g) => g.value === watch("personalInfo.gender"),
+                )?.label || ""
+              }
               readOnly
               placeholder="Select..."
               aria-label="Gender"
@@ -458,7 +507,7 @@ const CareerForm = () => {
               className="w-full border border-text rounded-md p-2 cursor-pointer bg-white focus:outline-none focus:ring-2 focus:ring-primary/30"
             />
             <ChevronDown
-              className="absolute right-3 top-8 text-gray-500 pointer-events-none"
+              className="absolute right-3 top-9 text-gray-500 pointer-events-none"
               size={18}
             />
             {errors.personalInfo?.gender && (
@@ -476,14 +525,14 @@ const CareerForm = () => {
                 <li
                   key={i}
                   onClick={() => {
-                    setValue("personalInfo.gender", opt, {
+                    setValue("personalInfo.gender", opt.value, {
                       shouldValidate: true,
                     });
                     setOpenDropdown(null);
                   }}
                   className="px-3 py-2 cursor-pointer hover:bg-gray-100"
                 >
-                  {opt}
+                  {opt.label}
                 </li>
               ))}
             </ul>
@@ -491,7 +540,9 @@ const CareerForm = () => {
         </div>
 
         <div className="flex flex-col mt-4">
-          <label className="text-sm font-medium text-gray-700 mb-1">Address <span className="text-red-500">*</span></label>
+          <label className="text-sm font-medium text-gray-700 mb-1">
+            Address <span className="text-red-500">*</span>
+          </label>
           <input
             {...register("personalInfo.address", {
               required: "Address is required",
@@ -524,7 +575,9 @@ const CareerForm = () => {
         <button
           type="button"
           className="absolute right-0 top-6"
-          onClick={() => append({ degree: "", institution: "", year: "" })}
+          onClick={() =>
+            append({ degree: "", institution: "", graduationDate: "" })
+          }
         >
           <Plus size={32} />
         </button>
@@ -567,23 +620,23 @@ const CareerForm = () => {
             <div className="flex flex-col">
               <input
                 type="date"
-                {...register(`education.${i}.year` as const, {
-                  required: "Year is required",
+                {...register(`education.${i}.graduationDate` as const, {
+                  required: "Graduation date is required",
                   validate: (value) => {
                     const today = new Date();
                     const selected = new Date(value);
                     if (selected > today) {
-                      return "Year cannot be in the future";
+                      return "Graduation date cannot be in the future";
                     }
                     return true;
                   },
                 })}
-                aria-label={`Education year ${i + 1}`}
+                aria-label={`Education graduation date ${i + 1}`}
                 className="border border-text rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
               />
-              {errors.education?.[i]?.year && (
+              {errors.education?.[i]?.graduationDate && (
                 <p className="text-red-500 text-sm">
-                  {errors.education[i]?.year?.message}
+                  {errors.education[i]?.graduationDate?.message}
                 </p>
               )}
             </div>
@@ -858,61 +911,36 @@ const CareerForm = () => {
         <div className="flex items-center gap-3 mb-4">
           <div className="h-px flex-1 bg-gray-100" />
           <h3 className="text-base font-semibold text-primary uppercase tracking-widest">
-            Cover Letter <span className="text-red-500 text-xs normal-case">*</span>
+            Cover Letter{" "}
+            <span className="text-red-500 text-xs normal-case">*</span>
           </h3>
           <div className="h-px flex-1 bg-gray-100" />
         </div>
-        <Controller
-          control={control}
-          name="coverLetterFile"
-          rules={{
-            required: "Cover letter file is required",
-            validate: (file) => {
-              if (!file) return "Cover letter file is required";
-              const maxSize = 5 * 1024 * 1024;
-              if (file.size > maxSize) {
-                return "File size must be less than 5MB";
-              }
-
-              const allowedTypes = [
-                "application/pdf",
-                "application/msword",
-                "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-                "image/png",
-              ];
-              if (!allowedTypes.includes(file.type)) {
-                return "Only PDF, DOC, DOCX, and PNG files are allowed";
-              }
-
-              return true;
-            },
-          }}
-          render={({ field }) => (
-            <CustomFileUpload
-              onFileChange={(file) => {
-                field.onChange(file);
-                if (file) {
-                  clearErrors("coverLetterFile");
-                }
-              }}
-              file={field.value}
-              accept=".pdf,.doc,.docx,.png"
-              error={errors.coverLetterFile?.message}
-            />
+        <div>
+          <label className="text-sm font-medium text-gray-700 mb-1 block">
+            Cover Letter <span className="text-red-500">*</span>
+          </label>
+          <textarea
+            {...register("coverLetter", {
+              required: "Cover letter is required",
+            })}
+            placeholder="Write your cover letter here..."
+            className="w-full border border-text rounded-md p-3 h-20 resize-none focus:outline-none focus:ring-2 focus:ring-primary/30"
+          />
+          {errors.coverLetter && (
+            <p className="text-red-500 text-sm mt-1">
+              {errors.coverLetter.message}
+            </p>
           )}
-        />
-        {errors.coverLetterFile && (
-          <p className="text-red-500 text-sm mt-1">
-            {errors.coverLetterFile.message}
-          </p>
-        )}
+        </div>
       </div>
 
       <div className="mt-8 pt-6 border-t border-gray-100">
         <div className="flex items-center gap-3 mb-4">
           <div className="h-px flex-1 bg-gray-100" />
           <h3 className="text-base font-semibold text-primary uppercase tracking-widest">
-            Upload CV <span className="text-red-500 text-xs normal-case">*</span>
+            Upload CV{" "}
+            <span className="text-red-500 text-xs normal-case">*</span>
           </h3>
           <div className="h-px flex-1 bg-gray-100" />
         </div>

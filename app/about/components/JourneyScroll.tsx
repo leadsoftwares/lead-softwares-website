@@ -29,7 +29,7 @@ export default function PortfolioSection() {
 					</div>
 					<div className='bg-white flex items-center justify-center rounded-xl w-30 h-30 md:w-40 md:h-40 lg:w-45 lg:h-45 xl:w-55 xl:h-55 absolute top-40 md:top-60 xl:top-50 left-5 md:left-35 lg:left-70 xl:left-100 shadow-lg z-20'>
 						<h1 className='md:text-lg lg:text-xl xl:text-2xl text-primary font-bold text-center'>
-							5 Year of Experience
+							5+ Year of Experience
 						</h1>
 					</div>
 				</div>

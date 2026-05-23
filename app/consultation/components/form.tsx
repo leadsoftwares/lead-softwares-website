@@ -1,24 +1,23 @@
 "use client";
-import FirebaseUtils from "@/lib/firestore-utils";
+import api from "@/lib/axios-config";
 import { CheckCircle, ChevronDown, Loader } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import CountrySelector from "./countrySelector";
-
-type CountryOption = {
-  value: string;
-  label: string;
-};
+import RegionSelector from "./countrySelector";
 
 type FormData = {
-  fullName: string;
+  firstName: string;
+  lastName: string;
   email: string;
   phone: string;
-  budgetValue: string;
-  country: CountryOption | null;
-  requirement: string;
+  industry: string;
+  hearFrom: string;
+  budget: string;
+  region: string;
+  company: string;
+  details: string;
 };
 
 const ConsultationForm = () => {
@@ -37,6 +36,13 @@ const ConsultationForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const budgets = ["$1000 - $5000", "$5000 - $10000", "More than $10000"];
+  const hearFromOptions = [
+    "Google",
+    "LinkedIn",
+    "Referral",
+    "Social Media",
+    "Others",
+  ];
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -52,19 +58,12 @@ const ConsultationForm = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = async (data: FormData) => {
     console.log("Form Submitted:", data);
     setIsLoading(true);
 
-    FirebaseUtils.addDocument("consultation", {
-      fullName: data.fullName,
-      phone: data.phone,
-      email: data.email,
-      country: data.country?.label || "",
-      requirement: data.requirement,
-      budget: data.budgetValue,
-      createdAt: new Date(),
-    })
+    await api
+      .post("api/v1/quote-request", data)
       .then(() => {
         setIsLoading(false);
         setShowSuccess(true);
@@ -137,7 +136,7 @@ const ConsultationForm = () => {
     >
       {showSuccess && (
         <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-          <div className="bg-white rounded-2xl shadow-xl p-6 text-center w-[300px]">
+          <div className="bg-white rounded-2xl shadow-xl p-6 text-center w-75">
             <div className="flex justify-center mb-4">
               <div className="bg-green-100 p-4 rounded-full">
                 <CheckCircle className="h-10 w-10 text-green-600" />
@@ -164,21 +163,21 @@ const ConsultationForm = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="flex flex-col">
-          <label className="text-text">Full Name</label>
+          <label className="text-text">First Name</label>
           <input
-            {...register("fullName", {
-              required: "Full name is required",
+            {...register("firstName", {
+              required: "First name is required",
               pattern: {
                 value: /^[A-Za-z\s]+$/,
-                message: "Full name can only contain letters and spaces",
+                message: "First name can only contain letters and spaces",
               },
               minLength: {
                 value: 2,
-                message: "Full name must be at least 2 characters",
+                message: "First name must be at least 2 characters",
               },
             })}
             type="text"
-            placeholder="Full Name"
+            placeholder="First Name"
             onKeyDown={(e) => {
               if (
                 !/[a-zA-Z\s]/.test(e.key) &&
@@ -190,8 +189,40 @@ const ConsultationForm = () => {
             }}
             className="border border-text rounded-md p-2"
           />
-          {errors.fullName && (
-            <p className="text-red-500 text-sm">{errors.fullName.message}</p>
+          {errors.firstName && (
+            <p className="text-red-500 text-sm">{errors.firstName.message}</p>
+          )}
+        </div>
+
+        <div className="flex flex-col">
+          <label className="text-text">Last Name</label>
+          <input
+            {...register("lastName", {
+              required: "Last name is required",
+              pattern: {
+                value: /^[A-Za-z\s]+$/,
+                message: "Last name can only contain letters and spaces",
+              },
+              minLength: {
+                value: 2,
+                message: "Last name must be at least 2 characters",
+              },
+            })}
+            type="text"
+            placeholder="Last Name"
+            onKeyDown={(e) => {
+              if (
+                !/[a-zA-Z\s]/.test(e.key) &&
+                e.key !== "Backspace" &&
+                e.key !== "Tab"
+              ) {
+                e.preventDefault();
+              }
+            }}
+            className="border border-text rounded-md p-2"
+          />
+          {errors.lastName && (
+            <p className="text-red-500 text-sm">{errors.lastName.message}</p>
           )}
         </div>
 
@@ -225,7 +256,9 @@ const ConsultationForm = () => {
             }}
             render={({ field }) => (
               <PhoneInput
-                inputClass="p-4 py-5 border border-text rounded-md max-w-full"
+                containerClass="flex w-full rounded-md border border-text focus:outline-none focus:ring-2 focus:ring-primary/30 overflow-hidden"
+                inputClass="!w-full !border-none !outline-none !shadow-none !rounded-none p-5 text-sm text-gray-900 placeholder-gray-400"
+                buttonClass="!border-none !border-r !border-text !bg-gray-50 hover:!bg-gray-100 !rounded-none"
                 country="pk"
                 value={field.value}
                 onChange={field.onChange}
@@ -237,47 +270,74 @@ const ConsultationForm = () => {
           )}
         </div>
         <div className="space-y-8">
-          <div>
-            <label className="text-text">Country</label>
-            <Controller
-              control={control}
-              name="country"
-              rules={{ required: "Country is required" }}
-              render={({ field }) => (
-                <CountrySelector
-                  value={field.value}
-                  onChange={field.onChange}
-                />
-              )}
+          <label className="text-text">Region</label>
+          <Controller
+            control={control}
+            name="region"
+            rules={{ required: "Region is required" }}
+            render={({ field }) => (
+              <RegionSelector value={field.value} onChange={field.onChange} />
+            )}
+          />
+          {errors.region && (
+            <p className="text-red-500 text-sm">{errors.region.message}</p>
+          )}
+        </div>
+        <div className="space-y-8">
+          <div className="mt-0">
+            <Dropdown
+              label="How did you hear about us?"
+              name="hearFrom"
+              options={hearFromOptions}
+              index={0}
             />
-            {errors.country && (
-              <p className="text-red-500 text-sm">{errors.country.message}</p>
+          </div>
+        </div>
+        <div className="space-y-8">
+          <div className="mt-0 flex flex-col">
+            <label className="text-text">Industry</label>
+            <input
+              {...register("industry", { required: "Industry is required" })}
+              type="text"
+              placeholder="Industry"
+              className="border border-text rounded-md p-2"
+            />
+            {errors.industry && (
+              <p className="text-red-500 text-sm">{errors.industry.message}</p>
             )}
           </div>
+        </div>
+        <div className="flex flex-col">
+          <label className="text-text">Company</label>
+          <input
+            {...register("company")}
+            type="text"
+            placeholder="Company"
+            className="border border-text rounded-md p-2"
+          />
         </div>
       </div>
 
       <div className="pt-6">
-        <label className="text-text">Project Requirements</label>
+        <label className="text-text">Project Details</label>
         <textarea
-          {...register("requirement", {
-            required: "Project requirements are required",
+          {...register("details", {
+            required: "Project details are required",
             minLength: {
               value: 10,
               message: "Please provide more details (at least 10 characters)",
             },
           })}
           className="w-full border border-text rounded-md p-2 h-24 resize-none"
-          placeholder="Please describe your project requirements..."
+          placeholder="Please describe your project details..."
         />
-        {errors.requirement && (
-          <p className="text-red-500 text-sm">{errors.requirement.message}</p>
+        {errors.details && (
+          <p className="text-red-500 text-sm">{errors.details.message}</p>
         )}
       </div>
-
       <Dropdown
         label="Estimated Budget"
-        name="budgetValue"
+        name="budget"
         options={budgets}
         index={2}
       />
