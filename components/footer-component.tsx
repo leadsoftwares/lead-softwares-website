@@ -1,103 +1,112 @@
-'use client'
-import { motion } from 'framer-motion'
-import { Facebook, Twitter, Youtube } from 'lucide-react'
-import Image from 'next/image'
-import Link from 'next/link'
-import Logo from '../public/png/Lead Logo White with white Text-02-02.png'
+"use client";
+import { motion } from "framer-motion";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import Logo from "../public/png/Lead Logo White with white Text-02-02.png";
 
 const Footer = () => {
-	return (
-		<div>
-			<div className='relative overflow-hidden w-full bg-[#12032F] h-200 md:h-155 lg:h-110'>
-				{/* gradient */}
-				<div className='ml-30 h-110 w-120 flex items-center'>
-					<div className='hidden lg:block h-100 w-120 blur-3xl bg-[#31096A] rounded-full'></div>
-				</div>
+  return (
+    <div>
+      <div className="relative overflow-hidden w-full bg-[#12032F] h-200 md:h-155 lg:h-87">
+        {/* gradient */}
+        <div className="ml-30 h-110 w-120 flex items-center">
+          <div className="hidden lg:block h-100 w-120 blur-3xl bg-[#31096A] rounded-full"></div>
+        </div>
 
-				<div className='absolute left-0 top-0 flex flex-wrap gap-12 md:gap-16 flex-col md:flex-row justify-between z-110 py-18 px-8 md:py-20 md:px-30'>
-					{/* left-side */}
-					<motion.div
-						initial={{ opacity: 0, y: 100 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true, amount: 0.3 }}
-						transition={{ duration: 0.8, ease: 'easeOut' }}
-						className='flex flex-col items-center md:items-start text-center md:text-left md:ml-20'
-					>
-						<Image width={150} height={150} src={Logo} alt='Lead-softwares' />
-						<div className='text-zinc-300 text-sm font-light mt-6 max-w-[380px]'>
-							Lead Softwares builds cutting-edge digital platforms that help businesses adapt, grow, and lead in the digital era. We focus on creating technology solutions that deliver value, efficiency, and long-lasting impact.
-						</div>
-					</motion.div>
-					{/* right side */}
-					<motion.div
-						initial={{ opacity: 0, x: -100 }}
-						whileInView={{ opacity: 1, x: 0 }}
-						viewport={{ once: true, amount: 0.3 }}
-						transition={{ duration: 0.8, ease: 'easeOut' }}
-						className='flex flex-col text-center md:flex-row gap-10 md:gap-30 md:pr-20 relative z-110 md:pb-14'
-					>
-						<ul className='flex flex-col gap-6 text-zinc-400 text-sm'>
-							<li className='text-zinc-200 font-semibold'>
-								Products
-							</li>
-							<li>
-								<Link href='/about'>About</Link>
-							</li>
-							<li>
-								<Link href='/portfolio'>Portfolio</Link>
-							</li>
-							<li>
-								<Link href='/services'>Services</Link>
-							</li>
-							<li>
-								<Link href='/team'>Team</Link>
-							</li>
-						</ul>
-						<ul className='flex flex-col gap-6 text-zinc-400 text-sm'>
-							<li className='text-zinc-200 font-semibold'>
-								Resources
-							</li>
-							<li>
-								<Link href='/consultation'>Quote</Link>
-							</li>
-							<li>
-								<Link href='/contact'>Contact Us</Link>
-							</li>
-							<li>
-								<Link href='/career'>Career</Link>
-							</li>
-							<li>
-								<Link href='/privacy-policy'>Privacy Policy</Link>
-							</li>
-						</ul>
-					</motion.div>
-					{/* gradient */}
-					<div className='hidden lg:block absolute right-50 top-10 blur-3xl h-90 w-100 bg-[#412855] rounded-full'></div>
-					<footer className='w-[80vw] border-t border-zinc-600 z-110 flex justify-between mx-auto'>
-						<div className='text-zinc-400 text-xs mt-2'>
-							&copy; Lead Softwares 2024. All rights reserved.
-						</div>
-						<div className='flex gap-6 mt-2'>
-							<a
-								href='https://www.facebook.com/leadsoft'
-								target='_blank'
-								rel='noopener noreferrer'
-								aria-label='Lead Softwares on Facebook'
-							>
-								<Facebook color='white' size={18} />
-							</a>
-							<span aria-hidden='true'>
-								<Twitter color='white' size={18} />
-							</span>
-							<span aria-hidden='true'>
-								<Youtube color='white' size={18} />
-							</span>
-						</div>
-					</footer>
-				</div>
-			</div>
-		</div>
-	)
-}
+        <div className="absolute left-0 top-0 flex flex-wrap gap-12 md:gap-0 flex-col md:flex-row justify-between z-110 py-18 px-8 md:py-14 md:px-10">
+          {/* left-side */}
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col items-center md:items-start text-center md:text-left md:ml-20"
+          >
+            <Image width={150} height={150} src={Logo} alt="Lead-softwares" />
+            <div className="text-zinc-300 text-sm font-light mt-6 max-w-[380px]">
+              Lead Softwares builds cutting-edge digital platforms that help
+              businesses adapt, grow, and lead in the digital era. We focus on
+              creating technology solutions that deliver value, efficiency, and
+              long-lasting impact.
+            </div>
+          </motion.div>
+          {/* right side */}
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col text-center md:flex-row gap-10 md:gap-30 md:pr-20 relative z-110 md:pb-14"
+          >
+            <ul className="flex flex-col gap-6 text-zinc-400 text-sm">
+              <li className="text-zinc-200 font-semibold">Products</li>
+              <li>
+                <Link href="/about">About</Link>
+              </li>
+              <li>
+                <Link href="/portfolio">Portfolio</Link>
+              </li>
+              <li>
+                <Link href="/services">Services</Link>
+              </li>
+              <li>
+                <Link href="/team">Team</Link>
+              </li>
+            </ul>
+            <ul className="flex flex-col gap-6 text-zinc-400 text-sm">
+              <li className="text-zinc-200 font-semibold">Resources</li>
+              <li>
+                <Link href="/consultation">Quote</Link>
+              </li>
+              <li>
+                <Link href="/contact">Contact Us</Link>
+              </li>
+              <li>
+                <Link href="/career">Career</Link>
+              </li>
+              <li>
+                <Link href="/privacy-policy">Privacy Policy</Link>
+              </li>
+            </ul>
+          </motion.div>
+          {/* gradient */}
+          <div className="hidden lg:block absolute right-50 top-10 blur-3xl h-90 w-100 bg-[#412855] rounded-full"></div>
+          <footer className="w-[80vw] border-t border-zinc-600 z-110 flex justify-between mx-auto">
+            <div className="text-zinc-400 text-xs mt-2">
+              &copy; Lead Softwares 2026. All rights reserved.
+            </div>
+            <div className="flex gap-6 mt-2">
+              <a
+                href="https://www.facebook.com/leadsoft"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Lead Softwares on Facebook"
+              >
+                <Facebook color="white" size={18} />
+              </a>
+              <a
+                href="https://www.instagram.com/leadsoftwares/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Lead Softwares on Instagram"
+              >
+                <Instagram color="white" size={18} />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/lead-softwares"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Lead Softwares on LinkedIn"
+              >
+                <Linkedin color="white" size={18} />
+              </a>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default Footer
+export default Footer;

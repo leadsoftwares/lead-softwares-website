@@ -1,5 +1,4 @@
 "use client";
-import Contact1 from "@/public/webp/contact-1.webp";
 import ContactIMG from "@/public/contact-us.png";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -44,7 +43,7 @@ const Contact = () => {
               </div>
               <h2 className="font-extrabold text-2xl mb-4">{card.title}</h2>
               <p className="text-text mb-4">{card.text}</p>
-              <p className="text-black font-bold break-words px-10 md:px-20">
+              <p className="text-black font-bold wrap-break-word px-10 md:px-20">
                 {card.info}
               </p>
             </div>
@@ -65,11 +64,11 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="lg:w-[50%] h-120 lg:h-[500px] px-2"
+            className="lg:w-[50%] h-120 lg:h-125 px-2"
           >
             <iframe
               loading="lazy"
-              className="w-full h-[100%] md:h-full rounded-2xl border-0"
+              className="w-full h-full md:h-full rounded-2xl border-0"
               src="https://www.google.com/maps?q=30.240904984729816,71.48171433334791&hl=en&z=15&output=embed"
             ></iframe>
           </motion.div>
