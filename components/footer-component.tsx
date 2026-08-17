@@ -1,10 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
-import { Facebook, Instagram, Linkedin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "../public/png/Lead Logo White with white Text-02-02.png";
-
+import {
+  IconBrandInstagram,
+  IconBrandFacebook,
+  IconBrandLinkedin,
+} from "@tabler/icons-react";
 const Footer = () => {
   return (
     <div>
@@ -83,7 +86,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 aria-label="Lead Softwares on Facebook"
               >
-                <Facebook color="white" size={18} />
+                <IconBrandFacebook color="white" size={18} />
               </a>
               <a
                 href="https://www.instagram.com/leadsoftwares/"
@@ -91,7 +94,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 aria-label="Lead Softwares on Instagram"
               >
-                <Instagram color="white" size={18} />
+                <IconBrandInstagram color="white" size={18} />
               </a>
               <a
                 href="https://www.linkedin.com/company/lead-softwares"
@@ -99,7 +102,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 aria-label="Lead Softwares on LinkedIn"
               >
-                <Linkedin color="white" size={18} />
+                <IconBrandLinkedin color="white" size={18} />
               </a>
             </div>
           </footer>
