@@ -1,7 +1,6 @@
 'use client'
 
 import JourneyScroll from '@/app/about/components/JourneyScroll'
-import Team from '@/app/team/components/team'
 import SectionBG from '@/public/jpeg/about-us-section-bg.jpg'
 import WhyIMG from '@/public/png/About/Building 2.png'
 import { Check } from 'lucide-react'
@@ -100,7 +99,7 @@ const About = () => {
 					</div>
 				</div>
 			</div>
-			<Team />
+			{/* <Team /> */}
 			<ProjectsLogos />
 		</div>
 	)

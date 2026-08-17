@@ -50,9 +50,9 @@ const Footer = () => {
               <li>
                 <Link href="/services">Services</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/team">Team</Link>
-              </li>
+              </li> */}
             </ul>
             <ul className="flex flex-col gap-6 text-zinc-400 text-sm">
               <li className="text-zinc-200 font-semibold">Resources</li>
