@@ -1,10 +1,12 @@
-'use client'
-import TeamSection from '@/components/team-section'
+"use client";
+
 // import TeamImg from '@/public/png/Lead software pages Images/Our Team.png'
-import { useEffect } from 'react'
-import NavbarTitle from '../about/components/NavbarTitle'
-import Team from './components/team'
+import { notFound } from "next/navigation";
+
 const page = () => {
+  notFound();
+
+  /*
 	// eslint-disable-next-line react-hooks/rules-of-hooks
 	useEffect(() => {
 		window.scrollTo(0, 0)
@@ -12,6 +14,7 @@ const page = () => {
 			window.scrollTo({ top: 0, behavior: 'smooth' })
 		}, 50)
 	}, [])
+
 	return (
 		<div className='w-full overflow-hidden select-none'>
 			<NavbarTitle
@@ -25,6 +28,7 @@ const page = () => {
 			<TeamSection />
 		</div>
 	)
-}
+	*/
+};
 
-export default page
+export default page;

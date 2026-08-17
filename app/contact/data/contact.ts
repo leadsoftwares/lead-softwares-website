@@ -14,7 +14,7 @@ export const contactCards = [
 		icon: Phone,
 		title: 'Phone',
 		text: 'Reach out to us by phone',
-		info: '+92 316 6072132',
+		info: '+92 318 4760224',
 	},
 	{
 		id: 3,

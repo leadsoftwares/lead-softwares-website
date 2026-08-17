@@ -29,7 +29,7 @@ const ProjectsLogos = () => {
 	return (
 		<div className='w-full space-y-12 md:space-y-20'>
 			<div className='text-primary text-center mx-4 lg:mx-0 text-2xl md:text-3xl font-semibold mt-8 lg:mt-30'>
-				Trusted by nearly 5000+ customers & startups
+				Trusted by nearly 50+ customers & startups
 			</div>
 
 			<motion.div

@@ -82,7 +82,7 @@ const Navbar = () => {
 								{openDropdown === 'pages' && (
 									<ul className='absolute flex flex-col top-full text-text w-52 bg-white shadow-lg rounded-xl py-2 z-50'>
 										<NavLink href='/services'>Services</NavLink>
-										<NavLink href='/team'>Team</NavLink>
+										{/* <NavLink href='/team'>Team</NavLink> */}
 										<NavLink href='/career'>Careers</NavLink>
 									</ul>
 								)}
@@ -106,7 +106,7 @@ const Navbar = () => {
 								{openDropdown === 'pages' && (
 									<ul className='absolute flex flex-col top-full text-text w-52 bg-white shadow-lg rounded-xl py-2 z-50'>
 										<NavLink href='/services'>Services</NavLink>
-										<NavLink href='/team'>Team</NavLink>
+										{/* <NavLink href='/team'>Team</NavLink> */}
 										<NavLink href='/career'>Careers</NavLink>
 									</ul>
 								)}
@@ -180,9 +180,9 @@ const Navbar = () => {
 									<NavLink href='/services' onClick={toggleMobileMenu}>
 										Services
 									</NavLink>
-									<NavLink href='/team' onClick={toggleMobileMenu}>
+									{/* <NavLink href='/team' onClick={toggleMobileMenu}>
 										Team
-									</NavLink>
+									</NavLink> */}
 									<NavLink href='/career' onClick={toggleMobileMenu}>
 										Careers
 									</NavLink>
