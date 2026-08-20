@@ -1,7 +1,7 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 /* Disable smooth scroll on mobile */
@@ -14,124 +14,140 @@ html {
 /* @theme directive is from Tailwind CSS v4 - ignore unknown at-rule warning */
 /* stylelint-disable-next-line at-rule-no-unknown -- Tailwind CSS v4 @theme directive */
 @theme {
-	--color-primary: #321270;
-	--color-text: #7b88a8;
-	--color-white: #ffffff;
-	--color-bg: #f4f6fb;
-	--color-blue: #4299e1;
-	--color-bgGradient: linear-gradient(
-		to bottom right,
-		#ffedf9 40%,
-		#dadaff 60%
-	);
+  --color-primary: #321270;
+  --color-text: #7b88a8;
+  --color-white: #ffffff;
+  --color-bg: #f4f6fb;
+  --color-blue: #4299e1;
+  --color-bgGradient: linear-gradient(
+    to bottom right,
+    #ffedf9 40%,
+    #dadaff 60%
+  );
 }
 
+/* Global placeholder styling */
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+  color: rgb(184, 184, 184);
+  opacity: 1;
+}
+
+/* Global field border styling */
+input,
+textarea,
+select {
+  border-color: #e2e8f0;
+}
+
+
 ::-webkit-scrollbar {
-	width: 5px;
-	height: 8px; 
-	display: none;
+  width: 5px;
+  height: 8px;
+  display: none;
 }
 
 ::-webkit-scrollbar-track {
-	border-radius: 10px;
-	display: none;
+  border-radius: 10px;
+  display: none;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-	display: none;
+  display: none;
 }
 
 @keyframes blink {
-	0%,
-	50%,
-	100% {
-		opacity: 1;
-	}
-	25%,
-	75% {
-		opacity: 0;
-	}
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
 }
 
 .animate-blink {
-	animation: blink 1s step-start infinite;
+  animation: blink 1s step-start infinite;
 }
 
 @keyframes scroll-up {
-	0% {
-		transform: translateY(0);
-	}
-	100% {
-		transform: translateY(-50%);
-	} 
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
 }
 
 @keyframes scroll-down {
-	0% {
-		transform: translateY(-50%);
-	}
-	100% {
-		transform: translateY(0);
-	} 
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .animate-scroll-up {
-	animation: scroll-up 30s linear infinite;
+  animation: scroll-up 30s linear infinite;
 }
 
 .animate-scroll-down {
-	animation: scroll-down 30s linear infinite;
+  animation: scroll-down 30s linear infinite;
 }
 
 @keyframes marquee {
-	0% {
-		transform: translateX(0);
-	}
-	100% {
-		transform: translateX(-50%);
-	}
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes marquee2 {
-	0% {
-		transform: translateX(-50%);
-	}
-	100% {
-		transform: translateX(0);
-	}
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .animate-marquee {
-	animation: marquee 25s linear infinite;
+  animation: marquee 25s linear infinite;
 }
 .animate-marquee2 {
-	animation: marquee2 60s linear infinite;
-	display: inline-flex;
+  animation: marquee2 60s linear infinite;
+  display: inline-flex;
 }
 
 .animate-marquee:hover {
-	animation-play-state: paused;
+  animation-play-state: paused;
 }
 .animate-marquee2:hover {
-	animation-play-state: paused;
+  animation-play-state: paused;
 }
 
 /* hero Gallery Component */
 .tp-hero-gallery-item img {
-	transition: transform 0.4s ease;
+  transition: transform 0.4s ease;
 }
 .tp-hero-gallery-item img:hover {
-	transform: scale(1.05);
+  transform: scale(1.05);
 }
 @keyframes float {
-	0%,
-	100% {
-		transform: translateY(0px);
-	}
-	50% {
-		transform: translateY(-10px);
-	}
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 .animate-float {
-	animation: float 6s ease-in-out infinite;
+  animation: float 6s ease-in-out infinite;
 }

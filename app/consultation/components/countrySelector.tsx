@@ -23,8 +23,20 @@ function RegionSelector({ value, onChange }: RegionSelectorProps) {
 
   return (
     <Select<Option, false>
-      className="border border-text rounded-md p-px focus:outline-none focus:ring-2 focus:ring-primary/30"
-      classNames={{ control: () => "!border-0 !shadow-none" }}
+      className="border border-[#e2e8f0] rounded-md p-px focus:outline-none focus:ring-2 focus:ring-primary/30"
+      classNames={{
+        control: () => "!border-0 !shadow-none",
+        placeholder: () => "!text-[rgb(184,184,184)]", // Placeholder color
+        singleValue: () => "!text-gray-900", // Selected value color
+        input: () => "!text-gray-900", // Typed input text color
+        menu: () => "!bg-white !border !border-gray-200 !rounded-md !shadow-lg", // Dropdown menu container
+        option: ({ isSelected, isFocused }) =>
+          isSelected
+            ? "!bg-primary !text-white" // Selected item style
+            : isFocused
+              ? "!bg-gray-100 !text-gray-900" // Hover/focused item style
+              : "!text-gray-700", // Normal item style
+      }}
       options={REGION_OPTIONS}
       value={selected}
       onChange={(opt: SingleValue<Option>) =>

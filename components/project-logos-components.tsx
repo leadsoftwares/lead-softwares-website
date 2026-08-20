@@ -66,7 +66,7 @@ const ProjectsLogos = () => {
 					{ourProjectsLogos.map((partner, index) => (
 						<div
 							key={`partner-${index}`}
-							className='mx-8 flex-shrink-0 hover:scale-110 transition-transform duration-300'
+							className='mx-8 shrink-0 hover:scale-110 transition-transform duration-300'
 						>
 							<Image
 								width={100}
@@ -81,7 +81,7 @@ const ProjectsLogos = () => {
 					{ourProjectsLogos.map((partner, index) => (
 						<div
 							key={`partner-dup-${index}`}
-							className='mx-8 flex-shrink-0 hover:scale-110 transition-transform duration-300'
+							className='mx-8 shrink-0 hover:scale-110 transition-transform duration-300'
 						>
 							<Image
 								width={100}
@@ -96,7 +96,7 @@ const ProjectsLogos = () => {
 					{ourProjectsLogos.map((partner, index) => (
 						<div
 							key={`partner-triple-${index}`}
-							className='mx-8 flex-shrink-0 hover:scale-110 transition-transform duration-300'
+							className='mx-8 shrink-0 hover:scale-110 transition-transform duration-300'
 						>
 							<Image
 								width={100}
