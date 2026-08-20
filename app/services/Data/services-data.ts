@@ -65,7 +65,7 @@ export const ServiceData = [
   {
     icon: Design,
     title: "Prototyping & UX Design",
-    text: "Rapidly test ideas with interactive AI-generated prototypes and data-backed design decisions that put users first.",
+    text: "Bring your ideas to life with interactive prototypes and modern UI/UX design that validate concepts, elevate usability, and create seamless digital experiences users love.",
   },
   {
     icon: Shop,

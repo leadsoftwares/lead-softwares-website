@@ -94,7 +94,7 @@ const ConsultationForm = () => {
         readOnly
         placeholder="Select..."
         onClick={() => setOpenDropdown(openDropdown === name ? null : name)}
-        className="w-full border border-text rounded-md p-2 cursor-pointer bg-white"
+        className="w-full border border-[#e2e8f0] rounded-md p-2 cursor-pointer bg-white"
       />
       <ChevronDown
         className="absolute right-3 top-9 text-gray-500 pointer-events-none"
@@ -187,7 +187,7 @@ const ConsultationForm = () => {
                 e.preventDefault();
               }
             }}
-            className="border border-text rounded-md p-2"
+            className="border border-[#e2e8f0] rounded-md p-2"
           />
           {errors.firstName && (
             <p className="text-red-500 text-sm">{errors.firstName.message}</p>
@@ -219,7 +219,7 @@ const ConsultationForm = () => {
                 e.preventDefault();
               }
             }}
-            className="border border-text rounded-md p-2"
+            className="border border-[#e2e8f0] rounded-md p-2"
           />
           {errors.lastName && (
             <p className="text-red-500 text-sm">{errors.lastName.message}</p>
@@ -238,7 +238,7 @@ const ConsultationForm = () => {
             })}
             type="email"
             placeholder="Email"
-            className="border border-text rounded-md p-2"
+            className="border border-[#e2e8f0] rounded-md p-2"
           />
           {errors.email && (
             <p className="text-red-500 text-sm">{errors.email.message}</p>
@@ -256,9 +256,9 @@ const ConsultationForm = () => {
             }}
             render={({ field }) => (
               <PhoneInput
-                containerClass="flex w-full rounded-md border border-text focus:outline-none focus:ring-2 focus:ring-primary/30 overflow-hidden"
-                inputClass="!w-full !border-none !outline-none !shadow-none !rounded-none p-5 text-sm text-gray-900 placeholder-gray-400"
-                buttonClass="!border-none !border-r !border-text !bg-gray-50 hover:!bg-gray-100 !rounded-none"
+                containerClass="flex w-full rounded-md border border-[#e2e8f0] focus:outline-none focus:ring-2 focus:ring-primary/30 overflow-hidden"
+                inputClass="!w-full !border-none !outline-none !shadow-none !rounded-none p-5 text-sm text-gray-900 placeholder-[#B8B8B8]"
+                buttonClass="!border-none !border-r !border-[#e2e8f0] !bg-gray-50 hover:!bg-gray-100 !rounded-none"
                 country="pk"
                 value={field.value}
                 onChange={field.onChange}
@@ -299,8 +299,8 @@ const ConsultationForm = () => {
             <input
               {...register("industry", { required: "Industry is required" })}
               type="text"
-              placeholder="Industry"
-              className="border border-text rounded-md p-2"
+              placeholder="e.g. IT, Healthcare, Solar"
+              className="border border-[#e2e8f0] rounded-md p-2"
             />
             {errors.industry && (
               <p className="text-red-500 text-sm">{errors.industry.message}</p>
@@ -312,8 +312,8 @@ const ConsultationForm = () => {
           <input
             {...register("company")}
             type="text"
-            placeholder="Company"
-            className="border border-text rounded-md p-2"
+            placeholder="Enter your company name"
+            className="border border-[#e2e8f0] rounded-md p-2"
           />
         </div>
       </div>
@@ -328,7 +328,7 @@ const ConsultationForm = () => {
               message: "Please provide more details (at least 10 characters)",
             },
           })}
-          className="w-full border border-text rounded-md p-2 h-24 resize-none"
+          className="w-full border border-[#e2e8f0] rounded-md p-2 h-24 resize-none"
           placeholder="Please describe your project details..."
         />
         {errors.details && (

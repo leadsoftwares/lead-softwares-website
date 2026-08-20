@@ -346,7 +346,7 @@ const CareerForm = () => {
                   e.preventDefault();
                 }
               }}
-              className="border border-text rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
+              className="border border-[#e2e8f0] rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
             />
             {errors.personalInfo?.firstName && (
               <p className="text-red-500 text-sm">
@@ -375,7 +375,7 @@ const CareerForm = () => {
                   e.preventDefault();
                 }
               }}
-              className="border border-text rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
+              className="border border-[#e2e8f0] rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
             />
 
             {errors.personalInfo?.lastName && (
@@ -400,7 +400,7 @@ const CareerForm = () => {
               type="email"
               placeholder="you@example.com"
               aria-label="Email address"
-              className="border border-text rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
+              className="border border-[#e2e8f0] rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
             />
             {errors.personalInfo?.email && (
               <p className="text-red-500 text-sm">
@@ -430,7 +430,7 @@ const CareerForm = () => {
               })}
               type="date"
               aria-label="Date of birth"
-              className="border border-text rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
+              className="border border-[#e2e8f0] rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
             />
             {errors.personalInfo?.dob && (
               <p className="text-red-500 text-sm">
@@ -463,9 +463,9 @@ const CareerForm = () => {
               }}
               render={({ field }) => (
                 <PhoneInput
-                  containerClass="flex w-full rounded-md border border-text focus:outline-none focus:ring-2 focus:ring-primary/30 overflow-hidden"
-                  inputClass="!w-full !border-none !outline-none !shadow-none !rounded-none p-5 text-sm text-gray-900 placeholder-gray-400"
-                  buttonClass="!border-none !border-r !border-text !bg-gray-50 hover:!bg-gray-100 !rounded-none"
+                  containerClass="flex w-full rounded-md border border-[#e2e8f0] focus:outline-none focus:ring-2 focus:ring-primary/30 overflow-hidden"
+                  inputClass="!w-full !border-none !outline-none !shadow-none !rounded-none p-5 text-sm text-gray-900 placeholder-[#B8B8B8]"
+                  buttonClass="!border-none !border-r !border-[#e2e8f0] !bg-gray-50 hover:!bg-gray-100 !rounded-none"
                   country="pk"
                   placeholder="+92 300 0000000"
                   value={field.value || ""}
@@ -504,7 +504,7 @@ const CareerForm = () => {
               onClick={() =>
                 setOpenDropdown(openDropdown === "gender" ? null : "gender")
               }
-              className="w-full border border-text rounded-md p-2 cursor-pointer bg-white focus:outline-none focus:ring-2 focus:ring-primary/30"
+              className="w-full border border-[#e2e8f0] rounded-md p-2 cursor-pointer bg-white focus:outline-none focus:ring-2 focus:ring-primary/30"
             />
             <ChevronDown
               className="absolute right-3 top-9 text-gray-500 pointer-events-none"
@@ -554,7 +554,7 @@ const CareerForm = () => {
             type="text"
             placeholder="Street address, City"
             aria-label="Address"
-            className="border border-text rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
+            className="border border-[#e2e8f0] rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
           />
           {errors.personalInfo?.address && (
             <p className="text-red-500 text-sm">
@@ -593,7 +593,7 @@ const CareerForm = () => {
                 {...register(`education.${i}.degree` as const, {
                   required: "Degree is required",
                 })}
-                className="border border-text rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
+                className="border border-[#e2e8f0] rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
               />
               {errors.education?.[i]?.degree && (
                 <p className="text-red-500 text-sm">
@@ -608,7 +608,7 @@ const CareerForm = () => {
                 {...register(`education.${i}.institution` as const, {
                   required: "Institution is required",
                 })}
-                className="border border-text rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
+                className="border border-[#e2e8f0] rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
               />
               {errors.education?.[i]?.institution && (
                 <p className="text-red-500 text-sm">
@@ -632,7 +632,7 @@ const CareerForm = () => {
                   },
                 })}
                 aria-label={`Education graduation date ${i + 1}`}
-                className="border border-text rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
+                className="border border-[#e2e8f0] rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
               />
               {errors.education?.[i]?.graduationDate && (
                 <p className="text-red-500 text-sm">
@@ -705,7 +705,7 @@ const CareerForm = () => {
                   required: "Company is required",
                 })}
                 aria-label={`Company ${i + 1}`}
-                className="border border-text rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
+                className="border border-[#e2e8f0] rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
               />
               {errors.experience?.[i]?.company && (
                 <p className="text-red-500 text-sm">
@@ -721,7 +721,7 @@ const CareerForm = () => {
                   required: "Position is required",
                 })}
                 aria-label={`Position ${i + 1}`}
-                className="border border-text rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
+                className="border border-[#e2e8f0] rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
               />
               {errors.experience?.[i]?.position && (
                 <p className="text-red-500 text-sm">
@@ -746,7 +746,7 @@ const CareerForm = () => {
                   },
                 })}
                 aria-label={`Start date ${i + 1}`}
-                className="border border-text rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
+                className="border border-[#e2e8f0] rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
               />
               {errors.experience?.[i]?.startDate && (
                 <p className="text-red-500 text-sm">
@@ -776,7 +776,7 @@ const CareerForm = () => {
                   },
                 })}
                 aria-label={`End date ${i + 1}`}
-                className="border border-text rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
+                className="border border-[#e2e8f0] rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
               />
               {errors.experience?.[i]?.endDate && (
                 <p className="text-red-500 text-sm">
@@ -796,7 +796,7 @@ const CareerForm = () => {
                   },
                 })}
                 aria-label={`Description ${i + 1}`}
-                className="border border-text rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
+                className="border border-[#e2e8f0] rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
               />
               {errors.experience?.[i]?.description && (
                 <p className="text-red-500 text-sm">
@@ -857,7 +857,7 @@ const CareerForm = () => {
               }
             }}
             aria-label="Add skill"
-            className="border rounded-md p-2 flex-1 border-text focus:outline-none focus:ring-2 focus:ring-primary/30"
+            className="border rounded-md p-2 flex-1 border-[#e2e8f0] focus:outline-none focus:ring-2 focus:ring-primary/30"
           />
           <button
             type="button"
@@ -925,7 +925,7 @@ const CareerForm = () => {
               required: "Cover letter is required",
             })}
             placeholder="Write your cover letter here..."
-            className="w-full border border-text rounded-md p-3 h-20 resize-none focus:outline-none focus:ring-2 focus:ring-primary/30"
+            className="w-full border border-[#e2e8f0] rounded-md p-3 h-20 resize-none focus:outline-none focus:ring-2 focus:ring-primary/30"
           />
           {errors.coverLetter && (
             <p className="text-red-500 text-sm mt-1">

@@ -45,7 +45,7 @@ const Navbar = () => {
 
 	return (
 		<div
-			className={`w-full h-16 font-[500] flex items-center justify-between px-2 lg:px-10 fixed top-0 z-[10000] transition-all duration-300
+			className={`w-full h-16 font-medium flex items-center justify-between px-2 lg:px-10 fixed top-0 z-10000 transition-all duration-300
         ${
 					isScrolled
 						? 'bg-white shadow-[0_3px_8px_rgba(0,0,0,0.15)]'

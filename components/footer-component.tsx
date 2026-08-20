@@ -27,7 +27,7 @@ const Footer = () => {
             className="flex flex-col items-center md:items-start text-center md:text-left md:ml-20"
           >
             <Image width={150} height={150} src={Logo} alt="Lead-softwares" />
-            <div className="text-zinc-300 text-sm font-light mt-6 max-w-[380px]">
+            <div className="text-zinc-300 text-sm font-light mt-6 max-w-95">
               Lead Softwares builds cutting-edge digital platforms that help
               businesses adapt, grow, and lead in the digital era. We focus on
               creating technology solutions that deliver value, efficiency, and

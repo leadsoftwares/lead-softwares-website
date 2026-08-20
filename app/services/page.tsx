@@ -41,9 +41,6 @@ const Services = () => {
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="text-center w-full space-y-2 mx-auto"
         >
-          <div className="subTitle text-blue-500 text-md lg:text-xs px-2">
-            We work mainly with digital agencies and software companies
-          </div>
           <div className="sm:w-[80%] lg:w-[55%] mx-auto text-2xl md:text-3xl lg:text-5xl lg:leading-14 font-semibold text-primary">
             Outstanding software and services that solve your hassle
           </div>
